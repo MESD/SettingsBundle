@@ -9,7 +9,7 @@
         {
             "name": "David Cramblettet",
             "email": "david@functionalchaos.net"
-        },
+        }
     ],
     "minimum-stability": "dev",
     "require": {
@@ -26,5 +26,5 @@
     "autoload": {
         "psr-0": { "Fc\\SettingsBundle": "" }
     },
-    "target-dir": "Fc/SettingsBundle",
+    "target-dir": "Fc/SettingsBundle"
 }
