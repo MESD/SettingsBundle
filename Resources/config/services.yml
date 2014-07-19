@@ -1,0 +1,7 @@
+parameters:
+#    fc_settings.example.class: Fc\SettingsBundle\Example
+
+services:
+#    fc_settings.example:
+#        class: %fc_settings.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
