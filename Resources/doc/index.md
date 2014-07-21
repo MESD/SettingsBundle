@@ -46,7 +46,7 @@ Each `setting` has four descriptors: `name`, `description`, `type`, and `format`
 * **Format**: The string length, number of digits, number of decimals, etc.
 
 
-###Setting Definition Level - Hive or Cluster?:
+###Choosing the Definition Level - Hive or Cluster?:
 
 You have two options when it comes to choosing the level at which your settings are
 defined. `hive` or `cluster`. You must decide on the level when you define a new
