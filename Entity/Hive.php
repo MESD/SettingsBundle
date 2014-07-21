@@ -25,6 +25,11 @@ class Hive
     private $description;
 
     /**
+     * @var bool
+     */
+    private $definedAtHive;
+
+    /**
      * @var \Doctrine\Common\Collections\Collection
      */
     private $cluster;
@@ -91,6 +96,29 @@ class Hive
     public function getDescription()
     {
         return $this->description;
+    }
+
+    /**
+     * Set definedAtHive
+     *
+     * @param \bool $definedAtHive
+     * @return Hive
+     */
+    public function setDefinedAtHive(\bool $definedAtHive)
+    {
+        $this->definedAtHive = $definedAtHive;
+    
+        return $this;
+    }
+
+    /**
+     * Get definedAtHive
+     *
+     * @return \bool 
+     */
+    public function getDefinedAtHive()
+    {
+        return $this->definedAtHive;
     }
 
     /**

@@ -15,6 +15,10 @@ Fc\SettingsBundle\Entity\Hive:
         description:
             type: text
             nullable: true
+        definedAtHive:
+            column: defined_at_hive
+            type: bool
+            nullable: false
 
     oneToMany:
         cluster:
