@@ -25,7 +25,7 @@ class Hive
     private $description;
 
     /**
-     * @var bool
+     * @var boolean
      */
     private $definedAtHive;
 
@@ -101,10 +101,10 @@ class Hive
     /**
      * Set definedAtHive
      *
-     * @param \bool $definedAtHive
+     * @param boolean $definedAtHive
      * @return Hive
      */
-    public function setDefinedAtHive(\bool $definedAtHive)
+    public function setDefinedAtHive($definedAtHive)
     {
         $this->definedAtHive = $definedAtHive;
     
@@ -114,7 +114,7 @@ class Hive
     /**
      * Get definedAtHive
      *
-     * @return \bool 
+     * @return boolean 
      */
     public function getDefinedAtHive()
     {

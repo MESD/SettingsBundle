@@ -17,7 +17,7 @@ Fc\SettingsBundle\Entity\Hive:
             nullable: true
         definedAtHive:
             column: defined_at_hive
-            type: bool
+            type: boolean
             nullable: false
 
     oneToMany:
