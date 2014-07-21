@@ -10,7 +10,7 @@ Fc\SettingsBundle\Entity\Hive:
                 strategy: AUTO
         name:
             type: string
-            length: 32
+            length: 64
             nullable: false
         description:
             type: text
