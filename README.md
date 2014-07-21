@@ -11,7 +11,7 @@ or user settings, not Symfony2 framework or bundle configuration items.
 The documentation is stored in the `Resources/doc/index.md`
 file in this bundle:
 
-[Read the Documentation](https://github.com/functionalchaos/SeetingsBundle/blob/master/Resources/doc/index.md)
+[Read the Documentation](https://github.com/FunctionalChaos/SettingsBundle/blob/master/Resources/doc/index.md)
 
 
 
@@ -26,4 +26,4 @@ All the installation instructions are located in the documentation.
 
 This bundle is under the MIT license. See the complete license at:
 
-[Resources/meta/LICENSE.md](https://github.com/functionalchaos/SeetingsBundle/blob/master/Resources/meta/LICENSE.md)
+[Resources/meta/LICENSE.md](https://github.com/FunctionalChaos/SettingsBundle/blob/master/Resources/meta/LICENSE.md)
