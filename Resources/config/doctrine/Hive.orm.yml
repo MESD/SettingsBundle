@@ -1,0 +1,24 @@
+Fc\SettingsBundle\Entity\Hive:
+    type: entity
+    table: setting_hive
+    repositoryClass: Fc\SettingsBundle\Repository\HiveRepository
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        name:
+            type: string
+            length: 32
+            nullable: false
+        description:
+            type: text
+            nullable: true
+
+    oneToMany:
+        cluster:
+            targetEntity: Cluster
+            mappedBy: hive
+
+    lifecycleCallbacks: {  }

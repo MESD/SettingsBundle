@@ -1,0 +1,31 @@
+Fc\SettingsBundle\Entity\Cluster:
+    type: entity
+    table: setting_cluster
+    repositoryClass: Fc\SettingsBundle\Repository\ClusterRepository
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        name:
+            type: string
+            length: 32
+            nullable: false
+        description:
+            type: text
+            nullable: true
+        dataSet:
+            column: data_set
+            type: array
+            nullable: true
+
+    manyToOne:
+        hive:
+            targetEntity: Hive
+            inversedBy: cluster
+            joinColumn:
+                name: hive_id
+                referencedColumnName: id
+
+    lifecycleCallbacks: {  }
