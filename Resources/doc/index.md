@@ -36,14 +36,14 @@ controlled the theme of your application, you might create a `theme` `cluster`.
 
 Each `setting` has four descriptors: `name`, `description`, `type`, and `format`.
 
-* Name: Esentialy the setting *key*, how you'll lookup the setting.
-* Description: A terse explanation of the setting.
-* Type: The settings data type. Currently supported:
+* **Name**: Essentially the setting *key* and how you'll lookup the setting.
+* **Description**: A terse explanation of the setting.
+* **Type**: The settings data type. Currently supported:
     - String
     - Int
     - Float
     - Bool
-* Format: The string length, number of digits, number of decimals, etc.
+* **Format**: The string length, number of digits, number of decimals, etc.
 
 
 ###Setting Definition Level - Hive or Cluster?:
