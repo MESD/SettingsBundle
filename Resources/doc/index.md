@@ -29,7 +29,7 @@ might create a `hive` for each sub-application.
 ###Create a new Cluster:
 
 Clusters are used to group like settings. For example if you had 5 settings that
-controlled the theme of your application, you might create a `theme` `cluster`.
+controlled the theme of your application, you might create a **theme** `cluster`.
 
 
 ###Create a new Setting:
