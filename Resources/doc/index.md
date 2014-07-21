@@ -49,11 +49,11 @@ Each `setting` has four descriptors: `name`, `description`, `type`, and `format`
 ###Setting Definition Level - Hive or Cluster?:
 
 You have two options when it comes to choosing the level at which your settings are
-defined. `hive` or `cluster`. The chose is made when you define a new `hive` and
-defaults to the `cluster` level. Normally you'll want to define what settings exist,
-and their default values, at the cluster level because each cluster has different
-kinds/types of settings. However, in some situations each cluster will store the
-same kind/type of settings, but with different values. One example would be user
-settings. Each user would likely have the same settings, but with different values.
-In this situation, would would want to define the settings at the `hive` level and
-store each user's settings in a cluster.
+defined. `hive` or `cluster`. You must decide on the level when you define a new
+`hive`. The default is the `cluster` level. Normally you'll want to define what
+settings exist, and their default values, at the cluster level because each cluster
+has different kinds/types of settings. However, in some situations each cluster
+will store the same kind/type of settings, but with different values. One example
+would be user settings. Each user would likely have the same settings, but with
+different (or potentially different) values. In this situation, would would want to
+define the settings at the `hive` level and store each user's settings in a cluster.
