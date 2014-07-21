@@ -55,5 +55,5 @@ settings exist, and their default values, at the cluster level because each clus
 has different kinds/types of settings. However, in some situations each cluster
 will store the same kind/type of settings, but with different values. One example
 would be user settings. Each user would likely have the same settings, but with
-different (or potentially different) values. In this situation, would would want to
+different (or potentially different) values. In this situation, you would want to
 define the settings at the `hive` level and store each user's settings in a cluster.
