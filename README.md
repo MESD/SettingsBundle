@@ -1,9 +1,12 @@
-Fc/SettingsBundle
-=================
+##Fc/SettingsBundle
 
 
-Documentation
--------------
+A Symfony2 bundle for managing settings. The bundles intention is to manage application
+or user settings, not Symfony2 framework or bundle configuration items.
+
+
+###Documentation
+
 
 The documentation is stored in the `Resources/doc/index.md`
 file in this bundle:
@@ -12,19 +15,15 @@ file in this bundle:
 
 
 
-Installation
-------------
+###Installation
+
 
 All the installation instructions are located in the documentation.
 
 
-License
--------
-
-This bundle is under the MIT license. See the complete license in the bundle:
-
-    Resources/meta/LICENSE
+###License
 
 
-About
------
+This bundle is under the MIT license. See the complete license at:
+
+[Resources/meta/LICENSE.md](https://github.com/functionalchaos/SeetingsBundle/blob/master/Resources/meta/LICENSE.md)
