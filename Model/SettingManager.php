@@ -9,16 +9,10 @@ class SettingManager {
 
     private $objectManager;
 
-    private $hiveRepository;
-
-    private $clusterRepository;
-
 
     public function __construct($objectManager)
     {
          $this->objectManager     = $objectManager->getEntityManager();
-         $this->hiveRepository    = $this->objectManager->getRepository('FcSettingsBundle:Hive');
-         $this->clusterRepository = $this->objectManager->getRepository('FcSettingsBundle:Cluster');
     }
 
 
