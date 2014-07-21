@@ -11,7 +11,7 @@ or user settings, not Symfony2 framework or bundle configuration items.
 The documentation is stored in the `Resources/doc/index.md`
 file in this bundle:
 
-[Read the Documentation](https://github.com/FunctionalChaos/SettingsBundle/blob/master/Resources/doc/index.md)
+[Read the Documentationn](https://github.com/FunctionalChaos/SettingsBundle/blob/master/Resources/doc/index.md)
 
 
 
