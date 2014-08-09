@@ -21,8 +21,8 @@ class CreateHiveCommand extends ContainerAwareCommand
             ->setName('fc:setting:hive:create')
             ->setDescription('Create a hive.')
             ->setDefinition(array(
-                new InputArgument('name', InputArgument::REQUIRED, 'The Hive Name'),
-                new InputArgument('description', InputArgument::OPTIONAL, 'The Hive Description'),
+                new InputArgument('name', InputArgument::REQUIRED, 'Hive Name'),
+                new InputArgument('description', InputArgument::OPTIONAL, 'Hive Description'),
                 new InputOption('definedAtHive', null, InputOption::VALUE_NONE, 'Set the definition level to hive'),
               ))
             ->setHelp(<<<EOT
