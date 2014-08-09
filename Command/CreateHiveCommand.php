@@ -18,7 +18,7 @@ class CreateHiveCommand extends ContainerAwareCommand
     protected function configure()
     {
         $this
-            ->setName('fc:setting:create-hive')
+            ->setName('fc:setting:hive:create')
             ->setDescription('Create a hive.')
             ->setDefinition(array(
                 new InputArgument('name', InputArgument::REQUIRED, 'The Hive Name'),
@@ -26,7 +26,7 @@ class CreateHiveCommand extends ContainerAwareCommand
                 new InputOption('definedAtHive', null, InputOption::VALUE_NONE, 'Set the definition level to hive'),
               ))
             ->setHelp(<<<EOT
-The <info>fc:setting:create-hive</info> command creates a setting hive:
+The <info>fc:setting:hive:create</info> command creates a setting hive:
 
 This interactive shell will ask you for a name and description.
 
@@ -44,9 +44,14 @@ EOT
         $definedAtHive = $input->getOption('definedAtHive');
 
         $settingManager =  $this->getContainer()->get("fc_settings.setting_manager");
-        $settingManager->createHive($name, $description, $definedAtHive);
 
-        $output->writeln(sprintf('Created hive <comment>%s</comment>', $name));
+        if ($settingManager->hiveExists($name)) {
+            $output->writeln(sprintf('<error>Error: Hive %s already exists</error>', $name));
+        }
+        else {
+            $settingManager->createHive($name, $description, $definedAtHive);
+            $output->writeln(sprintf('<comment>Created hive <info>%s</info></comment>', $name));
+        }
     }
 
     /**
@@ -70,10 +75,13 @@ EOT
         }
 
         if (!$input->getArgument('description')) {
-            $description = $this->getHelper('dialog')->ask(
+            $description = $this->getHelper('dialog')->askAndValidate(
                 $output,
-                'Please choose a description:',
+                'Please enter a description (optional):',
                 function($description) {
+                    if (empty($description)) {
+                        return null;
+                    }
                     return $description;
                 }
             );

@@ -16,7 +16,7 @@ class SettingManager {
     }
 
 
-    public function createHive($name, $description, $definedAtHive = false)
+    public function createHive($name, $description = null, $definedAtHive = false)
     {
         $hive = new Hive();
         $hive->setName($name);
@@ -24,6 +24,15 @@ class SettingManager {
         $hive->setDefinedAtHive($definedAtHive);
         $this->objectManager->persist($hive);
         $this->objectManager->flush();
+    }
+
+    public function hiveExists($name)
+    {
+        $hive = $this->objectManager
+                    ->getRepository('FcSettingsBundle:Hive')
+                    ->findOneBy(array('name' => $name));
+
+        return $hive;
     }
 
 

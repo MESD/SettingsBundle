@@ -28,4 +28,8 @@ Fc\SettingsBundle\Entity\Cluster:
                 name: hive_id
                 referencedColumnName: id
 
+    uniqueConstraints:
+        setting_cluster_hive_name_ukey:
+            columns: [ hive_id, name ]
+
     lifecycleCallbacks: {  }

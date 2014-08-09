@@ -25,4 +25,8 @@ Fc\SettingsBundle\Entity\Hive:
             targetEntity: Cluster
             mappedBy: hive
 
+    uniqueConstraints:
+        setting_hive_name_ukey:
+            columns: [ name ]
+
     lifecycleCallbacks: {  }

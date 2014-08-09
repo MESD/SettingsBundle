@@ -41,11 +41,11 @@ class Hive
     {
         $this->cluster = new \Doctrine\Common\Collections\ArrayCollection();
     }
-    
+
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -61,14 +61,14 @@ class Hive
     public function setName($name)
     {
         $this->name = $name;
-    
+
         return $this;
     }
 
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -84,14 +84,14 @@ class Hive
     public function setDescription($description)
     {
         $this->description = $description;
-    
+
         return $this;
     }
 
     /**
      * Get description
      *
-     * @return string 
+     * @return string
      */
     public function getDescription()
     {
@@ -107,14 +107,14 @@ class Hive
     public function setDefinedAtHive($definedAtHive)
     {
         $this->definedAtHive = $definedAtHive;
-    
+
         return $this;
     }
 
     /**
      * Get definedAtHive
      *
-     * @return boolean 
+     * @return boolean
      */
     public function getDefinedAtHive()
     {
@@ -130,7 +130,7 @@ class Hive
     public function addCluster(\Fc\SettingsBundle\Entity\Cluster $cluster)
     {
         $this->cluster[] = $cluster;
-    
+
         return $this;
     }
 
@@ -147,7 +147,7 @@ class Hive
     /**
      * Get cluster
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getCluster()
     {
