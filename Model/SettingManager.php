@@ -24,7 +24,7 @@ class SettingManager {
             throw new \Exception(sprintf('Hive %s does not exist', $hiveName));
         }
 
-        $cluster = $this->hiveClusterExists($hiveName, $name);
+        $cluster = $this->clusterExists($hiveName, $name);
 
         if($cluster) {
             throw new \Exception(sprintf('Hive %s and Cluster %s combination already exists', $hiveName, $name));
@@ -60,7 +60,7 @@ class SettingManager {
     }
 
 
-    public function hiveClusterExists($hiveName, $clusterName)
+    public function clusterExists($hiveName, $clusterName)
     {
         $hive = $this->hiveExists($hiveName);
 
@@ -68,7 +68,7 @@ class SettingManager {
             return false;
         }
 
-        $cluster = 
+        $cluster =
             $this->objectManager
                 ->getRepository('FcSettingsBundle:Cluster')
                 ->findOneBy(array(

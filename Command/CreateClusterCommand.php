@@ -45,7 +45,7 @@ EOT
 
         $settingManager =  $this->getContainer()->get("fc_settings.setting_manager");
 
-        if ($settingManager->hiveClusterExists($hiveName, $name)) {
+        if ($settingManager->clusterExists($hiveName, $name)) {
             $output->writeln(sprintf('<error>Error: Hive %s and Cluster %s combination already exist</error>', $hiveName, $name));
         }
         else {
@@ -97,9 +97,9 @@ EOT
                         throw new \Exception('Hive name can not be empty');
                     }
                     $settingManager =  $this->getContainer()->get("fc_settings.setting_manager");
-			        if (!$settingManager->hiveExists($hiveName)) {
-			            throw new \Exception(sprintf('Hive %s does not exist', $hiveName));
-			        }
+                    if (!$settingManager->hiveExists($hiveName)) {
+                        throw new \Exception(sprintf('Hive %s does not exist', $hiveName));
+                    }
                     return $hiveName;
                 }
             );
