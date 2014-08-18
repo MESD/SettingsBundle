@@ -19,17 +19,40 @@ to a `hive`. You can create as many hives and clusters as you need. You should t
 a `hive` as an application wide classification, and a `cluster` as sub-classification.
 
 
+###Choosing the Definition Level - Hive or Cluster?:
+
+You have two options when it comes to choosing the level at which your settings are
+defined. `hive` or `cluster`. You must decide on the level when you define a new
+`hive`. The default is the `cluster` level. Normally you'll want to define what
+settings exist, and their default values, at the cluster level because each cluster
+has different kinds/types of settings. However, in some situations each cluster
+will store the same kind/type of settings, but with different values. One example
+would be user settings. Each user would likely have the same settings, but with
+different (or potentially different) values. In this situation, you would want to
+define the settings at the `hive` level and store each user's settings in a cluster.
+
+
 ###Create a new Hive:
 
-Since hives are application wide, you may only need a few or even a single `hive`. If
-your application is rather large and can be broken down into sub-applications, you
-might create a `hive` for each sub-application.
+Since hives are application wide, you may only need a single `hive`. If your application
+is rather large and can be broken down into sub-applications, you might create a `hive`
+for each sub-application.
+
+
+``` bash
+$ app/console fc:setting:hive:create
+```
 
 
 ###Create a new Cluster:
 
 Clusters are used to group like settings. For example if you had 5 settings that
 controlled the theme of your application, you might create a **theme** `cluster`.
+
+
+``` bash
+$ app/console fc:setting:cluster:create
+```
 
 
 ###Create a new Setting:
@@ -43,17 +66,5 @@ Each `setting` has four descriptors: `name`, `description`, `type`, and `format`
     - Int
     - Float
     - Bool
+    - Array
 * **Format**: The string length, number of digits, number of decimals, etc.
-
-
-###Choosing the Definition Level - Hive or Cluster?:
-
-You have two options when it comes to choosing the level at which your settings are
-defined. `hive` or `cluster`. You must decide on the level when you define a new
-`hive`. The default is the `cluster` level. Normally you'll want to define what
-settings exist, and their default values, at the cluster level because each cluster
-has different kinds/types of settings. However, in some situations each cluster
-will store the same kind/type of settings, but with different values. One example
-would be user settings. Each user would likely have the same settings, but with
-different (or potentially different) values. In this situation, you would want to
-define the settings at the `hive` level and store each user's settings in a cluster.

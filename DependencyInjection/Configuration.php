@@ -14,7 +14,16 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('fc_settings');
+        $rootNode = $treeBuilder->root('fc_settings')
+            ->children()
+                ->booleanNode('auto_map')
+                    ->isRequired()
+                ->end()
+                ->arrayNode('bundles')
+                    ->prototype('scalar')
+                    ->end()
+                ->end()
+            ->end();
 
         return $treeBuilder;
     }

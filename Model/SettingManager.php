@@ -27,7 +27,7 @@ class SettingManager {
         $cluster = $this->clusterExists($hiveName, $name);
 
         if($cluster) {
-            throw new \Exception(sprintf('Hive %s and Cluster %s combination already exists', $hiveName, $name));
+            throw new \Exception(sprintf('Hive %s and Cluster %s combination already exist', $hiveName, $name));
         }
 
         $cluster = new Cluster();
@@ -80,6 +80,22 @@ class SettingManager {
         return $cluster;
     }
 
+/*
+    public function defineSetting($hiveName, $clusterName, array $defintion)
+    {
+        $hive = $this->hiveExists($hiveName);
+
+        if(!$hive) {
+            throw new \Exception(sprintf('Hive %s does not exist', $hiveName));
+        }
+
+        $cluster = $this->clusterExists($hiveName, $clusterName);
+
+        if(!$cluster) {
+            throw new \Exception(sprintf('Hive %s and Cluster %s combination don\'t exist', $hiveName, $clusterName));
+        }
+    }
+*/
 
     public function hiveExists($name)
     {
