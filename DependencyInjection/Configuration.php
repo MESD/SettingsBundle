@@ -17,7 +17,7 @@ class Configuration implements ConfigurationInterface
         $rootNode = $treeBuilder->root('fc_settings')
             ->children()
                 ->booleanNode('auto_map')
-                    ->isRequired()
+                    ->defaultFalse()
                 ->end()
                 ->arrayNode('bundles')
                     ->prototype('scalar')
