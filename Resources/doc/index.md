@@ -68,3 +68,15 @@ Each `setting` has four descriptors: `name`, `description`, `type`, and `format`
     - Bool
     - Array
 * **Format**: The string length, number of digits, number of decimals, etc.
+
+
+
+###Setting Definition Files:
+
+When locating your setting definition files, the file locatoer will check the kernel root
+directory first, then in each bundle you specified under *bundles* in the fc_settings
+section of your config.yml. If you set *auto_map* to true, they system will all bundles
+register in your kernel, in the order they have been registered. Therefore, you can override
+a setting definition file from a bundle, by placing a copy in your kernel root. Be aware that
+if you create the same a definition file in mutiple bundles, the system will only load the
+first definition file it locates.

@@ -55,17 +55,23 @@ class FcSettingsExtension extends Extension
             }
         }
 
-        // Load all requested bundle paths
+
+        // Creat an array to hold setting definition file locations
         $bundleStorage = array();
+
+        // Make the first/defualt location in the kernel root directory
+        $bundleStorage[0] = $container->getParameter('kernel.root_dir') . '/Resources/settings';
+
+        // Load all user requested bundle paths from config
         if(isset($config["bundles"]) || true === $config["auto_map"]) {
             foreach ($container->getParameter('kernel.bundles') as $bundle => $bundlePath) {
                 if(isset( $config["bundles"])) {
                     if (array_key_exists($bundle, $config["bundles"])) {
-                        $bundleStorage[] = $bundle;
+                        $bundleStorage[] = '@' . $bundle . '/Resources/settings';
                     }
                 }
                 elseif (true === $config["auto_map"]) {
-                    $bundleStorage[] = $bundle;
+                    $bundleStorage[] = '@' . $bundle . '/Resources/settings';
                 }
             }
         }

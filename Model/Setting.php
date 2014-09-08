@@ -5,43 +5,12 @@ namespace Fc\SettingsBundle\Model;
 
 abstract class Setting {
 
-    private $description;
-    private $format;
     private $name;
-    private $type;
     private $value;
 
 
     public function __construct()
     {
-    }
-
-
-    public function getDescription()
-    {
-        return $this->description;
-    }
-
-
-    public function setDescription($description)
-    {
-        $this->description = $description;
-
-        return $this;
-    }
-
-
-    public function getFormat()
-    {
-        return $this->format;
-    }
-
-
-    public function setFormat($format)
-    {
-        $this->format = $format;
-
-        return $this;
     }
 
 
@@ -59,27 +28,13 @@ abstract class Setting {
     }
 
 
-    public function getType()
-    {
-        return $this->type;
-    }
-
-
-    public function setType($type)
-    {
-        $this->type = $type;
-
-        return $this;
-    }
-
-
     public function getValue()
     {
         return $this->value;
     }
 
 
-    public function setType($value)
+    public function setValue($value)
     {
         $this->value = $value;
 

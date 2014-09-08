@@ -1,11 +1,11 @@
 parameters:
-    fc_settings.definition_file_manager.class: Fc\SettingsBundle\Model\Definition\FileManager
+    fc_settings.definition_manager.class: Fc\SettingsBundle\Model\Definition\DefinitionManager
     fc_settings.setting_manager.class: Fc\SettingsBundle\Model\SettingManager
 
 services:
-    fc_settings.definition_file_manager:
-        class: %fc_settings.definition_file_manager.class%
-        arguments: [%kernel.root_dir%, %fc_settings.bundle_storage%, @file_locator]
+    fc_settings.definition_manager:
+        class: %fc_settings.definition_manager.class%
+        arguments: [%fc_settings.bundle_storage%, @kernel]
 
     fc_settings.setting_manager:
         class: %fc_settings.setting_manager.class%

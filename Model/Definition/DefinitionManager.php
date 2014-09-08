@@ -3,25 +3,25 @@
 namespace Fc\SettingsBundle\Model\Definition;
 
 use Symfony\Component\Filesystem\Filesystem;
+use Symfony\Component\HttpKernel\Config\FileLocator;
 use Symfony\Component\Yaml\Dumper;
 use Symfony\Component\Yaml\Parser;
+use Fc\SettingsBundle\Model\Definition\SettingDefinition;
+use Fc\SettingsBundle\Model\Definition\SettingDefinitionFile;
 
 
-class FileManager {
+class DefinitionManager {
 
     private $bundleStorage;
     private $definition;
     private $file;
-    private $fileDir;
-    private $fileLocator;
-    private $kernelRootDir;
+    private $kernel;
 
 
-    public function __construct ($kernelRootDir, $bundleStorage, $fileLocator)
+    public function __construct ($bundleStorage, $kernel)
     {
-        $this->kernelRootDir = $kernelRootDir;
         $this->bundleStorage = $bundleStorage;
-        $this->fileLocator   = $fileLocator;
+        $this->kernel        = $kernel;
     }
 
 
@@ -39,7 +39,7 @@ class FileManager {
     }
 
 
-    public function createFile ($fileName, $type)
+    public function createFile($fileName, $type)
     {
         if ($this->fileExists($fileName, $bundlePath)) {
             throw new \Exception(sprintf('File %s already exists', $this->file));
@@ -69,19 +69,19 @@ class FileManager {
     }
 
 
-    public function fileExists ()
+
+    public function fileExists($file)
     {
         $fs = new Filesystem();
-
-        return $fs->exists($this->file);
+        return $fs->exists($file);
     }
 
 
-    public function load ()
+    public function loadFileByName($fileName)
     {
-        if (!$this->fileExists($fileName, $bundlePath)) {
-            throw new \Exception(sprintf('File %s doen\'t exist', $this->file));
-        }
+        $this->locateFile($fileName);
+
+        print $this->file;exit;
 
         $fs = new Filesystem();
         $yaml = new Parser();
@@ -91,23 +91,34 @@ class FileManager {
     }
 
 
-    public function locateFile ($fileName)
+    public function locateFile($fileName)
     {
-        if ($bundlePath) {
-            $this->fileDir  = $bundlePath . '/Resources/settings/';
-        }
-        else {
-            $this->fileDir  = $this->kernelRootDir . '/Resources/settings/';
+        foreach ($this->bundleStorage as $key => $path) {
+            if ('@' != substr($path,0,1)) {
+                if($this->fileExists($path . '/' . $fileName . '.yml')) {
+                    $this->file = $path . '/' . $fileName . '.yml';
+                    return $this;
+                }
+            }
+            else {
+                try {
+                    $this->file = $this->kernel->locateResource($path . '/' . $fileName . '.yml');
+                    return $this;
+                }
+                catch (\Exception $e) {
+                }
+            }
         }
 
-        $this->file = $this->fileDir . $fileName . '.yml';
-
-        if (!$this->fileExists()) {
-            throw new \Exception(sprintf('File %s does not exist', $this->file));
-        }
-
-        return $this;
+        throw new \Exception(
+            sprintf(
+                "Settings Definition File '%s.yml' does not exist in any of the following paths: %s",
+                $fileName,
+                implode(', ', $this->bundleStorage)
+            )
+        );
     }
+
 
 
 /*    public function saveFile()

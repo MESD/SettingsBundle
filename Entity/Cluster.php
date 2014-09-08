@@ -3,6 +3,7 @@
 namespace Fc\SettingsBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Fc\SettingsBundle\Model\Setting;
 
 /**
  * Cluster
@@ -27,7 +28,7 @@ class Cluster
     /**
      * @var array
      */
-    private $dataSet;
+    private $setting;
 
     /**
      * @var \Fc\SettingsBundle\Entity\Hive
@@ -81,6 +82,7 @@ class Cluster
         return $this;
     }
 
+
     /**
      * Get description
      *
@@ -91,28 +93,65 @@ class Cluster
         return $this->description;
     }
 
+
     /**
-     * Set dataSet
+     * Add Setting
      *
-     * @param array $dataSet
+     * @param Fc\SettingsBundle\Model\Setting $setting
      * @return Cluster
      */
-    public function setDataSet($dataSet)
+    public function addSetting(Setting $setting)
     {
-        $this->dataSet = $dataSet;
+        $this->setting[$setting->getName()] = $setting->getValue();
 
         return $this;
     }
 
+
     /**
-     * Get dataSet
+     * Get setting Array
      *
      * @return array
      */
-    public function getDataSet()
+    public function getSettingArray()
     {
-        return $this->dataSet;
+        return $this->setting;
     }
+
+
+    /**
+     * Get setting
+     *
+     * @param  string settingName
+     * @return Fc\SettingsBundle\Model\Setting $setting
+     */
+    public function getSetting($settingName)
+    {
+        if ($this->setting[$settingName]) {
+            $setting = new Setting();
+            $setting->setName($settingName);
+            $setting->setValue($this->setting[$settingName]);
+
+            return $setting;
+        }
+
+        return false;
+    }
+
+
+    /**
+     * Remove Setting
+     *
+     * @param Fc\SettingsBundle\Model\Setting $setting
+     * @return Cluster
+     */
+    public function removeSetting(Setting $setting)
+    {
+        unset($this->setting[$setting->getName()]);
+
+        return $this;
+    }
+
 
     /**
      * Set hive
@@ -126,6 +165,7 @@ class Cluster
 
         return $this;
     }
+
 
     /**
      * Get hive

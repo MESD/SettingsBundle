@@ -3,15 +3,31 @@
 namespace Fc\SettingsBundle\Model\Definition;
 
 
-class Definition {
+abstract class SettingDefinition {
 
-    private $hive;
-    private $cluster;
-    private $setting;
+    private $default;
+    private $description;
+    private $format;
+    private $name;
+    private $type;
 
 
     public function __construct()
     {
+    }
+
+
+    public function getDefault()
+    {
+        return $this->default;
+    }
+
+
+    public function setDefault($default)
+    {
+        $this->default = $default;
+
+        return $this;
     }
 
 
@@ -69,19 +85,4 @@ class Definition {
 
         return $this;
     }
-
-
-    public function getValue()
-    {
-        return $this->value;
-    }
-
-
-    public function setType($value)
-    {
-        $this->value = $value;
-
-        return $this;
-    }
-
 }

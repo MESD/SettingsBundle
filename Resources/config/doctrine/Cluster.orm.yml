@@ -15,8 +15,8 @@ Fc\SettingsBundle\Entity\Cluster:
         description:
             type: text
             nullable: true
-        dataSet:
-            column: data_set
+        setting:
+            column: setting
             type: array
             nullable: true
 
