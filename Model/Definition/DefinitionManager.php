@@ -6,11 +6,11 @@ use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\HttpKernel\Config\FileLocator;
 use Symfony\Component\Yaml\Dumper;
 use Symfony\Component\Yaml\Parser;
+use Fc\SettingsBundle\Model\Definition\DefinitionValidator;
 use Fc\SettingsBundle\Model\Definition\SettingDefinition;
-use Fc\SettingsBundle\Model\Definition\SettingDefinitionFile;
 
-
-class DefinitionManager {
+class DefinitionManager
+{
 
     private $bundleStorage;
     private $definition;
@@ -38,7 +38,7 @@ class DefinitionManager {
         return $this;
     }
 
-
+/*
     public function createFile($fileName, $type)
     {
         if ($this->fileExists($fileName, $bundlePath)) {
@@ -67,7 +67,7 @@ class DefinitionManager {
 
         return $this;
     }
-
+*/
 
 
     public function fileExists($file)
@@ -79,13 +79,12 @@ class DefinitionManager {
 
     public function loadFileByName($fileName)
     {
-        $this->locateFile($fileName);
-
-        print $this->file;exit;
-
-        $fs = new Filesystem();
+        $this->file = $this->locateFile($fileName);
         $yaml = new Parser();
-        $this->definition = $yaml->parse(file_get_contents($this->file));
+        $fileContents = $yaml->parse(file_get_contents($this->file));
+        $validator = new DefinitionValidator($fileContents, $this->file);
+        $validator->validate();
+        //$this->definition = new SettingDefinition($fileContents);
 
         return $this;
     }
@@ -96,23 +95,22 @@ class DefinitionManager {
         foreach ($this->bundleStorage as $key => $path) {
             if ('@' != substr($path,0,1)) {
                 if($this->fileExists($path . '/' . $fileName . '.yml')) {
-                    $this->file = $path . '/' . $fileName . '.yml';
-                    return $this;
+                     return $path . '/' . $fileName . '.yml';
                 }
             }
             else {
                 try {
-                    $this->file = $this->kernel->locateResource($path . '/' . $fileName . '.yml');
-                    return $this;
+                    return $this->kernel->locateResource($path . '/' . $fileName . '.yml');
                 }
                 catch (\Exception $e) {
                 }
             }
         }
 
+        // If we arrive here, the definition file was not found
         throw new \Exception(
             sprintf(
-                "Settings Definition File '%s.yml' does not exist in any of the following paths: %s",
+                "Settings Definition File '%s.yml' does not exist in any of the following paths you specified for settings storage: %s",
                 $fileName,
                 implode(', ', $this->bundleStorage)
             )
@@ -149,4 +147,13 @@ class DefinitionManager {
 
         return $this;
     }*/
+
+
+    private function unserialize()
+    {
+
+
+
+    }
+
 }

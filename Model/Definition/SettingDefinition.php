@@ -2,72 +2,50 @@
 
 namespace Fc\SettingsBundle\Model\Definition;
 
+use Fc\SettingsBundle\Model\Definition\SettingNode;
 
-abstract class SettingDefinition {
+class SettingDefinition
+{
 
-    private $default;
-    private $description;
-    private $format;
-    private $name;
+    private $key;
+    private $hive;
     private $type;
+    private $settingDefinition;
 
 
-    public function __construct()
+    public function __construct(array $fileContents = null)
     {
+        $this->settingDefinition = new \Doctrine\Common\Collections\ArrayCollection();
+
+        if (null !== $fileContents) {
+            $this->unserialize($fileContents);
+        }
     }
 
 
-    public function getDefault()
+    public function getKey()
     {
-        return $this->default;
+        return $this->key;
     }
 
 
-    public function setDefault($default)
+    public function setKey($key)
     {
-        $this->default = $default;
+        $this->key = $key;
 
         return $this;
     }
 
 
-    public function getDescription()
+    public function getHive()
     {
-        return $this->description;
+        return $this->hive;
     }
 
 
-    public function setDescription($description)
+    public function setHive($hive)
     {
-        $this->description = $description;
-
-        return $this;
-    }
-
-
-    public function getFormat()
-    {
-        return $this->format;
-    }
-
-
-    public function setFormat($format)
-    {
-        $this->format = $format;
-
-        return $this;
-    }
-
-
-    public function getName()
-    {
-        return $this->name;
-    }
-
-
-    public function setName($name)
-    {
-        $this->name = $name;
+        $this->hive = $hive;
 
         return $this;
     }
@@ -85,4 +63,64 @@ abstract class SettingDefinition {
 
         return $this;
     }
+
+
+    /**
+     * Add SettingDefinition
+     *
+     * @param Fc\SettingsBundle\Model\Definition\SettingDefinition $settingDefinition
+     * @return Cluster
+     */
+    public function addSettingDefinition(SettingDefinition $settingDefinition)
+    {
+        $this->settingDefinition[] = $settingDefinition;
+
+        return $this;
+    }
+
+
+    /**
+     * Get SettingDefinition Array
+     *
+     * @return array
+     */
+    public function getSettingDefinitionArray()
+    {
+        return $this->settingDefinition;
+    }
+
+
+    /**
+     * Get SettingDefinition
+     *
+     * @param  string settingDefinitionName
+     * @return Fc\SettingsBundle\Model\Definition\SettingDefinition
+     */
+    public function getSettingDefinition($settingDefinitionName)
+    {
+        if ($this->setting[$settingDefinitionName]) {
+            $SettingDefinition = new SettingDefinition();
+            $SettingDefinition->setName($settingName);
+            $SettingDefinition->setValue($this->setting[$settingName]);
+
+            return $setting;
+        }
+
+        return false;
+    }
+
+
+    /**
+     * Remove Setting
+     *
+     * @param Fc\SettingsBundle\Model\Setting $setting
+     * @return Cluster
+     */
+    public function removeSetting(SettingDefinition $setting)
+    {
+        unset($this->setting[$setting->getName()]);
+
+        return $this;
+    }
+
 }
