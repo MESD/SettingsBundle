@@ -8,18 +8,22 @@ class DefinitionValidator
 
     private $file;
     private $fileContents;
+    private $settingsManager;
 
 
-    public function __construct (array $fileContents, $file)
+    public function __construct (array $fileContents, $file, $settingsManager)
     {
-        $this->file         = $file;
-        $this->fileContents = $fileContents;
+        $this->file            = $file;
+        $this->fileContents    = $fileContents;
+        $this->settingsManager = $settingsManager;
     }
+
 
     public function validate()
     {
         $this->validateKey();
         $this->validateStructure();
+        $this->validateNodes();
 
         print $this->file;
         print "<br />";
@@ -42,6 +46,7 @@ class DefinitionValidator
         }
     }
 
+
     private function validateStructure()
     {
         $key = array_keys($this->fileContents)[0];
@@ -50,7 +55,7 @@ class DefinitionValidator
         if (!array_key_exists('type',$this->fileContents[$key])){
             throw new \Exception(
                 sprintf(
-                    "Settings Definition File '%s' is missing the 'type' element",
+                    "Settings Definition File '%s' is missing the definition 'type' element",
                     $this->file
                 )
             );
@@ -59,23 +64,63 @@ class DefinitionValidator
                 'cluster' != $this->fileContents[$key]['type']    ) {
             throw new \Exception(
                 sprintf(
-                    "Settings Definition File '%s' has an invalid 'type'",
+                    "Settings Definition File '%s' has an invalid definition 'type' element",
                     $this->file
                 )
             );
         }
 
+        // Is hive set and valid?
+        if (!array_key_exists('hive',$this->fileContents[$key])){
+            throw new \Exception(
+                sprintf(
+                    "Settings Definition File '%s' is missing the definition 'hive' element",
+                    $this->file
+                )
+            );
+        }
+        else {
+            // Check if hive is defined in database
+            if (!$this->settingsManager
+                    ->hiveExists(
+                        $this->fileContents[$key]['hive']
+                    )
+                ) {
+                throw new \Exception(
+                    sprintf(
+                        "Settings Hive '%s' does not exisit",
+                        $this->fileContents[$key]['hive']
+                    )
+                );
+            }
+        }
 
+        //Check for any additional elements that should not exisit
+        $elements = $this->fileContents[$key];
+        unset($elements['type']);
+        unset($elements['hive']);
+        unset($elements['nodes']);
+        if(0 < count(array_keys($elements))) {
+            throw new \Exception(
+                sprintf(
+                    "Settings Definition File '%s' has invalid definition elements: %s",
+                    $this->file,
+                    implode(', ', array_keys($elements))
+                )
+            );
+        }
     }
 
 
     private function validateNodes()
     {
-        //print "<pre>";
-        foreach ($this->fileContents as $key => $val) {
+        $key = array_keys($this->fileContents)[0];
+
+        print "<pre>";
+        foreach ($this->fileContents[$key]['nodes'] as $key => $val) {
+            print "Key: " . $key . "\n";
             print_r($val);
         }
-
     }
 
 }

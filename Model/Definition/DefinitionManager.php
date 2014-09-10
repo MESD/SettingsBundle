@@ -16,12 +16,14 @@ class DefinitionManager
     private $definition;
     private $file;
     private $kernel;
+    private $settingsManager;
 
 
-    public function __construct ($bundleStorage, $kernel)
+    public function __construct ($bundleStorage, $kernel, $settingsManager)
     {
-        $this->bundleStorage = $bundleStorage;
-        $this->kernel        = $kernel;
+        $this->bundleStorage   = $bundleStorage;
+        $this->kernel          = $kernel;
+        $this->settingsManager = $settingsManager;
     }
 
 
@@ -82,7 +84,7 @@ class DefinitionManager
         $this->file = $this->locateFile($fileName);
         $yaml = new Parser();
         $fileContents = $yaml->parse(file_get_contents($this->file));
-        $validator = new DefinitionValidator($fileContents, $this->file);
+        $validator = new DefinitionValidator($fileContents, $this->file, $this->settingsManager);
         $validator->validate();
         //$this->definition = new SettingDefinition($fileContents);
 

@@ -3,10 +3,10 @@ parameters:
     fc_settings.setting_manager.class: Fc\SettingsBundle\Model\SettingManager
 
 services:
-    fc_settings.definition_manager:
-        class: %fc_settings.definition_manager.class%
-        arguments: [%fc_settings.bundle_storage%, @kernel]
-
     fc_settings.setting_manager:
         class: %fc_settings.setting_manager.class%
         arguments: [@doctrine]
+
+    fc_settings.definition_manager:
+        class: %fc_settings.definition_manager.class%
+        arguments: [%fc_settings.bundle_storage%, @kernel, @fc_settings.setting_manager]
