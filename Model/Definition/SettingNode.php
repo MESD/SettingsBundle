@@ -2,18 +2,27 @@
 
 namespace Fc\SettingsBundle\Model\Definition;
 
-
-abstract class SettingNode
+class SettingNode
 {
 
     private $default;
     private $description;
+    private $format;
     private $name;
     private $type;
 
 
-    public function __construct()
+    public function __construct($nodeData = null)
     {
+        if (null !== $nodeData && is_array($nodeData)) {
+            $this->name    = $nodeData['nodeName'];
+            $this->type    = $nodeData['nodeAttributes']['type'];
+            $this->default = $nodeData['nodeAttributes']['default'];
+
+            $className = 'Fc\SettingsBundle\Model\Definition\SettingNode' . ucwords($this->type);
+            $this->format = new $className($nodeData['nodeAttributes']);
+        }
+
     }
 
 

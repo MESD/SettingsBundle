@@ -67,7 +67,7 @@ class SettingDefinition
      * @param Fc\SettingsBundle\Model\Definition\SettingNode $settingNode
      * @return Cluster
      */
-    public function addSettingNode(SettingDefinition $settingNode)
+    public function addSettingNode(SettingNode $settingNode)
     {
         $this->settingNode[] = $settingNode;
 
@@ -76,45 +76,25 @@ class SettingDefinition
 
 
     /**
-     * Get SettingNode Array
-     *
-     * @return array
-     */
-    public function getSettingNodeArray()
-    {
-        return $this->SettingNode;
-    }
-
-
-    /**
      * Get SettingNode
      *
-     * @param  string settingNodeName
-     * @return Fc\SettingsBundle\Model\Definition\SettingNode
+     * @return Doctrine\Common\Collections\ArrayCollection()
      */
-    public function getSettingNode($settingNodeName)
+    public function getSettingNode()
     {
-        if ($this->setting[$settingNodeName]) {
-            $ettingNode = new SettingDefinition();
-            $settingNode->setName($settingName);
-            $settingNode->setValue($this->setting[$settingName]);
-
-            return $setting;
-        }
-
-        return false;
+        return $this->settingNode;
     }
 
 
     /**
-     * Remove Setting
+     * Remove SettingNode
      *
-     * @param Fc\SettingsBundle\Model\Setting $setting
+     * @param Fc\SettingsBundle\Model\Definition\SettingNode $settingNode
      * @return Cluster
      */
-    public function removeSetting(SettingDefinition $setting)
+    public function removeSettingNode(SettingDefinition $settingNode)
     {
-        unset($this->setting[$setting->getName()]);
+        $this->settingNode->removeElement($settingNode);
 
         return $this;
     }

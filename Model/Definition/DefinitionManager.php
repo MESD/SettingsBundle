@@ -8,6 +8,7 @@ use Symfony\Component\Yaml\Dumper;
 use Symfony\Component\Yaml\Parser;
 use Fc\SettingsBundle\Model\Definition\DefinitionValidator;
 use Fc\SettingsBundle\Model\Definition\SettingDefinition;
+use Fc\SettingsBundle\Model\Definition\SettingNode;
 
 class DefinitionManager
 {
@@ -164,11 +165,17 @@ class DefinitionManager
         $settingDefinition->setHive($fileContents[$key]['hive']);
         $settingDefinition->setType($fileContents[$key]['type']);
 
+        foreach ($fileContents[$key]['nodes'] as $nodeName => $nodeAttributes) {
+            $settingNode = new SettingNode(
+                array(
+                    'nodeName'       => $nodeName,
+                    'nodeAttributes' => $nodeAttributes
+                )
+            );
+            $settingDefinition->addSettingNode($settingNode);
+        }
 
-        print "<pre>";print_r($fileContents);exit;
-
-
-
+        print "<pre>";print_r($settingDefinition);exit;
     }
 
 }
