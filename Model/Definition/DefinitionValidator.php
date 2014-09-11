@@ -23,12 +23,6 @@ class DefinitionValidator
     {
         $this->validateStructure();
         $this->validateNodes();
-
-        print $this->file;
-        print "<br />";
-        print "<pre>";
-        print_r($this->fileContents);
-        exit;
     }
 
 
@@ -310,7 +304,6 @@ class DefinitionValidator
             }
         }
 
-
         // Check for any additional elements that should not exisit
         unset($nodeAttributes['type']);
         unset($nodeAttributes['prototype']);
@@ -538,7 +531,6 @@ class DefinitionValidator
                 )
             );
         }
-
     }
 
 

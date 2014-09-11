@@ -10,16 +10,12 @@ class SettingDefinition
     private $key;
     private $hive;
     private $type;
-    private $settingDefinition;
+    private $settingNode;
 
 
-    public function __construct(array $fileContents = null)
+    public function __construct()
     {
         $this->settingDefinition = new \Doctrine\Common\Collections\ArrayCollection();
-
-        if (null !== $fileContents) {
-            $this->unserialize($fileContents);
-        }
     }
 
 
@@ -66,42 +62,42 @@ class SettingDefinition
 
 
     /**
-     * Add SettingDefinition
+     * Add SettingNode
      *
-     * @param Fc\SettingsBundle\Model\Definition\SettingDefinition $settingDefinition
+     * @param Fc\SettingsBundle\Model\Definition\SettingNode $settingNode
      * @return Cluster
      */
-    public function addSettingDefinition(SettingDefinition $settingDefinition)
+    public function addSettingNode(SettingDefinition $settingNode)
     {
-        $this->settingDefinition[] = $settingDefinition;
+        $this->settingNode[] = $settingNode;
 
         return $this;
     }
 
 
     /**
-     * Get SettingDefinition Array
+     * Get SettingNode Array
      *
      * @return array
      */
-    public function getSettingDefinitionArray()
+    public function getSettingNodeArray()
     {
-        return $this->settingDefinition;
+        return $this->SettingNode;
     }
 
 
     /**
-     * Get SettingDefinition
+     * Get SettingNode
      *
-     * @param  string settingDefinitionName
-     * @return Fc\SettingsBundle\Model\Definition\SettingDefinition
+     * @param  string settingNodeName
+     * @return Fc\SettingsBundle\Model\Definition\SettingNode
      */
-    public function getSettingDefinition($settingDefinitionName)
+    public function getSettingNode($settingNodeName)
     {
-        if ($this->setting[$settingDefinitionName]) {
-            $SettingDefinition = new SettingDefinition();
-            $SettingDefinition->setName($settingName);
-            $SettingDefinition->setValue($this->setting[$settingName]);
+        if ($this->setting[$settingNodeName]) {
+            $ettingNode = new SettingDefinition();
+            $settingNode->setName($settingName);
+            $settingNode->setValue($this->setting[$settingName]);
 
             return $setting;
         }
