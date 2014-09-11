@@ -84,9 +84,7 @@ class DefinitionManager
         $this->file = $this->locateFile($fileName);
         $yaml = new Parser();
         $fileContents = $yaml->parse(file_get_contents($this->file));
-        $validator = new DefinitionValidator($fileContents, $this->file, $this->settingsManager);
-        $validator->validate();
-        //$this->definition = new SettingDefinition($fileContents);
+        $this->definition = $this->unserialize($fileContents);
 
         return $this;
     }
@@ -94,12 +92,15 @@ class DefinitionManager
 
     public function locateFile($fileName)
     {
+        // Check each path for the file
         foreach ($this->bundleStorage as $key => $path) {
+            // Standard path
             if ('@' != substr($path,0,1)) {
                 if($this->fileExists($path . '/' . $fileName . '.yml')) {
                      return $path . '/' . $fileName . '.yml';
                 }
             }
+            // Bundle alias path (@BundleName/path/to/file)
             else {
                 try {
                     return $this->kernel->locateResource($path . '/' . $fileName . '.yml');
@@ -151,8 +152,20 @@ class DefinitionManager
     }*/
 
 
-    private function unserialize()
+    private function unserialize($fileContents)
     {
+        $validator = new DefinitionValidator($fileContents, $this->file, $this->settingsManager);
+        $validator->validate();
+
+        $key = array_keys($fileContents)[0];
+
+        $settingDefinition = new SettingDefinition();
+        $settingDefinition->setKey($key);
+        $settingDefinition->setHive($fileContents[$key]['hive']);
+        $settingDefinition->setType($fileContents[$key]['type']);
+
+
+        print "<pre>";print_r($fileContents);exit;
 
 
 

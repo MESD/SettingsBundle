@@ -15,7 +15,7 @@ class SettingDefinition
 
     public function __construct()
     {
-        $this->settingDefinition = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->settingNode = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
 

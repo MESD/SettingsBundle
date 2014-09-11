@@ -8,7 +8,6 @@ abstract class SettingNode
 
     private $default;
     private $description;
-    private $format;
     private $name;
     private $type;
 
