@@ -175,7 +175,7 @@ class DefinitionManager
             $settingDefinition->addSettingNode($settingNode);
         }
 
-        print "<pre>";print_r($settingDefinition);exit;
+        return $settingDefinition;
     }
 
 }
