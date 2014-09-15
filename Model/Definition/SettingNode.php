@@ -17,12 +17,13 @@ class SettingNode
         if (null !== $nodeData && is_array($nodeData)) {
             $this->name    = $nodeData['nodeName'];
             $this->type    = $nodeData['nodeAttributes']['type'];
-            $this->default = $nodeData['nodeAttributes']['default'];
+            if (array_key_exists('default', $nodeData['nodeAttributes'])) {
+                $this->default = $nodeData['nodeAttributes']['default'];
+            }
 
             $className = 'Fc\SettingsBundle\Model\Definition\SettingNode' . ucwords($this->type);
             $this->format = new $className($nodeData['nodeAttributes']);
         }
-
     }
 
 

@@ -41,14 +41,16 @@ class DefinitionManager
         return $this;
     }
 
-/*
-    public function createFile($fileName, $type)
+
+    public function createFile($fileName, $type, $bundle = null)
     {
-        if ($this->fileExists($fileName, $bundlePath)) {
+        if ($this->file = $this->locateFile($fileName)) {
             throw new \Exception(sprintf('File %s already exists', $this->file));
         }
 
         $fs = new Filesystem();
+
+        print $this->file;exit;
 
         if (!$fs->exists($this->fileDir)) {
             $fs->mkdir($this->fileDir, 0666);
@@ -70,7 +72,7 @@ class DefinitionManager
 
         return $this;
     }
-*/
+
 
 
     public function fileExists($file)
@@ -80,9 +82,23 @@ class DefinitionManager
     }
 
 
+    /**
+     * Load a setting defintion file by name
+     *
+     * @param string $filename
+     * @return $this
+     */
     public function loadFileByName($fileName)
     {
-        $this->file = $this->locateFile($fileName);
+        if (!$this->file = $this->locateFile($fileName)) {
+            throw new \Exception(
+                sprintf(
+                    "Settings Definition File '%s.yml' does not exist in any of the following paths you specified for settings storage: %s",
+                    $fileName,
+                    implode(', ', $this->bundleStorage)
+                )
+            );
+        }
         $yaml = new Parser();
         $fileContents = $yaml->parse(file_get_contents($this->file));
         $this->definition = $this->unserialize($fileContents);
@@ -91,6 +107,16 @@ class DefinitionManager
     }
 
 
+    /**
+     * Locate a setting defintion file
+     *
+     * Checks each bundle defined in settings config, and the app/Resources
+     * default path for a setting defintion file. Returns the the file path
+     * or false.
+     *
+     * @param string $filename
+     * @return filepath|false
+     */
     public function locateFile($fileName)
     {
         // Check each path for the file
@@ -111,14 +137,7 @@ class DefinitionManager
             }
         }
 
-        // If we arrive here, the definition file was not found
-        throw new \Exception(
-            sprintf(
-                "Settings Definition File '%s.yml' does not exist in any of the following paths you specified for settings storage: %s",
-                $fileName,
-                implode(', ', $this->bundleStorage)
-            )
-        );
+        return false;
     }
 
 
