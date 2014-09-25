@@ -126,20 +126,50 @@ $settingDefinition->addSettingNode($settingNode);
 > or boolean) and the prototype definition must contain all of the attributes
 > the base type requires. i.e. String type requires a 'length' attribute.
 
+#####Array Node (Integer prototype example):
+
 ``` php
 // Define array containing setting node data
 $nodeData = array (
     'nodeName' => 'fuz',
     'nodeAttributes' => array (
         'type'        => 'array',
-        'prototype' => array(           // array - Protype definition
+        'prototype' => array(           // array - Prototype definition
             'type'   => 'integer',
             'digits' => i               // int - Number of digits in integer prototype
         ),
-        'default' => array(             // array - Array of default values [optional]
+        'default' => array(             // array - Array of default int values [optional]
             0 => 25,
             1 => 30,
             2 => 35
+        ),
+        'description' => 'fuz setting array' // string - Setting Description [optional]
+    )
+);
+
+// Define a new setting node using array of node data
+$settingNode = new \Fc\SettingsBundle\Model\Definition\SettingNode($nodeData);
+
+// Add the new setting node to a definition you created or loaded previously
+$settingDefinition->addSettingNode($settingNode);
+```
+
+#####Array Node (String prototype example):
+
+``` php
+// Define array containing setting node data
+$nodeData = array (
+    'nodeName' => 'fuz',
+    'nodeAttributes' => array (
+        'type'        => 'array',
+        'prototype' => array(           // array - Prototype definition
+            'type'   => 'string',
+            'length' => i               // int - Max length of string prototype
+        ),
+        'default' => array(             // array - Array of default string values [optional]
+            0 => 'foo',
+            1 => 'bar',
+            2 => 'baz'
         ),
         'description' => 'fuz setting array' // string - Setting Description [optional]
     )
