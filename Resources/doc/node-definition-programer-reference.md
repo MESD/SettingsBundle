@@ -2,7 +2,7 @@
 
 ###Overview
 
-Creating setting node definitions is most easily done using the `symfony2` console
+Creating setting node definitions is best done using the `symfony2` console
 commands or by editing the yaml definition files in your text editor. However,
 there may come a time that you need to create or update setting definitions from
 within your code.
