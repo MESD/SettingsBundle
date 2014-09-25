@@ -7,20 +7,24 @@ class SettingNodeInteger
 
     private $digits;
 
-
     public function __construct($nodeAttributes = null)
     {
         if (null !== $nodeAttributes && is_array($nodeAttributes)) {
+            if(!isset($nodeAttributes['digits'])) {
+                throw new \Exception(
+                    sprintf(
+                        "SettingNodeInteger expects attribute 'digits' to be defined in nodeAttributes"
+                    )
+                );
+            }
             $this->digits    = $nodeAttributes['digits'];
         }
     }
-
 
     public function getDigits()
     {
         return $this->digits;
     }
-
 
     public function setDigits($digits)
     {
@@ -28,5 +32,4 @@ class SettingNodeInteger
 
         return $this;
     }
-
 }

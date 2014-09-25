@@ -12,7 +12,22 @@ class SettingNodeFloat
     public function __construct($nodeAttributes = null)
     {
         if (null !== $nodeAttributes && is_array($nodeAttributes)) {
+            if(!isset($nodeAttributes['digits'])) {
+                throw new \Exception(
+                    sprintf(
+                        "SettingNodeFloat expects attribute 'digits' to be defined in nodeAttributes"
+                    )
+                );
+            }
             $this->digits    = $nodeAttributes['digits'];
+
+            if(!isset($nodeAttributes['precision'])) {
+                throw new \Exception(
+                    sprintf(
+                        "SettingNodeFloat expects attribute 'precision' to be defined in nodeAttributes"
+                    )
+                );
+            }
             $this->precision = $nodeAttributes['precision'];
         }
     }

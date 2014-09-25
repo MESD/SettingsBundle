@@ -89,8 +89,9 @@ class DefinitionValidator
                 ) {
                 throw new \Exception(
                     sprintf(
-                        "Settings Hive '%s' does not exisit",
-                        $this->fileContents[$key]['hive']
+                        "Settings Hive '%s' does not exist. Defined in File '%s'",
+                        $this->fileContents[$key]['hive'],
+                        $this->file
                     )
                 );
             }
@@ -106,8 +107,9 @@ class DefinitionValidator
                 ) {
                 throw new \Exception(
                     sprintf(
-                        "Settings Cluster '%s' does not exisit",
-                        $key
+                        "Settings Cluster '%s' does not exist. Defined in File '%s'",
+                        $key,
+                        $this->file
                     )
                 );
             }
@@ -308,6 +310,7 @@ class DefinitionValidator
         unset($nodeAttributes['type']);
         unset($nodeAttributes['prototype']);
         unset($nodeAttributes['default']);
+        unset($nodeAttributes['description']);
         if(0 < count(array_keys($nodeAttributes))) {
             throw new \Exception(
                 sprintf(
@@ -340,6 +343,7 @@ class DefinitionValidator
         // Check for any additional elements that should not exisit
         unset($nodeAttributes['type']);
         unset($nodeAttributes['default']);
+        unset($nodeAttributes['description']);
         if(0 < count(array_keys($nodeAttributes))) {
             throw new \Exception(
                 sprintf(
@@ -450,6 +454,7 @@ class DefinitionValidator
         unset($nodeAttributes['default']);
         unset($nodeAttributes['digits']);
         unset($nodeAttributes['precision']);
+        unset($nodeAttributes['description']);
         if(0 < count(array_keys($nodeAttributes))) {
             throw new \Exception(
                 sprintf(
@@ -521,6 +526,7 @@ class DefinitionValidator
         unset($nodeAttributes['type']);
         unset($nodeAttributes['default']);
         unset($nodeAttributes['digits']);
+        unset($nodeAttributes['description']);
         if(0 < count(array_keys($nodeAttributes))) {
             throw new \Exception(
                 sprintf(
@@ -590,6 +596,7 @@ class DefinitionValidator
         unset($nodeAttributes['type']);
         unset($nodeAttributes['length']);
         unset($nodeAttributes['default']);
+        unset($nodeAttributes['description']);
         if(0 < count(array_keys($nodeAttributes))) {
             throw new \Exception(
                 sprintf(

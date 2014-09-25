@@ -12,6 +12,20 @@ class SettingNodeArray
     public function __construct($nodeAttributes = null)
     {
         if (null !== $nodeAttributes && is_array($nodeAttributes)) {
+            if(!isset($nodeAttributes['prototype'])) {
+                throw new \Exception(
+                    sprintf(
+                        "SettingNodeArray expects attribute 'prototype' to be defined in nodeAttributes"
+                    )
+                );
+            }
+            if(!isset($nodeAttributes['prototype']['type'])) {
+                throw new \Exception(
+                    sprintf(
+                        "SettingNodeArray expects attribute 'type' to be defined in nodeAttributes[prototype]"
+                    )
+                );
+            }
             $this->prototype = $nodeAttributes['prototype']['type'];
 
             $className = 'Fc\SettingsBundle\Model\Definition\SettingNode' . ucwords($this->prototype);

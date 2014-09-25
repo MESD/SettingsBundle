@@ -69,7 +69,7 @@ class SettingDefinition
      */
     public function addSettingNode(SettingNode $settingNode)
     {
-        $this->settingNode[] = $settingNode;
+        $this->settingNode[$settingNode->getName()] = $settingNode;
 
         return $this;
     }
@@ -78,9 +78,26 @@ class SettingDefinition
     /**
      * Get SettingNode
      *
+     * @param string $name
+     * @return Fc\SettingsBundle\Model\Definition\SettingNode $settingNode
+     */
+    public function getSettingNode($name)
+    {
+        if ($this->settingNode->containsKey($name)) {
+            return $this->settingNode->get($name);
+        }
+        else {
+            return false;
+        }
+    }
+
+
+    /**
+     * Get SettingNodes
+     *
      * @return Doctrine\Common\Collections\ArrayCollection()
      */
-    public function getSettingNode()
+    public function getSettingNodes()
     {
         return $this->settingNode;
     }
@@ -92,7 +109,7 @@ class SettingDefinition
      * @param Fc\SettingsBundle\Model\Definition\SettingNode $settingNode
      * @return Cluster
      */
-    public function removeSettingNode(SettingDefinition $settingNode)
+    public function removeSettingNode(SettingNode $settingNode)
     {
         $this->settingNode->removeElement($settingNode);
 
