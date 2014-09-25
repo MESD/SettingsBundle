@@ -24,8 +24,8 @@ within your code.
         'nodeName' => 'foo',
         'nodeAttributes' => array (
             'type'    => 'integer',
-            'digits'  => *n*,       // int - Number of digits in integer setting
-            'default' => *n*,       // int - Defualt value of integer setting [optional]
+            'digits'  => **n**,       // int - Number of digits in integer setting
+            'default' => **n**,       // int - Defualt value of integer setting [optional]
         )
     );
 
