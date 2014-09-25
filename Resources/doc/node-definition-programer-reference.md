@@ -27,8 +27,8 @@ $settingDefinition = $definitionManger->getDefinition();
 
 **Warning:**
 
-> The code examples below assume that *$settingDefinition* is an instantiated
-> `SettingDefinition` object of which you created with one of the methods above
+> The code examples below assume that *$settingDefinition* is an instance of the
+> `SettingDefinition` object, of which you created with one of the methods above
 > in step 1.
 
 ####Integer Node:
