@@ -1,4 +1,4 @@
-##Setting Node Definitions - Programmers Reference
+##Setting Definitions - Programmers Reference
 
 ###Overview
 
@@ -74,5 +74,43 @@ $settingNode = new \Fc\SettingsBundle\Model\Definition\SettingNode($nodeData);
 $settingDefinition->addSettingNode($settingNode);
 ```
 
+####String Node:
 
+``` php
+// Define array containing setting node data
+$nodeData = array (
+    'nodeName' => 'baz',
+    'nodeAttributes' => array (
+        'type'      => 'string',
+        'length'    => i,                     // int - Max Length of string setting
+        'default'   => 'baz',                 // string - Default value of string [optional]
+        'description' => 'baz setting string' // string - Setting Description [optional]
+    )
+);
 
+// Define a new setting node using array of node data
+$settingNode = new \Fc\SettingsBundle\Model\Definition\SettingNode($nodeData);
+
+// Add the new setting node to a definition you created or loaded previously
+$settingDefinition->addSettingNode($settingNode);
+```
+
+####String Node:
+
+``` php
+// Define array containing setting node data
+$nodeData = array (
+    'nodeName' => 'buz',
+    'nodeAttributes' => array (
+        'type'      => 'boolean',
+        'default'   => bool,                   // boolean - Default value of boolean [optional]
+        'description' => 'buz setting boolean' // string - Setting Description [optional]
+    )
+);
+
+// Define a new setting node using array of node data
+$settingNode = new \Fc\SettingsBundle\Model\Definition\SettingNode($nodeData);
+
+// Add the new setting node to a definition you created or loaded previously
+$settingDefinition->addSettingNode($settingNode);
+```
