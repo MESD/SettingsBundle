@@ -95,7 +95,7 @@ $settingNode = new \Fc\SettingsBundle\Model\Definition\SettingNode($nodeData);
 $settingDefinition->addSettingNode($settingNode);
 ```
 
-####String Node:
+####Boolean Node:
 
 ``` php
 // Define array containing setting node data
