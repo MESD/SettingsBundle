@@ -39,7 +39,6 @@ $settingDefinition->setKey('theme');
 $settingDefinition->setHive('application');
 
 ```
----
 
 ###Step 2 - Creating setting definition nodes:
 
@@ -199,6 +198,5 @@ $settingNode = new \Fc\SettingsBundle\Model\Definition\SettingNode($nodeData);
 // Add the new setting node to a definition you created or loaded previously
 $settingDefinition->addSettingNode($settingNode);
 ```
----
 
 ###Step 3 - Save the setting definition:
