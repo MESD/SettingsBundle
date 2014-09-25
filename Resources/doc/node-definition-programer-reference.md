@@ -25,7 +25,7 @@ $settingDefinition = $definitionManger->getDefinition();
 ---
 ###Step 2 - Creating setting definition nodes:
 
-**Warning:**
+**Note:**
 
 > The code examples below assume that *$settingDefinition* is an instance of the
 > `SettingDefinition` object, of which you created with one of the methods above
@@ -103,8 +103,45 @@ $nodeData = array (
     'nodeName' => 'buz',
     'nodeAttributes' => array (
         'type'        => 'boolean',
-        'default'     => bool,                 // boolean - Default value of boolean [optional]
+        'default'     => false,                // boolean - Default value of boolean [optional]
         'description' => 'buz setting boolean' // string - Setting Description [optional]
+    )
+);
+
+// Define a new setting node using array of node data
+$settingNode = new \Fc\SettingsBundle\Model\Definition\SettingNode($nodeData);
+
+// Add the new setting node to a definition you created or loaded previously
+$settingDefinition->addSettingNode($settingNode);
+```
+
+
+####Array Node:
+
+**Note:**
+
+> Array nodes hold an array of values for each setting. Each array node needs
+> a `prototype` definition which defines the type of data contained within the
+> array. The prototype must be one of the base types (integer, float, string,
+> or boolean) and the prototype definition must contain all of the attributes
+> the base type requires. i.e. String type requires a 'length' attribute.
+
+``` php
+// Define array containing setting node data
+$nodeData = array (
+    'nodeName' => 'fuz',
+    'nodeAttributes' => array (
+        'type'        => 'array',
+        'prototype' => array(           // array - Protype definition
+            'type'   => 'integer',
+            'digits' => i               // int - Number of digits in integer prototype
+        ),
+        'default' => array(             // array - Array of default values [optional]
+            0 => 25,
+            1 => 30,
+            2 => 35
+        ),
+        'description' => 'fuz setting array' // string - Setting Description [optional]
     )
 );
 
