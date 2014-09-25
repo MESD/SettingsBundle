@@ -25,10 +25,16 @@ $settingDefinition = $definitionManger->getDefinition();
 ---
 ###Step 2 - Creating setting definition nodes:
 
+**Warning:**
+
+> The code examples below assume that *$settingDefinition* is an instantiated
+> `SettingDefinition` object of which you created with one of the methods above
+> in step 1.
+
 ####Integer Node:
 
 ``` php
-// Define array contating setting node data
+// Define array containing setting node data
 $nodeData = array (
     'nodeName' => 'foo',
     'nodeAttributes' => array (
@@ -49,7 +55,7 @@ $settingDefinition->addSettingNode($settingNode);
 ####Float Node:
 
 ``` php
-// Define array contating setting node data
+// Define array containing setting node data
 $nodeData = array (
     'nodeName' => 'bar',
     'nodeAttributes' => array (
