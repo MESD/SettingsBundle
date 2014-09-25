@@ -9,7 +9,6 @@ within your code.
 
 
 ###Step 1 - Load an existing definition or create a new one
----
 
 ####Loading an existing definition:
 
@@ -23,8 +22,8 @@ $settingDefinition = $definitionManger->getDefinition();
 
 ####Creating a new definition:
 
-###Step 2 - Creating setting definition nodes:
 ---
+###Step 2 - Creating setting definition nodes:
 
 ####Integer Node:
 
