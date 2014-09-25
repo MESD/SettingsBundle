@@ -59,10 +59,10 @@ $settingDefinition->addSettingNode($settingNode);
 $nodeData = array (
     'nodeName' => 'bar',
     'nodeAttributes' => array (
-        'type'      => 'float',
-        'digits'    => i,                    // int - Number of digits in float setting
-        'precision' => i,                    // int - Number of digits after decimal in float setting
-        'default'   => i.d,                  // float - Default value of float [optional]
+        'type'        => 'float',
+        'digits'      => i,                  // int - Number of digits in float setting
+        'precision'   => i,                  // int - Number of digits after decimal in float setting
+        'default'     => i.d,                // float - Default value of float [optional]
         'description' => 'bar setting float' // string - Setting Description [optional]
     )
 );
@@ -81,9 +81,9 @@ $settingDefinition->addSettingNode($settingNode);
 $nodeData = array (
     'nodeName' => 'baz',
     'nodeAttributes' => array (
-        'type'      => 'string',
-        'length'    => i,                     // int - Max Length of string setting
-        'default'   => 'baz',                 // string - Default value of string [optional]
+        'type'        => 'string',
+        'length'      => i,                   // int - Max Length of string setting
+        'default'     => 'baz',               // string - Default value of string [optional]
         'description' => 'baz setting string' // string - Setting Description [optional]
     )
 );
@@ -102,8 +102,8 @@ $settingDefinition->addSettingNode($settingNode);
 $nodeData = array (
     'nodeName' => 'buz',
     'nodeAttributes' => array (
-        'type'      => 'boolean',
-        'default'   => bool,                   // boolean - Default value of boolean [optional]
+        'type'        => 'boolean',
+        'default'     => bool,                 // boolean - Default value of boolean [optional]
         'description' => 'buz setting boolean' // string - Setting Description [optional]
     )
 );
