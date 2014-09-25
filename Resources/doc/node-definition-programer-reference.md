@@ -9,20 +9,22 @@ within your code.
 
 
 ###Step 1 - Load an existing definition or create a new one
+---
 
 ####Loading an existing definition:
 
 ``` php
-    $definitionManger = $this->get('fc_settings.definition_manager');
+$definitionManger = $this->get('fc_settings.definition_manager');
 
-    $definitionManger->loadFileByName('application-theme');
+$definitionManger->loadFileByName('application-theme');
 
-    $settingDefinition = $definitionManger->getDefinition();
+$settingDefinition = $definitionManger->getDefinition();
 ```
 
 ####Creating a new definition:
 
 ###Step 2 - Creating setting definition nodes:
+---
 
 ####Integer Node:
 
