@@ -13,16 +13,37 @@ within your code.
 ####Loading an existing definition:
 
 ``` php
+// Get Definition Manager Service
 $definitionManger = $this->get('fc_settings.definition_manager');
 
+// Load exisiting definition by file name
 $definitionManger->loadFileByName('application-theme');
 
+// Get SettingDefiniiton object
 $settingDefinition = $definitionManger->getDefinition();
 ```
 
 ####Creating a new definition:
 
+``` php
+// Get Definition Manager Service
+$definitionManger = $this->get('fc_settings.definition_manager');
+
+// Create a new SettingDefiniiton instance
+$settingDefinition = new \Fc\SettingsBundle\Model\Definition\SettingDefinition();
+
+// Set the defintion type (cluster or hive)
+$settingDefinition->setType('cluster');
+
+// Set the defintion key (cluster name on cluster type, hive name on hive type )
+$settingDefinition->setKey('theme');
+
+// Set the defintion hive
+$settingDefinition->setHive('application');
+
+```
 ---
+
 ###Step 2 - Creating setting definition nodes:
 
 **Note:**
