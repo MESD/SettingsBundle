@@ -26,9 +26,6 @@ $settingDefinition = $definitionManger->getDefinition();
 ####Creating a new definition:
 
 ``` php
-// Get Definition Manager Service
-$definitionManger = $this->get('fc_settings.definition_manager');
-
 // Create a new SettingDefiniiton instance
 $settingDefinition = new \Fc\SettingsBundle\Model\Definition\SettingDefinition();
 
