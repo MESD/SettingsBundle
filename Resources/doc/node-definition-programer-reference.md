@@ -1,4 +1,4 @@
-##Setting Node Definition Programmers Reference
+##Setting Node Definitions - Programmers Reference
 
 ###Overview
 
@@ -31,9 +31,10 @@ within your code.
     $nodeData = array (
         'nodeName' => 'foo',
         'nodeAttributes' => array (
-            'type'    => 'integer',
-            'digits'  => i,         // int - Number of digits in integer
-            'default' => i,         // int - Default value of integer [optional]
+            'type'        => 'integer',
+            'digits'      => i,                    // int - Number of digits in integer
+            'default'     => i,                    // int - Default value of integer [optional]
+            'description' => 'foo setting integer' // string - Setting Description [optional]
         )
     );
 
@@ -52,9 +53,10 @@ within your code.
         'nodeName' => 'bar',
         'nodeAttributes' => array (
             'type'      => 'float',
-            'digits'    => i,       // int - Number of digits in float setting
-            'precision' => i,       // int - Number of digits after decimal in float setting
-            'default'   => i.d      // float - Default value of float [optional]
+            'digits'    => i,                    // int - Number of digits in float setting
+            'precision' => i,                    // int - Number of digits after decimal in float setting
+            'default'   => i.d,                  // float - Default value of float [optional]
+            'description' => 'bar setting float' // string - Setting Description [optional]
         )
     );
 
