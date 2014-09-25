@@ -27,44 +27,44 @@ within your code.
 ####Integer Node:
 
 ``` php
-    // Define array contating setting node data
-    $nodeData = array (
-        'nodeName' => 'foo',
-        'nodeAttributes' => array (
-            'type'        => 'integer',
-            'digits'      => i,                    // int - Number of digits in integer
-            'default'     => i,                    // int - Default value of integer [optional]
-            'description' => 'foo setting integer' // string - Setting Description [optional]
-        )
-    );
+// Define array contating setting node data
+$nodeData = array (
+    'nodeName' => 'foo',
+    'nodeAttributes' => array (
+        'type'        => 'integer',
+        'digits'      => i,                    // int - Number of digits in integer
+        'default'     => i,                    // int - Default value of integer [optional]
+        'description' => 'foo setting integer' // string - Setting Description [optional]
+    )
+);
 
-    // Define a new setting node using array of node data
-    $settingNode = new \Fc\SettingsBundle\Model\Definition\SettingNode($nodeData);
+// Define a new setting node using array of node data
+$settingNode = new \Fc\SettingsBundle\Model\Definition\SettingNode($nodeData);
 
-    // Add the new setting node to a definition you created or loaded previously
-    $settingDefinition->addSettingNode($settingNode);
+// Add the new setting node to a definition you created or loaded previously
+$settingDefinition->addSettingNode($settingNode);
 ```
 
 ####Float Node:
 
 ``` php
-    // Define array contating setting node data
-    $nodeData = array (
-        'nodeName' => 'bar',
-        'nodeAttributes' => array (
-            'type'      => 'float',
-            'digits'    => i,                    // int - Number of digits in float setting
-            'precision' => i,                    // int - Number of digits after decimal in float setting
-            'default'   => i.d,                  // float - Default value of float [optional]
-            'description' => 'bar setting float' // string - Setting Description [optional]
-        )
-    );
+// Define array contating setting node data
+$nodeData = array (
+    'nodeName' => 'bar',
+    'nodeAttributes' => array (
+        'type'      => 'float',
+        'digits'    => i,                    // int - Number of digits in float setting
+        'precision' => i,                    // int - Number of digits after decimal in float setting
+        'default'   => i.d,                  // float - Default value of float [optional]
+        'description' => 'bar setting float' // string - Setting Description [optional]
+    )
+);
 
-    // Define a new setting node using array of node data
-    $settingNode = new \Fc\SettingsBundle\Model\Definition\SettingNode($nodeData);
+// Define a new setting node using array of node data
+$settingNode = new \Fc\SettingsBundle\Model\Definition\SettingNode($nodeData);
 
-    // Add the new setting node to a definition you created or loaded previously
-    $settingDefinition->addSettingNode($settingNode);
+// Add the new setting node to a definition you created or loaded previously
+$settingDefinition->addSettingNode($settingNode);
 ```
 
 
