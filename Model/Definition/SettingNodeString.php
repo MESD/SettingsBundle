@@ -23,6 +23,12 @@ class SettingNodeString
     }
 
 
+    public function dumpToArray()
+    {
+        return array('length' => $this->length);
+    }
+
+
     public function getLength()
     {
         return $this->length;
@@ -35,5 +41,4 @@ class SettingNodeString
 
         return $this;
     }
-
 }

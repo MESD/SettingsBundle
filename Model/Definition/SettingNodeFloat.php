@@ -32,12 +32,18 @@ class SettingNodeFloat
         }
     }
 
+    public function dumpToArray()
+    {
+        return array(
+            'digits'    => $this->digits,
+            'precision' => $this->precision
+        );
+    }
 
     public function getDigits()
     {
         return $this->digits;
     }
-
 
     public function setDigits($digits)
     {
@@ -46,12 +52,10 @@ class SettingNodeFloat
         return $this;
     }
 
-
         public function getPrecision()
     {
         return $this->precision;
     }
-
 
     public function setPrecision($precision)
     {

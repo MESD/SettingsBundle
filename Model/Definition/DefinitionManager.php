@@ -42,7 +42,7 @@ class DefinitionManager
     }
 
 
-    public function createFile($fileName, $type, $bundle = null)
+/*    public function createFile($fileName, $type, $bundle = null)
     {
         if ($this->file = $this->locateFile($fileName)) {
             throw new \Exception(sprintf('File %s already exists', $this->file));
@@ -71,7 +71,7 @@ class DefinitionManager
         $fs->dumpFile($this->file, $yaml, 0666);
 
         return $this;
-    }
+    }*/
 
 
 
@@ -83,17 +83,20 @@ class DefinitionManager
 
 
     /**
-     * Load a setting defintion file by name
+     * Load a setting definition file by hive [ and cluster name ]
      *
-     * @param string $filename
+     * @param string $hive
+     * @param string $cluster
      * @return $this
      */
-    public function loadFileByName($fileName)
+    public function loadFile($hive, $cluster = null)
     {
+        $fileName = $this->buildFileName($hive, $cluster);
+
         if (!$this->file = $this->locateFile($fileName)) {
             throw new \Exception(
                 sprintf(
-                    "Settings Definition File '%s.yml' does not exist in any of the following paths you specified for settings storage: %s",
+                    "Settings Definition File '%s' does not exist in any of the following paths you specified for settings storage: %s",
                     $fileName,
                     implode(', ', $this->bundleStorage)
                 )
@@ -108,10 +111,10 @@ class DefinitionManager
 
 
     /**
-     * Locate a setting defintion file
+     * Locate a setting definition file
      *
      * Checks each bundle defined in settings config, and the app/Resources
-     * default path for a setting defintion file. Returns the the file path
+     * default path for a setting definition file. Returns the the file path
      * or false.
      *
      * @param string $filename
@@ -123,14 +126,14 @@ class DefinitionManager
         foreach ($this->bundleStorage as $key => $path) {
             // Standard path
             if ('@' != substr($path,0,1)) {
-                if($this->fileExists($path . '/' . $fileName . '.yml')) {
-                     return $path . '/' . $fileName . '.yml';
+                if($this->fileExists($path . '/' . $fileName)) {
+                     return $path . '/' . $fileName;
                 }
             }
             // Bundle alias path (@BundleName/path/to/file)
             else {
                 try {
-                    return $this->kernel->locateResource($path . '/' . $fileName . '.yml');
+                    return $this->kernel->locateResource($path . '/' . $fileName);
                 }
                 catch (\Exception $e) {
                 }
@@ -142,39 +145,92 @@ class DefinitionManager
 
 
 
-    public function saveFile()
+    public function saveFile(SettingDefinition $settingDefinition)
     {
-        if (!$this->fileExists($fileName, $bundlePath)) {
-            throw new \Exception(sprintf('File %s doen\'t exist', $this->file));
+        $fileName = $this->buildFileNameFromDefinition();
+
+        if (!$fullQualifiedFileName = $this->locateFile($fileName)) {
+            $fullQualifiedFileName = createFile();
         }
 
-        $fs = new Filesystem();
+        $serializedDefinition = $this->serialize($settingDefinition);
 
-        if (!$fs->exists($this->fileDir)) {
-            $fs->mkdir($this->fileDir, 0666);
-        }
-
-        $rootNode = ('cluster' === $type ? explode("-", $fileName)[1] : explode("-", $fileName)[0]);
-
-        $this->definition = array(
-            $rootNode => array(
-                'type' => $type,
-                'nodes' => array()
-            )
-        );
+        $validator = new DefinitionValidator($serializedDefinition, $this->settingsManager);
+        $validator->validate();
 
         $dumper = new Dumper();
-        $yaml = $dumper->dump($this->definition, 5);
+        $yaml = $dumper->dump($serializedDefinition, 5);
 
+        $fs = new Filesystem();
         $fs->dumpFile($this->file, $yaml, 0666);
 
         return $this;
     }
 
 
+    private function buildFileName($hive, $cluster = null)
+    {
+        $filename = (
+            null !== $cluster ?
+            $hive . '-' . $cluster . '.yml' :
+            $hive . '.yml'
+        );
+
+        return $filename;
+    }
+
+
+    private function buildFileNameFromDefinition()
+    {
+        if (!$this->definition instanceof SettingDefinition) {
+            throw new \Exception(
+                sprintf(
+                    "Expected setting definition to be an instance of %s, but found: %s",
+                    'Fc\SettingsBundle\Model\Definition\SettingDefinition',
+                    (is_object($this->definition)) ? get_class($this->definition) : gettype($this->definition)
+                )
+            );
+        }
+
+        $filename = (
+            'cluster' == $this->definition->getType() ?
+            $this->definition->getHive() . '-' . $this->definition->getKey() . '.yml' :
+            $this->definition->getKey() . '.yml'
+        );
+
+        return $filename;
+    }
+
+
+    private function serialize(SettingDefinition $settingDefinition)
+    {
+        $definitionNodes = $settingDefinition->getSettingNodes()->toArray();
+
+        $serializedNodes = array();
+        foreach ($definitionNodes as $node => $nodeData) {
+            $serializedNodes[$node]['default']     = $nodeData->getDefault();
+            $serializedNodes[$node]['description'] = $nodeData->getDescription();
+            $serializedNodes[$node]['type']        = $nodeData->getType();
+            foreach( $nodeData->getFormat()->dumpToArray() as $key => $val) {
+                $serializedNodes[$node][$key] = $val;
+            }
+        }
+
+        $serializedDefinition = array(
+            $settingDefinition->getKey() => array(
+                'hive'  => $settingDefinition->getHive(),
+                'type'  => $settingDefinition->getType(),
+                'nodes' => $serializedNodes
+            )
+        );
+
+        return $serializedDefinition;
+    }
+
+
     private function unserialize($fileContents)
     {
-        $validator = new DefinitionValidator($fileContents, $this->file, $this->settingsManager);
+        $validator = new DefinitionValidator($fileContents, $this->settingsManager);
         $validator->validate();
 
         $key = array_keys($fileContents)[0];

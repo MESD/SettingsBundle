@@ -16,8 +16,8 @@ within your code.
 // Get Definition Manager Service
 $definitionManger = $this->get('fc_settings.definition_manager');
 
-// Load exisiting definition by file name
-$definitionManger->loadFileByName('application-theme');
+// Load exisiting definition by file name ($hive, $cluster)
+$definitionManger->loadFileloadFile('application', 'theme');
 
 // Get SettingDefiniiton object
 $settingDefinition = $definitionManger->getDefinition();

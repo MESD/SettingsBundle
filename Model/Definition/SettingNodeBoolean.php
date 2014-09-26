@@ -12,4 +12,10 @@ class SettingNodeBoolean
     }
 
 
+    public function dumpToArray()
+    {
+        return array();
+    }
+
+
 }

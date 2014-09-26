@@ -5,16 +5,13 @@ namespace Fc\SettingsBundle\Model\Definition;
 
 class DefinitionValidator
 {
-
-    private $file;
-    private $fileContents;
+    private $definition;
     private $settingsManager;
 
 
-    public function __construct (array $fileContents, $file, $settingsManager)
+    public function __construct (array $definition, $settingsManager)
     {
-        $this->file            = $file;
-        $this->fileContents    = $fileContents;
+        $this->definition      = $definition;
         $this->settingsManager = $settingsManager;
     }
 
@@ -29,54 +26,52 @@ class DefinitionValidator
     private function validateStructure()
     {
         // Validate key element
-        if(1 !== count(array_keys($this->fileContents))) {
+        if(1 !== count(array_keys($this->definition))) {
             throw new \Exception(
                 sprintf(
-                    "Settings Definition File '%s' has more than one key element: %s",
-                    $this->file,
-                    implode(', ', array_keys($this->fileContents))
+                    "Settings Definition has more than one key element: %s",
+                    implode(', ', array_keys($this->definition))
                 )
             );
         }
 
-        $key = array_keys($this->fileContents)[0];
+        $key = array_keys($this->definition)[0];
 
         // Is type set and valid?
-        if (!array_key_exists('type', $this->fileContents[$key])){
+        if (!array_key_exists('type', $this->definition[$key])){
             throw new \Exception(
                 sprintf(
-                    "Settings Definition File '%s' is missing the definition 'type' element",
-                    $this->file
+                    "Settings Definition '%s' is missing the definition 'type' element",
+                    $key
                 )
             );
         }
-        elseif ('hive'    != $this->fileContents[$key]['type'] &&
-                'cluster' != $this->fileContents[$key]['type']    ) {
+        elseif ('hive'    != $this->definition[$key]['type'] &&
+                'cluster' != $this->definition[$key]['type']    ) {
             throw new \Exception(
                 sprintf(
-                    "Settings Definition File '%s' has an invalid definition 'type' element",
-                    $this->file
+                    "Settings Definition '%s' has an invalid definition 'type' element",
+                    $key
                 )
             );
         }
 
         // Is hive set and valid?
-        if (!array_key_exists('hive', $this->fileContents[$key])){
+        if (!array_key_exists('hive', $this->definition[$key])){
             throw new \Exception(
                 sprintf(
-                    "Settings Definition File '%s' is missing the definition 'hive' element",
-                    $this->file
+                    "Settings Definition '%s' is missing the definition 'hive' element",
+                    $key
                 )
             );
         }
-        elseif ('hive' == $this->fileContents[$key]['type'] &&
-                $key   != $this->fileContents[$key]['hive']    ) {
+        elseif ('hive' == $this->definition[$key]['type'] &&
+                $key   != $this->definition[$key]['hive']    ) {
             throw new \Exception(
                 sprintf(
-                    "Settings Definition File '%s' has a type of 'hive' buy the key element and hive element do not match. Key: %s, Hive: %s",
-                    $this->file,
+                    "Settings Definition has type 'hive', but the key element and hive element do not match. Key: %s, Hive: %s",
                     $key,
-                    $this->fileContents[$key]['hive']
+                    $this->definition[$key]['hive']
                 )
             );
         }
@@ -84,32 +79,30 @@ class DefinitionValidator
         else {
             if (!$this->settingsManager
                     ->hiveExists(
-                        $this->fileContents[$key]['hive']
+                        $this->definition[$key]['hive']
                     )
                 ) {
                 throw new \Exception(
                     sprintf(
-                        "Settings Hive '%s' does not exist. Defined in File '%s'",
-                        $this->fileContents[$key]['hive'],
-                        $this->file
+                        "Settings Hive '%s' does not exist.",
+                        $this->definition[$key]['hive']
                     )
                 );
             }
         }
 
         // If type is cluster, check if cluster is defined in database
-        if ('cluster' == $this->fileContents[$key]['type']) {
+        if ('cluster' == $this->definition[$key]['type']) {
             if (!$this->settingsManager
                     ->clusterExists(
-                        $this->fileContents[$key]['hive'],
+                        $this->definition[$key]['hive'],
                         $key
                     )
                 ) {
                 throw new \Exception(
                     sprintf(
-                        "Settings Cluster '%s' does not exist. Defined in File '%s'",
-                        $key,
-                        $this->file
+                        "Settings Cluster '%s' does not exist.",
+                        $key
                     )
                 );
             }
@@ -117,15 +110,15 @@ class DefinitionValidator
 
 
         // Check for any additional elements that should not exisit
-        $elements = $this->fileContents[$key];
+        $elements = $this->definition[$key];
         unset($elements['type']);
         unset($elements['hive']);
         unset($elements['nodes']);
         if(0 < count(array_keys($elements))) {
             throw new \Exception(
                 sprintf(
-                    "Settings Definition File '%s' has invalid definition elements: %s",
-                    $this->file,
+                    "Settings Definition '%s' has invalid definition elements: %s",
+                    $key,
                     implode(', ', array_keys($elements))
                 )
             );
@@ -135,16 +128,16 @@ class DefinitionValidator
 
     private function validateNodes()
     {
-        $key = array_keys($this->fileContents)[0];
+        $key = array_keys($this->definition)[0];
 
-        foreach ($this->fileContents[$key]['nodes'] as $node => $attributes) {
+        foreach ($this->definition[$key]['nodes'] as $node => $attributes) {
 
             // Is type set and valid?
             if (!array_key_exists('type', $attributes)) {
                 throw new \Exception(
                     sprintf(
-                        "Settings Definition File '%s' is missing the 'type' element for node '%s'",
-                        $this->file,
+                        "Settings Definition '%s' is missing the 'type' element for node '%s'",
+                        $key,
                         $node
                     )
                 );
@@ -155,8 +148,8 @@ class DefinitionValidator
                     ) {
                 throw new \Exception(
                     sprintf(
-                        "Settings Definition File '%s' has an invalid 'type' element on node '%s'",
-                        $this->file,
+                        "Settings Definition '%s' has an invalid 'type' element on node '%s'",
+                        $key,
                         $node
                     )
                 );
@@ -164,19 +157,19 @@ class DefinitionValidator
 
             // Perform node type specific validation
             $methodName = 'validateNode' . ucwords($attributes['type']);
-            $this->$methodName($node, $attributes);
+            $this->$methodName($node, $attributes, $key);
         }
     }
 
 
-    private function validateNodeArray($nodeName, $nodeAttributes)
+    private function validateNodeArray($nodeName, $nodeAttributes, $key)
     {
         // Is prototype set?
         if (!array_key_exists('prototype', $nodeAttributes)) {
             throw new \Exception(
                 sprintf(
-                    "Settings Definition File '%s' is missing the 'prototype' element for array node '%s'",
-                    $this->file,
+                    "Settings Definition '%s' is missing the 'prototype' element for array node '%s'",
+                    $key,
                     $nodeName
                 )
             );
@@ -185,8 +178,8 @@ class DefinitionValidator
         elseif (!array_key_exists('type', $nodeAttributes['prototype'])) {
             throw new \Exception(
                 sprintf(
-                    "Settings Definition File '%s' is missing the 'type' element for array prototype on node '%s'",
-                    $this->file,
+                    "Settings Definition '%s' is missing the 'type' element for array prototype on node '%s'",
+                    $key,
                     $nodeName
                 )
             );
@@ -198,8 +191,8 @@ class DefinitionValidator
                 ) {
             throw new \Exception(
                 sprintf(
-                    "Settings Definition File '%s' has an invalid 'type' element for array prototype on node '%s'",
-                    $this->file,
+                    "Settings Definition '%s' has an invalid 'type' element for array prototype on node '%s'",
+                    $key,
                     $nodeName
                 )
             );
@@ -207,7 +200,7 @@ class DefinitionValidator
         // Perform node prototype specific validation
         else {
             $methodName = 'validateNode' . ucwords($nodeAttributes['prototype']['type']);
-            $this->$methodName($nodeName, $nodeAttributes['prototype']);
+            $this->$methodName($nodeName, $nodeAttributes['prototype'], $key);
         }
 
         // If default is set
@@ -217,8 +210,8 @@ class DefinitionValidator
             if (!is_array($nodeAttributes['default'])) {
                 throw new \Exception(
                     sprintf(
-                        "Settings Definition File '%s' has an invalid 'default' element value on node '%s'. Expected type array, found type %s",
-                        $this->file,
+                        "Settings Definition '%s' has an invalid 'default' element value on node '%s'. Expected type array, found type %s",
+                        $key,
                         $nodeName,
                         gettype($nodeAttributes['default'])
                     )
@@ -234,8 +227,8 @@ class DefinitionValidator
                 if ($type != $nodeAttributes['prototype']['type']) {
                     throw new \Exception(
                         sprintf(
-                            "Settings Definition File '%s' has an invalid 'default' element value on array node '%s'. Expected type '%s', found type %s",
-                            $this->file,
+                            "Settings Definition '%s' has an invalid 'default' element value on array node '%s'. Expected type '%s', found type %s",
+                            $key,
                             $nodeName,
                             $nodeAttributes['prototype']['type'],
                             $type
@@ -249,8 +242,8 @@ class DefinitionValidator
                     strlen($val) > $nodeAttributes['prototype']['length']) {
                     throw new \Exception(
                         sprintf(
-                            "Settings Definition File '%s' has an invalid 'default' element value on array node '%s'. Expected %u chars max, found %u chars",
-                            $this->file,
+                            "Settings Definition '%s' has an invalid 'default' element value on array node '%s'. Expected %u chars max, found %u chars",
+                            $key,
                             $nodeName,
                             $nodeAttributes['prototype']['length'],
                             strlen($val)
@@ -262,8 +255,8 @@ class DefinitionValidator
                     strlen($val) > $nodeAttributes['prototype']['digits']) {
                     throw new \Exception(
                         sprintf(
-                            "Settings Definition File '%s' has an invalid 'default' element value on array node '%s'. Expected %u digits max, found %u digits",
-                            $this->file,
+                            "Settings Definition '%s' has an invalid 'default' element value on array node '%s'. Expected %u digits max, found %u digits",
+                            $key,
                             $nodeName,
                             $nodeAttributes['prototype']['digits'],
                             strlen($val)
@@ -279,8 +272,8 @@ class DefinitionValidator
                     if (strlen($floatParts[0]) > $nodeAttributes['prototype']['digits']) {
                         throw new \Exception(
                             sprintf(
-                                "Settings Definition File '%s' has an invalid 'default' element value on array node '%s'. Expected %u digits max, found %u digits",
-                                $this->file,
+                                "Settings Definition '%s' has an invalid 'default' element value on array node '%s'. Expected %u digits max, found %u digits",
+                                $key,
                                 $nodeName,
                                 $nodeAttributes['prototype']['digits'],
                                 strlen($floatParts[0])
@@ -293,8 +286,8 @@ class DefinitionValidator
                         if (strlen($floatParts[1]) > $nodeAttributes['prototype']['precision']) {
                             throw new \Exception(
                                 sprintf(
-                                    "Settings Definition File '%s' has an invalid 'default' element value on array node '%s'. Expected %u precision digits max, found %u precision digits",
-                                    $this->file,
+                                    "Settings Definition '%s' has an invalid 'default' element value on array node '%s'. Expected %u precision digits max, found %u precision digits",
+                                    $key,
                                     $nodeName,
                                     $nodeAttributes['prototype']['precision'],
                                     strlen($floatParts[1])
@@ -314,8 +307,8 @@ class DefinitionValidator
         if(0 < count(array_keys($nodeAttributes))) {
             throw new \Exception(
                 sprintf(
-                    "Settings Definition File '%s' has invalid elements for node '%s': %s",
-                    $this->file,
+                    "Settings Definition '%s' has invalid elements for node '%s': %s",
+                    $key,
                     $nodeName,
                     implode(', ', array_keys($nodeAttributes))
                 )
@@ -325,15 +318,15 @@ class DefinitionValidator
     }
 
 
-    private function validateNodeBoolean($nodeName, $nodeAttributes)
+    private function validateNodeBoolean($nodeName, $nodeAttributes, $key)
     {
         // If default is set, ensure it's type is boolean
         if (array_key_exists('default', $nodeAttributes) &&
             !is_bool($nodeAttributes['default'])            ) {
             throw new \Exception(
                 sprintf(
-                    "Settings Definition File '%s' has an invalid 'default' element value on node '%s'. Expected type boolean, found type %s",
-                    $this->file,
+                    "Settings Definition '%s' has an invalid 'default' element value on node '%s'. Expected type boolean, found type %s",
+                    $key,
                     $nodeName,
                     gettype($nodeAttributes['default'])
                 )
@@ -347,8 +340,8 @@ class DefinitionValidator
         if(0 < count(array_keys($nodeAttributes))) {
             throw new \Exception(
                 sprintf(
-                    "Settings Definition File '%s' has invalid elements for boolean node '%s': %s",
-                    $this->file,
+                    "Settings Definition '%s' has invalid elements for boolean node '%s': %s",
+                    $key,
                     $nodeName,
                     implode(', ', array_keys($nodeAttributes))
                 )
@@ -358,14 +351,14 @@ class DefinitionValidator
     }
 
 
-    private function validateNodeFloat($nodeName, $nodeAttributes)
+    private function validateNodeFloat($nodeName, $nodeAttributes, $key)
     {
         // Is digits set and valid?
         if (!array_key_exists('digits', $nodeAttributes)) {
             throw new \Exception(
                 sprintf(
-                    "Settings Definition File '%s' is missing the 'digits' element for float node '%s'",
-                    $this->file,
+                    "Settings Definition '%s' is missing the 'digits' element for float node '%s'",
+                    $key,
                     $nodeName
                 )
             );
@@ -373,8 +366,8 @@ class DefinitionValidator
         elseif (!is_int($nodeAttributes['digits'])) {
             throw new \Exception(
                 sprintf(
-                    "Settings Definition File '%s' has an invalid 'digits' element value on node '%s'. Expected type integer, found type %s",
-                    $this->file,
+                    "Settings Definition '%s' has an invalid 'digits' element value on node '%s'. Expected type integer, found type %s",
+                    $key,
                     $nodeName,
                     gettype($nodeAttributes['digits'])
                 )
@@ -385,8 +378,8 @@ class DefinitionValidator
         if (!array_key_exists('precision', $nodeAttributes)) {
             throw new \Exception(
                 sprintf(
-                    "Settings Definition File '%s' is missing the 'precision' element for float node '%s'",
-                    $this->file,
+                    "Settings Definition '%s' is missing the 'precision' element for float node '%s'",
+                    $key,
                     $nodeName
                 )
             );
@@ -394,8 +387,8 @@ class DefinitionValidator
         elseif (!is_int($nodeAttributes['precision'])) {
             throw new \Exception(
                 sprintf(
-                    "Settings Definition File '%s' has an invalid 'precision' element value on node '%s'. Expected type integer, found type %s",
-                    $this->file,
+                    "Settings Definition '%s' has an invalid 'precision' element value on node '%s'. Expected type integer, found type %s",
+                    $key,
                     $nodeName,
                     gettype($nodeAttributes['digits'])
                 )
@@ -409,8 +402,8 @@ class DefinitionValidator
             if (!is_float($nodeAttributes['default'])) {
                 throw new \Exception(
                     sprintf(
-                        "Settings Definition File '%s' has an invalid 'default' element value on node '%s'. Expected type float, found type %s",
-                        $this->file,
+                        "Settings Definition '%s' has an invalid 'default' element value on node '%s'. Expected type float, found type %s",
+                        $key,
                         $nodeName,
                         gettype($nodeAttributes['default'])
                     )
@@ -424,8 +417,8 @@ class DefinitionValidator
             if (strlen($floatParts[0]) > $nodeAttributes['digits']) {
                 throw new \Exception(
                     sprintf(
-                        "Settings Definition File '%s' has an invalid 'default' element value on node '%s'. Expected %u digits max, found %u digits",
-                        $this->file,
+                        "Settings Definition '%s' has an invalid 'default' element value on node '%s'. Expected %u digits max, found %u digits",
+                        $key,
                         $nodeName,
                         $nodeAttributes['digits'],
                         strlen($floatParts[0])
@@ -438,8 +431,8 @@ class DefinitionValidator
                 if (strlen($floatParts[1]) > $nodeAttributes['precision']) {
                     throw new \Exception(
                         sprintf(
-                            "Settings Definition File '%s' has an invalid 'default' element value on node '%s'. Expected %u precision digits max, found %u precision digits",
-                            $this->file,
+                            "Settings Definition '%s' has an invalid 'default' element value on node '%s'. Expected %u precision digits max, found %u precision digits",
+                            $key,
                             $nodeName,
                             $nodeAttributes['precision'],
                             strlen($floatParts[1])
@@ -458,8 +451,8 @@ class DefinitionValidator
         if(0 < count(array_keys($nodeAttributes))) {
             throw new \Exception(
                 sprintf(
-                    "Settings Definition File '%s' has invalid elements for float node '%s': %s",
-                    $this->file,
+                    "Settings Definition '%s' has invalid elements for float node '%s': %s",
+                    $key,
                     $nodeName,
                     implode(', ', array_keys($nodeAttributes))
                 )
@@ -469,14 +462,14 @@ class DefinitionValidator
     }
 
 
-    private function validateNodeInteger($nodeName, $nodeAttributes)
+    private function validateNodeInteger($nodeName, $nodeAttributes, $key)
     {
         // Is digits set and valid?
         if (!array_key_exists('digits', $nodeAttributes)) {
             throw new \Exception(
                 sprintf(
-                    "Settings Definition File '%s' is missing the 'digits' element for integer node '%s'",
-                    $this->file,
+                    "Settings Definition '%s' is missing the 'digits' element for integer node '%s'",
+                    $key,
                     $nodeName
                 )
             );
@@ -484,8 +477,8 @@ class DefinitionValidator
         elseif (!is_int($nodeAttributes['digits'])) {
             throw new \Exception(
                 sprintf(
-                    "Settings Definition File '%s' has an invalid 'digits' element value on node '%s'. Expected type integer, found type %s",
-                    $this->file,
+                    "Settings Definition '%s' has an invalid 'digits' element value on node '%s'. Expected type integer, found type %s",
+                    $key,
                     $nodeName,
                     gettype($nodeAttributes['digits'])
                 )
@@ -499,8 +492,8 @@ class DefinitionValidator
             if(!is_int($nodeAttributes['default'])) {
                 throw new \Exception(
                     sprintf(
-                        "Settings Definition File '%s' has an invalid 'default' element value on node '%s'. Expected type integer, found type %s",
-                        $this->file,
+                        "Settings Definition '%s' has an invalid 'default' element value on node '%s'. Expected type integer, found type %s",
+                        $key,
                         $nodeName,
                         gettype($nodeAttributes['default'])
                     )
@@ -511,8 +504,8 @@ class DefinitionValidator
             if (strlen($nodeAttributes['default']) > $nodeAttributes['digits']) {
                 throw new \Exception(
                     sprintf(
-                        "Settings Definition File '%s' has an invalid 'default' element value on node '%s'. Expected %u digits max, found %u digits",
-                        $this->file,
+                        "Settings Definition '%s' has an invalid 'default' element value on node '%s'. Expected %u digits max, found %u digits",
+                        $key,
                         $nodeName,
                         $nodeAttributes['digits'],
                         strlen($nodeAttributes['default'])
@@ -530,8 +523,8 @@ class DefinitionValidator
         if(0 < count(array_keys($nodeAttributes))) {
             throw new \Exception(
                 sprintf(
-                    "Settings Definition File '%s' has invalid elements for integer node '%s': %s",
-                    $this->file,
+                    "Settings Definition '%s' has invalid elements for integer node '%s': %s",
+                    $key,
                     $nodeName,
                     implode(', ', array_keys($nodeAttributes))
                 )
@@ -540,14 +533,14 @@ class DefinitionValidator
     }
 
 
-    private function validateNodeString($nodeName, $nodeAttributes)
+    private function validateNodeString($nodeName, $nodeAttributes, $key)
     {
         // Is length set and valid?
         if (!array_key_exists('length', $nodeAttributes)) {
             throw new \Exception(
                 sprintf(
-                    "Settings Definition File '%s' is missing the 'length' element for string node '%s'",
-                    $this->file,
+                    "Settings Definition '%s' is missing the 'length' element for string node '%s'",
+                    $key,
                     $nodeName
                 )
             );
@@ -555,8 +548,8 @@ class DefinitionValidator
         elseif (!is_int($nodeAttributes['length'])) {
             throw new \Exception(
                 sprintf(
-                    "Settings Definition File '%s' has an invalid 'length' element value on node '%s'. Expected type integer, found type %s",
-                    $this->file,
+                    "Settings Definition '%s' has an invalid 'length' element value on node '%s'. Expected type integer, found type %s",
+                    $key,
                     $nodeName,
                     gettype($nodeAttributes['length'])
                 )
@@ -570,8 +563,8 @@ class DefinitionValidator
             if(!is_string($nodeAttributes['default'])) {
                 throw new \Exception(
                     sprintf(
-                        "Settings Definition File '%s' has an invalid 'default' element value on node '%s'. Expected type string, found type %s",
-                        $this->file,
+                        "Settings Definition '%s' has an invalid 'default' element value on node '%s'. Expected type string, found type %s",
+                        $key,
                         $nodeName,
                         gettype($nodeAttributes['default'])
                     )
@@ -582,8 +575,8 @@ class DefinitionValidator
             if (strlen($nodeAttributes['default']) > $nodeAttributes['length']) {
                 throw new \Exception(
                     sprintf(
-                        "Settings Definition File '%s' has an invalid 'default' element value on node '%s'. Expected %u chars max, found %u chars",
-                        $this->file,
+                        "Settings Definition '%s' has an invalid 'default' element value on node '%s'. Expected %u chars max, found %u chars",
+                        $key,
                         $nodeName,
                         $nodeAttributes['length'],
                         strlen($nodeAttributes['default'])
@@ -600,8 +593,8 @@ class DefinitionValidator
         if(0 < count(array_keys($nodeAttributes))) {
             throw new \Exception(
                 sprintf(
-                    "Settings Definition File '%s' has invalid elements for string node '%s': %s",
-                    $this->file,
+                    "Settings Definition '%s' has invalid elements for string node '%s': %s",
+                    $key,
                     $nodeName,
                     implode(', ', array_keys($nodeAttributes))
                 )

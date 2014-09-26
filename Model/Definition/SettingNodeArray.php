@@ -33,6 +33,21 @@ class SettingNodeArray
         }
     }
 
+    public function dumpToArray()
+    {
+        $prototype = array(
+            'prototype' => array(
+                'type'  => $this->prototype
+            )
+        );
+
+        foreach ($this->node->dumpToArray() as $key => $val) {
+            $prototype['prototype'][$key] = $val;
+        }
+
+        return $prototype;
+    }
+
 
     public function getPrototype()
     {

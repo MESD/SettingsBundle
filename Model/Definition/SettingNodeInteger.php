@@ -21,6 +21,11 @@ class SettingNodeInteger
         }
     }
 
+    public function dumpToArray()
+    {
+        return array('digits' => $this->digits);
+    }
+
     public function getDigits()
     {
         return $this->digits;
