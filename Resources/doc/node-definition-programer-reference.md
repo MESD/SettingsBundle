@@ -17,10 +17,7 @@ within your code.
 $definitionManger = $this->get('fc_settings.definition_manager');
 
 // Load exisiting definition by file name ($hive, $cluster)
-$definitionManger->loadFileloadFile('application', 'theme');
-
-// Get SettingDefiniiton object
-$settingDefinition = $definitionManger->getDefinition();
+$settingDefinition = $definitionManger->loadFileloadFile('application', 'theme');
 ```
 
 ####Creating a new definition:
@@ -200,3 +197,8 @@ $settingDefinition->addSettingNode($settingNode);
 ```
 
 ###Step 3 - Save the setting definition:
+
+``` php
+// Save definition to file
+$definitionManger->saveFile($settingDefinition);
+```
