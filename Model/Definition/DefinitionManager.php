@@ -34,7 +34,7 @@ class DefinitionManager
     }
 
 
-    public function setDefinition($definition)
+    public function setDefinition(SettingDefinition $definition)
     {
         $this->definition = $definition;
 
@@ -142,7 +142,7 @@ class DefinitionManager
 
 
 
-/*    public function saveFile()
+    public function saveFile()
     {
         if (!$this->fileExists($fileName, $bundlePath)) {
             throw new \Exception(sprintf('File %s doen\'t exist', $this->file));
@@ -169,7 +169,7 @@ class DefinitionManager
         $fs->dumpFile($this->file, $yaml, 0666);
 
         return $this;
-    }*/
+    }
 
 
     private function unserialize($fileContents)
