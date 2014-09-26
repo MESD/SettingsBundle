@@ -14,8 +14,6 @@ class DefinitionManager
 {
 
     private $bundleStorage;
-    private $definition;
-    private $file;
     private $kernel;
     private $settingsManager;
 
@@ -25,20 +23,6 @@ class DefinitionManager
         $this->bundleStorage   = $bundleStorage;
         $this->kernel          = $kernel;
         $this->settingsManager = $settingsManager;
-    }
-
-
-    public function getDefinition()
-    {
-        return $this->definition;
-    }
-
-
-    public function setDefinition(SettingDefinition $definition)
-    {
-        $this->definition = $definition;
-
-        return $this;
     }
 
 
@@ -74,7 +58,6 @@ class DefinitionManager
     }*/
 
 
-
     public function fileExists($file)
     {
         $fs = new Filesystem();
@@ -83,7 +66,10 @@ class DefinitionManager
 
 
     /**
-     * Load a setting definition file by hive [ and cluster name ]
+     * Load a setting definition file
+     *
+     * Loads a setting definition file by hive [ and cluster name ],
+     * parses the yaml content, and returns a SettingDefinition.
      *
      * @param string $hive
      * @param string $cluster
@@ -93,7 +79,7 @@ class DefinitionManager
     {
         $fileName = $this->buildFileName($hive, $cluster);
 
-        if (!$this->file = $this->locateFile($fileName)) {
+        if (!$file = $this->locateFile($fileName)) {
             throw new \Exception(
                 sprintf(
                     "Settings Definition File '%s' does not exist in any of the following paths you specified for settings storage: %s",
@@ -103,10 +89,10 @@ class DefinitionManager
             );
         }
         $yaml = new Parser();
-        $fileContents = $yaml->parse(file_get_contents($this->file));
-        $this->definition = $this->unserialize($fileContents);
+        $fileContents = $yaml->parse(file_get_contents($file));
+        $settingDefinition = $this->unserialize($fileContents);
 
-        return $this;
+        return $settingDefinition;
     }
 
 
@@ -144,13 +130,17 @@ class DefinitionManager
     }
 
 
-
+    /**
+     * Save a SettingDefinition to a yaml file
+     *
+     * @param SettingDefinition
+     */
     public function saveFile(SettingDefinition $settingDefinition)
     {
-        $fileName = $this->buildFileNameFromDefinition();
+        $fileName = $this->buildFileNameFromDefinition($settingDefinition);
 
-        if (!$fullQualifiedFileName = $this->locateFile($fileName)) {
-            $fullQualifiedFileName = createFile();
+        if (!$file = $this->locateFile($fileName)) {
+            $file = createFile();
         }
 
         $serializedDefinition = $this->serialize($settingDefinition);
@@ -162,12 +152,19 @@ class DefinitionManager
         $yaml = $dumper->dump($serializedDefinition, 5);
 
         $fs = new Filesystem();
-        $fs->dumpFile($this->file, $yaml, 0666);
+        $fs->dumpFile($file, $yaml, 0666);
 
         return $this;
     }
 
 
+    /**
+     * Builds a file name based on a hive [ and cluster ].
+     *
+     * @param string $hive
+     * @param string $cluster
+     * @return string $filename
+     */
     private function buildFileName($hive, $cluster = null)
     {
         $filename = (
@@ -180,28 +177,33 @@ class DefinitionManager
     }
 
 
-    private function buildFileNameFromDefinition()
+    /**
+     * Builds a file name based on setting definition.
+     *
+     * @param SettingDefinition
+     * @return string $filename
+     */
+    private function buildFileNameFromDefinition(SettingDefinition $SettingDefinition)
     {
-        if (!$this->definition instanceof SettingDefinition) {
-            throw new \Exception(
-                sprintf(
-                    "Expected setting definition to be an instance of %s, but found: %s",
-                    'Fc\SettingsBundle\Model\Definition\SettingDefinition',
-                    (is_object($this->definition)) ? get_class($this->definition) : gettype($this->definition)
-                )
-            );
-        }
-
         $filename = (
-            'cluster' == $this->definition->getType() ?
-            $this->definition->getHive() . '-' . $this->definition->getKey() . '.yml' :
-            $this->definition->getKey() . '.yml'
+            'cluster' == $SettingDefinition->getType() ?
+            $SettingDefinition->getHive() . '-' . $SettingDefinition->getKey() . '.yml' :
+            $SettingDefinition->getKey() . '.yml'
         );
 
         return $filename;
     }
 
 
+    /**
+     * Serialize a SettingDefinition
+     *
+     * Serializes a SettingDefinition so it can be saved to
+     * a yaml file.
+     *
+     * @param SettingDefinition
+     * @return array
+     */
     private function serialize(SettingDefinition $settingDefinition)
     {
         $definitionNodes = $settingDefinition->getSettingNodes()->toArray();
@@ -224,10 +226,25 @@ class DefinitionManager
             )
         );
 
+    /*    print "<pre>";
+        print getType($serializedDefinition['theme']['nodes']['bar']['default']);
+        print "\n";
+        print_r($serializedDefinition);
+        exit;*/
+
         return $serializedDefinition;
     }
 
 
+    /**
+     * Unserialize a setting definition yaml
+     *
+     * Serializes a SettingDefinition so it can be saved to
+     * a yaml file.
+     *
+     * @param SettingDefinition
+     * @return array
+     */
     private function unserialize($fileContents)
     {
         $validator = new DefinitionValidator($fileContents, $this->settingsManager);

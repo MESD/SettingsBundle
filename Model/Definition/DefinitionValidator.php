@@ -398,8 +398,8 @@ class DefinitionValidator
         // If default is set
         if (array_key_exists('default', $nodeAttributes)) {
 
-            // Ensure it's type is float
-            if (!is_float($nodeAttributes['default'])) {
+            // Ensure it's type is float or int
+            if (!is_float($nodeAttributes['default']) && !is_int($nodeAttributes['default'])) {
                 throw new \Exception(
                     sprintf(
                         "Settings Definition '%s' has an invalid 'default' element value on node '%s'. Expected type float, found type %s",
