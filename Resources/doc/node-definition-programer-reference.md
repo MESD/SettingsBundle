@@ -199,6 +199,9 @@ $settingDefinition->addSettingNode($settingNode);
 ###Step 3 - Save the setting definition:
 
 ``` php
+// Get Definition Manager Service
+$definitionManger = $this->get('fc_settings.definition_manager');
+
 // Save definition to file
 $definitionManger->saveFile($settingDefinition);
 ```
