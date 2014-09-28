@@ -204,7 +204,7 @@ class DefinitionValidator
         }
 
         // If default is set
-        if (array_key_exists('default', $nodeAttributes)) {
+        if (array_key_exists('default', $nodeAttributes) && !is_null($nodeAttributes['default'])) {
 
             // Is default an array?
             if (!is_array($nodeAttributes['default'])) {
@@ -322,7 +322,8 @@ class DefinitionValidator
     {
         // If default is set, ensure it's type is boolean
         if (array_key_exists('default', $nodeAttributes) &&
-            !is_bool($nodeAttributes['default'])            ) {
+            !is_bool($nodeAttributes['default']) &&
+            !is_null($nodeAttributes['default'])) {
             throw new \Exception(
                 sprintf(
                     "Settings Definition '%s' has an invalid 'default' element value on node '%s'. Expected type boolean, found type %s",
@@ -399,7 +400,9 @@ class DefinitionValidator
         if (array_key_exists('default', $nodeAttributes)) {
 
             // Ensure it's type is float or int
-            if (!is_float($nodeAttributes['default']) && !is_int($nodeAttributes['default'])) {
+            if (!is_float($nodeAttributes['default']) &&
+                !is_int($nodeAttributes['default']) &&
+                !is_null($nodeAttributes['default'])) {
                 throw new \Exception(
                     sprintf(
                         "Settings Definition '%s' has an invalid 'default' element value on node '%s'. Expected type float, found type %s",
@@ -489,7 +492,7 @@ class DefinitionValidator
         if (array_key_exists('default', $nodeAttributes)) {
 
             // Ensure it's type is integer
-            if(!is_int($nodeAttributes['default'])) {
+            if(!is_int($nodeAttributes['default']) && !is_null($nodeAttributes['default'])) {
                 throw new \Exception(
                     sprintf(
                         "Settings Definition '%s' has an invalid 'default' element value on node '%s'. Expected type integer, found type %s",
@@ -560,7 +563,7 @@ class DefinitionValidator
         if (array_key_exists('default', $nodeAttributes)) {
 
             // Ensure it's type is string
-            if(!is_string($nodeAttributes['default'])) {
+            if(!is_string($nodeAttributes['default']) && !is_null($nodeAttributes['default'])) {
                 throw new \Exception(
                     sprintf(
                         "Settings Definition '%s' has an invalid 'default' element value on node '%s'. Expected type string, found type %s",

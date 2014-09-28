@@ -26,36 +26,20 @@ class DefinitionManager
     }
 
 
-/*    public function createFile($fileName, $type, $bundle = null)
+    public function createFile($fileName)
     {
-        if ($this->file = $this->locateFile($fileName)) {
-            throw new \Exception(sprintf('File %s already exists', $this->file));
+        if ($file = $this->locateFile($fileName)) {
+            throw new \Exception(sprintf('File %s already exists', $fileName));
         }
 
         $fs = new Filesystem();
 
-        print $this->file;exit;
-
-        if (!$fs->exists($this->fileDir)) {
-            $fs->mkdir($this->fileDir, 0666);
+        if (!$fs->exists($this->bundleStorage[0])) {
+            $fs->mkdir($this->bundleStorage[0], 0666);
         }
 
-        $rootNode = ('cluster' === $type ? explode("-", $fileName)[1] : explode("-", $fileName)[0]);
-
-        $this->definition = array(
-            $rootNode => array(
-                'type' => $type,
-                'nodes' => array()
-            )
-        );
-
-        $dumper = new Dumper();
-        $yaml = $dumper->dump($this->definition, 5);
-
-        $fs->dumpFile($this->file, $yaml, 0666);
-
-        return $this;
-    }*/
+        return $this->bundleStorage[0] . "/" . $fileName;
+    }
 
 
     public function fileExists($file)
@@ -140,7 +124,7 @@ class DefinitionManager
         $fileName = $this->buildFileNameFromDefinition($settingDefinition);
 
         if (!$file = $this->locateFile($fileName)) {
-            $file = createFile();
+            $file = $this->createFile($fileName);
         }
 
         $serializedDefinition = $this->serialize($settingDefinition);
