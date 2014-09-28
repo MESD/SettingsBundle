@@ -26,6 +26,16 @@ class DefinitionManager
     }
 
 
+    /**
+     * Create file path for new definition file
+     *
+     * Create a fully qualified file path for a new definition file
+     * and ensure that the directory structure is in place. The actual
+     * file will be created in the saveFile() method.
+     *
+     * @param string $fileName
+     * @return string $file
+     */
     public function createFile($fileName)
     {
         if ($file = $this->locateFile($fileName)) {
@@ -42,6 +52,12 @@ class DefinitionManager
     }
 
 
+    /**
+     * Determine if a given file exists
+     *
+     * @param string $file
+     * @return boolean true|false
+     */
     public function fileExists($file)
     {
         $fs = new Filesystem();
@@ -53,11 +69,11 @@ class DefinitionManager
      * Load a setting definition file
      *
      * Loads a setting definition file by hive [ and cluster name ],
-     * parses the yaml content, and returns a SettingDefinition.
+     * parses the yaml content, and returns a SettingDefinition object.
      *
      * @param string $hive
      * @param string $cluster
-     * @return $this
+     * @return SettingDefinition
      */
     public function loadFile($hive, $cluster = null)
     {
@@ -117,7 +133,12 @@ class DefinitionManager
     /**
      * Save a SettingDefinition to a yaml file
      *
+     * Saves a SettingDefinition to a yaml setting file. If the file
+     * does not exist, it will be created. The SettingDefinition
+     * will be validated before being saved.
+     *
      * @param SettingDefinition
+     * @return string $file
      */
     public function saveFile(SettingDefinition $settingDefinition)
     {
@@ -138,7 +159,7 @@ class DefinitionManager
         $fs = new Filesystem();
         $fs->dumpFile($file, $yaml, 0666);
 
-        return $this;
+        return $file;
     }
 
 
@@ -162,7 +183,7 @@ class DefinitionManager
 
 
     /**
-     * Builds a file name based on setting definition.
+     * Builds a file name based on SettingDefinition.
      *
      * @param SettingDefinition
      * @return string $filename
@@ -210,12 +231,6 @@ class DefinitionManager
             )
         );
 
-    /*    print "<pre>";
-        print getType($serializedDefinition['theme']['nodes']['bar']['default']);
-        print "\n";
-        print_r($serializedDefinition);
-        exit;*/
-
         return $serializedDefinition;
     }
 
@@ -223,11 +238,11 @@ class DefinitionManager
     /**
      * Unserialize a setting definition yaml
      *
-     * Serializes a SettingDefinition so it can be saved to
-     * a yaml file.
+     * Unserializes a setting definition yaml file, validates the
+     * content, and converts the data into a SettingDefinition.
      *
-     * @param SettingDefinition
-     * @return array
+     * @param string $fileContents
+     * @return SettingDefinition
      */
     private function unserialize($fileContents)
     {
