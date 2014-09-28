@@ -10,7 +10,7 @@ within your code.
 
 ###Step 1 - Load an existing definition or create a new one
 
-####Loading an existing definition:
+####Option A - Loading an existing definition:
 
 ``` php
 // Get Definition Manager Service
@@ -20,7 +20,7 @@ $definitionManger = $this->get('fc_settings.definition_manager');
 $settingDefinition = $definitionManger->loadFileloadFile('application', 'theme');
 ```
 
-####Creating a new definition:
+####Option B - Creating a new definition:
 
 ``` php
 // Create a new SettingDefiniiton instance
@@ -42,7 +42,7 @@ $settingDefinition->setHive('application');
 **Note:**
 
 > The code examples below assume that *$settingDefinition* is an instance of the
-> `SettingDefinition` object, of which you created with one of the methods above
+> `SettingDefinition` object, of which you created with one of the options above
 > in step 1.
 
 ####Integer Node:
