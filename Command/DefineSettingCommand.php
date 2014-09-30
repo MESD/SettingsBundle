@@ -21,7 +21,7 @@ class DefineSettingCommand extends ContainerAwareCommand
             ->setName('fc:setting:setting:define')
             ->setDescription('Define a setting.')
             ->setDefinition(array(
-                new InputArgument('hive', InputArgument::REQUIRED, 'Hive Name'),
+                new InputArgument('hiveName', InputArgument::REQUIRED, 'Hive Name'),
               ))
             ->setHelp(<<<EOT
 The <info>fc:setting:setting:define</info> command defines a setting:
@@ -37,17 +37,27 @@ EOT
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $hive          = $input->getArgument('hive');
+        $hiveName = $input->getArgument('hiveName');
 
         $settingManager =  $this->getContainer()->get("fc_settings.setting_manager");
 
-        if (!$settingManager->hiveExists($hive)) {
-            $output->writeln(sprintf('<error>Error: Hive %s does not exist</error>', $hive));
+        if (!$hive = $settingManager->hiveExists($hiveName)) {
+            $output->writeln(sprintf('<error>Error: Hive %s does not exist</error>', $hiveName));
+            exit;
+        }
+
+
+        if ($hive->getDefinedAtHive()) {
+            print "Defined at Hive\n";
         }
         else {
+            print "Defined at Cluster\n";
+        }
+
+        /*else {
             $settingManager->createHive($name, $description, $definedAtHive);
             $output->writeln(sprintf('<comment>Created hive <info>%s</info></comment>', $name));
-        }
+        }*/
     }
 
     /**
@@ -55,19 +65,19 @@ EOT
      */
     protected function interact(InputInterface $input, OutputInterface $output)
     {
-        if (!$input->getArgument('hive')) {
-            $hive = $this->getHelper('dialog')->askAndValidate(
+        if (!$input->getArgument('hiveName')) {
+            $hiveName = $this->getHelper('dialog')->askAndValidate(
                 $output,
                 'Please enter the hive name:',
-                function($hive) {
-                    if (empty($hive)) {
+                function($hiveName) {
+                    if (empty($hiveName)) {
                         throw new \Exception('Hive name can not be empty');
                     }
 
-                    return $hive;
+                    return $hiveName;
                 }
             );
-            $input->setArgument('hive', $hive);
+            $input->setArgument('hiveName', $hiveName);
         }
     }
 }
