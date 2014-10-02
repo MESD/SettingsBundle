@@ -52,7 +52,7 @@ EOT
         // If settings are defined at hive, no cluster is needed.
         if ($hive->getDefinedAtHive()) {
             $fileName = $definitionManager
-                ->buildFileName($hive);
+                ->buildFileName($hiveName);
         }
         // If settings are not defined at hive, we must request which cluster.
         else {
@@ -85,9 +85,31 @@ EOT
                 ->buildFileName($hiveName, $clusterName);
         }
 
-        // If definition file does not exist, as user if they want
+
+        // If definition file does not exist, ask user if they want
         // to create the file.
         if (!$definitionManager->locateFile($fileName)) {
+            $output->writeln('<comment>Definition file was not found!</comment>');
+            $dialog = $this->getHelper('dialog');
+            $createFile = $dialog->askConfirmation(
+                $output,
+                '<question>Would you like to create a new definition file? (y/n) :<question>',
+                false
+            );
+
+            if($createFile) {
+                echo "Createing File! \n";
+            }
+            else {
+                $output->writeln(
+                    sprintf(
+                        '<comment>Please create a %s definition file to define settings.</comment>',
+                        $fileName
+                    )
+                );
+                exit;
+            }
+
 
         }
 
