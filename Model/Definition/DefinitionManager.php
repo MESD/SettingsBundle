@@ -166,16 +166,16 @@ class DefinitionManager
     /**
      * Builds a file name based on a hive [ and cluster ].
      *
-     * @param string $hive
-     * @param string $cluster
+     * @param string $hiveName
+     * @param string $clusterName
      * @return string $filename
      */
-    private function buildFileName($hive, $cluster = null)
+    public function buildFileName($hiveName, $clusterName = null)
     {
         $filename = (
-            null !== $cluster ?
-            $hive . '-' . $cluster . '.yml' :
-            $hive . '.yml'
+            null !== $clusterName ?
+            $hiveName . '-' . $clusterName . '.yml' :
+            $hiveName . '.yml'
         );
 
         return $filename;

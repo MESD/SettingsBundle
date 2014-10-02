@@ -39,20 +39,60 @@ EOT
     {
         $hiveName = $input->getArgument('hiveName');
 
-        $settingManager =  $this->getContainer()->get("fc_settings.setting_manager");
+        $settingManager    = $this->getContainer()->get("fc_settings.setting_manager");
+        $definitionManager = $this->getContainer()->get("fc_settings.definition_manager");
 
+        // If Hive doesn't exist, exit now so user can create it
         if (!$hive = $settingManager->hiveExists($hiveName)) {
             $output->writeln(sprintf('<error>Error: Hive %s does not exist</error>', $hiveName));
             exit;
         }
 
 
+        // If settings are defined at hive, no cluster is needed.
         if ($hive->getDefinedAtHive()) {
-            print "Defined at Hive\n";
+            $fileName = $definitionManager
+                ->buildFileName($hive);
         }
+        // If settings are not defined at hive, we must request which cluster.
         else {
-            print "Defined at Cluster\n";
+            $dialog = $this->getHelper('dialog');
+            $clusterName = $dialog->askAndValidate(
+                $output,
+                'Please enter the cluster name:',
+                function($clusterName) {
+                    if (empty($clusterName)) {
+                        throw new \Exception('Cluster name can not be empty');
+                    }
+
+                    return $clusterName;
+                }
+            );
+
+            // If Cluster doesn't exist, exit now so user can create it.
+            if (!$cluster = $settingManager->clusterExists($hiveName, $clusterName)) {
+                $output->writeln(
+                    sprintf(
+                        '<error>Error: Hive %s and Cluster %s combination do not exist</error>',
+                        $hiveName,
+                        $clusterName
+                    )
+                );
+                exit;
+            }
+
+            $fileName = $definitionManager
+                ->buildFileName($hiveName, $clusterName);
         }
+
+        // If definition file does not exist, as user if they want
+        // to create the file.
+        if (!$definitionManager->locateFile($fileName)) {
+
+        }
+
+
+
 
         /*else {
             $settingManager->createHive($name, $description, $definedAtHive);
