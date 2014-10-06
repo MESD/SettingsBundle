@@ -71,13 +71,13 @@ class DefinitionManager
      * Loads a setting definition file by hive [ and cluster name ],
      * parses the yaml content, and returns a SettingDefinition object.
      *
-     * @param string $hive
-     * @param string $cluster
+     * @param string $hiveName
+     * @param string $clusterName
      * @return SettingDefinition
      */
-    public function loadFile($hive, $cluster = null)
+    public function loadFile($hiveName, $clusterName = null)
     {
-        $fileName = $this->buildFileName($hive, $cluster);
+        $fileName = $this->buildFileName($hiveName, $clusterName);
 
         if (!$file = $this->locateFile($fileName)) {
             throw new \Exception(

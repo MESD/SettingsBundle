@@ -8,7 +8,8 @@ use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-use Fc\SettingsBundle\Model\SettingManager;
+use Fc\SettingsBundle\Model\Definition\SettingDefinition;
+use Fc\SettingsBundle\Model\Definition\SettingNode;
 
 class DefineSettingCommand extends ContainerAwareCommand
 {
@@ -37,24 +38,26 @@ EOT
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+        // Get user input
         $hiveName = $input->getArgument('hiveName');
 
+        // Get needed services
         $settingManager    = $this->getContainer()->get("fc_settings.setting_manager");
         $definitionManager = $this->getContainer()->get("fc_settings.definition_manager");
 
-        // If Hive doesn't exist, exit now so user can create it
+        // If the specified Hive doesn't exist, exit now so user can create it
         if (!$hive = $settingManager->hiveExists($hiveName)) {
             $output->writeln(sprintf('<error>Error: Hive %s does not exist</error>', $hiveName));
             exit;
         }
 
-
         // If settings are defined at hive, no cluster is needed.
         if ($hive->getDefinedAtHive()) {
+            $clusterName = null;
             $fileName = $definitionManager
                 ->buildFileName($hiveName);
         }
-        // If settings are not defined at hive, we must request which cluster.
+        // If settings are not defined at hive, we must request a cluster.
         else {
             $dialog = $this->getHelper('dialog');
             $clusterName = $dialog->askAndValidate(
@@ -85,7 +88,6 @@ EOT
                 ->buildFileName($hiveName, $clusterName);
         }
 
-
         // If definition file does not exist, ask user if they want
         // to create the file.
         if (!$definitionManager->locateFile($fileName)) {
@@ -97,8 +99,28 @@ EOT
                 false
             );
 
+            // If user requested the file be created, create a new definition and
+            // save file.
             if($createFile) {
-                echo "Createing File! \n";
+                $settingDefinition = new SettingDefinition();
+                $settingDefinition->setHive($hiveName);
+
+                if ($hive->getDefinedAtHive()) {
+                    $settingDefinition->setKey($hiveName);
+                    $settingDefinition->setType('hive');
+                }
+                else {
+                    $settingDefinition->setKey($clusterName);
+                    $settingDefinition->setType('cluster');
+                }
+
+                $file = $definitionManager->saveFile($settingDefinition);
+                $output->writeln(
+                    sprintf(
+                        '<info>Definition file %s created.</info>',
+                        $file
+                    )
+                );
             }
             else {
                 $output->writeln(
@@ -109,17 +131,31 @@ EOT
                 );
                 exit;
             }
-
-
+        }
+        // Load SettingDefinition from exisiting definition file
+        else {
+            $settingDefinition = $definitionManager->loadFile($hiveName, $clusterName);
         }
 
+        // Request what type of SettingNode to create
+        $dialog = $this->getHelper('dialog');
+        $settingTypes = array('Array', 'Boolean', 'Float', 'Integer', 'String');
+        $settingType = $dialog->select(
+            $output,
+            'Please select setting type (String):',
+            $settingTypes,
+            4
+        );
 
+        // Reuest SettingNode data for specific type of setting
+        $settingNodeMethod = 'RequestNodeData' . $settingTypes[$settingType];
+        $settingNode = $this->$settingNodeMethod($input, $output);
 
+        // Add SettingNode to SettingDefinition
+        $settingDefinition->addSettingNode($settingNode);
 
-        /*else {
-            $settingManager->createHive($name, $description, $definedAtHive);
-            $output->writeln(sprintf('<comment>Created hive <info>%s</info></comment>', $name));
-        }*/
+        // Save SettingDefinition to file
+        $definitionManager->saveFile($settingDefinition);
     }
 
     /**
@@ -142,4 +178,73 @@ EOT
             $input->setArgument('hiveName', $hiveName);
         }
     }
+
+
+    /**
+     * Request data needed for new String Setting Node
+     *
+     * @return SettingNode
+     */
+    protected function RequestNodeDataString(InputInterface $input, OutputInterface $output)
+    {
+
+        $dialog = $this->getHelper('dialog');
+
+        // Request setting node name
+        $nodeName = $dialog->askAndValidate(
+            $output,
+            'Please enter the setting name:',
+            function($nodeName) {
+                if (empty($nodeName)) {
+                    throw new \Exception('Cluster name can not be empty');
+                }
+
+                return $nodeName;
+            }
+        );
+
+        // Request setting node description
+        $nodeDesc = $dialog->ask(
+            $output,
+            'Please enter the setting description [optional]',
+            null
+        );
+
+        // Request setting max length
+        $maxLength = $dialog->askAndValidate(
+            $output,
+            'Please enter the setting values max length:',
+            function($maxLength) {
+                if (empty($maxLength)) {
+                    throw new \Exception('Max length can not be empty');
+                }
+
+                return $maxLength;
+            }
+        );
+
+        // Request defualt value
+        $defaultValue = $dialog->ask(
+            $output,
+            'Please enter the default value [optional]',
+            null
+        );
+
+        // Store setting node data in expected array format
+        $nodeData = array (
+            'nodeName' => $nodeName,
+            'nodeAttributes' => array (
+                'type'        => 'string',
+                'length'      => intval($maxLength),
+                'default'     => $defaultValue,
+                'description' => $nodeDesc
+            )
+        );
+
+        // Define a new setting node using array of node data
+        $settingNode = new SettingNode($nodeData);
+
+        return $settingNode;
+    }
+
 }
