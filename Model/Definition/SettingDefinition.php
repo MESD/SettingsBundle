@@ -65,7 +65,7 @@ class SettingDefinition
      * Add SettingNode
      *
      * @param Fc\SettingsBundle\Model\Definition\SettingNode $settingNode
-     * @return Cluster
+     * @return SettingDefinition
      */
     public function addSettingNode(SettingNode $settingNode)
     {
@@ -107,7 +107,7 @@ class SettingDefinition
      * Remove SettingNode
      *
      * @param Fc\SettingsBundle\Model\Definition\SettingNode $settingNode
-     * @return Cluster
+     * @return SettingDefinition
      */
     public function removeSettingNode(SettingNode $settingNode)
     {
@@ -115,5 +115,25 @@ class SettingDefinition
 
         return $this;
     }
+
+
+    /**
+     * Remove SettingNode by name
+     *
+     * @param string $name
+     * @return SettingDefinition
+     */
+    public function removeSettingNodeByName($name)
+    {
+        $settingNode = $this->getSettingNode($name);
+
+        if ($settingNode) {
+            $this->settingNode->removeElement($settingNode);
+        }
+
+        return $this;
+    }
+
+
 
 }
