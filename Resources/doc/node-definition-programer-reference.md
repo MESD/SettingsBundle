@@ -215,3 +215,21 @@ $definitionManger = $this->get('fc_settings.definition_manager');
 // Save definition to file
 $definitionManger->saveFile($settingDefinition);
 ```
+
+###:Other ways you to manipulate a setting definition:
+
+#####Delete a setting node:
+
+``` php
+// Get Definition Manager Service
+$definitionManger = $this->get('fc_settings.definition_manager');
+
+// Load existing definition by hive and cluster ($hiveName, $clusterName)
+$settingDefinition = $definitionManger->loadFile('application', 'theme');
+
+// Remove a setting node
+$settingDefinition->removeSettingNodeByName($nodeName);
+
+// Save definition to file
+$definitionManger->saveFile($settingDefinition);
+```
