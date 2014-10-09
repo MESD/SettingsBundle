@@ -134,6 +134,4 @@ class SettingDefinition
         return $this;
     }
 
-
-
 }
