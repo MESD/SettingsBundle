@@ -216,7 +216,7 @@ $definitionManger = $this->get('fc_settings.definition_manager');
 $definitionManger->saveFile($settingDefinition);
 ```
 
-###:Other ways you to manipulate a setting definition:
+###Other ways you may want to manipulate setting definitions:
 
 #####Delete a setting node:
 
