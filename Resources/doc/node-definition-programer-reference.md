@@ -5,7 +5,7 @@
 Creating setting node definitions is best done using the `symfony2` console
 commands or by editing the yaml definition files in your text editor. However,
 there may come a time that you need to create or update setting definitions from
-within your code.
+within your code dynamically.
 
 
 ###Step 1 - Load an existing definition or create a new one
@@ -16,9 +16,15 @@ within your code.
 // Get Definition Manager Service
 $definitionManger = $this->get('fc_settings.definition_manager');
 
-// Load exisiting definition by file name ($hive, $cluster)
-$settingDefinition = $definitionManger->loadFileloadFile('application', 'theme');
+// Load existing definition by hive and cluster ($hiveName, $clusterName)
+$settingDefinition = $definitionManger->loadFile('application', 'theme');
 ```
+
+**Note:**
+
+> When loading an existing definition, the cluster is not needed when settings
+> are defined at the hive. In this case you can just leave the `clusterName`
+> parameter off of the `loadFile` method.
 
 ####Option B - Creating a new definition:
 
@@ -26,13 +32,13 @@ $settingDefinition = $definitionManger->loadFileloadFile('application', 'theme')
 // Create a new SettingDefiniiton instance
 $settingDefinition = new \Fc\SettingsBundle\Model\Definition\SettingDefinition();
 
-// Set the defintion type (cluster or hive)
+// Set the definition type (cluster or hive)
 $settingDefinition->setType('cluster');
 
-// Set the defintion key (cluster name on cluster type, hive name on hive type )
+// Set the definition key (cluster name on cluster type, hive name on hive type )
 $settingDefinition->setKey('theme');
 
-// Set the defintion hive
+// Set the definition hive
 $settingDefinition->setHive('application');
 
 ```
