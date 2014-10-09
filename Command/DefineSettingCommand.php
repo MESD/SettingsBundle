@@ -143,20 +143,34 @@ EOT
             $settingDefinition = $definitionManager->loadFile($hiveName, $clusterName);
         }
 
-        // Allow user to define as many settings as needed
+        // Define setting loop - Allow user to define as many settings as needed
+        $count = 1;
         while(true) {
 
+            $output->writeln(array(
+                '',
+                '<comment>Define as many settings as needed. Enter "e" or press <return> when done.</comment>',
+                ''
+            ));
+
             // Request what type of SettingNode to create
-            $settingTypes = array('Array', 'Boolean', 'Float', 'Integer', 'String');
+            $settingTypes = array(
+                'a' => 'Array',
+                'b' => 'Boolean',
+                'f' => 'Float',
+                'i' => 'Integer',
+                's' => 'String',
+                'e' => 'Exit'
+            );
             $settingType = $dialog->select(
                 $output,
                 'Please select setting type (press <return> to stop defining settings): ',
                 $settingTypes,
-                false
+                'e'
             );
 
             // If user is done, break out of loop
-            if(!$settingType) {
+            if('e' === $settingType) {
                 break;
             }
 
@@ -173,6 +187,27 @@ EOT
                 }
             );
 
+            // Check if setting already exisits. If yes, ask user
+            // if they want to overwrite.
+            if ($settingDefinition->getSettingNode($nodeName)) {
+
+                $output->writeln('');
+
+                $overwrite = $dialog->askConfirmation(
+                    $output,
+                    sprintf(
+                        '<comment>Setting %s already exisits. Would you like to overwrite? (y/n):</comment> ',
+                        $nodeName
+                    ),
+                    false
+                );
+
+                // If user doesn't want to overwite, then start again with a new setting.
+                if(!$overwrite) {
+                    continue;
+                }
+            }
+
             // Request setting node description
             $nodeDesc = $dialog->ask(
                 $output,
@@ -180,18 +215,40 @@ EOT
                 null
             );
 
-            // Reuest SettingNode data for specific type of setting
+            // Request setting node attribute data for specific setting type
             $settingNodeMethod = 'RequestNodeData' . $settingTypes[$settingType];
-            $settingNode = $this->$settingNodeMethod($input, $output, $dialog, $nodeName, $nodeDesc);
+            $settingNodeAttributes = $this->$settingNodeMethod($input, $output, $dialog);
+
+            // Add setting description to node attributes
+            $settingNodeAttributes['description'] = $nodeDesc;
+
+            // Store setting node data in expected array format
+            $nodeData = array (
+                'nodeName' => $nodeName,
+                'nodeAttributes' => $settingNodeAttributes
+            );
+
+            // Define a new setting node using array of node data
+            $settingNode = new SettingNode($nodeData);
 
             // Add SettingNode to SettingDefinition
             $settingDefinition->addSettingNode($settingNode);
 
+            $output->writeln(array(
+                '',
+                sprintf(
+                    '<comment>%d setting(s) defined.</comment>',
+                    $count
+                )
+            ));
+
+            $count++;
         }
 
         // Save SettingDefinition to file
         $definitionManager->saveFile($settingDefinition);
     }
+
 
     /**
      * @see Command
@@ -216,6 +273,88 @@ EOT
 
 
     /**
+     * Request data needed for new Array Setting Node
+     *
+     * @param InputInterface
+     * @param OutputInterface
+     * @param DialogHelper
+     * @param string $nodeName
+     * @param string $nodeDesc
+     *
+     * @return SettingNode
+     */
+    protected function RequestNodeDataArray(InputInterface $input, OutputInterface $output, DialogHelper $dialog)
+    {
+
+        // Request prototype for array setting
+        $prototypes = array(
+            'b' => 'Boolean',
+            'f' => 'Float',
+            'i' => 'Integer',
+            's' => 'String'
+        );
+        $settingPrototype = $dialog->select(
+            $output,
+            'Please select a prototype for your array setting (String): ',
+            $prototypes,
+            's'
+        );
+
+        // Request setting data for specific prototype
+        $prototypeMethod = 'RequestNodeData' . $prototypes[$settingPrototype];
+        $prototypeAttributes = $this->$prototypeMethod($input, $output, $dialog, $prototype = true);
+
+        // Array defualt value loop - Allow user to define as many
+        // default values as needed.
+        $defaultValueList = array();
+        $count = 1;
+        while(true) {
+
+            $output->writeln(array(
+                '',
+                sprintf(
+                    '<comment>Define as many %s default values as needed. Press <return> when done.</comment>',
+                    $prototypeAttributes['type']
+                ),
+                ''
+            ));
+
+            $defaultValue = $dialog->ask(
+                $output,
+                'Please enter the default value [optional]: ',
+                null
+            );
+
+            // If user is done, break out of loop
+            if(!$defaultValue) {
+                break;
+            }
+
+            $defaultValueList[] = $defaultValue;
+
+            $output->writeln(array(
+                '',
+                sprintf(
+                    '<comment>%d default value(s) defined.</comment>',
+                    $count
+                )
+            ));
+
+            $count++;
+        }
+
+        // Store setting node data in expected array format
+        $nodeAttributes = array (
+            'type'      => 'array',
+            'prototype' => $prototypeAttributes,
+            'default'   => $defaultValueList
+        );
+
+        return $nodeAttributes;
+    }
+
+
+    /**
      * Request data needed for new Boolean Setting Node
      *
      * @param InputInterface
@@ -226,32 +365,26 @@ EOT
      *
      * @return SettingNode
      */
-    protected function RequestNodeDataBoolean(InputInterface $input, OutputInterface $output, DialogHelper $dialog, $nodeName, $nodeDesc)
+    protected function RequestNodeDataBoolean(InputInterface $input, OutputInterface $output, DialogHelper $dialog, $prototype = false)
     {
-
-        // Request default value
-        $defaultTypes = array('false', 'true');
-        $defaultValue = $dialog->select(
-            $output,
-            'Please select setting default value (False): ',
-            $defaultTypes,
-            false
-        );
-
         // Store setting node data in expected array format
-        $nodeData = array (
-            'nodeName' => $nodeName,
-            'nodeAttributes' => array (
-                'type'        => 'boolean',
-                'default'     => $defaultValue,
-                'description' => $nodeDesc
-            )
+        $nodeAttributes = array (
+            'type'        => 'boolean'
         );
 
-        // Define a new setting node using array of node data
-        $settingNode = new SettingNode($nodeData);
+        // Request default value if this is not an array prototype
+        if (false === $prototype) {
+            $defaultTypes = array('false', 'true');
+            $defaultValue = $dialog->select(
+                $output,
+                'Please select setting default value (False): ',
+                $defaultTypes,
+                false
+            );
+            $nodeAttributes['default'] = filter_var($defaultValue, FILTER_VALIDATE_BOOLEAN);
+        }
 
-        return $settingNode;
+        return $nodeAttributes;
     }
 
 
@@ -266,7 +399,7 @@ EOT
      *
      * @return SettingNode
      */
-    protected function RequestNodeDataFloat(InputInterface $input, OutputInterface $output, DialogHelper $dialog, $nodeName, $nodeDesc)
+    protected function RequestNodeDataFloat(InputInterface $input, OutputInterface $output, DialogHelper $dialog, $prototype = false)
     {
         // Request setting digits
         $digits = $dialog->askAndValidate(
@@ -300,29 +433,24 @@ EOT
             }
         );
 
-        // Request default value
-        $defaultValue = $dialog->ask(
-            $output,
-            'Please enter the default value [optional]: ',
-            null
-        );
-
         // Store setting node data in expected array format
-        $nodeData = array (
-            'nodeName' => $nodeName,
-            'nodeAttributes' => array (
-                'type'        => 'float',
-                'digits'      => intval($digits),
-                'precision'   => intval($precision),
-                'default'     => floatval($defaultValue),
-                'description' => $nodeDesc
-            )
+        $nodeAttributes = array (
+            'type'      => 'float',
+            'digits'    => intval($digits),
+            'precision' => intval($precision)
         );
 
-        // Define a new setting node using array of node data
-        $settingNode = new SettingNode($nodeData);
+        // Request default value if this is not an array prototype
+        if (false === $prototype) {
+            $defaultValue = $dialog->ask(
+                $output,
+                'Please enter the default value [optional]: ',
+                null
+            );
+            $nodeAttributes['default'] = floatval($defaultValue);
+        }
 
-        return $settingNode;
+        return $nodeAttributes;
     }
 
 
@@ -337,7 +465,7 @@ EOT
      *
      * @return SettingNode
      */
-    protected function RequestNodeDataInteger(InputInterface $input, OutputInterface $output, DialogHelper $dialog, $nodeName, $nodeDesc)
+    protected function RequestNodeDataInteger(InputInterface $input, OutputInterface $output, DialogHelper $dialog, $prototype = false)
     {
         // Request setting digits
         $digits = $dialog->askAndValidate(
@@ -355,28 +483,23 @@ EOT
             }
         );
 
-        // Request default value
-        $defaultValue = $dialog->ask(
-            $output,
-            'Please enter the default value [optional]: ',
-            null
-        );
-
         // Store setting node data in expected array format
-        $nodeData = array (
-            'nodeName' => $nodeName,
-            'nodeAttributes' => array (
-                'type'        => 'integer',
-                'digits'      => intval($digits),
-                'default'     => intval($defaultValue),
-                'description' => $nodeDesc
-            )
+        $nodeAttributes = array (
+            'type'      => 'integer',
+            'digits'    => intval($digits)
         );
 
-        // Define a new setting node using array of node data
-        $settingNode = new SettingNode($nodeData);
+        // Request default value if this is not an array prototype
+        if (false === $prototype) {
+            $defaultValue = $dialog->ask(
+                $output,
+                'Please enter the default value [optional]: ',
+                null
+            );
+            $nodeAttributes['default'] = intval($defaultValue);
+        }
 
-        return $settingNode;
+        return $nodeAttributes;
     }
 
 
@@ -391,7 +514,7 @@ EOT
      *
      * @return SettingNode
      */
-    protected function RequestNodeDataString(InputInterface $input, OutputInterface $output, DialogHelper $dialog, $nodeName, $nodeDesc)
+    protected function RequestNodeDataString(InputInterface $input, OutputInterface $output, DialogHelper $dialog, $prototype = false)
     {
         // Request setting max length
         $maxLength = $dialog->askAndValidate(
@@ -409,28 +532,23 @@ EOT
             }
         );
 
-        // Request default value
-        $defaultValue = $dialog->ask(
-            $output,
-            'Please enter the default value [optional]: ',
-            null
-        );
-
         // Store setting node data in expected array format
-        $nodeData = array (
-            'nodeName' => $nodeName,
-            'nodeAttributes' => array (
-                'type'        => 'string',
-                'length'      => intval($maxLength),
-                'default'     => $defaultValue,
-                'description' => $nodeDesc
-            )
+        $nodeAttributes = array (
+            'type'    => 'string',
+            'length'  => intval($maxLength)
         );
 
-        // Define a new setting node using array of node data
-        $settingNode = new SettingNode($nodeData);
+        // Request default value if this is not an array prototype
+        if (false === $prototype) {
+            $defaultValue = $dialog->ask(
+                $output,
+                'Please enter the default value [optional]: ',
+                null
+            );
+            $nodeAttributes['default'] = $defaultValue;
+        }
 
-        return $settingNode;
+        return $nodeAttributes;
     }
 
 }
