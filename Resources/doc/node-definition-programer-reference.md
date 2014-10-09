@@ -144,13 +144,11 @@ $settingDefinition->addSettingNode($settingNode);
 
 ####Array Node:
 
-**Note:**
-
-> Array nodes hold an array of values for each setting. Each array node needs
-> a `prototype` definition which defines the type of data contained within the
-> array. The prototype must be one of the base types (integer, float, string,
-> or boolean) and the prototype definition must contain all of the attributes
-> the base type requires. i.e. String type requires a 'length' attribute.
+Array nodes hold an array of values for each setting. Each array node needs
+a `prototype` definition which defines the type of data contained within the
+array. The prototype must be one of the base types (integer, float, string,
+or boolean) and the prototype definition must contain all of the attributes
+the base type requires. i.e. String type requires a 'length' attribute.
 
 #####Array Node (Integer prototype example):
 
