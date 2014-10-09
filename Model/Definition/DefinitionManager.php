@@ -45,7 +45,7 @@ class DefinitionManager
         $fs = new Filesystem();
 
         if (!$fs->exists($this->bundleStorage[0])) {
-            $fs->mkdir($this->bundleStorage[0], 0666);
+            $fs->mkdir($this->bundleStorage[0], 0776);
         }
 
         return $this->bundleStorage[0] . "/" . $fileName;
