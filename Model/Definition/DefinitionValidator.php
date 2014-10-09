@@ -219,7 +219,7 @@ class DefinitionValidator
             }
 
             // Check each item in default array
-            foreach ($nodeAttributes['default'] as $key => $val ) {
+            foreach ($nodeAttributes['default'] as $k => $val ) {
 
                 $type = ('double' == gettype($val) ? 'float' : gettype($val));
 
@@ -227,9 +227,10 @@ class DefinitionValidator
                 if ($type != $nodeAttributes['prototype']['type']) {
                     throw new \Exception(
                         sprintf(
-                            "Settings Definition '%s' has an invalid 'default' element value on array node '%s'. Expected type '%s', found type %s",
+                            "Settings Definition '%s' has an invalid 'default' element value on array node '%s', key %u. Expected type '%s', found type %s",
                             $key,
                             $nodeName,
+                            $k,
                             $nodeAttributes['prototype']['type'],
                             $type
                         )
@@ -242,9 +243,10 @@ class DefinitionValidator
                     strlen($val) > $nodeAttributes['prototype']['length']) {
                     throw new \Exception(
                         sprintf(
-                            "Settings Definition '%s' has an invalid 'default' element value on array node '%s'. Expected %u chars max, found %u chars",
+                            "Settings Definition '%s' has an invalid 'default' element value on array node '%s', key %u. Expected %u chars max, found %u chars",
                             $key,
                             $nodeName,
+                            $k,
                             $nodeAttributes['prototype']['length'],
                             strlen($val)
                         )
@@ -255,9 +257,10 @@ class DefinitionValidator
                     strlen($val) > $nodeAttributes['prototype']['digits']) {
                     throw new \Exception(
                         sprintf(
-                            "Settings Definition '%s' has an invalid 'default' element value on array node '%s'. Expected %u digits max, found %u digits",
+                            "Settings Definition '%s' has an invalid 'default' element value on array node '%s', key %u. Expected %u digits max, found %u digits",
                             $key,
                             $nodeName,
+                            $k,
                             $nodeAttributes['prototype']['digits'],
                             strlen($val)
                         )
@@ -272,9 +275,10 @@ class DefinitionValidator
                     if (strlen($floatParts[0]) > $nodeAttributes['prototype']['digits']) {
                         throw new \Exception(
                             sprintf(
-                                "Settings Definition '%s' has an invalid 'default' element value on array node '%s'. Expected %u digits max, found %u digits",
+                                "Settings Definition '%s' has an invalid 'default' element value on array node '%s', key %u. Expected %u digits max, found %u digits",
                                 $key,
                                 $nodeName,
+                                $k,
                                 $nodeAttributes['prototype']['digits'],
                                 strlen($floatParts[0])
                             )
@@ -286,9 +290,10 @@ class DefinitionValidator
                         if (strlen($floatParts[1]) > $nodeAttributes['prototype']['precision']) {
                             throw new \Exception(
                                 sprintf(
-                                    "Settings Definition '%s' has an invalid 'default' element value on array node '%s'. Expected %u precision digits max, found %u precision digits",
+                                    "Settings Definition '%s' has an invalid 'default' element value on array node '%s', key %u. Expected %u precision digits max, found %u precision digits",
                                     $key,
                                     $nodeName,
+                                    $k,
                                     $nodeAttributes['prototype']['precision'],
                                     strlen($floatParts[1])
                                 )
