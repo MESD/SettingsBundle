@@ -51,6 +51,12 @@ $settingDefinition->setHive('application');
 > `SettingDefinition` object, of which you created with one of the options above
 > in step 1.
 
+**Warning:**
+
+> If you load an existing setting definition and define a new setting node,
+> that has the same name as an existing setting node, you will overwrite the
+> existing node when you save the definition.
+
 ####Integer Node:
 
 ``` php
