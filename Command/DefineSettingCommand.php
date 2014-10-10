@@ -246,7 +246,14 @@ EOT
         }
 
         // Save SettingDefinition to file
-        $definitionManager->saveFile($settingDefinition);
+        $file = $definitionManager->saveFile($settingDefinition);
+
+        $output->writeln(array(
+            '',
+            sprintf('<info>Setting definition saved to file %s</info>', $file),
+            ''
+        ));
+
     }
 
 
