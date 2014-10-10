@@ -8,7 +8,7 @@
 ###Install with composer:
 
 
-Add the repository to your projects composer.json
+Add the repository and bundle to your projects composer.json
 
 ``` json
 "repositories": [
@@ -19,17 +19,50 @@ Add the repository to your projects composer.json
 ]
 ```
 
-Add the bundle to your projects composer.json
-
 ``` json
 "require": {
     "fc/settings-bundle": "dev-master"
 }
 ```
 
+Install with composer
+
+``` bash
+$ composer update fc/settings-bundle
+```
+
+
+###Enable the bundle:
+
+``` php
+// app/AppKernel.php
+
+public function registerBundles()
+{
+    $bundles = array(
+        // ...
+        new Fc\SettingsBundle\FcSettingsBundle(),
+    );
+}
+```
+
+
 ###Configure the bundle:
 
+Now that the bundle is installed and enabled, you need to create a configuration entry
+in your applications config.yml.
 
+
+``` yaml
+# app/config/config.yml
+
+# SettingsBundle Configuration
+fc_settings:
+    #auto_map: false            # true/false - Scan all registered bundles for setting definitions
+    #bundles:                   # Scan the following list of bundles for setting definitions
+    #    AcmeDemoBundle:
+    #    AcmeFooBundle:
+```
 
 
 ##Using FcSettingsBundle
