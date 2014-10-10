@@ -10,7 +10,7 @@
     tbw
 
 
-##Using Fc/SettingsBundle
+##Using FcSettingsBundle
 
 ###Understanding the terminology:
 
@@ -35,8 +35,14 @@ define the settings at the `hive` level and store each user's settings in a clus
 ###Create a new Hive:
 
 Since hives are application wide, you may only need a single `hive`. If your application
-is rather large and can be broken down into sub-applications, you might create a `hive`
-for each sub-application.
+is rather large and can be broken down into sub-applications or modules, you might create
+a `hive` for each sub-application or module.
+
+**Note:**
+
+> By default hives are created with the settings defined at the cluster level.
+> If youd like your settings defined at the hive level, add the `--definedAtHive`
+> option to the create hive command.
 
 
 ``` bash
@@ -70,7 +76,6 @@ Each `setting` has four descriptors: `name`, `description`, `type`, and `format`
 * **Format**: The string length, number of digits, number of decimals, etc.
 
 
-
 ###Setting Definition Files:
 
 When locating your setting definition files, the file locatoer will check the kernel root
@@ -80,3 +85,13 @@ register in your kernel, in the order they have been registered. Therefore, you 
 a setting definition file from a bundle, by placing a copy in your kernel root. Be aware that
 if you create the same a definition file in mutiple bundles, the system will only load the
 first definition file it locates.
+
+
+###Next Steps
+
+Now that you have completed the basic installation and configuration of the FcSettingsBundle,
+you are ready to learn about more advanced features and usages of the bundle.
+
+The following documents are available:
+
+- [Setting Definitions - Programmers Reference](node-definition-programer-reference.md)
