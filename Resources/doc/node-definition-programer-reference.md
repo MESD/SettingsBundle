@@ -2,10 +2,10 @@
 
 ###Overview
 
-Creating setting node definitions is best done using the `symfony2` console
-commands or by editing the yaml definition files in your text editor. However,
-there may come a time that you need to create or update setting definitions from
-within your code dynamically.
+Creating setting definitions is best done using the `symfony2` console or by
+editing the yaml definition files in your text editor. However, there may come
+a time that you need to create or update setting definitions from within your
+application dynamically.
 
 
 ###Step 1 - Load an existing definition or create a new one
@@ -178,7 +178,7 @@ $settingNode = new \Fc\SettingsBundle\Model\Definition\SettingNode($nodeData);
 $settingDefinition->addSettingNode($settingNode);
 ```
 
-#####Array Node (String prototype example):
+#####Array Node (Float prototype example):
 
 ``` php
 // Define array containing setting node data
@@ -186,14 +186,15 @@ $nodeData = array (
     'nodeName' => 'fuz',
     'nodeAttributes' => array (
         'type'        => 'array',
-        'prototype' => array(           // array - Prototype definition
-            'type'   => 'string',
-            'length' => i               // int - Max length of string prototype
+        'prototype' => array(      // array - Prototype definition
+            'type'   => 'float',
+            'digits'      => i,    // int - Number of digits in float setting
+            'precision'   => i,    // int - Number of digits after decimal in float setting
         ),
-        'default' => array(             // array - Array of default string values [optional]
-            0 => 'foo',
-            1 => 'bar',
-            2 => 'baz'
+        'default' => array(        // array - Array of default string values [optional]
+            0 => 10.50
+            1 => 12.70
+            2 => 11.75
         ),
         'description' => 'fuz setting array' // string - Setting Description [optional]
     )
@@ -233,3 +234,9 @@ $settingDefinition->removeSettingNodeByName($nodeName);
 // Save definition to file
 $definitionManger->saveFile($settingDefinition);
 ```
+
+**Note:**
+
+> When loading an existing definition, the cluster is not needed when settings
+> are defined at the hive. In this case you can just leave the `clusterName`
+> parameter off of the `loadFile` method.
