@@ -23,7 +23,7 @@ a `hive` as an application wide classification, and a `cluster` as sub-classific
 
 You have two options when it comes to choosing the level at which your settings are
 defined. `hive` or `cluster`. You must decide on the level when you define a new
-`hive`. The default behavior is define settings at the `cluster` level. Normally
+`hive`. The default behavior is to define settings at the `cluster` level. Normally
 you'll want to define what settings exist, and their default values, at the cluster
 level because each cluster has different types of settings. However, in some
 situations each cluster will store the same type of settings, but with different
@@ -64,15 +64,15 @@ $ app/console fc:setting:cluster:create
 
 ###Setting Definitions:
 
-After you have created your `cluster`, or `hive` if defining at the `hive` level,
-you can define your new settings. You can think of a setting definition as a *map*
+After you have created your `cluster` (or `hive` if defining at the `hive` level)
+you can define your new settings. You can think of a setting definition as a map
 that describes the available settings in the specific cluster (or hive), and helps
 the system validate the setting data your application attempts to store. While the
 settings themselves are stored in a database for fast and easy retrieval, the
 definitions are stored as yaml files. By default the setting definition files are
-stored in the `app/Resources/settings/` directory. The setting definition files
-can also be stored within a bundle by placing the files in the bundles
-`Resources/settings/` directory.
+stored in the kernel root `app/Resources/settings/` directory. The setting
+definition files can also be stored within a bundle by placing the files in the
+bundles `Resources/settings/` directory.
 
 **Note:**
 > The `app/Resources/settings/` directory will always be checked first, allowing
@@ -119,7 +119,6 @@ Each `setting` has five descriptors:
 ``` bash
 $ app/console fc:setting:setting:define
 ```
-
 
 
 ###Next Steps
