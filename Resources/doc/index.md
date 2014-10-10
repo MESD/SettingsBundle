@@ -1,4 +1,4 @@
-##Install Fc/SettingsBundle
+##Install FcSettingsBundle
 
 ###Dependencies:
 
@@ -7,7 +7,29 @@
 
 ###Install with composer:
 
-    tbw
+
+Add the repository to your projects composer.json
+
+``` json
+"repositories": [
+    {
+        "type" : "vcs",
+        "url" : "https://github.com/functionalchaos/SettingsBundle.git"
+    }
+]
+```
+
+Add the bundle to your projects composer.json
+
+``` json
+"require": {
+    "fc/settings-bundle": "dev-master"
+}
+```
+
+###Configure the bundle:
+
+
 
 
 ##Using FcSettingsBundle
