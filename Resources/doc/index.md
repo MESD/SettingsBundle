@@ -80,7 +80,7 @@ and `default`.
 **Note:**
 
 > An array setting holds an array of values for each setting. Each array setting
-> needs `prototype` definition which defines the type of data contained within the
+> needs a `prototype` definition which defines the type of data contained within the
 > array. The prototype must be one of the base types (integer, float, string, or
 > boolean) and the prototype definition must contain all of the format items the
 > base type requires. i.e. String type requires a 'length' attribute, etc.
