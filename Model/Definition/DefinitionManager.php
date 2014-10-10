@@ -27,6 +27,43 @@ class DefinitionManager
 
 
     /**
+     * Builds a file name based on a hive [ and cluster ].
+     *
+     * @param string $hiveName
+     * @param string $clusterName
+     * @return string $filename
+     */
+    public function buildFileName($hiveName, $clusterName = null)
+    {
+        $filename = (
+            null !== $clusterName ?
+            $hiveName . '-' . $clusterName . '.yml' :
+            $hiveName . '.yml'
+        );
+
+        return $filename;
+    }
+
+
+    /**
+     * Builds a file name based on SettingDefinition.
+     *
+     * @param SettingDefinition
+     * @return string $filename
+     */
+    private function buildFileNameFromDefinition(SettingDefinition $SettingDefinition)
+    {
+        $filename = (
+            'cluster' == $SettingDefinition->getType() ?
+            $SettingDefinition->getHive() . '-' . $SettingDefinition->getKey() . '.yml' :
+            $SettingDefinition->getKey() . '.yml'
+        );
+
+        return $filename;
+    }
+
+
+    /**
      * Create file path for new definition file
      *
      * Create a fully qualified file path for a new definition file
@@ -160,43 +197,6 @@ class DefinitionManager
         $fs->dumpFile($file, $yaml, 0666);
 
         return $file;
-    }
-
-
-    /**
-     * Builds a file name based on a hive [ and cluster ].
-     *
-     * @param string $hiveName
-     * @param string $clusterName
-     * @return string $filename
-     */
-    public function buildFileName($hiveName, $clusterName = null)
-    {
-        $filename = (
-            null !== $clusterName ?
-            $hiveName . '-' . $clusterName . '.yml' :
-            $hiveName . '.yml'
-        );
-
-        return $filename;
-    }
-
-
-    /**
-     * Builds a file name based on SettingDefinition.
-     *
-     * @param SettingDefinition
-     * @return string $filename
-     */
-    private function buildFileNameFromDefinition(SettingDefinition $SettingDefinition)
-    {
-        $filename = (
-            'cluster' == $SettingDefinition->getType() ?
-            $SettingDefinition->getHive() . '-' . $SettingDefinition->getKey() . '.yml' :
-            $SettingDefinition->getKey() . '.yml'
-        );
-
-        return $filename;
     }
 
 
