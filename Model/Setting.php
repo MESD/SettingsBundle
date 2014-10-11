@@ -3,7 +3,7 @@
 namespace Fc\SettingsBundle\Model;
 
 
-abstract class Setting {
+class Setting {
 
     private $name;
     private $value;

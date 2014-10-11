@@ -151,4 +151,5 @@ class SettingManager {
 
         return false;
     }
+
 }
