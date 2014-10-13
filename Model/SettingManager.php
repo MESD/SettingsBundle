@@ -9,7 +9,6 @@ class SettingManager {
 
     private $objectManager;
 
-
     public function __construct($objectManager)
     {
          $this->objectManager = $objectManager->getEntityManager();

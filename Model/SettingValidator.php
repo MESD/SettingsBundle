@@ -24,7 +24,7 @@ class SettingValidator {
     /**
      * Validate a setting
      *
-     * @return boolean true|false
+     * @return array (valid, validationMessage)
      */
     public function validate()
     {
@@ -37,21 +37,17 @@ class SettingValidator {
     /**
      * Validate a string setting
      *
-     * @return boolean true|false
+     * @return array (valid, validationMessage)
      */
     protected function validateString()
     {
-/*        print_r($this->setting);
-        print "\n\n";
-        print_r($this->settingNode);*/
-
         $this->valid = true;
 
         // Check type
         if('string' != getType($this->setting->getValue())) {
             $this->valid = false;
             $this->validationMessage = sprintf(
-                "    Expected Type 'string', but found type '%s'.\n",
+                "  Expected Type 'string', but found type '%s'.\n",
                 getType($this->setting->getValue())
             );
         }
@@ -60,7 +56,7 @@ class SettingValidator {
         if(strlen($this->setting->getValue()) > $this->settingNode->getFormat()->getLength()) {
             $this->valid = false;
             $this->validationMessage .= sprintf(
-                "    Expected max length '%s', but found string length '%s' \n",
+                "  Expected max length '%s', but found string length '%s' \n",
                 $this->settingNode->getFormat()->getLength(),
                 strlen($this->setting->getValue())
             );

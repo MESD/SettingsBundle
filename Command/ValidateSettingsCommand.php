@@ -170,7 +170,6 @@ EOT
     protected function validateCluster(
         Cluster $cluster,
         SettingDefinition $settingDefinition,
-
         InputInterface $input,
         OutputInterface $output,
         DialogHelper $dialog,
@@ -191,7 +190,8 @@ EOT
 
         // First check each setting node in definition
         // and determine existence/compliance within cluster
-        foreach ($settingDefinition->getSettingNodes() as $settingKey => $setting ) {
+        foreach ($settingDefinition->getSettingNodes() as $settingKey => $settingNode ) {
+
 
             // INSERT Operation - Check for existence in cluster;
             if(!array_key_exists($settingKey, $clusterSettings)) {
@@ -212,25 +212,25 @@ EOT
                     $confirmInsert = true;
                 }
 
-                // Insert into cluster if requested
+                // Insert into cluster, if confirmed
                 if (true === $confirmInsert) {
                     $newSetting = new Setting();
                     $newSetting->setName($settingKey);
-                    $newSetting->setValue($setting->getDefault());
+                    $newSetting->setValue($settingNode->getDefault());
                     $cluster->addSetting($newSetting);
                 }
             }
 
+
             // UPDATE Operation - Check for definition
             // compliance in cluster
             else {
-
                 $settingValidator = new SettingValidator(
-                    $setting,
+                    $settingNode,
                     $cluster->getSetting($settingKey)
                 );
 
-                // Validate exising cluster setting
+                // Validate existing cluster setting
                 $validationResults = $settingValidator->validate();
 
                 // If invalid, alert user
@@ -238,7 +238,7 @@ EOT
 
                     $output->writeln(array(
                         sprintf(
-                            "  <comment>Cluster '%s' has an invalid setting '%s':</comment>",
+                            "<comment>Cluster '%s' has an invalid setting '%s':</comment>",
                             $cluster->getName(),
                             $settingKey
                         ),
@@ -250,7 +250,7 @@ EOT
                         $confirmUpdate = $dialog->askConfirmation(
                             $output,
                             sprintf(
-                                "Would you like to update the setting? This can be destructive to value. (y/n): ",
+                                "Would you like to update the setting? This can be destructive to the setting value. (y/n): ",
                                 $cluster->getName(),
                                 $settingKey
                             ),
@@ -263,14 +263,14 @@ EOT
 
                     exit;
 
-                    // Insert into cluster if requested
+                    // Update setting in cluster, if confirmed
                     if (true === $confirmUpdate) {
 
                         $settingValue = $cluster->getSetting($settingKey)->getValue();
 
                         $newSetting = new Setting();
                         $newSetting->setName($settingKey);
-                        $newSetting->setValue($setting->getDefault());
+                        $newSetting->setValue($settingNode->getDefault());
                         $cluster->addSetting($newSetting);
                     }
 
