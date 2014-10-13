@@ -11,6 +11,7 @@ use Symfony\Component\Console\Helper\DialogHelper;
 use Fc\SettingsBundle\Entity\Cluster;
 use Fc\SettingsBundle\Model\Definition\SettingDefinition;
 use Fc\SettingsBundle\Model\Setting;
+use Fc\SettingsBundle\Model\SettingValidator;
 
 
 class ValidateSettingsCommand extends ContainerAwareCommand
@@ -123,8 +124,8 @@ EOT
                 // Loop through clusters
                 foreach ($clusterCollection as $clusterKey => $cluster) {
                     $cluster = $this->validateCluster($cluster, $settingDefinition, $input, $output, $dialog, $confirmation);
+                    $entityManager->persist($cluster);
                 }
-
             }
 
             // Settings are defined at cluster, each using
@@ -141,6 +142,8 @@ EOT
                 ));
 
             }
+
+            $entityManager->flush();
 
         }
 
@@ -164,36 +167,127 @@ EOT
      * @param array $confirmation
      * @return Cluster
      */
-    protected function validateCluster($cluster, $settingDefinition, $input, $output, $dialog, $confirmation)
+    protected function validateCluster(
+        Cluster $cluster,
+        SettingDefinition $settingDefinition,
+
+        InputInterface $input,
+        OutputInterface $output,
+        DialogHelper $dialog,
+        $confirmation
+    )
     {
 
-        $clusterExisitngSettings = $cluster->getSettingArray();
-        print_r($cluster->getSettingArray());
+        print "Before: \n"; print_r($cluster->getSettingArray());
 
-        if(!is_array($clusterExisitngSettings)) {
-            $clusterExisitngSettings = array();
+        // Create array of current cluster settings to
+        // check against, and to track what has not been
+        // verified by the final stage (Settings to Delete).
+        $clusterSettings = $cluster->getSettingArray();
+
+        if(!is_array($clusterSettings)) {
+            $clusterSettings = array();
         }
 
         // First check each setting node in definition
-        // and determine exisitance/compliance in cluster
+        // and determine existence/compliance within cluster
         foreach ($settingDefinition->getSettingNodes() as $settingKey => $setting ) {
 
-            // Check for existance;
-            if(!array_key_exists($settingKey, $clusterExisitngSettings)) {
-                $newSetting = new Setting();
-                $newSetting->setName($settingKey);
-                $newSetting->setValue($setting->getDefault());
-                $cluster->addSetting($newSetting);
+            // INSERT Operation - Check for existence in cluster;
+            if(!array_key_exists($settingKey, $clusterSettings)) {
+
+                // Did the user request the 'force' option ?
+                if (!$confirmation['forceInsert'] && !$confirmation['forceAll']) {
+                    $confirmInsert = $dialog->askConfirmation(
+                        $output,
+                        sprintf(
+                            "Cluster '%s' is missing setting '%s'. Would you like to insert the setting? (y/n): ",
+                            $cluster->getName(),
+                            $settingKey
+                        ),
+                        false
+                    );
+                }
+                else {
+                    $confirmInsert = true;
+                }
+
+                // Insert into cluster if requested
+                if (true === $confirmInsert) {
+                    $newSetting = new Setting();
+                    $newSetting->setName($settingKey);
+                    $newSetting->setValue($setting->getDefault());
+                    $cluster->addSetting($newSetting);
+                }
             }
+
+            // UPDATE Operation - Check for definition
+            // compliance in cluster
+            else {
+
+                $settingValidator = new SettingValidator(
+                    $setting,
+                    $cluster->getSetting($settingKey)
+                );
+
+                // Validate exising cluster setting
+                $validationResults = $settingValidator->validate();
+
+                // If invalid, alert user
+                if (!$validationResults['valid']) {
+
+                    $output->writeln(array(
+                        sprintf(
+                            "  <comment>Cluster '%s' has an invalid setting '%s':</comment>",
+                            $cluster->getName(),
+                            $settingKey
+                        ),
+                        '<comment>'.$validationResults['validationMessage'].'</comment>'
+                    ));
+
+                    // Did the user request the 'force' option ?
+                    if (!$confirmation['forceUpdate'] && !$confirmation['forceAll']) {
+                        $confirmUpdate = $dialog->askConfirmation(
+                            $output,
+                            sprintf(
+                                "Would you like to update the setting? This can be destructive to value. (y/n): ",
+                                $cluster->getName(),
+                                $settingKey
+                            ),
+                            false
+                        );
+                    }
+                    else {
+                        $confirmUpdate = true;
+                    }
+
+                    exit;
+
+                    // Insert into cluster if requested
+                    if (true === $confirmUpdate) {
+
+                        $settingValue = $cluster->getSetting($settingKey)->getValue();
+
+                        $newSetting = new Setting();
+                        $newSetting->setName($settingKey);
+                        $newSetting->setValue($setting->getDefault());
+                        $cluster->addSetting($newSetting);
+                    }
+
+                }
+
+                // Remove setting from clusterSettings
+                // tracking array
+                unset($clusterSettings[$settingKey]);
+            }
+
 
         }
 
-        print_r($cluster->getSettingArray());
+        print "After: \n"; print_r($cluster->getSettingArray());
 
-        //var_dump($cluster->getSettingArray());
-        //print_r($settingDefinition->getSettingNodes());
-        exit;
-
+        //exit;
+        return $cluster;
     }
 
 }
