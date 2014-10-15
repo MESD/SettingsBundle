@@ -7,10 +7,22 @@ class Setting {
 
     private $name;
     private $value;
+    private $definition;
 
 
-    public function __construct()
+    public function __construct($definition = null)
     {
+        $this->definition = $definition;
+    }
+
+
+    public function getDefinition()
+    {
+        if (null === $definition) {
+            throw new \Exception('The definition was not requested and therefore is not avialable');
+        }
+
+        return $this->definition;
     }
 
 

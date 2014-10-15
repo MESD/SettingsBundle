@@ -4,14 +4,63 @@ namespace Fc\SettingsBundle\Model;
 
 use Fc\SettingsBundle\Entity\Hive;
 use Fc\SettingsBundle\Entity\Cluster;
+use Fc\SettingsBundle\Model\Definition\DefinitionManager;
 
 class SettingManager {
 
+    private $definitionManager;
     private $objectManager;
 
     public function __construct($objectManager)
     {
          $this->objectManager = $objectManager->getEntityManager();
+    }
+
+
+    /**
+     * Set Definition Manager Service
+     *
+     * Setter Injection for the DefinitionManager service.
+     * Would prefer to use constructor injection, but since
+     * the DefinitionManager also uses the SettingManager
+     * circular references would be created.
+     *
+     * @param DefinitionManager
+     */
+    public function setDefinitionManager(DefinitionManager $definitionManager)
+    {
+        $this->definitionManager = $definitionManager;
+    }
+
+
+    /**
+     * Check if cluster exisits
+     *
+     * Determines if the specified cluster exisits
+     * in the database.
+     *
+     * @param string $hiveName
+     * @param string $clusterName
+     * @return Cluster|false
+     */
+    public function clusterExists($hiveName, $clusterName)
+    {
+        $hive = $this->hiveExists($hiveName);
+
+        if(!$hive) {
+            return false;
+        }
+
+        $cluster =
+            $this->objectManager
+                ->getRepository('FcSettingsBundle:Cluster')
+                ->findOneBy(array(
+                    'name' => strtoupper($clusterName),
+                    'hive' => $hive
+                    )
+                );
+
+        return $cluster;
     }
 
 
@@ -80,37 +129,6 @@ class SettingManager {
 
 
     /**
-     * Check if cluster exisits
-     *
-     * Determines if the specified cluster exisits
-     * in the database.
-     *
-     * @param string $hiveName
-     * @param string $clusterName
-     * @return Cluster|false
-     */
-    public function clusterExists($hiveName, $clusterName)
-    {
-        $hive = $this->hiveExists($hiveName);
-
-        if(!$hive) {
-            return false;
-        }
-
-        $cluster =
-            $this->objectManager
-                ->getRepository('FcSettingsBundle:Cluster')
-                ->findOneBy(array(
-                    'name' => strtoupper($clusterName),
-                    'hive' => $hive
-                    )
-                );
-
-        return $cluster;
-    }
-
-
-    /**
      * Check if hive exisits
      *
      * Determines if the specified hive exisits
@@ -149,6 +167,101 @@ class SettingManager {
         }
 
         return false;
+    }
+
+
+    /**
+     * Load cluster
+     *
+     * Load the specified cluster or throw Exception.
+     *
+     * @param string $hiveName
+     * @param string $clusterName
+     * @return Cluster|Exception
+     */
+    public function loadCluster($hiveName, $clusterName)
+    {
+        $cluster = $this->clusterExists($hiveName, $clusterName);
+
+        if (!$cluster) {
+            throw new \Exception(sprintf('The hive %s and Cluster %s combination do not exist', $hiveName, $clusterName));
+        }
+
+        return $cluster;
+    }
+
+
+    /**
+     * Load setting
+     *
+     * Load the specified setting or throw Exception.
+     *
+     * @param string $hiveName
+     * @param string $clusterName
+     * @param string $settingName
+     * @return Setting|Exception
+     */
+    public function loadSetting($hiveName, $clusterName, $settingName, $loadDefinition = false)
+    {
+        $cluster = $this->clusterExists($hiveName, $clusterName);
+
+        if (!$cluster) {
+            throw new \Exception(sprintf('The hive %s and Cluster %s combination do not exist', $hiveName, $clusterName));
+        }
+
+        $setting = $cluster->getSetting($settingName);
+
+        if (!$setting) {
+            throw new \Exception(sprintf(
+                'Setting %s does not exist in the Hive %s and Cluster %s combination',
+                $settingName,
+                $hiveName,
+                $clusterName
+            ));
+        }
+
+        $this->definitionManager->loadFile($hiveName, $clusterName);
+
+        return $setting;
+    }
+
+
+    /**
+     * Save setting
+     *
+     * Save the specified setting or throw Exception.
+     *
+     * @param string $hiveName
+     * @param string $clusterName
+     * @param string $settingName
+     * @return Setting|Exception
+     */
+    public function saveSetting($hiveName, $clusterName, $settingName, $settingValue)
+    {
+        $cluster = $this->clusterExists($hiveName, $clusterName);
+
+        if (!$cluster) {
+            throw new \Exception(sprintf('The hive %s and Cluster %s combination do not exist', $hiveName, $clusterName));
+        }
+
+        $setting = $cluster->getSetting($settingName);
+
+        if (!$setting) {
+            throw new \Exception(sprintf(
+                'Setting %s does not exist in the Hive %s and Cluster %s combination',
+                $settingName,
+                $hiveName,
+                $clusterName
+            ));
+        }
+
+        $setting->setValue($settingValue);
+        $cluster->addSetting($setting);
+
+        $this->objectManager->persist($cluster);
+        $this->objectManager->flush();
+
+        return $setting;
     }
 
 }

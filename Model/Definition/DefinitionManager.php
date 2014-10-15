@@ -9,20 +9,23 @@ use Symfony\Component\Yaml\Parser;
 use Fc\SettingsBundle\Model\Definition\DefinitionValidator;
 use Fc\SettingsBundle\Model\Definition\SettingDefinition;
 use Fc\SettingsBundle\Model\Definition\SettingNode;
+use Fc\SettingsBundle\Model\SettingManager;
 
 class DefinitionManager
 {
 
     private $bundleStorage;
     private $kernel;
-    private $settingsManager;
+    private $settingManager;
 
 
-    public function __construct ($bundleStorage, $kernel, $settingsManager)
+    public function __construct ($bundleStorage, $kernel, SettingManager $settingManager)
     {
         $this->bundleStorage   = $bundleStorage;
         $this->kernel          = $kernel;
-        $this->settingsManager = $settingsManager;
+        $this->settingManager = $settingManager;
+
+        $this->settingManager->setDefinitionManager($this);
     }
 
 
@@ -187,7 +190,7 @@ class DefinitionManager
 
         $serializedDefinition = $this->serialize($settingDefinition);
 
-        $validator = new DefinitionValidator($serializedDefinition, $this->settingsManager);
+        $validator = new DefinitionValidator($serializedDefinition, $this->settingManager);
         $validator->validate();
 
         $dumper = new Dumper();
@@ -246,7 +249,7 @@ class DefinitionManager
      */
     private function unserialize($fileContents)
     {
-        $validator = new DefinitionValidator($fileContents, $this->settingsManager);
+        $validator = new DefinitionValidator($fileContents, $this->settingManager);
         $validator->validate();
 
         $key = array_keys($fileContents)[0];

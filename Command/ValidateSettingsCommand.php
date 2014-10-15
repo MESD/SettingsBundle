@@ -263,7 +263,7 @@ EOT
 
                     exit;
 
-                    // Update setting in cluster, if confirmed
+                    // Update cluster setting, if confirmed
                     if (true === $confirmUpdate) {
 
                         $settingValue = $cluster->getSetting($settingKey)->getValue();
