@@ -65,12 +65,12 @@ fc_settings:
 ```
 
 
-##Using FcSettingsBundle
+##Understanding FcSettingsBundle terminology:
 
-###Understanding the terminology:
+###Hives and Clusters
 
 Related settings are stored in an entity called a `cluster`. Each `cluster` is attached
-to a parrent entity called a `hive`. You can create as many hives and clusters as you
+to a parent entity called a `hive`. You can create as many hives and clusters as you
 need. You should think of a `hive` as an application wide classification, and a `cluster`
 as a sub-classification.
 
@@ -88,6 +88,21 @@ settings, but with different (or potentially different) values. In this situatio
 you would want to define the settings at the `hive` level and store each user's
 settings in a cluster.
 
+
+###Setting Definition vs Settings:
+
+After you have created your `cluster` (or `hive` if defining at the `hive` level)
+you can define your new settings. You can think of a setting definition as a map
+that describes the available settings in the specific cluster (or hive), and helps
+the system validate the setting data your application attempts to store. While the
+settings themselves are stored in a database for fast and easy retrieval, the
+definitions are stored as yaml files. By default the setting definition files are
+stored in the kernel root `app/Resources/settings/` directory. The setting
+definition files can also be stored within a bundle by placing the files in the
+bundles `Resources/settings/` directory.
+
+
+##Using FcSettingsBundle
 
 ###Create a new Hive with the console:
 
@@ -118,17 +133,9 @@ $ app/console fc:setting:cluster:create
 ```
 
 
-###Setting Definitions:
+###Create a Setting Definition:
 
-After you have created your `cluster` (or `hive` if defining at the `hive` level)
-you can define your new settings. You can think of a setting definition as a map
-that describes the available settings in the specific cluster (or hive), and helps
-the system validate the setting data your application attempts to store. While the
-settings themselves are stored in a database for fast and easy retrieval, the
-definitions are stored as yaml files. By default the setting definition files are
-stored in the kernel root `app/Resources/settings/` directory. The setting
-definition files can also be stored within a bundle by placing the files in the
-bundles `Resources/settings/` directory.
+Now you're ready to start defining your settings.
 
 **Note:**
 > The `app/Resources/settings/` directory will always be checked first, allowing
@@ -137,7 +144,7 @@ bundles `Resources/settings/` directory.
 When locating your setting definition files, the file locater will check the kernel
 root `app/Resources/settings/` directory first, then in each bundle you specified
 under *bundles* in the fc_settings section of your config.yml. If you set *auto_map*
-to true, they system will check all bundles registered in your kernel, in the order
+to true, the system will check all bundles registered in your kernel, in the order
 they have been registered. Therefore, you can override a setting definition file
 from a bundle by placing a copy in your kernel root `app/Resources/settings/`
 directory.
