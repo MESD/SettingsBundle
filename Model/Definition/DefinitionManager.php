@@ -23,9 +23,7 @@ class DefinitionManager
     {
         $this->bundleStorage   = $bundleStorage;
         $this->kernel          = $kernel;
-        $this->settingManager = $settingManager;
-
-        $this->settingManager->setDefinitionManager($this);
+        $this->settingManager  = $settingManager;
     }
 
 
@@ -38,8 +36,10 @@ class DefinitionManager
      */
     public function buildFileName($hiveName, $clusterName = null)
     {
+        $hive = $this->settingManager->loadHive($hiveName);
+
         $filename = (
-            null !== $clusterName ?
+            false === $hive->getDefinedAtHive() ?
             $hiveName . '-' . $clusterName . '.yml' :
             $hiveName . '.yml'
         );

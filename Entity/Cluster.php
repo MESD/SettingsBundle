@@ -127,7 +127,7 @@ class Cluster
      */
     public function getSetting($settingName)
     {
-        if ($this->setting[$settingName]) {
+        if (array_key_exists($settingName, $this->setting)) {
             $setting = new Setting();
             $setting->setName($settingName);
             $setting->setValue($this->setting[$settingName]);

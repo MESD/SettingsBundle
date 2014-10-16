@@ -2,27 +2,78 @@
 
 namespace Fc\SettingsBundle\Model;
 
+use Fc\SettingsBundle\Model\Definition\SettingNode;
 
 class Setting {
 
     private $name;
     private $value;
-    private $definition;
+    private $nodeDefinition;
 
 
-    public function __construct($definition = null)
+    /**
+     * Get SettingNode definition
+     *
+     * Get the SettingNode definition, if it has been
+     * loaded. See isNodeDefinitionLoaded() below for
+     * more details.
+     *
+     * @return SettingNode|null
+     */
+    public function getNodeDefinition()
     {
-        $this->definition = $definition;
+        if (!$this->isNodeDefinitionLoaded()) {
+            throw new \Exception(
+                'The SettingNode definition has not been loaded. Please see the documentation ' .
+                'for the SettingManager loadSetting() method.'
+            );
+        }
+
+        return $this->nodeDefinition;
     }
 
 
-    public function getDefinition()
+    /**
+     * Set SettingNode definition
+     *
+     * Set the setting node definition.
+     *
+     * @param Fc\SettingsBundle\Model\Setting $setting
+     * @return SettingNode
+     */
+    public function setNodeDefinition(SettingNode $settingNode)
     {
-        if (null === $definition) {
-            throw new \Exception('The definition was not requested and therefore is not avialable');
-        }
+        $this->nodeDefinition = $settingNode;
 
-        return $this->definition;
+        return $this;
+    }
+
+
+    /**
+     * Is SettingNode definition loaded
+     *
+     * Determine if the SettingNode definition has been loaded.
+     *
+     * The SettingManager loadSetting() method has an optional
+     * fourth parameter which can be set to true if you would like
+     * the SettingNode definition to be loaded when the setting is
+     * retrieved. This requires loading, parsing, and validating
+     * the SettingDefinition Yaml file, which will take a little
+     * extra time. Since the SettingNode definition data is not
+     * commonly needed when retrieving settings and their values,
+     * the default behavior is to not loaded the SettingNode
+     * definition.
+     *
+     * @return boolean true|false
+     */
+    public function isNodeDefinitionLoaded()
+    {
+        if ($this->nodeDefinition instanceof SettingNode) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
 

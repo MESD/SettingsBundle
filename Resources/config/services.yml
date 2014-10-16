@@ -5,7 +5,7 @@ parameters:
 services:
     fc_settings.setting_manager:
         class: %fc_settings.setting_manager.class%
-        arguments: [@doctrine]
+        arguments: [@service_container]
 
     fc_settings.definition_manager:
         class: %fc_settings.definition_manager.class%

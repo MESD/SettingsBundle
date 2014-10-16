@@ -2,34 +2,20 @@
 
 namespace Fc\SettingsBundle\Model;
 
+use Symfony\Component\DependencyInjection\ContainerInterface as Container;
 use Fc\SettingsBundle\Entity\Hive;
 use Fc\SettingsBundle\Entity\Cluster;
 use Fc\SettingsBundle\Model\Definition\DefinitionManager;
+use Fc\SettingsBundle\Model\SettingValidator;
 
 class SettingManager {
 
-    private $definitionManager;
-    private $objectManager;
+    private $container;
 
-    public function __construct($objectManager)
+
+    public function __construct(Container $container)
     {
-         $this->objectManager = $objectManager->getEntityManager();
-    }
-
-
-    /**
-     * Set Definition Manager Service
-     *
-     * Setter Injection for the DefinitionManager service.
-     * Would prefer to use constructor injection, but since
-     * the DefinitionManager also uses the SettingManager
-     * circular references would be created.
-     *
-     * @param DefinitionManager
-     */
-    public function setDefinitionManager(DefinitionManager $definitionManager)
-    {
-        $this->definitionManager = $definitionManager;
+        $this->container = $container;
     }
 
 
@@ -52,7 +38,7 @@ class SettingManager {
         }
 
         $cluster =
-            $this->objectManager
+            $this->container->get('doctrine.orm.entity_manager')
                 ->getRepository('FcSettingsBundle:Cluster')
                 ->findOneBy(array(
                     'name' => strtoupper($clusterName),
@@ -92,8 +78,8 @@ class SettingManager {
         $cluster->setName($clusterName);
         $cluster->setDescription($description);
         $cluster->setHive($hive);
-        $this->objectManager->persist($cluster);
-        $this->objectManager->flush();
+        $this->container->get('doctrine.orm.entity_manager')->persist($cluster);
+        $this->container->get('doctrine.orm.entity_manager')->flush();
 
         return $cluster;
     }
@@ -121,8 +107,8 @@ class SettingManager {
         $hive->setName($hiveName);
         $hive->setDescription($description);
         $hive->setDefinedAtHive($definedAtHive);
-        $this->objectManager->persist($hive);
-        $this->objectManager->flush();
+        $this->container->get('doctrine.orm.entity_manager')->persist($hive);
+        $this->container->get('doctrine.orm.entity_manager')->flush();
 
         return $hive;
     }
@@ -139,7 +125,7 @@ class SettingManager {
      */
     public function hiveExists($hiveName)
     {
-        $hive = $this->objectManager
+        $hive = $this->container->get('doctrine.orm.entity_manager')
             ->getRepository('FcSettingsBundle:Hive')
             ->findOneBy(array('name' => strtoupper($hiveName)));
 
@@ -158,7 +144,7 @@ class SettingManager {
      */
     public function hiveHasClusters($hiveName)
     {
-        $hive = $this->objectManager
+        $hive = $this->container->get('doctrine.orm.entity_manager')
             ->getRepository('FcSettingsBundle:Hive')
             ->findOneBy(array('name' => strtoupper($hiveName)));
 
@@ -192,35 +178,63 @@ class SettingManager {
 
 
     /**
+     * Load hive
+     *
+     * Load the specified hive or throw Exception.
+     *
+     * @param string $hiveName
+     * @return Hive|Exception
+     */
+    public function loadHive($hiveName)
+    {
+        $hive = $this->hiveExists($hiveName);
+
+        if (!$hive) {
+            throw new \Exception(sprintf('The hive %s does not exist', $hiveName));
+        }
+
+        return $hive;
+    }
+
+
+    /**
      * Load setting
      *
      * Load the specified setting or throw Exception.
      *
+     * Optionaly, load the SettingNode definition and set it within the
+     * setting object. This operation requires extra resources and time,
+     * and therefore should only be done when the SettingNode definition
+     * is needed.
+     *
      * @param string $hiveName
      * @param string $clusterName
      * @param string $settingName
+     * @param boolean $loadDefinition (optional)
      * @return Setting|Exception
      */
     public function loadSetting($hiveName, $clusterName, $settingName, $loadDefinition = false)
     {
-        $cluster = $this->clusterExists($hiveName, $clusterName);
-
-        if (!$cluster) {
-            throw new \Exception(sprintf('The hive %s and Cluster %s combination do not exist', $hiveName, $clusterName));
-        }
+        $cluster = $this->loadCluster($hiveName, $clusterName);
 
         $setting = $cluster->getSetting($settingName);
 
         if (!$setting) {
             throw new \Exception(sprintf(
-                'Setting %s does not exist in the Hive %s and Cluster %s combination',
+                "Setting '%s' does not exist in the Hive '%s' and Cluster '%s' combination",
                 $settingName,
                 $hiveName,
                 $clusterName
             ));
         }
 
-        $this->definitionManager->loadFile($hiveName, $clusterName);
+        if (true === $loadDefinition) {
+            $settingDefinition = $this->container->get('fc_settings.definition_manager')->loadFile($hiveName, $clusterName);
+
+            $setting->setNodeDefinition(
+                $settingDefinition->getSettingNode($settingName)
+            );
+        }
 
         return $setting;
     }
@@ -234,32 +248,50 @@ class SettingManager {
      * @param string $hiveName
      * @param string $clusterName
      * @param string $settingName
+     * @param mixed $settingValue
      * @return Setting|Exception
      */
     public function saveSetting($hiveName, $clusterName, $settingName, $settingValue)
     {
-        $cluster = $this->clusterExists($hiveName, $clusterName);
-
-        if (!$cluster) {
-            throw new \Exception(sprintf('The hive %s and Cluster %s combination do not exist', $hiveName, $clusterName));
-        }
+        $cluster = $this->loadCluster($hiveName, $clusterName);
 
         $setting = $cluster->getSetting($settingName);
 
         if (!$setting) {
             throw new \Exception(sprintf(
-                'Setting %s does not exist in the Hive %s and Cluster %s combination',
+                "Setting '%s' does not exist in the Hive '%s' and Cluster '%s' combination",
                 $settingName,
                 $hiveName,
                 $clusterName
             ));
         }
 
+        $settingDefinition = $this->container->get('fc_settings.definition_manager')->loadFile($hiveName, $clusterName);
+
         $setting->setValue($settingValue);
+
+
+        $settingValidator = new SettingValidator(
+            $settingDefinition->getSettingNode($settingName),
+            $setting
+        );
+
+        $validationResults = $settingValidator->validate();
+
+        if (!$validationResults['valid']) {
+            throw new \Exception(sprintf(
+                "Hive '%s' - Cluster '%s' have invalid setting '%s': \n %s",
+                $hiveName,
+                $clusterName,
+                $setting->getName(),
+                $validationResults['validationMessage']
+            ));
+        }
+
         $cluster->addSetting($setting);
 
-        $this->objectManager->persist($cluster);
-        $this->objectManager->flush();
+        $this->container->get('doctrine.orm.entity_manager')->persist($cluster);
+        $this->container->get('doctrine.orm.entity_manager')->flush();
 
         return $setting;
     }

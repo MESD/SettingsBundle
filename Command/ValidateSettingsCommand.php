@@ -225,12 +225,13 @@ EOT
             // UPDATE Operation - Check for definition
             // compliance in cluster
             else {
+
+                // Validate existing cluster setting
                 $settingValidator = new SettingValidator(
                     $settingNode,
                     $cluster->getSetting($settingKey)
                 );
 
-                // Validate existing cluster setting
                 $validationResults = $settingValidator->validate();
 
                 // If invalid, alert user
