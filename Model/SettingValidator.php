@@ -22,6 +22,21 @@ class SettingValidator {
 
 
     /**
+     * Sanitize a setting
+     *
+     * Clean the setting so that it matches it's SettingNode
+     * definition.
+     *
+     * @return SettingNode
+     */
+    public function sanitize()
+    {
+
+        return $this->setting;
+    }
+
+
+    /**
      * Validate a setting
      *
      * @return array (valid, validationMessage)

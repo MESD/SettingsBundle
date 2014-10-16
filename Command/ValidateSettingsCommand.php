@@ -262,17 +262,10 @@ EOT
                         $confirmUpdate = true;
                     }
 
-                    exit;
-
                     // Update cluster setting, if confirmed
                     if (true === $confirmUpdate) {
-
-                        $settingValue = $cluster->getSetting($settingKey)->getValue();
-
-                        $newSetting = new Setting();
-                        $newSetting->setName($settingKey);
-                        $newSetting->setValue($settingNode->getDefault());
-                        $cluster->addSetting($newSetting);
+                        $setting = $settingValidator->sanitize();
+                        $cluster->addSetting($setting);
                     }
 
                 }
@@ -283,11 +276,15 @@ EOT
             }
 
 
+            // DELETE Operation - Check for cluster seetings
+            // to remove
+
+
         }
 
         print "After: \n"; print_r($cluster->getSettingArray());
 
-        //exit;
+        exit;
         return $cluster;
     }
 

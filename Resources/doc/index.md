@@ -69,9 +69,10 @@ fc_settings:
 
 ###Understanding the terminology:
 
-Related settings are stored in a group called a `cluster`. Each `cluster` is attached
-to a `hive`. You can create as many hives and clusters as you need. You should think of
-a `hive` as an application wide classification, and a `cluster` as sub-classification.
+Related settings are stored in an entity called a `cluster`. Each `cluster` is attached
+to a parrent entity called a `hive`. You can create as many hives and clusters as you
+need. You should think of a `hive` as an application wide classification, and a `cluster`
+as a sub-classification.
 
 
 ###Choosing the Definition Level - Hive or Cluster?:

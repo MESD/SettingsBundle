@@ -240,6 +240,7 @@ class SettingManager {
     }
 
 
+
     /**
      * Save setting
      *
