@@ -40,8 +40,8 @@ class DefinitionManager
 
         $filename = (
             false === $hive->getDefinedAtHive() ?
-            $hiveName . '-' . $clusterName . '.yml' :
-            $hiveName . '.yml'
+            strtolower($hiveName) . '-' . strtolower($clusterName) . '.yml' :
+            strtolower($hiveName) . '.yml'
         );
 
         return $filename;
@@ -58,8 +58,8 @@ class DefinitionManager
     {
         $filename = (
             'cluster' == $SettingDefinition->getType() ?
-            $SettingDefinition->getHive() . '-' . $SettingDefinition->getKey() . '.yml' :
-            $SettingDefinition->getKey() . '.yml'
+            strtolower($SettingDefinition->getHive()) . '-' . strtolower($SettingDefinition->getKey()) . '.yml' :
+            strtolower($SettingDefinition->getKey()) . '.yml'
         );
 
         return $filename;

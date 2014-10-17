@@ -141,6 +141,23 @@ EOT
                     ''
                 ));
 
+                // Load Hive's cluster collection
+                $clusterCollection = $hive->getCluster();
+
+                // Loop through clusters
+                foreach ($clusterCollection as $clusterKey => $cluster) {
+
+                    // Load clusters's SettingDefinition
+                    $settingDefinition = $definitionManager
+                        ->loadFile(
+                            $hive->getName(),
+                            $cluster->getName()
+                        );
+
+                    $cluster = $this->validateCluster($cluster, $settingDefinition, $input, $output, $dialog, $confirmation);
+                    $entityManager->persist($cluster);
+                }
+
             }
 
             $entityManager->flush();
@@ -177,8 +194,6 @@ EOT
     )
     {
 
-        print "Before: \n"; print_r($cluster->getSettingArray());
-
         // Create array of current cluster settings to
         // check against, and to track what has not been
         // verified by the final stage (Settings to Delete).
@@ -193,15 +208,24 @@ EOT
         foreach ($settingDefinition->getSettingNodes() as $settingKey => $settingNode ) {
 
 
-            // INSERT Operation - Check for existence in cluster;
+            // INSERT Operation - Check for existence in cluster
             if(!array_key_exists($settingKey, $clusterSettings)) {
+
+                 $output->writeln(array(
+                    sprintf(
+                        "<comment>Cluster '%s' is missing setting '%s':</comment>",
+                        $cluster->getName(),
+                        $settingKey
+                    ),
+                    ''
+                ));
 
                 // Did the user request the 'force' option ?
                 if (!$confirmation['forceInsert'] && !$confirmation['forceAll']) {
                     $confirmInsert = $dialog->askConfirmation(
                         $output,
                         sprintf(
-                            "Cluster '%s' is missing setting '%s'. Would you like to insert the setting? (y/n): ",
+                            "Would you like to insert the setting? (y/n): ",
                             $cluster->getName(),
                             $settingKey
                         ),
@@ -218,12 +242,20 @@ EOT
                     $newSetting->setName($settingKey);
                     $newSetting->setValue($settingNode->getDefault());
                     $cluster->addSetting($newSetting);
+
+                    $output->writeln(array(
+                        sprintf(
+                            "<info>Cluster '%s' setting '%s' has been inserted!</info>",
+                            $cluster->getName(),
+                            $settingKey
+                        ),
+                        ''
+                    ));
                 }
             }
 
 
-            // UPDATE Operation - Check for definition
-            // compliance in cluster
+            // UPDATE Operation - Check for definition compliance in cluster
             else {
 
                 // Validate existing cluster setting
@@ -266,6 +298,15 @@ EOT
                     if (true === $confirmUpdate) {
                         $setting = $settingValidator->sanitize();
                         $cluster->addSetting($setting);
+
+                        $output->writeln(array(
+                            sprintf(
+                                "<info>Cluster '%s' setting '%s' has been updated!</info>",
+                                $cluster->getName(),
+                                $settingKey
+                            ),
+                            ''
+                        ));
                     }
 
                 }
@@ -274,17 +315,62 @@ EOT
                 // tracking array
                 unset($clusterSettings[$settingKey]);
             }
-
-
-            // DELETE Operation - Check for cluster seetings
-            // to remove
-
-
         }
 
-        print "After: \n"; print_r($cluster->getSettingArray());
 
-        exit;
+        // DELETE Operation - Check for cluster settings to remove
+        if (0 < count($clusterSettings)) {
+            foreach ($clusterSettings as $settingKey => $setting) {
+
+                $output->writeln(array(
+                    sprintf(
+                        "<comment>Cluster '%s' has an invalid setting '%s' which does not exist in the definition</comment>",
+                        $cluster->getName(),
+                        $settingKey
+                    ),
+                    ''
+                ));
+
+                // Did the user request the 'force' option ?
+                if (!$confirmation['forceDelete'] && !$confirmation['forceAll']) {
+                    $confirmDelete = $dialog->askConfirmation(
+                        $output,
+                        sprintf(
+                            "Would you like to delete the setting from the cluster? This is destructive to the setting value. (y/n): ",
+                            $cluster->getName(),
+                            $settingKey
+                        ),
+                        false
+                    );
+                }
+                else {
+                    $confirmDelete = true;
+                }
+
+                // Update cluster setting, if confirmed
+                if (true === $confirmDelete) {
+                    $cluster->removeSetting(
+                        $cluster->getSetting($settingKey)
+                    );
+
+                    $output->writeln(array(
+                        sprintf(
+                            "<info>Cluster '%s' setting '%s' has been deleted!</info>",
+                            $cluster->getName(),
+                            $settingKey
+                        ),
+                        ''
+                    ));
+                }
+
+            }
+        }
+
+        // Persist updated cluster
+        $entityManager = $this->getContainer()->get("doctrine.orm.entity_manager");
+        $entityManager->persist($cluster);
+        $entityManager->flush();
+
         return $cluster;
     }
 
