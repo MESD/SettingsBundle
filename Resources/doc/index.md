@@ -138,8 +138,9 @@ $ app/console fc:setting:cluster:create
 ###Create a Setting Definition:
 
 Now you're ready to start defining your settings. You can define your settings by
-creating a Yaml file for the cluster (or hive) or by using the symfony consle
-command. First lets look at where the Yaml files are located and what
+creating a Yaml file for the cluster (or hive) or by using the symfony console
+command. First lets look at where the Yaml files are located and what makes up
+a setting definition node.
 
 When locating your setting definition files, the file locater will check the kernel
 root `app/Resources/settings/` directory first, then in each bundle you specified
