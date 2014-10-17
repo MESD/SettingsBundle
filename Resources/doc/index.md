@@ -162,7 +162,7 @@ directory.
 > only load the first definition file it locates.
 
 
-Each `setting` has five descriptors:
+Each `SettingNode` has five descriptors:
 
 * **Name**: The setting *key* and how you'll lookup the setting.
 * **Description**: A terse explanation of the setting [optional].
