@@ -89,17 +89,19 @@ you would want to define the settings at the `hive` level and store each user's
 settings in a cluster.
 
 
-###Setting Definition vs Settings:
+###Setting Definitions:
 
 After you have created your `cluster` (or `hive` if defining at the `hive` level)
 you can define your new settings. You can think of a setting definition as a map
-that describes the available settings in the specific cluster (or hive), and helps
+that describes the available settings in the specific cluster. The definition helps
 the system validate the setting data your application attempts to store. While the
 settings themselves are stored in a database for fast and easy retrieval, the
-definitions are stored as yaml files. By default the setting definition files are
-stored in the kernel root `app/Resources/settings/` directory. The setting
-definition files can also be stored within a bundle by placing the files in the
-bundles `Resources/settings/` directory.
+definitions are stored as yaml files. Yaml files are easy to read and configure,
+meaning you can create or update setting definitions using your text editor. There
+is also a console command to define new settings if you prefer. By default the
+setting definition files are stored in the kernel root `app/Resources/settings/`
+directory. The setting definition files can also be stored within a bundle by
+placing the files in the bundles `Resources/settings/` directory.
 
 
 ##Using FcSettingsBundle
@@ -135,11 +137,9 @@ $ app/console fc:setting:cluster:create
 
 ###Create a Setting Definition:
 
-Now you're ready to start defining your settings.
-
-**Note:**
-> The `app/Resources/settings/` directory will always be checked first, allowing
-> you to override a vendor bundle's setting definition if needed.
+Now you're ready to start defining your settings. You can define your settings by
+creating a Yaml file for the cluster (or hive) or by using the symfony consle
+command. First lets look at where the Yaml files are located and what
 
 When locating your setting definition files, the file locater will check the kernel
 root `app/Resources/settings/` directory first, then in each bundle you specified
@@ -148,6 +148,12 @@ to true, the system will check all bundles registered in your kernel, in the ord
 they have been registered. Therefore, you can override a setting definition file
 from a bundle by placing a copy in your kernel root `app/Resources/settings/`
 directory.
+
+
+**Note:**
+> The `app/Resources/settings/` directory will always be checked first, allowing
+> you to override a vendor bundle's setting definition if needed.
+
 
 **Warning:**
 
