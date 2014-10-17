@@ -194,7 +194,7 @@ $ app/console fc:setting:setting:define
 
 **Note:**
 
-> When you store a setting in the database it is automatically validated based on the
+> When you store a setting in the database it is automatically validated with the
 > current setting definition.
 
 ``` php
