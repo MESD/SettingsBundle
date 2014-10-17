@@ -190,6 +190,56 @@ Each `SettingNode` has five descriptors:
 $ app/console fc:setting:setting:define
 ```
 
+###Store a setting in the database:
+
+**Note:**
+
+> When you store a setting in the database it is automatically validated based on the
+> current setting definition.
+
+``` php
+
+// Get Setting Manager Service
+$settingManger = $this->get('fc_settings.setting_manager');
+
+// Store Setting
+$settingManger->saveSetting('application', 'theme', 'background', 'blue');
+
+```
+
+###Retrieve a setting from the database:
+
+``` php
+// Get Setting Manager Service
+$settingManger = $this->get('fc_settings.setting_manager');
+
+// Retrieve Setting
+$setting = $settingManger->loadSetting('application', 'theme', 'font-size');
+
+```
+
+
+The Setting Manager `loadSetting` method has an optional fourth parameter which
+triggers whether the setting node definition is loaded as well. The setting node
+definition contains the description, default value, and format data. Pass a
+boolean `true` value to the fourth parameter to load the definition.
+
+
+``` php
+// Get Setting Manager Service
+$settingManger = $this->get('fc_settings.setting_manager');
+
+// Retrieve Setting
+$setting = $settingManger->loadSetting('application', 'theme', 'font-size', true);
+
+```
+
+**Note:**
+
+> Loading the setting node definition requires loading information from the yaml
+> setting definition file. This operation takes a little extra time. Therefore,
+> the default behavior is to only load the setting name and value.
+
 
 ###Next Steps
 
