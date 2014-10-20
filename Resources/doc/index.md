@@ -182,7 +182,7 @@ $ app/console mesd:setting:setting:define
 ```
 
 
-###Setting Validation - Insert setting *base* data or validate changes:
+###Setting Validation - Insert setting base data or validate changes:
 
 When you define a new setting or change an existing setting definition, you need to
 ensure the clusters in the database are in-sync. Run the setting validation command
