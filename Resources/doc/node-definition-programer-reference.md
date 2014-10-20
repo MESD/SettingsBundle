@@ -14,7 +14,7 @@ application dynamically.
 
 ``` php
 // Get Definition Manager Service
-$definitionManger = $this->get('fc_settings.definition_manager');
+$definitionManger = $this->get('mesd_settings.definition_manager');
 
 // Load existing definition by hive and cluster ($hiveName, $clusterName)
 $settingDefinition = $definitionManger->loadFile('application', 'theme');
@@ -30,7 +30,7 @@ $settingDefinition = $definitionManger->loadFile('application', 'theme');
 
 ``` php
 // Create a new SettingDefiniiton instance
-$settingDefinition = new \Fc\SettingsBundle\Model\Definition\SettingDefinition();
+$settingDefinition = new \Mesd\SettingsBundle\Model\Definition\SettingDefinition();
 
 // Set the definition type (cluster or hive)
 $settingDefinition->setType('cluster');
@@ -72,7 +72,7 @@ $nodeData = array (
 );
 
 // Define a new setting node using array of node data
-$settingNode = new \Fc\SettingsBundle\Model\Definition\SettingNode($nodeData);
+$settingNode = new \Mesd\SettingsBundle\Model\Definition\SettingNode($nodeData);
 
 // Add the new setting node to a definition you created or loaded previously
 $settingDefinition->addSettingNode($settingNode);
@@ -94,7 +94,7 @@ $nodeData = array (
 );
 
 // Define a new setting node using array of node data
-$settingNode = new \Fc\SettingsBundle\Model\Definition\SettingNode($nodeData);
+$settingNode = new \Mesd\SettingsBundle\Model\Definition\SettingNode($nodeData);
 
 // Add the new setting node to a definition you created or loaded previously
 $settingDefinition->addSettingNode($settingNode);
@@ -115,7 +115,7 @@ $nodeData = array (
 );
 
 // Define a new setting node using array of node data
-$settingNode = new \Fc\SettingsBundle\Model\Definition\SettingNode($nodeData);
+$settingNode = new \Mesd\SettingsBundle\Model\Definition\SettingNode($nodeData);
 
 // Add the new setting node to a definition you created or loaded previously
 $settingDefinition->addSettingNode($settingNode);
@@ -135,7 +135,7 @@ $nodeData = array (
 );
 
 // Define a new setting node using array of node data
-$settingNode = new \Fc\SettingsBundle\Model\Definition\SettingNode($nodeData);
+$settingNode = new \Mesd\SettingsBundle\Model\Definition\SettingNode($nodeData);
 
 // Add the new setting node to a definition you created or loaded previously
 $settingDefinition->addSettingNode($settingNode);
@@ -172,7 +172,7 @@ $nodeData = array (
 );
 
 // Define a new setting node using array of node data
-$settingNode = new \Fc\SettingsBundle\Model\Definition\SettingNode($nodeData);
+$settingNode = new \Mesd\SettingsBundle\Model\Definition\SettingNode($nodeData);
 
 // Add the new setting node to a definition you created or loaded previously
 $settingDefinition->addSettingNode($settingNode);
@@ -201,7 +201,7 @@ $nodeData = array (
 );
 
 // Define a new setting node using array of node data
-$settingNode = new \Fc\SettingsBundle\Model\Definition\SettingNode($nodeData);
+$settingNode = new \Mesd\SettingsBundle\Model\Definition\SettingNode($nodeData);
 
 // Add the new setting node to a definition you created or loaded previously
 $settingDefinition->addSettingNode($settingNode);
@@ -211,7 +211,7 @@ $settingDefinition->addSettingNode($settingNode);
 
 ``` php
 // Get Definition Manager Service
-$definitionManger = $this->get('fc_settings.definition_manager');
+$definitionManger = $this->get('mesd_settings.definition_manager');
 
 // Save definition to file
 $definitionManger->saveFile($settingDefinition);
@@ -223,7 +223,7 @@ $definitionManger->saveFile($settingDefinition);
 
 ``` php
 // Get Definition Manager Service
-$definitionManger = $this->get('fc_settings.definition_manager');
+$definitionManger = $this->get('mesd_settings.definition_manager');
 
 // Load existing definition by hive and cluster ($hiveName, $clusterName)
 $settingDefinition = $definitionManger->loadFile('application', 'theme');

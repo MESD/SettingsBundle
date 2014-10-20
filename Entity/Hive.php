@@ -1,6 +1,6 @@
 <?php
 
-namespace Fc\SettingsBundle\Entity;
+namespace Mesd\SettingsBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -124,10 +124,10 @@ class Hive
     /**
      * Add cluster
      *
-     * @param \Fc\SettingsBundle\Entity\Cluster $cluster
+     * @param \Mesd\SettingsBundle\Entity\Cluster $cluster
      * @return Hive
      */
-    public function addCluster(\Fc\SettingsBundle\Entity\Cluster $cluster)
+    public function addCluster(\Mesd\SettingsBundle\Entity\Cluster $cluster)
     {
         $this->cluster[] = $cluster;
 
@@ -137,9 +137,9 @@ class Hive
     /**
      * Remove cluster
      *
-     * @param \Fc\SettingsBundle\Entity\Cluster $cluster
+     * @param \Mesd\SettingsBundle\Entity\Cluster $cluster
      */
-    public function removeCluster(\Fc\SettingsBundle\Entity\Cluster $cluster)
+    public function removeCluster(\Mesd\SettingsBundle\Entity\Cluster $cluster)
     {
         $this->cluster->removeElement($cluster);
     }

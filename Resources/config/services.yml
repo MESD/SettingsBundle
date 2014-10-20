@@ -1,12 +1,12 @@
 parameters:
-    fc_settings.definition_manager.class: Fc\SettingsBundle\Model\Definition\DefinitionManager
-    fc_settings.setting_manager.class: Fc\SettingsBundle\Model\SettingManager
+    mesd_settings.definition_manager.class: Mesd\SettingsBundle\Model\Definition\DefinitionManager
+    mesd_settings.setting_manager.class: Mesd\SettingsBundle\Model\SettingManager
 
 services:
-    fc_settings.setting_manager:
-        class: %fc_settings.setting_manager.class%
+    mesd_settings.setting_manager:
+        class: %mesd_settings.setting_manager.class%
         arguments: [@service_container]
 
-    fc_settings.definition_manager:
-        class: %fc_settings.definition_manager.class%
-        arguments: [%fc_settings.bundle_storage%, @kernel, @fc_settings.setting_manager]
+    mesd_settings.definition_manager:
+        class: %mesd_settings.definition_manager.class%
+        arguments: [%mesd_settings.bundle_storage%, @kernel, @mesd_settings.setting_manager]

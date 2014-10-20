@@ -1,6 +1,6 @@
 <?php
 
-namespace Fc\SettingsBundle\Repository;
+namespace Mesd\SettingsBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Fc\SettingsBundle\Command;
+namespace Mesd\SettingsBundle\Command;
 
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputArgument;
@@ -8,10 +8,10 @@ use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Helper\DialogHelper;
-use Fc\SettingsBundle\Entity\Cluster;
-use Fc\SettingsBundle\Model\Definition\SettingDefinition;
-use Fc\SettingsBundle\Model\Setting;
-use Fc\SettingsBundle\Model\SettingValidator;
+use Mesd\SettingsBundle\Entity\Cluster;
+use Mesd\SettingsBundle\Model\Definition\SettingDefinition;
+use Mesd\SettingsBundle\Model\Setting;
+use Mesd\SettingsBundle\Model\SettingValidator;
 
 
 class ValidateSettingsCommand extends ContainerAwareCommand
@@ -22,7 +22,7 @@ class ValidateSettingsCommand extends ContainerAwareCommand
     protected function configure()
     {
         $this
-            ->setName('fc:setting:setting:validate')
+            ->setName('mesd:setting:setting:validate')
             ->setDescription('Validate settings.')
             ->setDefinition(array(
                 new InputOption('forceInsert', null, InputOption::VALUE_NONE, 'Force the insert of new settings - no user prompt'),
@@ -31,7 +31,7 @@ class ValidateSettingsCommand extends ContainerAwareCommand
                 new InputOption('forceAll',    null, InputOption::VALUE_NONE, 'Force insert, update, and delete of settings - no user prompt'),
               ))
             ->setHelp(<<<EOT
-The <info>fc:setting:setting:validate</info> command validates all settings
+The <info>mesd:setting:setting:validate</info> command validates all settings
 in the database, in relation to the setting definition(s).
 
 The validate process will prompt the user for confirmation on any required
@@ -53,19 +53,19 @@ There are three types of changes that could be required:
 
 Force inserts without prompting for confirmation with the <comment>--forceInsert</comment> option:
 
-<info>php app/console fc:setting:setting:validate --forceInsert</info>
+<info>php app/console mesd:setting:setting:validate --forceInsert</info>
 
 Force updates without prompting for confirmation with the <comment>--forceUpdate</comment> option:
 
-<info>php app/console fc:setting:setting:validate --forceUpdate</info>
+<info>php app/console mesd:setting:setting:validate --forceUpdate</info>
 
 Force deletes without prompting for confirmation with the <comment>--forceDelete</comment> option:
 
-<info>php app/console fc:setting:setting:validate --forceDelete</info>
+<info>php app/console mesd:setting:setting:validate --forceDelete</info>
 
 Force all modifications without prompting for confirmation with the <comment>--forceAll</comment> option:
 
-<info>php app/console fc:setting:setting:validate --forceAll</info>
+<info>php app/console mesd:setting:setting:validate --forceAll</info>
 
 EOT
             );
@@ -85,8 +85,8 @@ EOT
         );
 
         // Get needed services
-        $settingManager    = $this->getContainer()->get("fc_settings.setting_manager");
-        $definitionManager = $this->getContainer()->get("fc_settings.definition_manager");
+        $settingManager    = $this->getContainer()->get("mesd_settings.setting_manager");
+        $definitionManager = $this->getContainer()->get("mesd_settings.definition_manager");
         $entityManager     = $this->getContainer()->get("doctrine.orm.entity_manager");
 
         // Get Dialog Helper

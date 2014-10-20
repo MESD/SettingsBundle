@@ -1,15 +1,15 @@
 <?php
 
-namespace Fc\SettingsBundle\Model\Definition;
+namespace Mesd\SettingsBundle\Model\Definition;
 
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\HttpKernel\Config\FileLocator;
 use Symfony\Component\Yaml\Dumper;
 use Symfony\Component\Yaml\Parser;
-use Fc\SettingsBundle\Model\Definition\DefinitionValidator;
-use Fc\SettingsBundle\Model\Definition\SettingDefinition;
-use Fc\SettingsBundle\Model\Definition\SettingNode;
-use Fc\SettingsBundle\Model\SettingManager;
+use Mesd\SettingsBundle\Model\Definition\DefinitionValidator;
+use Mesd\SettingsBundle\Model\Definition\SettingDefinition;
+use Mesd\SettingsBundle\Model\Definition\SettingNode;
+use Mesd\SettingsBundle\Model\SettingManager;
 
 class DefinitionManager
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Fc\SettingsBundle\DependencyInjection;
+namespace Mesd\SettingsBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
@@ -34,14 +34,14 @@ class FcSettingsExtension extends Extension
                     if (is_array($val)) {
                         foreach ($val as $k => $v) {
                             $container->setParameter(
-                                'fc_settings.' . $parameter . '.' . $key . '.' . $k,
+                                'mesd_settings.' . $parameter . '.' . $key . '.' . $k,
                                 $v
                             );
                         }
                     }
                     else {
                         $container->setParameter(
-                            'fc_settings.' . $parameter . '.' . $key,
+                            'mesd_settings.' . $parameter . '.' . $key,
                             $val
                         );
                     }
@@ -49,7 +49,7 @@ class FcSettingsExtension extends Extension
             }
             else {
                 $container->setParameter(
-                    'fc_settings.' . $parameter,
+                    'mesd_settings.' . $parameter,
                     $value
                 );
             }
@@ -77,7 +77,7 @@ class FcSettingsExtension extends Extension
         }
 
         $container->setParameter(
-            'fc_settings.bundle_storage',
+            'mesd_settings.bundle_storage',
             $bundleStorage
         );
 

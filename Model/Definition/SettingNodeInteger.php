@@ -1,6 +1,6 @@
 <?php
 
-namespace Fc\SettingsBundle\Model\Definition;
+namespace Mesd\SettingsBundle\Model\Definition;
 
 class SettingNodeInteger
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Fc\SettingsBundle\Model\Definition;
+namespace Mesd\SettingsBundle\Model\Definition;
 
 class SettingNodeArray
 {
@@ -28,7 +28,7 @@ class SettingNodeArray
             }
             $this->prototype = $nodeAttributes['prototype']['type'];
 
-            $className = 'Fc\SettingsBundle\Model\Definition\SettingNode' . ucwords($this->prototype);
+            $className = 'Mesd\SettingsBundle\Model\Definition\SettingNode' . ucwords($this->prototype);
             $this->node = new $className($nodeAttributes['prototype']);
         }
     }

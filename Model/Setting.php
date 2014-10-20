@@ -1,8 +1,8 @@
 <?php
 
-namespace Fc\SettingsBundle\Model;
+namespace Mesd\SettingsBundle\Model;
 
-use Fc\SettingsBundle\Model\Definition\SettingNode;
+use Mesd\SettingsBundle\Model\Definition\SettingNode;
 
 class Setting {
 
@@ -38,7 +38,7 @@ class Setting {
      *
      * Set the setting node definition.
      *
-     * @param Fc\SettingsBundle\Model\Setting $setting
+     * @param Mesd\SettingsBundle\Model\Setting $setting
      * @return SettingNode
      */
     public function setNodeDefinition(SettingNode $settingNode)

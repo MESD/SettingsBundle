@@ -1,12 +1,12 @@
 <?php
 
-namespace Fc\SettingsBundle\Model;
+namespace Mesd\SettingsBundle\Model;
 
 use Symfony\Component\DependencyInjection\ContainerInterface as Container;
-use Fc\SettingsBundle\Entity\Hive;
-use Fc\SettingsBundle\Entity\Cluster;
-use Fc\SettingsBundle\Model\Definition\DefinitionManager;
-use Fc\SettingsBundle\Model\SettingValidator;
+use Mesd\SettingsBundle\Entity\Hive;
+use Mesd\SettingsBundle\Entity\Cluster;
+use Mesd\SettingsBundle\Model\Definition\DefinitionManager;
+use Mesd\SettingsBundle\Model\SettingValidator;
 
 class SettingManager {
 
@@ -229,7 +229,7 @@ class SettingManager {
         }
 
         if (true === $loadDefinition) {
-            $settingDefinition = $this->container->get('fc_settings.definition_manager')->loadFile($hiveName, $clusterName);
+            $settingDefinition = $this->container->get('mesd_settings.definition_manager')->loadFile($hiveName, $clusterName);
 
             $setting->setNodeDefinition(
                 $settingDefinition->getSettingNode($settingName)
@@ -267,7 +267,7 @@ class SettingManager {
             ));
         }
 
-        $settingDefinition = $this->container->get('fc_settings.definition_manager')->loadFile($hiveName, $clusterName);
+        $settingDefinition = $this->container->get('mesd_settings.definition_manager')->loadFile($hiveName, $clusterName);
 
         $setting->setValue($settingValue);
 

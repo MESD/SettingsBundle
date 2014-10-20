@@ -1,7 +1,7 @@
-Fc\SettingsBundle\Entity\Hive:
+Mesd\SettingsBundle\Entity\Hive:
     type: entity
     table: setting_hive
-    repositoryClass: Fc\SettingsBundle\Repository\HiveRepository
+    repositoryClass: Mesd\SettingsBundle\Repository\HiveRepository
     fields:
         id:
             type: integer

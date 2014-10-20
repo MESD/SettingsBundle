@@ -1,9 +1,9 @@
 <?php
 
-namespace Fc\SettingsBundle\Model;
+namespace Mesd\SettingsBundle\Model;
 
-use Fc\SettingsBundle\Model\Definition\SettingNode;
-use Fc\SettingsBundle\Model\Setting;
+use Mesd\SettingsBundle\Model\Definition\SettingNode;
+use Mesd\SettingsBundle\Model\Setting;
 
 class SettingValidator {
 

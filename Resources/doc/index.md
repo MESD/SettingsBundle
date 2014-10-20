@@ -41,7 +41,7 @@ public function registerBundles()
 {
     $bundles = array(
         // ...
-        new Fc\SettingsBundle\FcSettingsBundle(),
+        new Mesd\SettingsBundle\FcSettingsBundle(),
     );
 }
 ```
@@ -120,7 +120,7 @@ modules, you might create a `hive` for each sub-application or module.
 
 
 ``` bash
-$ app/console fc:setting:hive:create
+$ app/console mesd:setting:hive:create
 ```
 
 
@@ -131,7 +131,7 @@ controlled the theme of your application, you might create a **theme** `cluster`
 
 
 ``` bash
-$ app/console fc:setting:cluster:create
+$ app/console mesd:setting:cluster:create
 ```
 
 
@@ -187,7 +187,7 @@ Each `SettingNode` has five descriptors:
 ###Define a new setting with the console:
 
 ``` bash
-$ app/console fc:setting:setting:define
+$ app/console mesd:setting:setting:define
 ```
 
 ###Store a setting in the database:
@@ -200,7 +200,7 @@ $ app/console fc:setting:setting:define
 ``` php
 
 // Get Setting Manager Service
-$settingManger = $this->get('fc_settings.setting_manager');
+$settingManger = $this->get('mesd_settings.setting_manager');
 
 // Store Setting
 $settingManger->saveSetting('application', 'theme', 'background', 'blue');
@@ -211,7 +211,7 @@ $settingManger->saveSetting('application', 'theme', 'background', 'blue');
 
 ``` php
 // Get Setting Manager Service
-$settingManger = $this->get('fc_settings.setting_manager');
+$settingManger = $this->get('mesd_settings.setting_manager');
 
 // Retrieve Setting
 $setting = $settingManger->loadSetting('application', 'theme', 'font-size');
@@ -227,7 +227,7 @@ boolean `true` value to the fourth parameter to load the definition.
 
 ``` php
 // Get Setting Manager Service
-$settingManger = $this->get('fc_settings.setting_manager');
+$settingManger = $this->get('mesd_settings.setting_manager');
 
 // Retrieve Setting
 $setting = $settingManger->loadSetting('application', 'theme', 'font-size', true);

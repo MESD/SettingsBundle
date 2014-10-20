@@ -1,6 +1,6 @@
 <?php
 
-namespace Fc\SettingsBundle\Command;
+namespace Mesd\SettingsBundle\Command;
 
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputArgument;
@@ -8,7 +8,7 @@ use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-use Fc\SettingsBundle\Model\SettingManager;
+use Mesd\SettingsBundle\Model\SettingManager;
 
 class CreateClusterCommand extends ContainerAwareCommand
 {
@@ -18,7 +18,7 @@ class CreateClusterCommand extends ContainerAwareCommand
     protected function configure()
     {
         $this
-            ->setName('fc:setting:cluster:create')
+            ->setName('mesd:setting:cluster:create')
             ->setDescription('Create a cluster.')
             ->setDefinition(array(
                 new InputArgument('name', InputArgument::REQUIRED, 'Cluster Name'),
@@ -26,7 +26,7 @@ class CreateClusterCommand extends ContainerAwareCommand
                 new InputArgument('hiveName', InputArgument::OPTIONAL, 'Hive name to attach Cluster'),
               ))
             ->setHelp(<<<EOT
-The <info>fc:setting:cluster:create</info> command creates a setting cluster:
+The <info>mesd:setting:cluster:create</info> command creates a setting cluster:
 
 This interactive shell will ask you for a name and description.
 
@@ -43,7 +43,7 @@ EOT
         $description = $input->getArgument('description');
         $hiveName    = $input->getArgument('hiveName');
 
-        $settingManager =  $this->getContainer()->get("fc_settings.setting_manager");
+        $settingManager =  $this->getContainer()->get("mesd_settings.setting_manager");
 
         if ($settingManager->clusterExists($hiveName, $name)) {
             $output->writeln(sprintf('<error>Error: Hive %s and Cluster %s combination already exist</error>', $hiveName, $name));
@@ -96,7 +96,7 @@ EOT
                     if (empty($hiveName)) {
                         throw new \Exception('Hive name can not be empty');
                     }
-                    $settingManager =  $this->getContainer()->get("fc_settings.setting_manager");
+                    $settingManager =  $this->getContainer()->get("mesd_settings.setting_manager");
                     if (!$settingManager->hiveExists($hiveName)) {
                         throw new \Exception(sprintf('Hive %s does not exist', $hiveName));
                     }

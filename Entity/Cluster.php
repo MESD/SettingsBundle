@@ -1,9 +1,9 @@
 <?php
 
-namespace Fc\SettingsBundle\Entity;
+namespace Mesd\SettingsBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Fc\SettingsBundle\Model\Setting;
+use Mesd\SettingsBundle\Model\Setting;
 
 /**
  * Cluster
@@ -31,7 +31,7 @@ class Cluster
     private $setting;
 
     /**
-     * @var \Fc\SettingsBundle\Entity\Hive
+     * @var \Mesd\SettingsBundle\Entity\Hive
      */
     private $hive;
 
@@ -97,7 +97,7 @@ class Cluster
     /**
      * Add Setting
      *
-     * @param Fc\SettingsBundle\Model\Setting $setting
+     * @param Mesd\SettingsBundle\Model\Setting $setting
      * @return Cluster
      */
     public function addSetting(Setting $setting)
@@ -123,7 +123,7 @@ class Cluster
      * Get setting
      *
      * @param  string settingName
-     * @return Fc\SettingsBundle\Model\Setting $setting
+     * @return Mesd\SettingsBundle\Model\Setting $setting
      */
     public function getSetting($settingName)
     {
@@ -142,7 +142,7 @@ class Cluster
     /**
      * Remove Setting
      *
-     * @param Fc\SettingsBundle\Model\Setting $setting
+     * @param Mesd\SettingsBundle\Model\Setting $setting
      * @return Cluster
      */
     public function removeSetting(Setting $setting)
@@ -156,10 +156,10 @@ class Cluster
     /**
      * Set hive
      *
-     * @param \Fc\SettingsBundle\Entity\Hive $hive
+     * @param \Mesd\SettingsBundle\Entity\Hive $hive
      * @return Cluster
      */
-    public function setHive(\Fc\SettingsBundle\Entity\Hive $hive = null)
+    public function setHive(\Mesd\SettingsBundle\Entity\Hive $hive = null)
     {
         $this->hive = $hive;
 
@@ -170,7 +170,7 @@ class Cluster
     /**
      * Get hive
      *
-     * @return \Fc\SettingsBundle\Entity\Hive
+     * @return \Mesd\SettingsBundle\Entity\Hive
      */
     public function getHive()
     {

@@ -1,7 +1,7 @@
-Fc\SettingsBundle\Entity\Cluster:
+Mesd\SettingsBundle\Entity\Cluster:
     type: entity
     table: setting_cluster
-    repositoryClass: Fc\SettingsBundle\Repository\ClusterRepository
+    repositoryClass: Mesd\SettingsBundle\Repository\ClusterRepository
     fields:
         id:
             type: integer

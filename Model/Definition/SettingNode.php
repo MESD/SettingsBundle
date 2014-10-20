@@ -1,6 +1,6 @@
 <?php
 
-namespace Fc\SettingsBundle\Model\Definition;
+namespace Mesd\SettingsBundle\Model\Definition;
 
 class SettingNode
 {
@@ -26,7 +26,7 @@ class SettingNode
                 $this->description = $nodeData['nodeAttributes']['description'];
             }
 
-            $className = 'Fc\SettingsBundle\Model\Definition\SettingNode' . ucwords($this->type);
+            $className = 'Mesd\SettingsBundle\Model\Definition\SettingNode' . ucwords($this->type);
             $this->format = new $className($nodeData['nodeAttributes']);
         }
     }

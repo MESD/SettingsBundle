@@ -1,6 +1,6 @@
 <?php
 
-namespace Fc\SettingsBundle\Command;
+namespace Mesd\SettingsBundle\Command;
 
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputArgument;
@@ -8,8 +8,8 @@ use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Helper\DialogHelper;
-use Fc\SettingsBundle\Model\Definition\SettingDefinition;
-use Fc\SettingsBundle\Model\Definition\SettingNode;
+use Mesd\SettingsBundle\Model\Definition\SettingDefinition;
+use Mesd\SettingsBundle\Model\Definition\SettingNode;
 
 class DefineSettingCommand extends ContainerAwareCommand
 {
@@ -19,13 +19,13 @@ class DefineSettingCommand extends ContainerAwareCommand
     protected function configure()
     {
         $this
-            ->setName('fc:setting:setting:define')
+            ->setName('mesd:setting:setting:define')
             ->setDescription('Define a setting.')
             ->setDefinition(array(
                 new InputArgument('hiveName', InputArgument::REQUIRED, 'Hive Name'),
               ))
             ->setHelp(<<<EOT
-The <info>fc:setting:setting:define</info> command defines a setting:
+The <info>mesd:setting:setting:define</info> command defines a setting:
 
 This interactive shell will ask you for a  and description.
 
@@ -42,8 +42,8 @@ EOT
         $hiveName = $input->getArgument('hiveName');
 
         // Get needed services
-        $settingManager    = $this->getContainer()->get("fc_settings.setting_manager");
-        $definitionManager = $this->getContainer()->get("fc_settings.definition_manager");
+        $settingManager    = $this->getContainer()->get("mesd_settings.setting_manager");
+        $definitionManager = $this->getContainer()->get("mesd_settings.definition_manager");
 
         // Get Dialog Helper
         $dialog = $this->getHelper('dialog');

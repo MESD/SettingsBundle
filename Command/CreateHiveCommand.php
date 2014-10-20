@@ -1,6 +1,6 @@
 <?php
 
-namespace Fc\SettingsBundle\Command;
+namespace Mesd\SettingsBundle\Command;
 
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputArgument;
@@ -8,7 +8,7 @@ use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-use Fc\SettingsBundle\Model\SettingManager;
+use Mesd\SettingsBundle\Model\SettingManager;
 
 class CreateHiveCommand extends ContainerAwareCommand
 {
@@ -18,7 +18,7 @@ class CreateHiveCommand extends ContainerAwareCommand
     protected function configure()
     {
         $this
-            ->setName('fc:setting:hive:create')
+            ->setName('mesd:setting:hive:create')
             ->setDescription('Create a hive.')
             ->setDefinition(array(
                 new InputArgument('name', InputArgument::REQUIRED, 'Hive Name'),
@@ -26,7 +26,7 @@ class CreateHiveCommand extends ContainerAwareCommand
                 new InputOption('definedAtHive', null, InputOption::VALUE_NONE, 'Set the definition level to hive'),
               ))
             ->setHelp(<<<EOT
-The <info>fc:setting:hive:create</info> command creates a setting hive:
+The <info>mesd:setting:hive:create</info> command creates a setting hive:
 
 This interactive shell will ask you for a name and description.
 
@@ -43,7 +43,7 @@ EOT
         $description   = $input->getArgument('description');
         $definedAtHive = $input->getOption('definedAtHive');
 
-        $settingManager =  $this->getContainer()->get("fc_settings.setting_manager");
+        $settingManager =  $this->getContainer()->get("mesd_settings.setting_manager");
 
         if ($settingManager->hiveExists($name)) {
             $output->writeln(sprintf('<error>Error: Hive %s already exists</error>', $name));

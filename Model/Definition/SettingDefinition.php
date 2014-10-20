@@ -1,8 +1,8 @@
 <?php
 
-namespace Fc\SettingsBundle\Model\Definition;
+namespace Mesd\SettingsBundle\Model\Definition;
 
-use Fc\SettingsBundle\Model\Definition\SettingNode;
+use Mesd\SettingsBundle\Model\Definition\SettingNode;
 
 class SettingDefinition
 {
@@ -64,7 +64,7 @@ class SettingDefinition
     /**
      * Add SettingNode
      *
-     * @param Fc\SettingsBundle\Model\Definition\SettingNode $settingNode
+     * @param Mesd\SettingsBundle\Model\Definition\SettingNode $settingNode
      * @return SettingDefinition
      */
     public function addSettingNode(SettingNode $settingNode)
@@ -79,7 +79,7 @@ class SettingDefinition
      * Get SettingNode
      *
      * @param string $name
-     * @return Fc\SettingsBundle\Model\Definition\SettingNode $settingNode
+     * @return Mesd\SettingsBundle\Model\Definition\SettingNode $settingNode
      */
     public function getSettingNode($name)
     {
@@ -106,7 +106,7 @@ class SettingDefinition
     /**
      * Remove SettingNode
      *
-     * @param Fc\SettingsBundle\Model\Definition\SettingNode $settingNode
+     * @param Mesd\SettingsBundle\Model\Definition\SettingNode $settingNode
      * @return SettingDefinition
      */
     public function removeSettingNode(SettingNode $settingNode)
