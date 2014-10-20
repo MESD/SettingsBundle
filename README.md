@@ -7,7 +7,7 @@ already being well handled within symfony.
 The SettingsBundle stores settings in a ORM supported database, using only two small
 tables. Settings can be defined as String, Integer, Float, Boolean, or Array. You can
 also define the max length, number digits, or decimals in each setting (depending on
-type). There is also support for assiging default values. The settings availbe in
+type). There is also support for assigning default values. The settings available in
 your application are defined using simple text yaml files. Like type settings can be
 grouped together.
 
