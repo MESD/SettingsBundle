@@ -49,8 +49,8 @@ in your applications config.yml.
 
 # SettingsBundle Configuration
 mesd_settings:
-    auto_map: false            # true/false - Scan all registered bundles for setting definitions
-    #bundles:                   # Scan the following list of bundles for setting definitions
+    auto_map: false        # true/false - Scan all registered bundles for setting definitions
+    #bundles:              # Scan the following list of bundles for setting definitions
     #    AcmeDemoBundle:
     #    AcmeFooBundle:
 ```
