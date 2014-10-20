@@ -1,7 +1,7 @@
 ##Mesd/SettingsBundle
 
 A Symfony2 bundle for managing settings. The bundles intention is to manage application
-or user settings, not Symfony2 framework or bundle configuration items - the latter
+or user settings, not Symfony2 framework or bundle configuration items, the latter
 already being well handled within symfony.
 
 The SettingsBundle stores settings in a ORM supported database, using only two small
