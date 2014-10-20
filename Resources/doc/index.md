@@ -194,6 +194,7 @@ $ app/console mesd:setting:setting:define
 $settingManger = $this->get('mesd_settings.setting_manager');
 
 // Store Setting
+// $settingManger->saveSetting($hive, $cluster, $setting, $value);
 $settingManger->saveSetting('application', 'theme', 'background', 'blue');
 
 ```
@@ -205,6 +206,7 @@ $settingManger->saveSetting('application', 'theme', 'background', 'blue');
 $settingManger = $this->get('mesd_settings.setting_manager');
 
 // Retrieve Setting
+// $setting = $settingManger->loadSetting($hive, $cluster, $setting);
 $setting = $settingManger->loadSetting('application', 'theme', 'font-size');
 
 ```
@@ -221,6 +223,7 @@ boolean `true` value to the fourth parameter to load the definition.
 $settingManger = $this->get('mesd_settings.setting_manager');
 
 // Retrieve Setting
+// $setting = $settingManger->loadSetting($hive, $cluster, $setting, $loadDefinition);
 $setting = $settingManger->loadSetting('application', 'theme', 'font-size', true);
 
 ```
