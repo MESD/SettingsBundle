@@ -31,3 +31,8 @@ All the installation instructions are located in the documentation.
 This bundle is under the MIT license. See the complete license at:
 
 [Resources/meta/LICENSE.md](https://github.com/MESD/SettingsBundle/blob/master/Resources/meta/LICENSE.md)
+
+
+###Status
+
+Beta Oct. 2014
