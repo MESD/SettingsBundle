@@ -181,6 +181,26 @@ Each `SettingNode` has five descriptors:
 $ app/console mesd:setting:setting:define
 ```
 
+
+###Setting Validation - Insert setting *base* data or validate changes:
+
+When you define a new setting or change an existing setting definition, you need to
+ensure the clusters in the database are in-sync. Run the setting validation command
+to check the clusters and make any needed updates. The validation command will not
+make any changes to the clusters without prompting you for confirmation of the
+needed change.
+
+**Note:**
+
+> If you have a large number of changes that need to be made and you don't want the
+> system to prompt you for every change, you can use the --forceInsert, --forceUpdate,
+> --forceDelete, or --forceAll command line options.
+
+``` bash
+$ app/console mesd:setting:setting:validate
+```
+
+
 ###Store a setting in the database:
 
 **Note:**
