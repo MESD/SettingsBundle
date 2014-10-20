@@ -8,8 +8,7 @@ or user settings, not Symfony2 framework or bundle configuration items.
 ###Documentation
 
 
-The documentation is stored in the `Resources/doc/index.md`
-file in this bundle:
+The documentation is stored in the `Resources/doc` directory in this bundle:
 
 [Read the Documentationn](https://github.com/MESD/SettingsBundle/blob/master/Resources/doc/index.md)
 

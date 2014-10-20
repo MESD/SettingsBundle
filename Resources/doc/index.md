@@ -1,4 +1,4 @@
-##Install FcSettingsBundle
+##Install MesdSettingsBundle
 
 ###Dependencies:
 
@@ -8,27 +8,18 @@
 ###Install with composer:
 
 
-Add the repository and bundle to your projects composer.json
-
-``` json
-"repositories": [
-    {
-        "type" : "vcs",
-        "url" : "https://github.com/functionalchaos/SettingsBundle.git"
-    }
-]
-```
+Add the bundle to your projects composer.json
 
 ``` json
 "require": {
-    "fc/settings-bundle": "dev-master"
+    "mesd/settings-bundle": "dev-master"
 }
 ```
 
 Install with composer
 
 ``` bash
-$ composer update fc/settings-bundle
+$ composer update mesd/settings-bundle
 ```
 
 
@@ -41,7 +32,7 @@ public function registerBundles()
 {
     $bundles = array(
         // ...
-        new Mesd\SettingsBundle\FcSettingsBundle(),
+        new Mesd\SettingsBundle\MesdSettingsBundle(),
     );
 }
 ```
@@ -57,7 +48,7 @@ in your applications config.yml.
 # app/config/config.yml
 
 # SettingsBundle Configuration
-fc_settings:
+mesd_settings:
     #auto_map: false            # true/false - Scan all registered bundles for setting definitions
     #bundles:                   # Scan the following list of bundles for setting definitions
     #    AcmeDemoBundle:
@@ -65,7 +56,7 @@ fc_settings:
 ```
 
 
-##Understanding FcSettingsBundle terminology:
+##Understanding MesdSettingsBundle terminology:
 
 ###Hives and Clusters
 
@@ -104,7 +95,7 @@ directory. The setting definition files can also be stored within a bundle by
 placing the files in the bundles `Resources/settings/` directory.
 
 
-##Using FcSettingsBundle
+##Using MesdSettingsBundle
 
 ###Create a new Hive with the console:
 
