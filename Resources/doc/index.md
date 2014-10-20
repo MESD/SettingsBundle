@@ -245,8 +245,9 @@ $settingDescription = $setting->getNodeDefinition()->getDescription();
 
 ###Next Steps
 
-Now that you have completed the basic installation and configuration of the MesdSettingsBundle,
-you are ready to learn about more advanced features and usages of the bundle.
+Now that you have completed the basic installation, configuration, and usage of the
+MesdSettingsBundle, you are ready to learn about more advanced features and usage of
+the bundle.
 
 The following documents are available:
 
