@@ -94,7 +94,7 @@ EOT
 
         // Load hive collection
         $hiveCollection = $entityManager
-            ->getRepository('FcSettingsBundle:Hive')
+            ->getRepository('MesdSettingsBundle:Hive')
             ->findAll();
 
         // Loop through all hives validating as we go

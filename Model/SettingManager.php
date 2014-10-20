@@ -39,7 +39,7 @@ class SettingManager {
 
         $cluster =
             $this->container->get('doctrine.orm.entity_manager')
-                ->getRepository('FcSettingsBundle:Cluster')
+                ->getRepository('MesdSettingsBundle:Cluster')
                 ->findOneBy(array(
                     'name' => strtoupper($clusterName),
                     'hive' => $hive
@@ -126,7 +126,7 @@ class SettingManager {
     public function hiveExists($hiveName)
     {
         $hive = $this->container->get('doctrine.orm.entity_manager')
-            ->getRepository('FcSettingsBundle:Hive')
+            ->getRepository('MesdSettingsBundle:Hive')
             ->findOneBy(array('name' => strtoupper($hiveName)));
 
         return $hive;
@@ -145,7 +145,7 @@ class SettingManager {
     public function hiveHasClusters($hiveName)
     {
         $hive = $this->container->get('doctrine.orm.entity_manager')
-            ->getRepository('FcSettingsBundle:Hive')
+            ->getRepository('MesdSettingsBundle:Hive')
             ->findOneBy(array('name' => strtoupper($hiveName)));
 
         if (0 < $hive->getCluster()->count()) {
