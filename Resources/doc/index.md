@@ -135,7 +135,7 @@ a setting definition node.
 
 When locating your setting definition files, the file locater will check the kernel
 root `app/Resources/settings/` directory first, then in each bundle you specified
-under *bundles* in the fc_settings section of your config.yml. If you set *auto_map*
+under *bundles* in the mesd_settings section of your config.yml. If you set *auto_map*
 to true, the system will check all bundles registered in your kernel, in the order
 they have been registered. Therefore, you can override a setting definition file
 from a bundle by placing a copy in your kernel root `app/Resources/settings/`
@@ -209,6 +209,9 @@ $settingManger = $this->get('mesd_settings.setting_manager');
 // $setting = $settingManger->loadSetting($hive, $cluster, $setting);
 $setting = $settingManger->loadSetting('application', 'theme', 'font-size');
 
+// Use the setting you retrieved
+$fontSize = $setting->getValue();
+
 ```
 
 
@@ -226,6 +229,11 @@ $settingManger = $this->get('mesd_settings.setting_manager');
 // $setting = $settingManger->loadSetting($hive, $cluster, $setting, $loadDefinition);
 $setting = $settingManger->loadSetting('application', 'theme', 'font-size', true);
 
+// Use the setting you retrieved
+$fontSize = $setting->getValue();
+
+// Use the setting definition you loaded
+$settingDescription = $setting->getNodeDefinition()->getDescription();
 ```
 
 **Note:**
