@@ -1,14 +1,14 @@
 {
-    "name": "fc/settings-bundle",
+    "name": "mesd/settings-bundle",
     "type": "symfony-bundle",
-    "description": "FunctionalChaos SettingsBundle",
+    "description": "MESD SettingsBundle",
     "keywords": ["settings management"],
-    "homepage": "https://github.com/functionalchaos",
+    "homepage": "https://github.com/MESD",
     "license": "MIT",
     "authors": [
         {
             "name": "David Cramblettet",
-            "email": "david@functionalchaos.net"
+            "email": "dcramble@mesd.k12.or.us"
         }
     ],
     "minimum-stability": "dev",
@@ -24,7 +24,7 @@
         "symfony/validator": "~2.1"
     },
     "autoload": {
-        "psr-0": { "Fc\\SettingsBundle": "" }
+        "psr-0": { "Mesd\\SettingsBundle": "" }
     },
-    "target-dir": "Fc/SettingsBundle"
+    "target-dir": "Mesd/SettingsBundle"
 }
