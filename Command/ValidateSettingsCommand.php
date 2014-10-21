@@ -107,7 +107,7 @@ EOT
                 $output->writeln(array(
                     '',
                     sprintf(
-                        '<comment>Hive: %s - Settings defined at hive</comment>',
+                        '<info>Checking hive: %s - Settings defined at hive</info>',
                         $hive->getName()
                     ),
                     ''
@@ -135,7 +135,7 @@ EOT
                 $output->writeln(array(
                     '',
                     sprintf(
-                        '<comment>Hive: %s - Settings defined at cluster</comment>',
+                        '<info>Checking hive: %s - Settings defined at cluster</info>',
                         $hive->getName()
                     ),
                     ''
@@ -244,6 +244,7 @@ EOT
                     $cluster->addSetting($newSetting);
 
                     $output->writeln(array(
+                        '',
                         sprintf(
                             "<info>Cluster '%s' setting '%s' has been inserted!</info>",
                             $cluster->getName(),
@@ -301,6 +302,7 @@ EOT
 
                         $output->writeln(array(
                             sprintf(
+                                '',
                                 "<info>Cluster '%s' setting '%s' has been updated!</info>",
                                 $cluster->getName(),
                                 $settingKey
@@ -354,6 +356,7 @@ EOT
                     );
 
                     $output->writeln(array(
+                        '',
                         sprintf(
                             "<info>Cluster '%s' setting '%s' has been deleted!</info>",
                             $cluster->getName(),

@@ -12,7 +12,9 @@ Add the bundle to your projects composer.json
 
 ``` json
 "require": {
+     ...
     "mesd/settings-bundle": "dev-master"
+    ...
 }
 ```
 
