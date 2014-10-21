@@ -8,20 +8,11 @@
 ###Install with composer:
 
 
-Add the bundle to your projects composer.json
-
-``` json
-"require": {
-     ...
-    "mesd/settings-bundle": "dev-master"
-    ...
-}
-```
-
-Install with composer
+Add the bundle to your project
 
 ``` bash
-$ composer update mesd/settings-bundle
+$ composer require mesd/settings-bundle "dev-master"
+
 ```
 
 
