@@ -87,7 +87,9 @@ meaning you can create or update setting definitions using your text editor. The
 is also a console command to define new settings if you prefer. By default the
 setting definition files are stored in the kernel root `app/Resources/settings/`
 directory. The setting definition files can also be stored within a bundle by
-placing the files in the bundles `Resources/settings/` directory.
+placing the files in the bundles `Resources/settings/` directory and updating
+your config.yml to let the MesdSettingsBundle know to scan the bundle for
+settings.
 
 
 ##Using MesdSettingsBundle
