@@ -98,12 +98,12 @@ The naming convention for setting definition files is `hiveName-clusterName.yml`
 If the settings are defined at the hive, then the cluster is left off and the file
 name pattern is `hiveName.yml`. Here is an example of a setting definition file:
 
-```yml
+```yaml
 // app/Resources/settings/application-theme.yml
 
-theme:
+theme:                     // Setting Key: clusterName on definition type cluster, hiveName for definition type hive
     hive: application
-    type: cluster
+    type: cluster          // Definition level: Hive or Cluster
     nodes:
         background:
             default: 'light-gray'
