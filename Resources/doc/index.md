@@ -156,7 +156,7 @@ $ app/console mesd:setting:hive:create
 ###Create a new Cluster with the console:
 
 Clusters are used to group like settings. For example if you had 5 settings that
-controlled the theme of your application, you might create a **theme** `cluster`.
+controlled the theme of your application, you might create a *theme* `cluster`.
 
 
 ``` bash
