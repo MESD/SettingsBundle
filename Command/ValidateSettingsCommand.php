@@ -39,17 +39,17 @@ changes to settings in the database.
 
 There are three types of changes that could be required:
 
-  Insert - New settings that have been defined, but don't exisit in database.
-           Inserts should not be destructive to exisitng data.
+  Insert - New settings that have been defined, but don't exist in database.
+           Inserts should not be destructive to existing data.
 
   Update - Changes to the setting definition that need to be applied to
            settings in the database. Updates can potentially be destructive
-           to exisitng data. i.e. Format change where value is no longer
-           compatable.
+           to existing data. i.e. Format change where value is no longer
+           compatible.
 
   Delete - Removed nodes from setting definition that need to be purged from
            the settings in the database. Deletes are always destructive to
-           exisitng data.
+           existing data.
 
 Force inserts without prompting for confirmation with the <comment>--forceInsert</comment> option:
 
