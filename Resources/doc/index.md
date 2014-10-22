@@ -252,6 +252,13 @@ required:
 > system to prompt you for every change, you can use the --forceInsert, --forceUpdate,
 > --forceDelete, or --forceAll command line options.
 
+**Warning:**
+
+> When the validation command attempts to update a setting to match the definition,
+> it will attempt to convert data when the new format has a type of string. Otherwise
+> the current setting value will be replaced with the default value from the
+> definition.
+
 Validate the settings with the symfony console command:
 
 ``` bash
