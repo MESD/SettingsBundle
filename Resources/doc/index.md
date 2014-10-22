@@ -79,17 +79,58 @@ cluster.
 
 After you have created your `cluster` (or `hive` if defining at the `hive` level)
 you can define your new settings. You can think of a setting definition as a map
-that describes the available settings in the specific cluster. The definition helps
-the system validate the setting data your application attempts to store. While the
-settings themselves are stored in a database for fast and easy retrieval, the
-definitions are stored as yaml files. Yaml files are easy to read and configure,
-meaning you can create or update setting definitions using your text editor. There
-is also a console command to define new settings if you prefer. By default the
-setting definition files are stored in the kernel root `app/Resources/settings/`
-directory. The setting definition files can also be stored within a bundle by
-placing the files in the bundles `Resources/settings/` directory and updating
-your config.yml to let the MesdSettingsBundle know to scan the bundle for
-settings.
+that describes the available settings in a specific cluster. The definition helps
+the system validate the setting data your application attempts to store.
+
+While the settings themselves are stored in a database for fast and easy retrieval,
+the definitions are stored as yaml files. Yaml files are easy to read and
+configure, meaning you can create or update setting definitions using your text
+editor. There is also a console command to define new settings if you prefer a more
+automated approach.
+
+By default the setting definition files are stored in the kernel root
+`app/Resources/settings/` directory. The setting definition files can also be
+stored within a bundle by placing the files in the bundles `Resources/settings/`
+directory, and then updating your config.yml to let the MesdSettingsBundle know to
+scan the bundle for setting definitions.
+
+The naming convention for setting definition files is `hiveName-clusterName.yml`.
+If the settings are defined at the hive, then the cluster is left off and the file
+name pattern is `hiveName.yml`. Here is an example setting definition file:
+
+```yaml
+// app/Resources/settings/application-theme.yml
+
+theme:
+    hive: application
+    type: cluster
+    nodes:
+        background:
+            default: 'light-gray'
+            description: 'Theme Background Color'
+            type: string
+            length: 25
+        color:
+            default: 'blue'
+            description: 'Theme Font Color'
+            type: string
+            length: 25
+        font-size:
+            default: 12
+            description: 'Theme font size in pixels'
+            type: integer
+            digits: 2
+        dashboard-widgets:
+            default:
+                - 'SalesPieChart'
+                - 'RecentNotifications'
+                - 'Favorites'
+            description: 'Theme dashboard widgets'
+            type: array
+            prototype:
+                type: string
+                length: 255
+```
 
 
 ##Using MesdSettingsBundle
