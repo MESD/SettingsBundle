@@ -96,9 +96,9 @@ scan the bundle for setting definitions.
 
 The naming convention for setting definition files is `hiveName-clusterName.yml`.
 If the settings are defined at the hive, then the cluster is left off and the file
-name pattern is `hiveName.yml`. Here is an example setting definition file:
+name pattern is `hiveName.yml`. Here is an example of a setting definition file:
 
-```yaml
+```yml
 // app/Resources/settings/application-theme.yml
 
 theme:
