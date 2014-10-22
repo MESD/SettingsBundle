@@ -101,9 +101,9 @@ name pattern is `hiveName.yml`. Here is an example of a setting definition file:
 ```yaml
 // app/Resources/settings/application-theme.yml
 
-theme:                   //  clusterName on definition type cluster, hiveName for definition type hive
+theme:                 //  clusterName on definition type cluster, hiveName for definition type hive
     hive: application
-    type: cluster        // Definition level: Hive or Cluster
+    type: cluster      // Definition level: Hive or Cluster
     nodes:
         background:
             default: 'light-gray'
