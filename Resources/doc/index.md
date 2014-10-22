@@ -101,9 +101,9 @@ name pattern is `hiveName.yml`. Here is an example of a setting definition file:
 ```yaml
 // app/Resources/settings/application-theme.yml
 
-theme:                 //  clusterName on definition type cluster, hiveName for definition type hive
+theme:                 // clusterName on definition type cluster, hiveName for definition type hive
     hive: application
-    type: cluster      // Definition level: Hive or Cluster
+    type: cluster      // Definition level: hive or cluster
     nodes:
         background:
             default: 'light-gray'
@@ -227,6 +227,25 @@ ensure the clusters in the database are in-sync. Run the setting validation comm
 to check the clusters and make any needed updates. The validation command will not
 make any changes to the clusters without prompting you for confirmation of the
 needed change.
+
+The validate process will prompt the user for confirmation on any required changes
+to settings in the database.
+
+There are three types of changes that could be required:
+
+```text
+   Insert - New settings that have been defined, but don't exist in database.
+            Inserts should not be destructive to existing data.
+
+   Update - Changes to the setting definition that need to be applied to
+            settings in the database. Updates can potentially be destructive
+            to existing data. i.e. Format change where value is no longer
+            compatible.
+
+   Delete - Removed nodes from setting definition that need to be purged from
+            the settings in the database. Deletes are always destructive to
+            existing data.
+```
 
 **Note:**
 
