@@ -25,7 +25,7 @@ public function registerBundles()
 {
     $bundles = array(
         // ...
-        new Mesd\SettingsBundle\MesdSettingsBundle(),
+        new Mesd\SettingsBundle\MesdSettingsBundle()
     );
 }
 ```
@@ -36,17 +36,18 @@ public function registerBundles()
 Now that the bundle is installed and enabled, you need to create a configuration entry
 in your applications config.yml.
 
-
 ``` yaml
 # app/config/config.yml
 
-# SettingsBundle Configuration
+# MesdSettingsBundle Configuration
 mesd_settings:
     auto_map: false        # true/false - Scan all registered bundles for setting definitions
     #bundles:              # Scan the following list of bundles for setting definitions
     #    AcmeDemoBundle:
     #    AcmeFooBundle:
 ```
+
+To better understand these settings, read on for details of how the MesdSettingsBundle works.
 
 
 ##Understanding MesdSettingsBundle terminology:
@@ -67,11 +68,12 @@ defined. `hive` or `cluster`. You must decide on the level when you define a new
 you'll want to define what settings exist, and their default values, at the cluster
 level because each cluster has different types of settings. However, in some
 situations each cluster will store the same type of settings, but with different
-values. One example would be user settings. Each user would likely have the same
-settings, but with different (or potentially different) values. In this situation,
-you would want to define the settings at the `hive` level and store each user's
-settings in a cluster.
+values. One example would be user settings. Each user would have the same settings,
+but with different (or potentially different) values. In this situation, you would
+want to define the settings at the `hive` level and store each user's settings in a
+cluster.
 
+![Settings defined at Cluster vs Hive](Resources/doc/img/settingsDefinedAt.png)
 
 ###Setting Definitions:
 
