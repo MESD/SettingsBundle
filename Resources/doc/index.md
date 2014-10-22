@@ -73,7 +73,7 @@ but with different (or potentially different) values. In this situation, you wou
 want to define the settings at the `hive` level and store each user's settings in a
 cluster.
 
-![Settings defined at Cluster vs Hive](Resources/doc/img/settingsDefinedAt.png)
+![Settings defined at Cluster vs Hive](/Resources/doc/img/settingsDefinedAt.png)
 
 ###Setting Definitions:
 
