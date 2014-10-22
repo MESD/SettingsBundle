@@ -167,8 +167,8 @@ $ app/console mesd:setting:cluster:create
 ###Create a Setting Definition:
 
 Now you're ready to start defining your settings. You can define your settings by
-creating a Yaml file for the cluster (or hive) or by using the symfony console
-command. First lets look at where the Yaml files are located and what makes up
+creating a yaml file for the cluster (or hive) or by using the symfony console
+command. First lets look at where the yaml files are located and what makes up
 a setting definition node.
 
 When locating your setting definition files, the file locater will check the kernel
@@ -229,9 +229,8 @@ make any changes to the clusters without prompting you for confirmation of the
 needed change.
 
 The validate process will prompt the user for confirmation on any required changes
-to settings in the database.
-
-There are three types of changes that could be required:
+to settings in the database. There are three types of changes that could be
+required:
 
 ```text
    Insert - New settings that have been defined, but don't exist in database.

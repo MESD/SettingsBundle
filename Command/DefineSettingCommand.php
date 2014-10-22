@@ -27,7 +27,7 @@ class DefineSettingCommand extends ContainerAwareCommand
             ->setHelp(<<<EOT
 The <info>mesd:setting:setting:define</info> command defines a setting:
 
-This interactive shell will ask you for a  and description.
+This interactive shell will ask you for a setting details.
 
 EOT
             );
