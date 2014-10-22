@@ -253,6 +253,8 @@ There are three types of changes that could be required:
 > system to prompt you for every change, you can use the --forceInsert, --forceUpdate,
 > --forceDelete, or --forceAll command line options.
 
+Validate the settings with the symfony console command:
+
 ``` bash
 $ app/console mesd:setting:setting:validate
 ```
