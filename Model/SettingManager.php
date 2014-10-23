@@ -6,6 +6,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface as Container;
 use Mesd\SettingsBundle\Entity\Hive;
 use Mesd\SettingsBundle\Entity\Cluster;
 use Mesd\SettingsBundle\Model\Definition\DefinitionManager;
+use Mesd\SettingsBundle\Model\Setting;
 use Mesd\SettingsBundle\Model\SettingValidator;
 
 class SettingManager {
@@ -200,7 +201,7 @@ class SettingManager {
     /**
      * Load setting
      *
-     * Load the specified setting or throw Exception.
+     * Load the specified setting object or throw Exception.
      *
      * Optionaly, load the SettingNode definition and set it within the
      * setting object. This operation requires extra resources and time,
@@ -211,7 +212,7 @@ class SettingManager {
      * @param string $clusterName
      * @param string $settingName
      * @param boolean $loadDefinition (optional)
-     * @return Setting|Exception
+     * @return Mesd\SettingsBundle\Model\Setting|Exception
      */
     public function loadSetting($hiveName, $clusterName, $settingName, $loadDefinition = false)
     {
@@ -240,19 +241,91 @@ class SettingManager {
     }
 
 
-
     /**
-     * Save setting
+     * Load setting value
      *
-     * Save the specified setting or throw Exception.
+     * Load the specified setting value or throw Exception.
      *
      * @param string $hiveName
      * @param string $clusterName
      * @param string $settingName
-     * @param mixed $settingValue
+     * @return string|Exception
+     */
+    public function loadSettingValue($hiveName, $clusterName, $settingName)
+    {
+        $cluster = $this->loadCluster($hiveName, $clusterName);
+
+        $setting = $cluster->getSetting($settingName);
+
+        if (!$setting) {
+            throw new \Exception(sprintf(
+                "Setting '%s' does not exist in the Hive '%s' and Cluster '%s' combination",
+                $settingName,
+                $hiveName,
+                $clusterName
+            ));
+        }
+
+        return $setting->getValue();
+    }
+
+
+    /**
+     * Save setting
+     *
+     * Save the specified setting object or throw Exception.
+     *
+     * @param mixed $setting
+     * @return Mesd\SettingsBundle\Model\Setting|Exception
+     */
+    public function saveSetting(Setting $setting)
+    {
+        $settingDefinition = $this->container->get('mesd_settings.definition_manager')
+            ->loadFile(
+                $setting->getCluster()->getHive()->getName(),
+                $setting->getCluster()->getName()
+            );
+
+        $settingValidator = new SettingValidator(
+            $settingDefinition->getSettingNode($setting->getName()),
+            $setting
+        );
+
+        $validationResults = $settingValidator->validate();
+
+        if (!$validationResults['valid']) {
+            throw new \Exception(sprintf(
+                "Hive '%s' - Cluster '%s' have invalid setting '%s': \n %s",
+                $setting->getCluster()->getHive()->getName(),
+                $setting->getCluster()->getName(),
+                $setting->getName(),
+                $validationResults['validationMessage']
+            ));
+        }
+
+        $cluster = $setting->getCluster();
+
+        $cluster->addSetting($setting);
+
+        $this->container->get('doctrine.orm.entity_manager')->persist($cluster);
+        $this->container->get('doctrine.orm.entity_manager')->flush();
+
+        return $setting;
+    }
+
+
+    /**
+     * Save setting value
+     *
+     * Save the specified setting value or throw Exception.
+     *
+     * @param string $hiveName
+     * @param string $clusterName
+     * @param string $settingName
+     * @param mixed  $settingValue
      * @return Setting|Exception
      */
-    public function saveSetting($hiveName, $clusterName, $settingName, $settingValue)
+    public function saveSettingValue($hiveName, $clusterName, $settingName, $settingValue)
     {
         $cluster = $this->loadCluster($hiveName, $clusterName);
 

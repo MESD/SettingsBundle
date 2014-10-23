@@ -122,7 +122,7 @@ class DefinitionManager
         if (!$file = $this->locateFile($fileName)) {
             throw new \Exception(
                 sprintf(
-                    "Settings Definition File '%s' does not exist in any of the following paths you specified for settings storage: %s",
+                    "Settings Definition File '%s' does not exist in any of the following paths you have configured for settings storage: %s",
                     $fileName,
                     implode(', ', $this->bundleStorage)
                 )
