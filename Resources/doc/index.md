@@ -343,7 +343,7 @@ $settingManger = $this->get('mesd_settings.setting_manager');
 $settingManger->saveSetting('application', 'theme', 'background', 'blue');
 ```
 
-The second method accepts the setting object to be saved. This is convient when you
+The second method accepts the setting object to be saved. This is convenient when you
 already have the setting object loaded.
 
 ``` php
