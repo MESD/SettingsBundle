@@ -265,33 +265,29 @@ Validate the settings with the symfony console command:
 $ app/console mesd:setting:setting:validate
 ```
 
+###Retrieve a setting from the database:
 
-###Store a setting in the database:
-
-**Note:**
-
-> When you store a setting in the database it is automatically validated with the
-> current setting definition.
+There are two ways to retrive setting data. The first method loads just the setting
+value.
 
 ``` php
-
 // Get Setting Manager Service
 $settingManger = $this->get('mesd_settings.setting_manager');
 
-// Store Setting
-// $settingManger->saveSetting($hive, $cluster, $setting, $value);
-$settingManger->saveSetting('application', 'theme', 'background', 'blue');
+// Retrieve Setting Value
+// $settingValue = $settingManger->loadSettingValue($hiveName, $clusterName, $settingName);
+$fontSize = $settingManger->loadSettingValue('application', 'theme', 'font-size');
 
 ```
 
-###Retrieve a setting from the database:
+The second method loads the setting object.
 
 ``` php
 // Get Setting Manager Service
 $settingManger = $this->get('mesd_settings.setting_manager');
 
 // Retrieve Setting
-// $setting = $settingManger->loadSetting($hive, $cluster, $setting);
+// $setting = $settingManger->loadSetting($hiveName, $clusterName, $settingName);
 $setting = $settingManger->loadSetting('application', 'theme', 'font-size');
 
 // Use the setting you retrieved
@@ -299,11 +295,10 @@ $fontSize = $setting->getValue();
 
 ```
 
-
 The Setting Manager `loadSetting` method has an optional fourth parameter which
-triggers whether the setting node definition is loaded as well. The setting node
-definition contains the description, default value, and format data. Pass a
-boolean `true` value to the fourth parameter to load the definition.
+triggers whether the `SettingNode` definition is loaded as well. The `SettingNode`
+definition contains the description, default value, and format data of the setting.
+Pass a boolean `true` value to the fourth parameter to load the definition.
 
 
 ``` php
@@ -323,10 +318,47 @@ $settingDescription = $setting->getNodeDefinition()->getDescription();
 
 **Note:**
 
-> Loading the setting node definition requires loading information from the yaml
+> Loading the SettingNode definition requires loading information from the yaml
 > setting definition file. This operation takes a little extra time. Therefore,
 > the default behavior is to only load the setting name and value.
 
+
+###Store a setting in the database:
+
+Just like with retrieving settings, there are two methods for saving settings as
+well. The first method saves the value without the need to load or create a setting
+object.
+
+**Note:**
+
+> When you store a setting in the database it is automatically validated with the
+> current setting definition.
+
+``` php
+// Get Setting Manager Service
+$settingManger = $this->get('mesd_settings.setting_manager');
+
+// Store Setting Value
+// $settingManger->saveSettingValue($hive, $cluster, $setting, $value);
+$settingManger->saveSetting('application', 'theme', 'background', 'blue');
+```
+
+The second method accepts the setting object to be saved. This is convient when you
+already have the setting object loaded.
+
+``` php
+// Get Setting Manager Service
+$settingManger = $this->get('mesd_settings.setting_manager');
+
+// Load a setting
+$fontSetting = $settingManger->loadSetting('application', 'theme', 'font-size');
+
+// Change the setting value
+$fontSetting->setValue(14);
+
+// Store Setting
+$settingManger->saveSetting($fontSetting);
+```
 
 ###Next Steps
 
