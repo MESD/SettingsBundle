@@ -241,6 +241,7 @@ EOT
                     $newSetting = new Setting();
                     $newSetting->setName($settingKey);
                     $newSetting->setValue($settingNode->getDefault());
+                    $newSetting->setCluster($cluster);
                     $cluster->addSetting($newSetting);
 
                     $output->writeln(array(

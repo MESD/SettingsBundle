@@ -3,6 +3,7 @@
 namespace Mesd\SettingsBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Mesd\SettingsBundle\Entity\Hive;
 use Mesd\SettingsBundle\Model\Setting;
 
 /**
@@ -133,6 +134,7 @@ class Cluster
             $setting = new Setting();
             $setting->setName($settingName);
             $setting->setValue($this->setting[$settingName]);
+            $setting->setCluster($this);
 
             return $setting;
         }
@@ -161,7 +163,7 @@ class Cluster
      * @param \Mesd\SettingsBundle\Entity\Hive $hive
      * @return Cluster
      */
-    public function setHive(\Mesd\SettingsBundle\Entity\Hive $hive = null)
+    public function setHive(Hive $hive = null)
     {
         $this->hive = $hive;
 

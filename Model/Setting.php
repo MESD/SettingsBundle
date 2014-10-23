@@ -2,6 +2,7 @@
 
 namespace Mesd\SettingsBundle\Model;
 
+use Mesd\SettingsBundle\Entity\Cluster;
 use Mesd\SettingsBundle\Model\Definition\SettingNode;
 
 class Setting {
@@ -9,44 +10,7 @@ class Setting {
     private $name;
     private $value;
     private $nodeDefinition;
-
-
-    /**
-     * Get SettingNode definition
-     *
-     * Get the SettingNode definition, if it has been
-     * loaded. See isNodeDefinitionLoaded() below for
-     * more details.
-     *
-     * @return SettingNode|null
-     */
-    public function getNodeDefinition()
-    {
-        if (!$this->isNodeDefinitionLoaded()) {
-            throw new \Exception(
-                'The SettingNode definition has not been loaded. Please see the documentation ' .
-                'for the SettingManager loadSetting() method.'
-            );
-        }
-
-        return $this->nodeDefinition;
-    }
-
-
-    /**
-     * Set SettingNode definition
-     *
-     * Set the setting node definition.
-     *
-     * @param Mesd\SettingsBundle\Model\Setting $setting
-     * @return SettingNode
-     */
-    public function setNodeDefinition(SettingNode $settingNode)
-    {
-        $this->nodeDefinition = $settingNode;
-
-        return $this;
-    }
+    private $cluster;
 
 
     /**
@@ -104,4 +68,65 @@ class Setting {
         return $this;
     }
 
+
+    /**
+     * Get cluster
+     *
+     * @return Mesd\SettingsBundle\Entity\Cluster
+     */
+    public function getCluster()
+    {
+        return $this->cluster;
+    }
+
+
+    /**
+     * Set cluster
+     *
+     * @param Mesd\SettingsBundle\Entity\Cluster $cluster
+     */
+    public function setCluster(Cluster $cluster)
+    {
+        $this->cluster = $cluster;
+
+        return $this;
+    }
+
+
+    /**
+     * Get SettingNode definition
+     *
+     * Get the SettingNode definition, if it has been
+     * loaded. See isNodeDefinitionLoaded() below for
+     * more details.
+     *
+     * @return SettingNode|null
+     */
+    public function getNodeDefinition()
+    {
+        if (!$this->isNodeDefinitionLoaded()) {
+            throw new \Exception(
+                'The SettingNode definition has not been loaded. Please see the documentation ' .
+                'for the SettingManager loadSetting() method.'
+            );
+        }
+
+        return $this->nodeDefinition;
+    }
+
+
+    /**
+     * Set SettingNode definition
+     *
+     * Set the setting node definition.
+     *
+     * @param Mesd\SettingsBundle\Model\Setting $setting
+     * @return SettingNode
+     */
+    public function setNodeDefinition(SettingNode $settingNode)
+    {
+        $this->nodeDefinition = $settingNode;
+
+        return $this;
+    }
 }
