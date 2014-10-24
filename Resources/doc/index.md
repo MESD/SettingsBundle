@@ -339,7 +339,7 @@ $settingManger = $this->get('mesd_settings.setting_manager');
 
 // Store Setting Value
 // $settingManger->saveSettingValue($hive, $cluster, $setting, $value);
-$settingManger->saveSetting('application', 'theme', 'background', 'blue');
+$settingManger->saveSettingValue('application', 'theme', 'background', 'blue');
 ```
 
 The second method accepts the setting object to be saved. This is convenient when you
