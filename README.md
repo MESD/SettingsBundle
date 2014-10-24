@@ -2,7 +2,7 @@
 
 A `Symfony2` bundle for managing settings. The bundles intention is to manage application
 or user settings, not `Symfony2` framework or bundle configuration items, the latter
-already being well handled within Symfony's configuration component.
+already being well handled with Symfony's configuration component.
 
 The SettingsBundle stores settings in a ORM supported database using two small tables.
 Settings can be defined as a String, Integer, Float, Boolean, or Array. You define the
