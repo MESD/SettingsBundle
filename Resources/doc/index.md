@@ -361,15 +361,16 @@ $settingManger->saveSetting($fontSetting);
 
 **Note:**
 
-> When you store a setting in the database it is automatically validated with the
+> When you store a setting in the database it is automatically validated against the
 > current setting definition.
 
 ###Next Steps
 
-Now that you have completed the basic installation, configuration, and usage of the
+Now that you have completed the installation, configuration, and basic usage of the
 MesdSettingsBundle, you are ready to learn about more advanced features and usage of
 the bundle.
 
-The following documents are available:
+The following additional documents are available:
 
+- [Using the SettingManager Service](using-setting-manager-service.md)
 - [Setting Definitions - Programmers Reference](node-definition-programer-reference.md)
