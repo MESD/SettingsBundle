@@ -190,7 +190,9 @@ directory.
 **Warning:**
 
 > If you create the same setting definition file in multiple bundles, the system will
-> only load the first definition file it locates.
+> only load the first definition file it locates. The bundles are scanned based on the
+> order the bundles were specified in the mesd_settings section of config.yml, or the
+> AppKernel.php if auto_map is set to true.
 
 
 Each `SettingNode` has five descriptors:
