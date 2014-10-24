@@ -116,6 +116,35 @@ class SettingManager {
 
 
     /**
+     * Delete hive
+     *
+     * Delete the specified hive or throw Exception.
+     *
+     * @param string $hiveName
+     * @return true|Exception
+     */
+    public function deleteHive($hiveName)
+    {
+        $hive = $this->hiveExists($hiveName);
+
+        if (!$hive) {
+            throw new \Exception(sprintf('The hive %s does not exist', $hiveName));
+        }
+
+        $hive = $this->hiveHasClusters($hiveName);
+
+        if ($hive) {
+            throw new \Exception(sprintf('The hive %s still has clusters attched', $hiveName));
+        }
+
+        $this->container->get('doctrine.orm.entity_manager')->remove($hive);
+        $this->container->get('doctrine.orm.entity_manager')->flush();
+
+        return true;
+    }
+
+
+    /**
      * Check if hive exisits
      *
      * Determines if the specified hive exisits

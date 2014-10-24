@@ -7,13 +7,13 @@ The `SettingManager` service provides a single entry point for managing and
 accessing your settings and related entities.
 
 The first step is to get the `SettingManager` service. It's should be avilable
-in any Symfony controller or ContainerAware class.
+in any Symfony controller or class that implements the Symfony
+`ContainerAwareInterface`.
 
 ```php
 // Get SettingManager Service
 $settingManger = $this->get('mesd_settings.setting_manager');
 ```
-
 
 ### Managing Hives
 
@@ -48,3 +48,20 @@ $hive = $settingManger->hiveExists('application');
 // $settingManger->loadHive($hiveName);
 $hive = $settingManger->loadHive('application');
 ```
+
+#### Determine if a hive has clusters
+
+```php
+// Check if specific hive has clusters, returns hive object or false
+// $settingManger->hiveHasClusters($hiveName);
+$hive = $settingManger->hiveHasClusters('application');
+```
+
+#### Delete a hive
+
+```php
+// Delete a specific hive, returns true or throws exception
+// $settingManger->deleteHive($hiveName);
+$settingManger->deleteHive('application');
+```
+
