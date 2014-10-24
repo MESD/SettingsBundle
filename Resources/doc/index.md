@@ -191,7 +191,7 @@ directory.
 
 > If you create the same setting definition file in multiple bundles, the system will
 > only load the first definition file it locates. The bundles are scanned based on the
-> order the bundles were specified in the mesd_settings section of config.yml, or the
+> order the bundles were specified in the mesd_settings section of config.yml, or
 > AppKernel.php if auto_map is set to true.
 
 
