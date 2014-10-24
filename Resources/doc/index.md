@@ -205,7 +205,7 @@ Each `SettingNode` has five descriptors:
     - Float
     - Boolean
     - Array
-* **Format**: The string length, number of digits, number of decimals, etc.
+* **Format**: The string length, number of digits, decimal precision, etc.
 * **Default**: The default value of the setting [optional].
 
 **Note:**
@@ -214,7 +214,7 @@ Each `SettingNode` has five descriptors:
 > needs a `prototype` definition which defines the type of data contained within the
 > array. The prototype must be one of the base types (integer, float, string, or
 > boolean). The prototype definition must contain all of the format items the
-> base type requires. i.e. String type requires a 'length' attribute.
+> base type requires. e.g. String type requires a 'length' attribute.
 
 
 ###Define a new setting with the console:
@@ -254,7 +254,8 @@ required:
 
 > If you have a large number of changes that need to be made and you don't want the
 > system to prompt you for every change, you can use the --forceInsert, --forceUpdate,
-> --forceDelete, or --forceAll command line options.
+> --forceDelete, or --forceAll command line options. However, the system will make
+> all the necessary changes with asking for any confirmation.
 
 **Warning:**
 
@@ -329,14 +330,8 @@ $settingDescription = $setting->getNodeDefinition()->getDescription();
 
 ###Store a setting in the database:
 
-Just like with retrieving settings, there are two methods for saving settings as
-well. The first method saves the value without the need to load or create a setting
-object.
-
-**Note:**
-
-> When you store a setting in the database it is automatically validated with the
-> current setting definition.
+Just like with retrieving settings, there are two methods for saving settings. The
+first method saves the value without the need to load or create a setting object.
 
 ``` php
 // Get Setting Manager Service
@@ -363,6 +358,11 @@ $fontSetting->setValue(14);
 // Store Setting
 $settingManger->saveSetting($fontSetting);
 ```
+
+**Note:**
+
+> When you store a setting in the database it is automatically validated with the
+> current setting definition.
 
 ###Next Steps
 
