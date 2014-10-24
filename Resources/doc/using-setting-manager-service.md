@@ -17,7 +17,7 @@ $settingManger = $this->get('mesd_settings.setting_manager');
 
 ### Managing Hives
 
-#### Create a new hive
+#### Create a new hive:
 
 ```php
 // Create Hive
@@ -33,7 +33,7 @@ $settingManger->createHive('application', 'Application Hive');
 $settingManger->createHive('application', 'Application Hive', true);
 ```
 
-#### Determine if a hive exisits
+#### Determine if a hive exisits:
 
 ```php
 // Check if specific hive exisits, returns hive object or false
@@ -41,7 +41,7 @@ $settingManger->createHive('application', 'Application Hive', true);
 $hive = $settingManger->hiveExists('application');
 ```
 
-#### Load a hive
+#### Load a hive:
 
 ```php
 // Load a specific hive, returns hive object or throws exception
@@ -49,7 +49,7 @@ $hive = $settingManger->hiveExists('application');
 $hive = $settingManger->loadHive('application');
 ```
 
-#### Determine if a hive has clusters
+#### Determine if a hive has clusters:
 
 ```php
 // Check if specific hive has clusters, returns hive object or false
@@ -57,7 +57,7 @@ $hive = $settingManger->loadHive('application');
 $hive = $settingManger->hiveHasClusters('application');
 ```
 
-#### Delete a hive
+#### Delete a hive:
 
 ```php
 // Delete a specific hive, returns true or throws exception
