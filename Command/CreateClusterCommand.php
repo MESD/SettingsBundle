@@ -45,7 +45,7 @@ EOT
 
         $settingManager =  $this->getContainer()->get("mesd_settings.setting_manager");
 
-        $settingManager->createCluster($clusterName, $description, $hiveName);
+        $settingManager->createCluster($hiveName, $clusterName, $description);
         $output->writeln(sprintf('<comment>Created cluster <info>%s</info></comment>', $clusterName));
     }
 

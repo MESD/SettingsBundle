@@ -20,17 +20,17 @@ $settingManger = $this->get('mesd_settings.setting_manager');
 #### Create a new hive:
 
 ```php
-// Create Hive
+// Create Hive, returns hive object or throws exception
 // $settingManger->createHive($hiveName, $description = null, $definedAtHive = false);
-$settingManger->createHive('application');
+$hive = $settingManger->createHive('application');
 
 // Create Hive with description
 // $settingManger->createHive($hiveName, $description = null, $definedAtHive = false);
-$settingManger->createHive('application', 'Application Hive');
+$hive = $settingManger->createHive('application', 'Application Hive');
 
 // Create Hive with settings defined at hive level
 // $settingManger->createHive($hiveName, $description = null, $definedAtHive = false);
-$settingManger->createHive('application', 'Application Hive', true);
+$hive = $settingManger->createHive('application', 'Application Hive', true);
 ```
 
 #### Determine if a hive exists:
@@ -65,3 +65,40 @@ $hive = $settingManger->hiveHasClusters('application');
 $settingManger->deleteHive('application');
 ```
 
+### Managing Clusters
+
+#### Create a new cluster:
+
+```php
+// Create Cluster, returns cluster object or throws exception
+// $settingManger->createCluster($hiveName, $clusterName, $description = null);
+$cluster = $settingManger->createCluster('application', 'theme');
+
+// Create Cluster with description
+// $settingManger->createCluster($hiveName, $clusterName, $description = null);
+$cluster = $settingManger->createCluster('application', 'theme', 'Theme Settings');
+```
+
+#### Determine if a cluster exists:
+
+```php
+// Check if specific cluster exists, returns cluster object or false
+// $settingManger->clusterExists($hiveName, $clusterName);
+$cluster = $settingManger->clusterExists('application', 'theme');
+```
+
+#### Load a cluster:
+
+```php
+// Load a specific cluster, returns cluster object or throws exception
+// $settingManger->loadCluster($hiveName, $clusterName);
+$cluster = $settingManger->loadCluster('application', 'theme');
+```
+
+#### Delete a cluster:
+
+```php
+// Delete a specific cluster, returns true or throws exception
+// $settingManger->deleteCluster($hiveName, $clusterName);
+$settingManger->deleteCluster('application', 'theme');
+```

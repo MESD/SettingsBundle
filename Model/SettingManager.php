@@ -56,12 +56,12 @@ class SettingManager {
      *
      * Creates a new cluster in database
      *
+     * @param string $hiveName
      * @param string $clusterName
      * @param string $description
-     * @param string $hiveName
      * @return Cluster
      */
-    public function createCluster($clusterName, $description = null, $hiveName)
+    public function createCluster($hiveName, $clusterName, $description = null)
     {
         $hive = $this->hiveExists($hiveName);
 
@@ -134,6 +134,30 @@ class SettingManager {
         $hive = $this->loadHive($hiveName);
 
         $this->container->get('doctrine.orm.entity_manager')->remove($hive);
+        $this->container->get('doctrine.orm.entity_manager')->flush();
+
+        return true;
+    }
+
+
+    /**
+     * Delete cluster
+     *
+     * Delete the specified cluster or throw Exception.
+     *
+     * @param string $hiveName
+     * @param string $clusterName
+     * @return true|Exception
+     */
+    public function deleteCluster($hiveName, $clusterName)
+    {
+        $cluster = $this->clusterExists($hiveName, $clusterName);
+
+        if (!$cluster) {
+            throw new \Exception(sprintf('The hive %s and Cluster %s combination do not exist', $hiveName, $clusterName));
+        }
+
+        $this->container->get('doctrine.orm.entity_manager')->remove($cluster);
         $this->container->get('doctrine.orm.entity_manager')->flush();
 
         return true;
