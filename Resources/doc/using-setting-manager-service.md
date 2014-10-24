@@ -15,8 +15,8 @@ in any Symfony controller or class that implements the Symfony
 $settingManger = $this->get('mesd_settings.setting_manager');
 ```
 
-### Managing Hives
 --
+### Managing Hives
 
 #### Create a new hive:
 
@@ -74,9 +74,8 @@ $settingManger->deleteHive('application');
 $settingManger->deleteHiveClusters('application');
 ```
 
-
-### Managing Clusters
 --
+### Managing Clusters
 
 #### Create a new cluster:
 
@@ -114,8 +113,8 @@ $cluster = $settingManger->loadCluster('application', 'theme');
 $settingManger->deleteCluster('application', 'theme');
 ```
 
-### Managing Settings
 --
+### Managing Settings
 
 ####Retrieve a setting from the database:
 
