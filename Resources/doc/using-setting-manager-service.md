@@ -74,7 +74,7 @@ $settingManger->deleteHiveClusters('application');
 ```
 
 ### Managing Clusters
----
+--
 
 #### Create a new cluster:
 
