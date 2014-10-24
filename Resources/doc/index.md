@@ -11,7 +11,7 @@
 Add the bundle to your project
 
 ``` bash
-$ composer require mesd/settings-bundle "dev-master"
+$ composer require mesd/settings-bundle "~1.0"
 
 ```
 
