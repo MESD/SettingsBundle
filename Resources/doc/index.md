@@ -276,7 +276,7 @@ There are two ways to retrive setting data. The first method loads just the sett
 value.
 
 ``` php
-// Get Setting Manager Service
+// Get SettingManager Service
 $settingManger = $this->get('mesd_settings.setting_manager');
 
 // Retrieve Setting Value
@@ -288,7 +288,7 @@ $fontSize = $settingManger->loadSettingValue('application', 'theme', 'font-size'
 The second method loads the setting object.
 
 ``` php
-// Get Setting Manager Service
+// Get SettingManager Service
 $settingManger = $this->get('mesd_settings.setting_manager');
 
 // Retrieve Setting
@@ -307,7 +307,7 @@ Pass a boolean `true` value to the fourth parameter to load the definition.
 
 
 ``` php
-// Get Setting Manager Service
+// Get SettingManager Service
 $settingManger = $this->get('mesd_settings.setting_manager');
 
 // Retrieve Setting
@@ -334,7 +334,7 @@ Just like with retrieving settings, there are two methods for saving settings. T
 first method saves the value without the need to load or create a setting object.
 
 ``` php
-// Get Setting Manager Service
+// Get SettingManager Service
 $settingManger = $this->get('mesd_settings.setting_manager');
 
 // Store Setting Value
@@ -346,7 +346,7 @@ The second method accepts the setting object to be saved. This is convenient whe
 already have the setting object loaded.
 
 ``` php
-// Get Setting Manager Service
+// Get SettingManager Service
 $settingManger = $this->get('mesd_settings.setting_manager');
 
 // Load a setting
