@@ -110,3 +110,62 @@ $cluster = $settingManger->loadCluster('application', 'theme');
 // $settingManger->deleteCluster($hiveName, $clusterName);
 $settingManger->deleteCluster('application', 'theme');
 ```
+
+### Managing Settings
+
+####Retrieve a setting from the database:
+
+``` php
+// Retrieve Setting Value
+// $settingValue = $settingManger->loadSettingValue($hiveName, $clusterName, $settingName);
+$fontSize = $settingManger->loadSettingValue('application', 'theme', 'font-size');
+
+// Retrieve Setting Object
+// $setting = $settingManger->loadSetting($hiveName, $clusterName, $settingName);
+$setting = $settingManger->loadSetting('application', 'theme', 'font-size');
+
+// Use the setting you retrieved
+$fontSize = $setting->getValue();
+
+
+// Retrieve Setting Object with Setting Definition Data
+// $setting = $settingManger->loadSetting($hive, $cluster, $setting, $loadDefinition);
+$setting = $settingManger->loadSetting('application', 'theme', 'font-size', true);
+
+// Use the setting you retrieved
+$fontSize = $setting->getValue();
+
+// Use the setting definition you loaded
+$settingDescription = $setting->getNodeDefinition()->getDescription();
+$settingType        = $setting->getNodeDefinition()->getType();
+```
+
+**Note:**
+
+> Loading the SettingNode definition requires loading information from the yaml
+> setting definition file. This operation takes a little extra time. Therefore,
+> the default behavior is to only load the setting name and value.
+
+
+####Store a setting in the database:
+
+``` php
+// Store Setting Value
+// $settingManger->saveSettingValue($hive, $cluster, $setting, $value);
+$settingManger->saveSettingValue('application', 'theme', 'background', 'blue');
+
+// Store a Setting Object
+//   Load a setting
+$fontSetting = $settingManger->loadSetting('application', 'theme', 'font-size');
+
+//   Change the setting value
+$fontSetting->setValue(14);
+
+//   Store Setting
+$settingManger->saveSetting($fontSetting);
+```
+
+**Note:**
+
+> When you store a setting in the database it is automatically validated against the
+> current setting definition.
