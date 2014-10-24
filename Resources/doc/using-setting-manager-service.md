@@ -65,6 +65,14 @@ $hive = $settingManger->hiveHasClusters('application');
 $settingManger->deleteHive('application');
 ```
 
+#### Delete all clusters attched to a hive:
+
+```php
+// Delete a clusters attched to a specific hive, returns true or false
+// $settingManger->deleteHiveClusters($hiveName);
+$settingManger->deleteHiveClusters('application');
+```
+
 ### Managing Clusters
 
 #### Create a new cluster:

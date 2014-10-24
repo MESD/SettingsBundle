@@ -116,6 +116,30 @@ class SettingManager {
 
 
     /**
+     * Delete cluster
+     *
+     * Delete the specified cluster or throw Exception.
+     *
+     * @param string $hiveName
+     * @param string $clusterName
+     * @return true|Exception
+     */
+    public function deleteCluster($hiveName, $clusterName)
+    {
+        $cluster = $this->clusterExists($hiveName, $clusterName);
+
+        if (!$cluster) {
+            throw new \Exception(sprintf('The hive %s and Cluster %s combination do not exist', $hiveName, $clusterName));
+        }
+
+        $this->container->get('doctrine.orm.entity_manager')->remove($cluster);
+        $this->container->get('doctrine.orm.entity_manager')->flush();
+
+        return true;
+    }
+
+
+    /**
      * Delete hive
      *
      * Delete the specified hive or throw Exception.
@@ -141,23 +165,25 @@ class SettingManager {
 
 
     /**
-     * Delete cluster
+     * Delete hive clusters
      *
-     * Delete the specified cluster or throw Exception.
+     * Delete all the clusters attched to specific hive.
      *
      * @param string $hiveName
-     * @param string $clusterName
-     * @return true|Exception
+     * @return true|false
      */
-    public function deleteCluster($hiveName, $clusterName)
+    public function deleteHiveClusters($hiveName)
     {
-        $cluster = $this->clusterExists($hiveName, $clusterName);
+        $hive = $this->hiveHasClusters($hiveName);
 
-        if (!$cluster) {
-            throw new \Exception(sprintf('The hive %s and Cluster %s combination do not exist', $hiveName, $clusterName));
+        if (!$hive) {
+            return false;
         }
 
-        $this->container->get('doctrine.orm.entity_manager')->remove($cluster);
+        foreach ($hive->getCluster() as $key => $cluster) {
+            $this->container->get('doctrine.orm.entity_manager')->remove($cluster);
+        }
+
         $this->container->get('doctrine.orm.entity_manager')->flush();
 
         return true;
