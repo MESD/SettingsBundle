@@ -16,6 +16,7 @@ $settingManger = $this->get('mesd_settings.setting_manager');
 ```
 
 ### Managing Hives
+--
 
 #### Create a new hive:
 
@@ -73,6 +74,7 @@ $settingManger->deleteHive('application');
 $settingManger->deleteHiveClusters('application');
 ```
 
+
 ### Managing Clusters
 --
 
@@ -113,6 +115,7 @@ $settingManger->deleteCluster('application', 'theme');
 ```
 
 ### Managing Settings
+--
 
 ####Retrieve a setting from the database:
 
