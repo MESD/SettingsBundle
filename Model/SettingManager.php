@@ -125,17 +125,13 @@ class SettingManager {
      */
     public function deleteHive($hiveName)
     {
-        $hive = $this->hiveExists($hiveName);
-
-        if (!$hive) {
-            throw new \Exception(sprintf('The hive %s does not exist', $hiveName));
-        }
-
         $hive = $this->hiveHasClusters($hiveName);
 
         if ($hive) {
             throw new \Exception(sprintf('The hive %s still has clusters attched', $hiveName));
         }
+
+        $hive = $this->loadHive($hiveName);
 
         $this->container->get('doctrine.orm.entity_manager')->remove($hive);
         $this->container->get('doctrine.orm.entity_manager')->flush();
@@ -174,6 +170,12 @@ class SettingManager {
      */
     public function hiveHasClusters($hiveName)
     {
+        $hive = $this->hiveExists($hiveName);
+
+        if (!$hive) {
+            throw new \Exception(sprintf('The hive %s does not exist', $hiveName));
+        }
+
         $hive = $this->container->get('doctrine.orm.entity_manager')
             ->getRepository('MesdSettingsBundle:Hive')
             ->findOneBy(array('name' => strtoupper($hiveName)));
