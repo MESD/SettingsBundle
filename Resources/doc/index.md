@@ -57,7 +57,8 @@ To better understand these settings, read on for details of how the MesdSettings
 Related settings are stored in an entity called a `cluster`. Each `cluster` is attached
 to a parent entity called a `hive`. You can create as many hives and clusters as you
 need. You should think of a `hive` as an application wide classification, and a `cluster`
-as a sub-classification.
+as a setting group. If your application is rather large and can be broken down into
+sub-applications or modules, you might create a `hive` for each sub-application or module.
 
 
 ###Choosing the Definition Level - Hive or Cluster?:
