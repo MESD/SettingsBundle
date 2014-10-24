@@ -79,6 +79,7 @@ class SettingManager {
         $cluster->setName($clusterName);
         $cluster->setDescription($description);
         $cluster->setHive($hive);
+        $hive->addCluster($cluster);
         $this->container->get('doctrine.orm.entity_manager')->persist($cluster);
         $this->container->get('doctrine.orm.entity_manager')->flush();
 
@@ -109,7 +110,7 @@ class SettingManager {
         $hive->setDescription($description);
         $hive->setDefinedAtHive($definedAtHive);
         $this->container->get('doctrine.orm.entity_manager')->persist($hive);
-        $this->container->get('doctrine.orm.entity_manager')->flush();
+        $this->container->get('doctrine.orm.entity_manager')->flush($hive);
 
         return $hive;
     }
@@ -133,7 +134,7 @@ class SettingManager {
         }
 
         $this->container->get('doctrine.orm.entity_manager')->remove($cluster);
-        $this->container->get('doctrine.orm.entity_manager')->flush();
+        $this->container->get('doctrine.orm.entity_manager')->flush($cluster);
 
         return true;
     }
@@ -177,6 +178,7 @@ class SettingManager {
         $hive = $this->hiveHasClusters($hiveName);
 
         if (!$hive) {
+            print "No Clusters Found!";
             return false;
         }
 
