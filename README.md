@@ -4,12 +4,12 @@ A Symfony2 bundle for managing settings. The bundles intention is to manage appl
 or user settings, not Symfony2 framework or bundle configuration items, the latter
 already being well handled within symfony.
 
-The SettingsBundle stores settings in a ORM supported database using only two small
-tables. Settings can be defined as String, Integer, Float, Boolean, or Array. You can
-define the max length, number of digits, or decimals in each setting - specific to
-setting type. There is also support for assigning default values. The settings
-available in your application are defined using simple text yaml files, with like
-settings grouped together in useful structures.
+The SettingsBundle stores settings in a ORM supported database using two small tables.
+Settings can be defined as a String, Integer, Float, Boolean, or Array. You define the
+format for the setting, e.g. the max length, number of digits, or decimals. There is
+also support for assigning default values. The settings available in your application
+are defined using simple text yaml files, with like settings grouped together in a
+structure called a cluster.
 
 For more details, please see the documentation.
 
