@@ -41,7 +41,7 @@ your desired location from the menu.
 Now the define setting command will allow you to define as many settings as
 you would like. When your done choose 'e' to exit.
 
-Here is an example Setting Definition file for some user settings:
+Here is the Setting Definition file for some example user settings:
 
 ```yaml
 User:
