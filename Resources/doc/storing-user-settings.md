@@ -150,5 +150,5 @@ When settings clusters are created they're loaded with the default values from t
 setting definition yaml file, assuming the settings were defined before the cluster
 was created. If you created the setting definition after creating some or all of
 your user clusters, or you added/removed settings from the definition after words,
-run the `app/console mesd:setting:setting:validate` command to validate the clusters.
+run the `mesd:setting:setting:validate` console command to validate the clusters.
 
