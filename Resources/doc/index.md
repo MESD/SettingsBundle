@@ -373,4 +373,4 @@ the bundle.
 The following additional documents are available:
 
 - [Using the SettingManager Service](using-setting-manager-service.md)
-- [Setting Definitions - Programmers Reference](node-definition-programer-reference.md)
+- [Using the DefinitionManager Service](using-definition-manager-service.md)
