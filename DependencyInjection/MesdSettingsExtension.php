@@ -19,11 +19,11 @@ class MesdSettingsExtension extends Extension
 
 
         //Peform some extra validation
-        if (1 > count($config["bundles"])) {
-            unset($config["bundles"]);
+        if (1 > count($config['bundles'])) {
+            unset($config['bundles']);
         }
-        if (true === $config["auto_map"] && isset($config["bundles"])) {
-            throw new \Exception("FcSetttingsBundle Config Error: You may set auto_map: true or specify bundles, not both");
+        if (true === $config['auto_map'] && isset($config['bundles'])) {
+            throw new \Exception('MesdSetttingsBundle Config Error: You may set auto_map: true or specify bundles, not both');
         }
 
         // Store fc_settings config parameters in container
@@ -63,19 +63,29 @@ class MesdSettingsExtension extends Extension
         $bundleStorage[0] = $container->getParameter('kernel.root_dir') . '/Resources/settings';
 
         // Load all user requested bundle paths from config
-        if(isset($config["bundles"]) || true === $config["auto_map"]) {
+        if(isset($config['bundles']) || true === $config['auto_map']) {
             foreach ($container->getParameter('kernel.bundles') as $bundle => $bundlePath) {
-                if(isset( $config["bundles"])) {
-                    if (array_key_exists($bundle, $config["bundles"])) {
+                if(isset( $config['bundles'])) {
+                    if (array_key_exists($bundle, $config['bundles'])) {
                         $bundleStorage[] = '@' . $bundle . '/Resources/settings';
+                        unset($config['bundles'][$bundle]);
                     }
                 }
-                elseif (true === $config["auto_map"]) {
+                elseif (true === $config['auto_map']) {
                     $bundleStorage[] = '@' . $bundle . '/Resources/settings';
                 }
             }
         }
 
+        // Throw exception is user listed bundle not in kernel
+        if (0 < count($config['bundles'])) {
+            throw new \Exception(sprintf(
+                'MesdSetttingsBundle Config Error - You configured the following bundles which are not loadad in the kernel: %s',
+                implode(', ', array_keys($config['bundles']))
+            ));
+        }
+
+        // Register configured bundles as a parameter
         $container->setParameter(
             'mesd_settings.bundle_storage',
             $bundleStorage
