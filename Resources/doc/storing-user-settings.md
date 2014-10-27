@@ -7,7 +7,7 @@ stores application settings. This guide will walk you through the setup process
 and give you code examples to use within your application.
 
 
-###Step 1 - Create a new Hive
+### Step 1 - Create a new Hive
 
 The first thing we need to do is define a new hive for the user settings. It's
 important that we create the new hive using the 'definedAtHive' command line
@@ -21,7 +21,7 @@ Additionally, we'll give the hive a description of `User Settings`.
 $ app/console mesd:setting:hive:create "User" "User Settings" --definedAtHive
 ```
 
-###Step 2 - Define user settings
+### Step 2 - Define user settings
 
 Once the new hive is created, we can define some settings. You don't have to
 define every setting right away, settings can easily be added as your
@@ -69,7 +69,7 @@ User:
             type: boolean
 ```
 
-###Step 3 - Update your application to create a new cluster for each user
+### Step 3 - Update your application to create a new cluster for each user
 
 At this point the setting system is ready to be used. You need to update your
 applications code that creates new users and add some code to create a new
@@ -79,7 +79,7 @@ cluster for the users settings.
 > For this example we'll assume your using the Symfony Security Component
 > UserInterface. If your not, it's easy to use this bundle with any user
 > interface, just determine the method you need to load your users unique
-> username or userid.
+> username or user id.
 
 
 ```php
@@ -100,7 +100,7 @@ $cluster = $settingManger->createCluster('user', $user->getUsername());
 ```
 
 It's important that the first argument of `createCluster` be the hive name you
-created earlier in step 1. The second argument should be a **unique** way of
+created earlier in step one. The second argument should be a **unique** way of
 identifying your user. Username is commonly a good option, or the database
 unique ID field if your storing users in your applications database. The third
 argument lets you set a description for the cluster, and is optional.
@@ -112,7 +112,7 @@ argument lets you set a description for the cluster, and is optional.
 > the records creating a new cluster for each user with code similar to above.
 
 
-###Step 4 - Update your application to delete the user cluster when needed
+### Step 4 - Update your application to delete the user cluster when needed
 
 Similar to creating a settings cluster when you create a new user, you may also
 wish to delete the users setting cluster when the user account is removed.
@@ -137,5 +137,19 @@ $settingManger->deleteCluster('user', $user->getUsername());
 ```
 
 It's important that the first argument of `createCluster` be the hive name you
-created earlier in step 1. The second argument should be a **unique** way of
+created earlier in step one. The second argument should be a **unique** way of
 identifying your user and the same method you used in creating the cluster.
+
+
+### Step 5 - Retrieve or store values from your user settings
+
+At this point all your exiting users should have settings clusters (See Note in
+Step 3), and any new users should be created with a new settings cluster.
+
+**Note:**
+> When settings clusters are created they're loaded with the default values from the
+> setting definition yaml file, assuming the settings were defined before the cluster
+> was created. If you created the setting definition after creating some or all of
+> your user clusters, or you added/removed settings from the definition after words,
+> run the `app/console mesd:setting:setting:validate` command to validate the clusters.
+
