@@ -21,7 +21,7 @@ Additionally, we'll give the hive a description of `User Settings`.
 $ app/console mesd:setting:hive:create "User" "User Settings" --definedAtHive
 ```
 
-###Step 2 - Define some user settings
+###Step 2 - Define user settings
 
 Once the new hive is created, we can define some settings. You don't have to
 define every setting right away, settings can easily be added as your
@@ -66,3 +66,7 @@ User:
             description: 'Display user image'
             type: boolean
 ```
+
+###Step 3 - Create a new cluster for each user
+
+At this point the setting system is ready to go and

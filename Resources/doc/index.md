@@ -1,11 +1,11 @@
-##Install MesdSettingsBundle
+## Install MesdSettingsBundle
 
-###Dependencies:
+### Dependencies:
 
     "symfony/symfony": "2.3.*",
     "doctrine/orm": "~2.3"
 
-###Install with composer:
+### Install with composer:
 
 
 Add the bundle to your project
@@ -16,7 +16,7 @@ $ composer require mesd/settings-bundle "~1.0"
 ```
 
 
-###Enable the bundle:
+### Enable the bundle:
 
 ``` php
 // app/AppKernel.php
@@ -31,7 +31,7 @@ public function registerBundles()
 ```
 
 
-###Configure the bundle:
+### Configure the bundle:
 
 Now that the bundle is installed and enabled, you need to create a configuration entry
 in your applications config.yml.
@@ -47,12 +47,37 @@ mesd_settings:
     #    AcmeFooBundle:
 ```
 
-To better understand these settings, read on for details of how the MesdSettingsBundle works.
+The MesdSettingsBundle uses yaml files to store Setting Definitions, which essentially are
+the blueprint for your settings. You'll learn more about Setting Definitions in a minute.
+These configuration options tell the MesdSettingsBundle where to locate your setting
+definition files. To start, just leave `auto_map` set to false, and the `bundles` section
+commented out. Once you have a better understanding of how things work, you can revisit
+config.yml file and make any needed adjustments.
 
 
-##Understanding MesdSettingsBundle terminology:
+### Create entities in the database:
 
-###Hives and Clusters
+Last, you just need to create the entities used for the MesdSettingsBundle in your
+database.
+
+Use the Doctrine Schema Update tool to list the changes needed:
+
+```bash
+$ app/console doctrine:schema:update --dump-sql
+```
+
+There should be just two tables created `setting_hive` and `setting_cluster`, and one
+foreign key. If everything looks good, go a head and run the command again, this time
+makeing the changes:
+
+```bash
+$ app/console doctrine:schema:update --force
+```
+
+
+## Understanding MesdSettingsBundle terminology:
+
+### Hives and Clusters
 
 Related settings are stored in an entity called a `cluster`. Each `cluster` is attached
 to a parent entity called a `hive`. You can create as many hives and clusters as you
@@ -62,7 +87,7 @@ into sub-applications or modules, you might create a `hive` for each sub-applica
 module.
 
 
-###Choosing the Definition Level - Hive or Cluster?:
+### Choosing the Definition Level - Hive or Cluster?:
 
 You have two options when it comes to choosing the level at which your settings are
 defined. `hive` or `cluster`. You must decide on the level when you define a new
@@ -77,7 +102,7 @@ cluster.
 
 ![Settings defined at Cluster vs Hive](/Resources/doc/img/settingsDefinedAt.png)
 
-###Setting Definitions:
+### Setting Definitions:
 
 After you have created your `cluster` (or `hive` if defining at the `hive` level)
 you can define your new settings. You can think of a setting definition as a map
@@ -135,9 +160,9 @@ theme:                 // clusterName on definition type cluster, hiveName for d
 ```
 
 
-##Using MesdSettingsBundle
+## Using MesdSettingsBundle
 
-###Create a new Hive with the console:
+### Create a new Hive with the console:
 
 Since hives are designed to be application wide, you may only need a single `hive`.
 If your application is rather large and can be broken down into sub-applications or
@@ -155,7 +180,7 @@ $ app/console mesd:setting:hive:create
 ```
 
 
-###Create a new Cluster with the console:
+### Create a new Cluster with the console:
 
 Clusters are used to group like settings. For example if you had 5 settings that
 controlled the theme of your application, you might create a *theme* `cluster`.
@@ -166,7 +191,7 @@ $ app/console mesd:setting:cluster:create
 ```
 
 
-###Create a Setting Definition:
+### Create a Setting Definition:
 
 Now you're ready to start defining your settings. You can define your settings by
 creating a yaml file for the cluster (or hive) or by using the symfony console
@@ -217,14 +242,14 @@ Each `SettingNode` has five descriptors:
 > base type requires. e.g. String type requires a 'length' attribute.
 
 
-###Define a new setting with the console:
+### Define a new setting with the console:
 
 ``` bash
 $ app/console mesd:setting:setting:define
 ```
 
 
-###Setting Validation - Insert setting base data or validate changes:
+### Setting Validation - Insert setting base data or validate changes:
 
 When you define a new setting or change an existing setting definition, you need to
 ensure the clusters in the database are in-sync. Run the setting validation command
@@ -270,7 +295,7 @@ Validate the settings with the symfony console command:
 $ app/console mesd:setting:setting:validate
 ```
 
-###Retrieve a setting from the database:
+### Retrieve a setting from the database:
 
 There are two ways to retrive setting data. The first method loads just the setting
 value.
@@ -364,7 +389,7 @@ $settingManger->saveSetting($fontSetting);
 > When you store a setting in the database it is automatically validated against the
 > current setting definition.
 
-###Next Steps
+### Next Steps
 
 Now that you have completed the installation, configuration, and basic usage of the
 MesdSettingsBundle, you are ready to learn about more advanced features and usage of
