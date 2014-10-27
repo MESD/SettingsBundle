@@ -68,7 +68,7 @@ $ app/console doctrine:schema:update --dump-sql
 
 There should be just two tables created `setting_hive` and `setting_cluster`, and one
 foreign key. If everything looks good, go a head and run the command again, this time
-makeing the changes:
+making the changes in the database:
 
 ```bash
 $ app/console doctrine:schema:update --force

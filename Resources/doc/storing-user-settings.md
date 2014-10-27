@@ -67,6 +67,30 @@ User:
             type: boolean
 ```
 
-###Step 3 - Create a new cluster for each user
+###Step 3 - Update your application to create a new cluster for each user
 
-At this point the setting system is ready to go and
+At this point the setting system is ready to be used. You need to update your
+applications code that creates new users and add some code to create a new
+cluster for the users settings.
+
+**Note:**
+> For this example we'll assume your using the Symfony Security Component
+> UserInterface. If your not, it's easy to use this bundle with any user
+> interface, just determine the method you need to load the users unique
+> username or userid.
+
+
+```php
+
+// Create a new user
+$user = new User();
+// ... Here is where your application logic for creating a new user lives
+
+// Get SettingManager Service
+$settingManger = $this->get('mesd_settings.setting_manager');
+
+// Create a new settings cluster for this user
+// $settingManger->createCluster($hiveName, $clusterName, $description = null);
+$cluster = $settingManger->createCluster('user', $user->getUsername());
+
+```
