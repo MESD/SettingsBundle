@@ -104,9 +104,22 @@ EOT
                 false
             );
 
+            $output->writeln('');
+
             // If user requested the file be created, create a new definition and
             // save file.
             if($createFile) {
+
+                // Get list of setting file storage locations currently configured
+                $availableLocations = $definitionManager->getBundleStorage();
+
+                $fileLocation = $dialog->select(
+                    $output,
+                    'Please select location to store the Setting Definition (Default - 0):',
+                    $availableLocations,
+                    0
+                );
+
                 $settingDefinition = new SettingDefinition();
                 $settingDefinition->setHive($hiveName);
 
@@ -118,6 +131,8 @@ EOT
                     $settingDefinition->setKey($clusterName);
                     $settingDefinition->setType('cluster');
                 }
+
+                $settingDefinition->setFilePath($availableLocations[$fileLocation]);
 
                 $file = $definitionManager->saveFile($settingDefinition);
                 $output->writeln(array(

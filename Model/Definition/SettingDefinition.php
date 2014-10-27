@@ -10,6 +10,7 @@ class SettingDefinition
     private $key;
     private $hive;
     private $type;
+    private $filePath;
     private $settingNode;
 
 
@@ -24,7 +25,6 @@ class SettingDefinition
         return $this->key;
     }
 
-
     public function setKey($key)
     {
         $this->key = $key;
@@ -37,7 +37,6 @@ class SettingDefinition
     {
         return $this->hive;
     }
-
 
     public function setHive($hive)
     {
@@ -52,10 +51,22 @@ class SettingDefinition
         return $this->type;
     }
 
-
     public function setType($type)
     {
         $this->type = $type;
+
+        return $this;
+    }
+
+
+    public function getFilePath()
+    {
+        return $this->filePath;
+    }
+
+    public function setFilePath($filePath)
+    {
+        $this->filePath = $filePath;
 
         return $this;
     }

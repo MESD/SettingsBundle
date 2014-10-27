@@ -74,21 +74,44 @@ class DefinitionManager
      * file will be created in the saveFile() method.
      *
      * @param string $fileName
-     * @return string $file
+     * @param string $filePath
+     * @return string|Exception
      */
-    public function createFile($fileName)
+    public function createFile($fileName, $filePath = null)
     {
-        if ($file = $this->locateFile($fileName)) {
+        if ($this->locateFile($fileName, $filePath)) {
             throw new \Exception(sprintf('File %s already exists', $fileName));
         }
 
+        $storagePaths = ($filePath) ? array(0 => $filePath) : $this->bundleStorage;
+
         $fs = new Filesystem();
 
-        if (!$fs->exists($this->bundleStorage[0])) {
-            $fs->mkdir($this->bundleStorage[0], 0776);
+        // Standard path
+        if ('@' != substr($storagePaths[0],0,1)) {
+            $path = $storagePaths[0];
+        }
+        // Bundle alias path (@BundleName/path/to/file)
+        else {
+            try {
+                $path = $this->kernel->locateResource($storagePaths[0]);
+            }
+            catch (\Exception $e) {
+            }
         }
 
-        return $this->bundleStorage[0] . "/" . $fileName;
+        if (!$path) {
+            throw new \Exception(sprintf(
+                'Could not create file %s',
+                $storagePaths[0] . '/' . $fileName
+            ));
+        }
+
+        if (!$fs->exists($path)) {
+            $fs->mkdir($path, 0776);
+        }
+
+        return $path . '/' . $fileName;
     }
 
 
@@ -139,17 +162,22 @@ class DefinitionManager
     /**
      * Locate a setting definition file
      *
-     * Checks each bundle defined in settings config, and the app/Resources
-     * default path for a setting definition file. Returns the the file path
-     * or false.
+     * Checks $filePath
+     *   -or-
+     * Each bundle defined in settings config and the app/Resources
+     * default path for a setting definition file. Returns the the
+     * fully qualifed file name or false.
      *
-     * @param string $filename
-     * @return filepath|false
+     * @param string $fileName
+     * @param string $filePath
+     * @return string|false
      */
-    public function locateFile($fileName)
+    public function locateFile($fileName, $filePath = null)
     {
+        $storagePaths = ($filePath) ? array(0 => $filePath) : $this->bundleStorage;
+
         // Check each path for the file
-        foreach ($this->bundleStorage as $key => $path) {
+        foreach ($storagePaths as $key => $path) {
             // Standard path
             if ('@' != substr($path,0,1)) {
                 if($this->fileExists($path . '/' . $fileName)) {
@@ -184,8 +212,8 @@ class DefinitionManager
     {
         $fileName = $this->buildFileNameFromDefinition($settingDefinition);
 
-        if (!$file = $this->locateFile($fileName)) {
-            $file = $this->createFile($fileName);
+        if (!$file = $this->locateFile($fileName, $settingDefinition->getFilePath())) {
+            $file = $this->createFile($fileName, $settingDefinition->getFilePath());
         }
 
         $serializedDefinition = $this->serialize($settingDefinition);
@@ -270,6 +298,20 @@ class DefinitionManager
         }
 
         return $settingDefinition;
+    }
+
+
+    /**
+     * Get bundleStorage
+     *
+     * BundleStorage holds the aviable bundle paths and defualt
+     * storage location for Setting Definition files.
+     *
+     * @return array $bundleStorage
+     */
+    public function getBundleStorage()
+    {
+        return $this->bundleStorage;
     }
 
 }
