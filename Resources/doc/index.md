@@ -255,7 +255,7 @@ required:
 > If you have a large number of changes that need to be made and you don't want the
 > system to prompt you for every change, you can use the --forceInsert, --forceUpdate,
 > --forceDelete, or --forceAll command line options. However, the system will make
-> all the necessary changes with asking for any confirmation.
+> all the necessary changes without asking for any confirmation.
 
 **Warning:**
 
