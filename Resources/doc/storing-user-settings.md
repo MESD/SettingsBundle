@@ -76,7 +76,7 @@ cluster for the users settings.
 **Note:**
 > For this example we'll assume your using the Symfony Security Component
 > UserInterface. If your not, it's easy to use this bundle with any user
-> interface, just determine the method you need to load the users unique
+> interface, just determine the method you need to load your users unique
 > username or userid.
 
 
@@ -92,5 +92,10 @@ $settingManger = $this->get('mesd_settings.setting_manager');
 // Create a new settings cluster for this user
 // $settingManger->createCluster($hiveName, $clusterName, $description = null);
 $cluster = $settingManger->createCluster('user', $user->getUsername());
-
 ```
+
+It's important that the first argument of `createCluster` be the hive name you
+created earlier in step 1. The second argument should be a **unique** way of
+identifying your user. Username is commonly a good option, or the database
+unique ID field if your storing users in your applications database. The third
+argument lets you set a description for the cluster, and is optional.
