@@ -14,12 +14,29 @@ important that we create the new hive using the 'definedAtHive' command line
 option. We want the settings defined at the hive level because we'll want all
 of our users to have the same settings. Only the setting values will be
 different, or at least we'll have support for the values to be different. You
-can call the hive what ever you want, we'll use `User` for our example.
-Additionally, we'll give our hive a description of `User Settings`.
+can give the hive whatever name you want, we'll use `User` for this example.
+Additionally, we'll give the hive a description of `User Settings`.
 
 ``` bash
 $ app/console mesd:setting:hive:create "User" "User Settings" --definedAtHive
 ```
 
-####Option A - Loading an existing definition:
+###Step 2 - Define some user settings
 
+Once the new hive is created, we can define some settings. You don't have to
+define every setting right away, settings can easily be added as your
+application demands them.
+
+``` bash
+$ app/console mesd:setting:setting:define "User"
+```
+
+The define settings command will inform you that it could not locate a
+'user.yml' setting definition file. Answer yes at the prompt to have one
+created for you.
+
+Next you will be asked where to store the settings definition file. Choose
+your desired location from the menu.
+
+Now the define setting command will allow you to define as many settings as
+you would like. Wen your done choose 'e' to exit.
