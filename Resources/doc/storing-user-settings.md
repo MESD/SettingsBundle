@@ -48,16 +48,19 @@ User:
     hive: User
     type: hive
     nodes:
+
         home-page:
             default: DemoBunde_dashBoard
             description: 'Home Page to load at login'
             type: string
             length: 50
+
         grid-page-size:
             default: 10
             description: 'Number of rows to display on grid'
             type: integer
             digits: 4
+
         display-avatar:
             default: true
             description: 'Display user image'
