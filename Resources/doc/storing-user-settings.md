@@ -143,12 +143,58 @@ identifying your user and the same method you used in creating the cluster.
 
 ### Step 5 - Retrieve or store values from your user settings
 
-At this point all your exiting users should have settings clusters (See Note in
-Step 3), and any new users should be created with a new settings cluster.
+At this point all your exiting users should have setting clusters (See Note in
+Step 3), and any new users should be created with a new setting cluster.
 
-When settings clusters are created they're loaded with the default values from the
+When setting clusters are created they're loaded with the default values from the
 setting definition yaml file, assuming the settings were defined before the cluster
 was created. If you created the setting definition after creating some or all of
 your user clusters, or you added/removed settings from the definition after words,
 run the `mesd:setting:setting:validate` console command to validate the clusters.
 
+
+``` bash
+$ app/console mesd:setting:setting:validate
+```
+
+Now were ready to access or update user settings as need. Again, in these examples,
+we'll assume your using the Symfony Security Component UserInterface, but you could
+use any method your application has for loading the currently logged in user.
+
+```php
+
+// ... Example of accessing current user in Symfony Controller
+$user = $this->getUser();
+
+
+// Get SettingManager Service
+$settingManger = $this->get('mesd_settings.setting_manager');
+
+
+//  --- Quick Get / Set Methods
+
+// Retrieve Setting Value
+// $settingValue = $settingManger->loadSettingValue($hiveName, $clusterName, $settingName);
+$homePage = $settingManger->loadSettingValue('user', $user->getUsername(), 'home-page');
+
+
+// Store Setting Value
+// $settingManger->saveSettingValue($hive, $cluster, $setting, $value);
+$settingManger->saveSettingValue('user', $user->getUsername(), 'home-page', 'AcmeDemoBundle_home');
+
+
+//  --- Access setting as object
+
+// Retrieve Setting Object
+// $setting = $settingManger->loadSetting($hiveName, $clusterName, $settingName);
+$setting = $settingManger->loadSetting('user', $user->getUsername(), 'home-page');
+
+// Use the setting you retrieved
+$homePage = $setting->getValue();
+
+// Change the setting value
+$homePage->setValue('AcmeDemoBundle_home');
+
+// Store Setting
+$settingManger->saveSetting($fontSetting);
+```
