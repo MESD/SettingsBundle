@@ -9,10 +9,10 @@ and give you code examples to use within your application.
 
 ###Step 1 - Create a new Hive
 
-The first thing we need to do is define a new hive for our user settings. It's
+The first thing we need to do is define a new hive for the user settings. It's
 important that we create the new hive using the 'definedAtHive' command line
 option. We want the settings defined at the hive level because we'll want all
-of our users to have the same settings. Only the setting values will be
+of the users to have the same settings. Only the setting values will be
 different, or at least we'll have support for the values to be different. You
 can give the hive whatever name you want, we'll use `User` for this example.
 Additionally, we'll give the hive a description of `User Settings`.
@@ -39,4 +39,27 @@ Next you will be asked where to store the settings definition file. Choose
 your desired location from the menu.
 
 Now the define setting command will allow you to define as many settings as
-you would like. Wen your done choose 'e' to exit.
+you would like. When your done choose 'e' to exit.
+
+Here is an example Setting Definition file for some user settings:
+
+```yaml
+User:
+    hive: User
+    type: hive
+    nodes:
+        home-page:
+            default: DemoBunde_dashBoard
+            description: 'Home Page to load at login'
+            type: string
+            length: 50
+        grid-page-size:
+            default: 10
+            description: 'Number of rows to display on grid'
+            type: integer
+            digits: 4
+        display-avatar:
+            default: true
+            description: 'Display user image'
+            type: boolean
+```
