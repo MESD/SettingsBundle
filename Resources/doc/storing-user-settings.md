@@ -44,6 +44,8 @@ you would like. When your done choose 'e' to exit.
 Here is the Setting Definition file for some example user settings:
 
 ```yaml
+// app/Resources/settings/user.yml
+
 User:
     hive: User
     type: hive
