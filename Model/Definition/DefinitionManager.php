@@ -153,7 +153,7 @@ class DefinitionManager
         }
         $yaml = new Parser();
         $fileContents = $yaml->parse(file_get_contents($file));
-        $settingDefinition = $this->unserialize($fileContents);
+        $settingDefinition = $this->unserialize($fileContents, $file);
 
         return $settingDefinition;
     }
@@ -275,7 +275,7 @@ class DefinitionManager
      * @param string $fileContents
      * @return SettingDefinition
      */
-    private function unserialize($fileContents)
+    private function unserialize($fileContents, $file)
     {
         $validator = new DefinitionValidator($fileContents, $this->settingManager);
         $validator->validate();
@@ -286,6 +286,13 @@ class DefinitionManager
         $settingDefinition->setKey($key);
         $settingDefinition->setHive($fileContents[$key]['hive']);
         $settingDefinition->setType($fileContents[$key]['type']);
+
+        // Determine File Path (trim file name)
+        $fileParts = explode(DIRECTORY_SEPARATOR, $file);
+        array_pop($fileParts);
+        $filePath = implode(DIRECTORY_SEPARATOR, $fileParts);
+
+        $settingDefinition->setFilePath($filePath);
 
         foreach ($fileContents[$key]['nodes'] as $nodeName => $nodeAttributes) {
             $settingNode = new SettingNode(
