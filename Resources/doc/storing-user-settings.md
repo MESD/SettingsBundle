@@ -82,9 +82,12 @@ cluster for the users settings.
 
 ```php
 
+// ... Example of what your create user logic may look like
+
 // Create a new user
 $user = new User();
-// ... Here is where your application logic for creating a new user lives
+
+// ... Here is where your application logic for creating a new user ends
 
 // Get SettingManager Service
 $settingManger = $this->get('mesd_settings.setting_manager');
@@ -99,3 +102,38 @@ created earlier in step 1. The second argument should be a **unique** way of
 identifying your user. Username is commonly a good option, or the database
 unique ID field if your storing users in your applications database. The third
 argument lets you set a description for the cluster, and is optional.
+
+**Note:**
+> If your configuring the MesdSettingsBundle on an existing application that
+> already has users in place, you can create a script to create a cluster for
+> each user. Just select all of your users into an array, and then loop through
+> the records creating a new cluster for each user with code similar to above.
+
+
+###Step 4 - Update your application to delete the user cluster when needed
+
+Similar to creating a settings cluster when you create a new user, you may also
+wish to delete the users setting cluster when the user account is removed.
+
+```php
+
+// ... Example of what your user load logic may look like
+
+// Load user to delete
+$userRepository = $this->getDoctrine()->getRepository();
+$user = $userRepository->loadUserByUsername($username)
+
+// ... Here is where your application logic for deleting the user ends
+
+
+// Get SettingManager Service
+$settingManger = $this->get('mesd_settings.setting_manager');
+
+// Delete the users cluster
+// $settingManger->deleteCluster($hiveName, $clusterName)
+$settingManger->deleteCluster('user', $user->getUsername());
+```
+
+It's important that the first argument of `createCluster` be the hive name you
+created earlier in step 1. The second argument should be a **unique** way of
+identifying your user and the same method you used in creating the cluster.
