@@ -3,7 +3,7 @@
 
 ### Overview
 
-Creating setting definitions is most easily done using the `symfony2` console
+Creating setting definitions is most easily done using the `symfony` console
 or by editing the yaml definition files in your favorite text editor. However,
 there may come a time that you need to create or update setting definitions
 from within your application dynamically.
@@ -17,7 +17,7 @@ from within your application dynamically.
 // Get Definition Manager Service
 $definitionManger = $this->get('mesd_settings.definition_manager');
 
-// Load existing definition by hive and cluster ($hiveName, $clusterName)
+// Load existing definition by hive and cluster ($hiveName, $clusterName = null)
 $settingDefinition = $definitionManger->loadFile('application', 'theme');
 ```
 
@@ -46,6 +46,25 @@ $settingDefinition->setHive('application');
 
 ###Step 2 - Creating setting definition nodes:
 
+To define a new `SettingNode`, you need to pass a formated array of setting node
+data. The base format is as follows:
+
+```php
+// Define array containing setting node data
+$nodeData = array (
+    'nodeName' => 'my-setting',         // The name of your setting
+    'nodeAttributes' => array (
+        'type'        => 'string',      // The setting type (string, integer, boolean, etc.)
+        'default'     => 'test',        // Default value of setting [optional]
+        'description' => 'My Setting'   // Setting Description [optional]
+    )
+);
+```
+
+Additional to the information above is format data specfic to each
+setting type. See the examples below for specific details on what's
+required.
+
 **Note:**
 
 > The code examples below assume that *$settingDefinition* is an instance of the
@@ -54,7 +73,7 @@ $settingDefinition->setHive('application');
 
 **Warning:**
 
-> If you load an existing setting definition and define a new setting node,
+> If you load an existing setting definition and define a new setting node
 > that has the same name as an existing setting node, you will overwrite the
 > existing node when you save the definition.
 
