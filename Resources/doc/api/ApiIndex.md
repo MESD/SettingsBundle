@@ -3,7 +3,6 @@ API Index
 
 * Mesd
     * Mesd\SettingsBundle
-        * [MesdSettingsBundle](Mesd-SettingsBundle-MesdSettingsBundle.md)
         * Mesd\SettingsBundle\Model
             * [Setting](Mesd-SettingsBundle-Model-Setting.md)
             * [SettingManager](Mesd-SettingsBundle-Model-SettingManager.md)
@@ -18,18 +17,4 @@ API Index
                 * [SettingNodeFloat](Mesd-SettingsBundle-Model-Definition-SettingNodeFloat.md)
                 * [DefinitionManager](Mesd-SettingsBundle-Model-Definition-DefinitionManager.md)
                 * [DefinitionValidator](Mesd-SettingsBundle-Model-Definition-DefinitionValidator.md)
-        * Mesd\SettingsBundle\Command
-            * [CreateClusterCommand](Mesd-SettingsBundle-Command-CreateClusterCommand.md)
-            * [DefineSettingCommand](Mesd-SettingsBundle-Command-DefineSettingCommand.md)
-            * [ValidateSettingsCommand](Mesd-SettingsBundle-Command-ValidateSettingsCommand.md)
-            * [CreateHiveCommand](Mesd-SettingsBundle-Command-CreateHiveCommand.md)
-        * Mesd\SettingsBundle\DependencyInjection
-            * [Configuration](Mesd-SettingsBundle-DependencyInjection-Configuration.md)
-            * [MesdSettingsExtension](Mesd-SettingsBundle-DependencyInjection-MesdSettingsExtension.md)
-        * Mesd\SettingsBundle\Entity
-            * [Hive](Mesd-SettingsBundle-Entity-Hive.md)
-            * [Cluster](Mesd-SettingsBundle-Entity-Cluster.md)
-        * Mesd\SettingsBundle\Repository
-            * [HiveRepository](Mesd-SettingsBundle-Repository-HiveRepository.md)
-            * [ClusterRepository](Mesd-SettingsBundle-Repository-ClusterRepository.md)
 
