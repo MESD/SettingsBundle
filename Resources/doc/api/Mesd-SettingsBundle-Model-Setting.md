@@ -2,21 +2,16 @@
 
 Setting.
 
-
-
-
 **Class name**: Setting
+
 **Namespace**: Mesd\SettingsBundle\Model
 
 
+###Properties
+--
 
 
-
-Properties
-----------
-
-
-### $name
+#### $name
 
     private string $name
 
@@ -24,10 +19,10 @@ The setting name
 
 
 
-* Visibility: **private**
+Visibility: **private**
 
 
-### $value
+#### $value
 
     private mixed $value
 
@@ -35,10 +30,10 @@ The setting value
 
 
 
-* Visibility: **private**
+Visibility: **private**
 
 
-### $settingNode
+#### $settingNode
 
     private \Mesd\SettingsBundle\Model\Mesd\SettingsBundle\Model\Definition\SettingNode $settingNode
 
@@ -46,10 +41,10 @@ SettingNode from the SettingDefinition
 
 
 
-* Visibility: **private**
+Visibility: **private**
 
 
-### $cluster
+#### $cluster
 
     private \Mesd\SettingsBundle\Model\Mesd\SettingsBundle\Entity\Cluster $cluster
 
@@ -57,14 +52,14 @@ Cluster Entity
 
 
 
-* Visibility: **private**
+Visibility: **private**
 
 
-Methods
--------
+###Methods
+--
 
 
-### isSettingNodeLoaded
+#### isSettingNodeLoaded
 
     boolean Mesd\SettingsBundle\Model\Setting::isSettingNodeLoaded()
 
@@ -85,7 +80,7 @@ not loaded the SettingNode.
 
 
 
-### getName
+#### getName
 
     string Mesd\SettingsBundle\Model\Setting::getName()
 
@@ -93,12 +88,12 @@ Get Setting Name
 
 
 
-* Visibility: **public**
+Visibility: **public**
 
 
 
 
-### setName
+#### setName
 
     \Mesd\SettingsBundle\Model\Setting Mesd\SettingsBundle\Model\Setting::setName(string $name)
 
@@ -106,15 +101,15 @@ Set Setting Name
 
 
 
-* Visibility: **public**
+Visibility: **public**
 
 
 ##### Arguments
-* $name **string** - &lt;p&gt;Setting Name&lt;/p&gt;
+$name **string** - &lt;p&gt;Setting Name&lt;/p&gt;
 
 
 
-### getValue
+#### getValue
 
     mixed Mesd\SettingsBundle\Model\Setting::getValue()
 
@@ -122,12 +117,12 @@ Get Setting Value
 
 
 
-* Visibility: **public**
+Visibility: **public**
 
 
 
 
-### setValue
+#### setValue
 
     \Mesd\SettingsBundle\Model\Setting Mesd\SettingsBundle\Model\Setting::setValue(mixed $value)
 
@@ -135,15 +130,16 @@ Set Setting Value
 
 
 
-* Visibility: **public**
+Visibility: **public**
 
 
 ##### Arguments
-* $value **mixed** - &lt;p&gt;Setting Value&lt;/p&gt;
+
+$value **mixed** - &lt;p&gt;Setting Value&lt;/p&gt;
 
 
 
-### getCluster
+#### getCluster
 
     \Mesd\SettingsBundle\Model\Mesd\SettingsBundle\Entity\Cluster Mesd\SettingsBundle\Model\Setting::getCluster()
 
@@ -151,12 +147,12 @@ Get cluster
 
 
 
-* Visibility: **public**
+Visibility: **public**
 
 
 
 
-### setCluster
+#### setCluster
 
     \Mesd\SettingsBundle\Model\Setting Mesd\SettingsBundle\Model\Setting::setCluster(\Mesd\SettingsBundle\Model\Mesd\SettingsBundle\Entity\Cluster $cluster)
 
@@ -164,15 +160,16 @@ Set cluster
 
 
 
-* Visibility: **public**
+Visibility: **public**
 
 
 ##### Arguments
-* $cluster **Mesd\SettingsBundle\Model\Mesd\SettingsBundle\Entity\Cluster**
+
+$cluster **Mesd\SettingsBundle\Model\Mesd\SettingsBundle\Entity\Cluster**
 
 
 
-### getSettingNode
+#### getSettingNode
 
     \Mesd\SettingsBundle\Model\Definition\SettingNode|\Mesd\SettingsBundle\Model\Excption Mesd\SettingsBundle\Model\Setting::getSettingNode()
 
@@ -181,12 +178,12 @@ Get SettingNode definition
 Get the SettingNode definition, if it has been loaded. See
 isSettingNodeLoaded() for more details.
 
-* Visibility: **public**
+Visibility: **public**
 
 
 
 
-### setSettingNode
+#### setSettingNode
 
     \Mesd\SettingsBundle\Model\Setting Mesd\SettingsBundle\Model\Setting::setSettingNode(\Mesd\SettingsBundle\Model\Mesd\SettingsBundle\Model\Definition\SettingNode $settingNode)
 
@@ -194,10 +191,10 @@ Set SettingNode definition
 
 
 
-* Visibility: **public**
+Visibility: **public**
 
 
 ##### Arguments
-* $settingNode **Mesd\SettingsBundle\Model\Mesd\SettingsBundle\Model\Definition\SettingNode**
+$settingNode **Mesd\SettingsBundle\Model\Mesd\SettingsBundle\Model\Definition\SettingNode**
 
 
