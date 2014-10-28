@@ -17,4 +17,7 @@ API Index
                 * [SettingNodeFloat](Mesd-SettingsBundle-Model-Definition-SettingNodeFloat.md)
                 * [DefinitionManager](Mesd-SettingsBundle-Model-Definition-DefinitionManager.md)
                 * [DefinitionValidator](Mesd-SettingsBundle-Model-Definition-DefinitionValidator.md)
+        * Mesd\SettingsBundle\Entity
+            * [Hive](Mesd-SettingsBundle-Entity-Hive.md)
+            * [Cluster](Mesd-SettingsBundle-Entity-Cluster.md)
 

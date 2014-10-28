@@ -1,10 +1,27 @@
 <?php
 
+/**
+ * This file is part of the MesdSettingsBundle.
+ *
+ * (c) MESD <appdev@mesd.k12.or.us>
+ *
+ * For the full copyright and license information, please view the LICENSE.md
+ * file that was distributed with this source code.
+ */
+
 namespace Mesd\SettingsBundle\Model;
 
 use Mesd\SettingsBundle\Entity\Cluster;
 use Mesd\SettingsBundle\Model\Definition\SettingNode;
 
+/**
+ * This file is part of the MesdSettingsBundle.
+ *
+ * (c) MESD <appdev@mesd.k12.or.us>
+ *
+ * For the full copyright and license information, please view the LICENSE.md
+ * file that was distributed with this source code.
+ */
 
 /**
  * Setting.
@@ -47,14 +64,13 @@ class Setting {
      *
      * Determine if the SettingNode has been loaded.
      *
-     * The SettingManager loadSetting() method has an optional
-     * fourth parameter which can be set to true if you would like
-     * the SettingNode definition to be loaded when the setting is
-     * retrieved. This requires loading, parsing, and validating
-     * the SettingDefinition Yaml file, which will take a little
-     * extra time. Since the SettingNode definition data is not
-     * commonly needed when retrieving settings and their values,
-     * the default behavior is to not loaded the SettingNode.
+     * The SettingManager loadSetting() method has an optional fourth parameter
+     * which can be set to true if you would like the SettingNode definition to
+     * be loaded when the setting is retrieved. This requires loading, parsing,
+     * and validating the SettingDefinition Yaml file, which will take a little
+     * extra time. Since the SettingNode definition data is not commonly needed
+     * when retrieving settings and their values, the default behavior is to
+     * not loaded the SettingNode.
      *
      * @return boolean true|false
      */
@@ -82,7 +98,7 @@ class Setting {
     /**
      * Set Setting Name
      *
-     * @param string Setting Name
+     * @param string $name Setting Name
      *
      * @return self
      */
@@ -107,7 +123,7 @@ class Setting {
     /**
      * Set Setting Value
      *
-     * @param mixed Setting Value
+     * @param mixed $value Setting Value
      *
      * @return self
      */
@@ -133,7 +149,7 @@ class Setting {
     /**
      * Set cluster
      *
-     * @param Mesd\SettingsBundle\Entity\Cluster
+     * @param Mesd\SettingsBundle\Entity\Cluster $cluster
      *
      * @return self
      */
@@ -148,8 +164,8 @@ class Setting {
     /**
      * Get SettingNode definition
      *
-     * Get the SettingNode definition, if it has been
-     * loaded. See isSettingNodeLoaded() for more details.
+     * Get the SettingNode definition, if it has been loaded. See
+     * isSettingNodeLoaded() for more details.
      *
      * @return SettingNode|Excption
      */
@@ -169,7 +185,7 @@ class Setting {
     /**
      * Set SettingNode definition
      *
-     * @param Mesd\SettingsBundle\Model\Definition\SettingNode
+     * @param Mesd\SettingsBundle\Model\Definition\SettingNode $settingNode
      *
      * @return self
      */

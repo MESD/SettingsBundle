@@ -1,7 +1,7 @@
 Mesd\SettingsBundle\Model\Setting
 ===============
 
-
+Setting.
 
 
 
@@ -19,9 +19,9 @@ Properties
 
 ### $name
 
-    private mixed $name
+    private string $name
 
-
+The setting name
 
 
 
@@ -32,18 +32,18 @@ Properties
 
     private mixed $value
 
-
+The setting value
 
 
 
 * Visibility: **private**
 
 
-### $nodeDefinition
+### $settingNode
 
-    private mixed $nodeDefinition
+    private \Mesd\SettingsBundle\Model\Mesd\SettingsBundle\Model\Definition\SettingNode $settingNode
 
-
+SettingNode from the SettingDefinition
 
 
 
@@ -52,9 +52,9 @@ Properties
 
 ### $cluster
 
-    private mixed $cluster
+    private \Mesd\SettingsBundle\Model\Mesd\SettingsBundle\Entity\Cluster $cluster
 
-
+Cluster Entity
 
 
 
@@ -65,23 +65,21 @@ Methods
 -------
 
 
-### isNodeDefinitionLoaded
+### isSettingNodeLoaded
 
-    boolean Mesd\SettingsBundle\Model\Setting::isNodeDefinitionLoaded()
+    boolean Mesd\SettingsBundle\Model\Setting::isSettingNodeLoaded()
 
-Is SettingNode definition loaded
+Is SettingNode loaded
 
-Determine if the SettingNode definition has been loaded.
+Determine if the SettingNode has been loaded.
 
-The SettingManager loadSetting() method has an optional
-fourth parameter which can be set to true if you would like
-the SettingNode definition to be loaded when the setting is
-retrieved. This requires loading, parsing, and validating
-the SettingDefinition Yaml file, which will take a little
-extra time. Since the SettingNode definition data is not
-commonly needed when retrieving settings and their values,
-the default behavior is to not loaded the SettingNode
-definition.
+The SettingManager loadSetting() method has an optional fourth parameter
+which can be set to true if you would like the SettingNode definition to
+be loaded when the setting is retrieved. This requires loading, parsing,
+and validating the SettingDefinition Yaml file, which will take a little
+extra time. Since the SettingNode definition data is not commonly needed
+when retrieving settings and their values, the default behavior is to
+not loaded the SettingNode.
 
 * Visibility: **public**
 
@@ -90,9 +88,9 @@ definition.
 
 ### getName
 
-    mixed Mesd\SettingsBundle\Model\Setting::getName()
+    string Mesd\SettingsBundle\Model\Setting::getName()
 
-
+Get Setting Name
 
 
 
@@ -103,9 +101,9 @@ definition.
 
 ### setName
 
-    mixed Mesd\SettingsBundle\Model\Setting::setName($name)
+    \Mesd\SettingsBundle\Model\Setting Mesd\SettingsBundle\Model\Setting::setName(string $name)
 
-
+Set Setting Name
 
 
 
@@ -113,7 +111,7 @@ definition.
 
 
 #### Arguments
-* $name **mixed**
+* $name **string** - &lt;p&gt;Setting Name&lt;/p&gt;
 
 
 
@@ -121,7 +119,7 @@ definition.
 
     mixed Mesd\SettingsBundle\Model\Setting::getValue()
 
-
+Get Setting Value
 
 
 
@@ -132,9 +130,9 @@ definition.
 
 ### setValue
 
-    mixed Mesd\SettingsBundle\Model\Setting::setValue($value)
+    \Mesd\SettingsBundle\Model\Setting Mesd\SettingsBundle\Model\Setting::setValue(mixed $value)
 
-
+Set Setting Value
 
 
 
@@ -142,7 +140,7 @@ definition.
 
 
 #### Arguments
-* $value **mixed**
+* $value **mixed** - &lt;p&gt;Setting Value&lt;/p&gt;
 
 
 
@@ -161,7 +159,7 @@ Get cluster
 
 ### setCluster
 
-    mixed Mesd\SettingsBundle\Model\Setting::setCluster(\Mesd\SettingsBundle\Model\Mesd\SettingsBundle\Entity\Cluster $cluster)
+    \Mesd\SettingsBundle\Model\Setting Mesd\SettingsBundle\Model\Setting::setCluster(\Mesd\SettingsBundle\Model\Mesd\SettingsBundle\Entity\Cluster $cluster)
 
 Set cluster
 
@@ -175,33 +173,32 @@ Set cluster
 
 
 
-### getNodeDefinition
+### getSettingNode
 
-    \Mesd\SettingsBundle\Model\Definition\SettingNode|null Mesd\SettingsBundle\Model\Setting::getNodeDefinition()
+    \Mesd\SettingsBundle\Model\Definition\SettingNode|\Mesd\SettingsBundle\Model\Excption Mesd\SettingsBundle\Model\Setting::getSettingNode()
 
 Get SettingNode definition
 
-Get the SettingNode definition, if it has been
-loaded. See isNodeDefinitionLoaded() below for
-more details.
+Get the SettingNode definition, if it has been loaded. See
+isSettingNodeLoaded() for more details.
 
 * Visibility: **public**
 
 
 
 
-### setNodeDefinition
+### setSettingNode
 
-    \Mesd\SettingsBundle\Model\Definition\SettingNode Mesd\SettingsBundle\Model\Setting::setNodeDefinition(\Mesd\SettingsBundle\Model\Definition\SettingNode $settingNode)
+    \Mesd\SettingsBundle\Model\Setting Mesd\SettingsBundle\Model\Setting::setSettingNode(\Mesd\SettingsBundle\Model\Mesd\SettingsBundle\Model\Definition\SettingNode $settingNode)
 
 Set SettingNode definition
 
-Set the setting node definition.
+
 
 * Visibility: **public**
 
 
 #### Arguments
-* $settingNode **[Mesd\SettingsBundle\Model\Definition\SettingNode](Mesd-SettingsBundle-Model-Definition-SettingNode.md)**
+* $settingNode **Mesd\SettingsBundle\Model\Mesd\SettingsBundle\Model\Definition\SettingNode**
 
 
