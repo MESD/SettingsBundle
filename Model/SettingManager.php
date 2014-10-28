@@ -80,6 +80,17 @@ class SettingManager {
         $cluster->setDescription($description);
         $cluster->setHive($hive);
         $hive->addCluster($cluster);
+
+        // Populate settings from SettingDefinition
+        $settingDefinition = $this->container->get('mesd_settings.definition_manager')->loadFile($hiveName, $clusterName);
+
+        foreach ($settingDefinition->getSettingNodes() as $key => $node) {
+            $setting = new Setting();
+            $setting->setName($node->getName());
+            $setting->setValue($node->getDefault());
+            $cluster->addSetting($setting);
+        }
+
         $this->container->get('doctrine.orm.entity_manager')->persist($cluster);
         $this->container->get('doctrine.orm.entity_manager')->flush();
 
