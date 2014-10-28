@@ -326,7 +326,7 @@ class SettingManager {
         if (true === $loadDefinition) {
             $settingDefinition = $this->container->get('mesd_settings.definition_manager')->loadFile($hiveName, $clusterName);
 
-            $setting->setNodeDefinition(
+            $setting->setSettingNode(
                 $settingDefinition->getSettingNode($settingName)
             );
         }

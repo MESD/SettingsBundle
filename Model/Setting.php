@@ -5,18 +5,47 @@ namespace Mesd\SettingsBundle\Model;
 use Mesd\SettingsBundle\Entity\Cluster;
 use Mesd\SettingsBundle\Model\Definition\SettingNode;
 
+
+/**
+ * Setting.
+ *
+ * @author David Cramblett <dcramble@mesd.k12.or.us>
+ */
 class Setting {
 
+    /**
+     * The setting name
+     *
+     * @var string
+     */
     private $name;
+
+    /**
+     * The setting value
+     *
+     * @var mixed
+     */
     private $value;
-    private $nodeDefinition;
+
+    /**
+     * SettingNode from the SettingDefinition
+     *
+     * @var Mesd\SettingsBundle\Model\Definition\SettingNode
+     */
+    private $settingNode;
+
+    /**
+     * Cluster Entity
+     *
+     * @var Mesd\SettingsBundle\Entity\Cluster
+     */
     private $cluster;
 
 
     /**
-     * Is SettingNode definition loaded
+     * Is SettingNode loaded
      *
-     * Determine if the SettingNode definition has been loaded.
+     * Determine if the SettingNode has been loaded.
      *
      * The SettingManager loadSetting() method has an optional
      * fourth parameter which can be set to true if you would like
@@ -25,14 +54,13 @@ class Setting {
      * the SettingDefinition Yaml file, which will take a little
      * extra time. Since the SettingNode definition data is not
      * commonly needed when retrieving settings and their values,
-     * the default behavior is to not loaded the SettingNode
-     * definition.
+     * the default behavior is to not loaded the SettingNode.
      *
      * @return boolean true|false
      */
-    public function isNodeDefinitionLoaded()
+    public function isSettingNodeLoaded()
     {
-        if ($this->nodeDefinition instanceof SettingNode) {
+        if ($this->settingNode instanceof SettingNode) {
             return true;
         }
         else {
@@ -41,12 +69,23 @@ class Setting {
     }
 
 
+    /**
+     * Get Setting Name
+     *
+     * @return string Setting Name
+     */
     public function getName()
     {
         return $this->name;
     }
 
-
+    /**
+     * Set Setting Name
+     *
+     * @param string Setting Name
+     *
+     * @return self
+     */
     public function setName($name)
     {
         $this->name = $name;
@@ -54,13 +93,24 @@ class Setting {
         return $this;
     }
 
-
+    /**
+     * Get Setting Value
+     *
+     * @return mixed Setting Value
+     */
     public function getValue()
     {
         return $this->value;
     }
 
 
+    /**
+     * Set Setting Value
+     *
+     * @param mixed Setting Value
+     *
+     * @return self
+     */
     public function setValue($value)
     {
         $this->value = $value;
@@ -83,7 +133,9 @@ class Setting {
     /**
      * Set cluster
      *
-     * @param Mesd\SettingsBundle\Entity\Cluster $cluster
+     * @param Mesd\SettingsBundle\Entity\Cluster
+     *
+     * @return self
      */
     public function setCluster(Cluster $cluster)
     {
@@ -97,35 +149,33 @@ class Setting {
      * Get SettingNode definition
      *
      * Get the SettingNode definition, if it has been
-     * loaded. See isNodeDefinitionLoaded() below for
-     * more details.
+     * loaded. See isSettingNodeLoaded() for more details.
      *
-     * @return SettingNode|null
+     * @return SettingNode|Excption
      */
-    public function getNodeDefinition()
+    public function getSettingNode()
     {
-        if (!$this->isNodeDefinitionLoaded()) {
+        if (!$this->isSettingNodeLoaded()) {
             throw new \Exception(
                 'The SettingNode definition has not been loaded. Please see the documentation ' .
                 'for the SettingManager loadSetting() method.'
             );
         }
 
-        return $this->nodeDefinition;
+        return $this->settingNode;
     }
 
 
     /**
      * Set SettingNode definition
      *
-     * Set the setting node definition.
+     * @param Mesd\SettingsBundle\Model\Definition\SettingNode
      *
-     * @param Mesd\SettingsBundle\Model\Setting $setting
-     * @return SettingNode
+     * @return self
      */
-    public function setNodeDefinition(SettingNode $settingNode)
+    public function setSettingNode(SettingNode $settingNode)
     {
-        $this->nodeDefinition = $settingNode;
+        $this->settingNode = $settingNode;
 
         return $this;
     }

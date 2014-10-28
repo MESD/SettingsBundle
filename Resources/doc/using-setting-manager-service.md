@@ -139,8 +139,8 @@ $setting = $settingManger->loadSetting('application', 'theme', 'font-size', true
 $fontSize = $setting->getValue();
 
 // Use the setting definition you loaded
-$settingDescription = $setting->getNodeDefinition()->getDescription();
-$settingType        = $setting->getNodeDefinition()->getType();
+$settingDescription = $setting->getSettingNode()->getDescription();
+$settingType        = $setting->getSettingNode()->getType();
 ```
 
 **Note:**
