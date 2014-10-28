@@ -5,8 +5,8 @@
 
 
 
-* Class name: SettingNodeFloat
-* Namespace: Mesd\SettingsBundle\Model\Definition
+**Class name**: SettingNodeFloat
+**Namespace**: Mesd\SettingsBundle\Model\Definition
 
 
 

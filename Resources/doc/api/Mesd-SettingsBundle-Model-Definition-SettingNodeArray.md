@@ -5,8 +5,8 @@
 
 
 
-* Class name: SettingNodeArray
-* Namespace: Mesd\SettingsBundle\Model\Definition
+**Class name**: SettingNodeArray
+**Namespace**: Mesd\SettingsBundle\Model\Definition
 
 
 

@@ -5,8 +5,8 @@
 
 
 
-* Class name: SettingDefinition
-* Namespace: Mesd\SettingsBundle\Model\Definition
+**Class name**: SettingDefinition
+**Namespace**: Mesd\SettingsBundle\Model\Definition
 
 
 

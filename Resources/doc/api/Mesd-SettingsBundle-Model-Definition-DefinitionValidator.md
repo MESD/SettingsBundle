@@ -5,8 +5,8 @@
 
 
 
-* Class name: DefinitionValidator
-* Namespace: Mesd\SettingsBundle\Model\Definition
+**Class name**: DefinitionValidator
+**Namespace**: Mesd\SettingsBundle\Model\Definition
 
 
 

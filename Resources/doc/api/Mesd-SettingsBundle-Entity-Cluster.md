@@ -5,8 +5,8 @@ Cluster
 
 
 
-* Class name: Cluster
-* Namespace: Mesd\SettingsBundle\Entity
+**Class name**: Cluster
+**Namespace**: Mesd\SettingsBundle\Entity
 
 
 

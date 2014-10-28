@@ -5,8 +5,8 @@
 
 
 
-* Class name: SettingNode
-* Namespace: Mesd\SettingsBundle\Model\Definition
+**Class name**: SettingNode
+**Namespace**: Mesd\SettingsBundle\Model\Definition
 
 
 

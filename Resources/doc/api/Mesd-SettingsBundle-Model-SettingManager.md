@@ -5,8 +5,8 @@
 
 
 
-* Class name: SettingManager
-* Namespace: Mesd\SettingsBundle\Model
+**Class name**: SettingManager
+**Namespace**: Mesd\SettingsBundle\Model
 
 
 

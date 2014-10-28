@@ -5,8 +5,8 @@
 
 
 
-* Class name: SettingNodeInteger
-* Namespace: Mesd\SettingsBundle\Model\Definition
+**Class name**: SettingNodeInteger
+**Namespace**: Mesd\SettingsBundle\Model\Definition
 
 
 

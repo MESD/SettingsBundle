@@ -5,8 +5,8 @@ Hive
 
 
 
-* Class name: Hive
-* Namespace: Mesd\SettingsBundle\Entity
+**Class name**: Hive
+**Namespace**: Mesd\SettingsBundle\Entity
 
 
 

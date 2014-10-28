@@ -5,8 +5,8 @@
 
 
 
-* Class name: DefinitionManager
-* Namespace: Mesd\SettingsBundle\Model\Definition
+**Class name**: DefinitionManager
+**Namespace**: Mesd\SettingsBundle\Model\Definition
 
 
 

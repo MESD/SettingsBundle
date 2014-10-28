@@ -5,8 +5,8 @@
 
 
 
-* Class name: SettingValidator
-* Namespace: Mesd\SettingsBundle\Model
+**Class name**: SettingValidator
+**Namespace**: Mesd\SettingsBundle\Model
 
 
 
