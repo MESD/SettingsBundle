@@ -6,7 +6,12 @@
 
 
 **Class name**: SettingNodeBoolean
+
 **Namespace**: Mesd\SettingsBundle\Model\Definition
+
+
+
+
 
 
 

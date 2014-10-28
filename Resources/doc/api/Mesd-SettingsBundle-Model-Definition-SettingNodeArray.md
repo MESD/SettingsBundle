@@ -6,7 +6,12 @@
 
 
 **Class name**: SettingNodeArray
+
 **Namespace**: Mesd\SettingsBundle\Model\Definition
+
+
+
+
 
 
 

@@ -6,7 +6,12 @@
 
 
 **Class name**: SettingNode
+
 **Namespace**: Mesd\SettingsBundle\Model\Definition
+
+
+
+
 
 
 

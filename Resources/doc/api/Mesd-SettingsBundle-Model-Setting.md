@@ -6,7 +6,12 @@ Setting.
 
 
 **Class name**: Setting
+
 **Namespace**: Mesd\SettingsBundle\Model
+
+
+
+
 
 
 
@@ -145,7 +150,7 @@ Set Setting Value
 
 ### getCluster
 
-    \Mesd\SettingsBundle\Model\Mesd\SettingsBundle\Entity\Cluster Mesd\SettingsBundle\Model\Setting::getCluster()
+    \Mesd\SettingsBundle\Entity\Cluster Mesd\SettingsBundle\Model\Setting::getCluster()
 
 Get cluster
 
@@ -158,7 +163,7 @@ Get cluster
 
 ### setCluster
 
-    \Mesd\SettingsBundle\Model\Setting Mesd\SettingsBundle\Model\Setting::setCluster(\Mesd\SettingsBundle\Model\Mesd\SettingsBundle\Entity\Cluster $cluster)
+    \Mesd\SettingsBundle\Model\Setting Mesd\SettingsBundle\Model\Setting::setCluster(\Mesd\SettingsBundle\Entity\Cluster $cluster)
 
 Set cluster
 
@@ -168,7 +173,7 @@ Set cluster
 
 
 ##### Arguments
-* $cluster **Mesd\SettingsBundle\Model\Mesd\SettingsBundle\Entity\Cluster**
+* $cluster **[Mesd\SettingsBundle\Entity\Cluster](Mesd-SettingsBundle-Entity-Cluster.md)**
 
 
 
@@ -188,7 +193,7 @@ isSettingNodeLoaded() for more details.
 
 ### setSettingNode
 
-    \Mesd\SettingsBundle\Model\Setting Mesd\SettingsBundle\Model\Setting::setSettingNode(\Mesd\SettingsBundle\Model\Mesd\SettingsBundle\Model\Definition\SettingNode $settingNode)
+    \Mesd\SettingsBundle\Model\Setting Mesd\SettingsBundle\Model\Setting::setSettingNode(\Mesd\SettingsBundle\Model\Definition\SettingNode $settingNode)
 
 Set SettingNode definition
 
@@ -198,6 +203,6 @@ Set SettingNode definition
 
 
 ##### Arguments
-* $settingNode **Mesd\SettingsBundle\Model\Mesd\SettingsBundle\Model\Definition\SettingNode**
+* $settingNode **[Mesd\SettingsBundle\Model\Definition\SettingNode](Mesd-SettingsBundle-Model-Definition-SettingNode.md)**
 
 

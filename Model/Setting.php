@@ -129,7 +129,7 @@ class Setting {
     /**
      * Get cluster
      *
-     * @return Mesd\SettingsBundle\Entity\Cluster
+     * @return Cluster
      */
     public function getCluster()
     {
@@ -140,7 +140,7 @@ class Setting {
     /**
      * Set cluster
      *
-     * @param Mesd\SettingsBundle\Entity\Cluster $cluster
+     * @param Cluster $cluster
      *
      * @return self
      */
@@ -176,7 +176,7 @@ class Setting {
     /**
      * Set SettingNode definition
      *
-     * @param Mesd\SettingsBundle\Model\Definition\SettingNode $settingNode
+     * @param SettingNode $settingNode
      *
      * @return self
      */

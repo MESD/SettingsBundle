@@ -6,7 +6,12 @@
 
 
 **Class name**: SettingManager
+
 **Namespace**: Mesd\SettingsBundle\Model
+
+
+
+
 
 
 

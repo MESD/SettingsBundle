@@ -6,7 +6,12 @@
 
 
 **Class name**: DefinitionManager
+
 **Namespace**: Mesd\SettingsBundle\Model\Definition
+
+
+
+
 
 
 

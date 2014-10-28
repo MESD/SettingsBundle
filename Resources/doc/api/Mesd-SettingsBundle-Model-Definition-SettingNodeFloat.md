@@ -6,7 +6,12 @@
 
 
 **Class name**: SettingNodeFloat
+
 **Namespace**: Mesd\SettingsBundle\Model\Definition
+
+
+
+
 
 
 

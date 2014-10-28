@@ -6,7 +6,12 @@ Hive
 
 
 **Class name**: Hive
+
 **Namespace**: Mesd\SettingsBundle\Entity
+
+
+
+
 
 
 

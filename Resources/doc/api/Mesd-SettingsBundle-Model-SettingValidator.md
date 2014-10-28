@@ -6,7 +6,12 @@
 
 
 **Class name**: SettingValidator
+
 **Namespace**: Mesd\SettingsBundle\Model
+
+
+
+
 
 
 

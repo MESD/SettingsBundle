@@ -6,7 +6,12 @@ Cluster
 
 
 **Class name**: Cluster
+
 **Namespace**: Mesd\SettingsBundle\Entity
+
+
+
+
 
 
 
