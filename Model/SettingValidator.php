@@ -58,6 +58,32 @@ class SettingValidator {
 
 
     /**
+     * Sanitize an array setting
+     *
+     * @return boolean true|false
+     */
+    public function sanitizeArray()
+    {
+        $this->sanitizeType();
+
+        return true;
+    }
+
+
+    /**
+     * Sanitize a boolean setting
+     *
+     * @return boolean true|false
+     */
+    public function sanitizeBoolean()
+    {
+        $this->sanitizeType();
+
+        return true;
+    }
+
+
+    /**
      * Sanitize a float setting
      *
      * @return boolean true|false
@@ -67,19 +93,6 @@ class SettingValidator {
         $this->sanitizeType();
         $this->sanitizeDigits();
         $this->sanitizePrecision();
-
-        return true;
-    }
-
-
-    /**
-     * Sanitize an array setting
-     *
-     * @return boolean true|false
-     */
-    public function sanitizeArray()
-    {
-        $this->sanitizeType();
 
         return true;
     }
@@ -189,6 +202,21 @@ class SettingValidator {
      * @return boolean true|false
      */
     protected function validateArray()
+    {
+        $valid = true;
+
+        $valid = (false === $this->validateType()) ? false : $valid;
+
+        return $valid;
+    }
+
+
+    /**
+     * Validate a boolean setting
+     *
+     * @return boolean true|false
+     */
+    protected function validateBoolean()
     {
         $valid = true;
 
