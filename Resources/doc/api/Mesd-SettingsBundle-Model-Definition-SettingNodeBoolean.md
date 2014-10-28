@@ -1,5 +1,4 @@
-Mesd\SettingsBundle\Model\Definition\SettingNodeBoolean
-===============
+##Mesd\SettingsBundle\Model\Definition\SettingNodeBoolean
 
 
 
@@ -30,7 +29,7 @@ Methods
 * Visibility: **public**
 
 
-#### Arguments
+##### Arguments
 * $nodeAttributes **mixed**
 
 

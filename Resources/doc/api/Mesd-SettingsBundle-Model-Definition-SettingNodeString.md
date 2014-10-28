@@ -1,5 +1,4 @@
-Mesd\SettingsBundle\Model\Definition\SettingNodeString
-===============
+##Mesd\SettingsBundle\Model\Definition\SettingNodeString
 
 
 
@@ -43,7 +42,7 @@ Methods
 * Visibility: **public**
 
 
-#### Arguments
+##### Arguments
 * $nodeAttributes **mixed**
 
 
@@ -85,7 +84,7 @@ Methods
 * Visibility: **public**
 
 
-#### Arguments
+##### Arguments
 * $length **mixed**
 
 

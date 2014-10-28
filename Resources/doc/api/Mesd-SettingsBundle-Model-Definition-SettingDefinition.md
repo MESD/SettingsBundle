@@ -1,5 +1,4 @@
-Mesd\SettingsBundle\Model\Definition\SettingDefinition
-===============
+##Mesd\SettingsBundle\Model\Definition\SettingDefinition
 
 
 
@@ -113,7 +112,7 @@ Methods
 * Visibility: **public**
 
 
-#### Arguments
+##### Arguments
 * $key **mixed**
 
 
@@ -142,7 +141,7 @@ Methods
 * Visibility: **public**
 
 
-#### Arguments
+##### Arguments
 * $hive **mixed**
 
 
@@ -171,7 +170,7 @@ Methods
 * Visibility: **public**
 
 
-#### Arguments
+##### Arguments
 * $type **mixed**
 
 
@@ -200,7 +199,7 @@ Methods
 * Visibility: **public**
 
 
-#### Arguments
+##### Arguments
 * $filePath **mixed**
 
 
@@ -216,7 +215,7 @@ Add SettingNode
 * Visibility: **public**
 
 
-#### Arguments
+##### Arguments
 * $settingNode **Mesd\SettingsBundle\Model\Definition\Mesd\SettingsBundle\Model\Definition\SettingNode**
 
 
@@ -232,7 +231,7 @@ Get SettingNode
 * Visibility: **public**
 
 
-#### Arguments
+##### Arguments
 * $name **string**
 
 
@@ -261,7 +260,7 @@ Remove SettingNode
 * Visibility: **public**
 
 
-#### Arguments
+##### Arguments
 * $settingNode **Mesd\SettingsBundle\Model\Definition\Mesd\SettingsBundle\Model\Definition\SettingNode**
 
 
@@ -277,7 +276,7 @@ Remove SettingNode by name
 * Visibility: **public**
 
 
-#### Arguments
+##### Arguments
 * $name **string**
 
 

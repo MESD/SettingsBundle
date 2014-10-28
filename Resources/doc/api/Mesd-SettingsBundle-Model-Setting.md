@@ -1,5 +1,4 @@
-Mesd\SettingsBundle\Model\Setting
-===============
+##Mesd\SettingsBundle\Model\Setting
 
 Setting.
 
@@ -110,7 +109,7 @@ Set Setting Name
 * Visibility: **public**
 
 
-#### Arguments
+##### Arguments
 * $name **string** - &lt;p&gt;Setting Name&lt;/p&gt;
 
 
@@ -139,7 +138,7 @@ Set Setting Value
 * Visibility: **public**
 
 
-#### Arguments
+##### Arguments
 * $value **mixed** - &lt;p&gt;Setting Value&lt;/p&gt;
 
 
@@ -168,7 +167,7 @@ Set cluster
 * Visibility: **public**
 
 
-#### Arguments
+##### Arguments
 * $cluster **Mesd\SettingsBundle\Model\Mesd\SettingsBundle\Entity\Cluster**
 
 
@@ -198,7 +197,7 @@ Set SettingNode definition
 * Visibility: **public**
 
 
-#### Arguments
+##### Arguments
 * $settingNode **Mesd\SettingsBundle\Model\Mesd\SettingsBundle\Model\Definition\SettingNode**
 
 

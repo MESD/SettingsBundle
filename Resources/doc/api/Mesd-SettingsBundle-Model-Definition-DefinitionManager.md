@@ -1,5 +1,4 @@
-Mesd\SettingsBundle\Model\Definition\DefinitionManager
-===============
+##Mesd\SettingsBundle\Model\Definition\DefinitionManager
 
 
 
@@ -65,7 +64,7 @@ Methods
 * Visibility: **public**
 
 
-#### Arguments
+##### Arguments
 * $bundleStorage **mixed**
 * $kernel **mixed**
 * $settingManager **[Mesd\SettingsBundle\Model\SettingManager](Mesd-SettingsBundle-Model-SettingManager.md)**
@@ -83,7 +82,7 @@ Builds a file name based on a hive [ and cluster ].
 * Visibility: **public**
 
 
-#### Arguments
+##### Arguments
 * $hiveName **string**
 * $clusterName **string**
 
@@ -100,7 +99,7 @@ Builds a file name based on SettingDefinition.
 * Visibility: **private**
 
 
-#### Arguments
+##### Arguments
 * $SettingDefinition **[Mesd\SettingsBundle\Model\Definition\SettingDefinition](Mesd-SettingsBundle-Model-Definition-SettingDefinition.md)**
 
 
@@ -118,7 +117,7 @@ file will be created in the saveFile() method.
 * Visibility: **public**
 
 
-#### Arguments
+##### Arguments
 * $fileName **string**
 * $filePath **string**
 
@@ -135,7 +134,7 @@ Determine if a given file exists
 * Visibility: **public**
 
 
-#### Arguments
+##### Arguments
 * $file **string**
 
 
@@ -152,7 +151,7 @@ parses the yaml content, and returns a SettingDefinition object.
 * Visibility: **public**
 
 
-#### Arguments
+##### Arguments
 * $hiveName **string**
 * $clusterName **string**
 
@@ -173,7 +172,7 @@ fully qualifed file name or false.
 * Visibility: **public**
 
 
-#### Arguments
+##### Arguments
 * $fileName **string**
 * $filePath **string**
 
@@ -192,7 +191,7 @@ will be validated before being saved.
 * Visibility: **public**
 
 
-#### Arguments
+##### Arguments
 * $settingDefinition **[Mesd\SettingsBundle\Model\Definition\SettingDefinition](Mesd-SettingsBundle-Model-Definition-SettingDefinition.md)**
 
 
@@ -209,7 +208,7 @@ a yaml file.
 * Visibility: **private**
 
 
-#### Arguments
+##### Arguments
 * $settingDefinition **[Mesd\SettingsBundle\Model\Definition\SettingDefinition](Mesd-SettingsBundle-Model-Definition-SettingDefinition.md)**
 
 
@@ -226,7 +225,7 @@ content, and converts the data into a SettingDefinition.
 * Visibility: **private**
 
 
-#### Arguments
+##### Arguments
 * $fileContents **string**
 * $file **mixed**
 

@@ -15,15 +15,6 @@ use Mesd\SettingsBundle\Entity\Cluster;
 use Mesd\SettingsBundle\Model\Definition\SettingNode;
 
 /**
- * This file is part of the MesdSettingsBundle.
- *
- * (c) MESD <appdev@mesd.k12.or.us>
- *
- * For the full copyright and license information, please view the LICENSE.md
- * file that was distributed with this source code.
- */
-
-/**
  * Setting.
  *
  * @author David Cramblett <dcramble@mesd.k12.or.us>

@@ -1,5 +1,4 @@
-Mesd\SettingsBundle\Model\Definition\SettingNode
-===============
+##Mesd\SettingsBundle\Model\Definition\SettingNode
 
 
 
@@ -87,7 +86,7 @@ Methods
 * Visibility: **public**
 
 
-#### Arguments
+##### Arguments
 * $nodeData **mixed**
 
 
@@ -116,7 +115,7 @@ Methods
 * Visibility: **public**
 
 
-#### Arguments
+##### Arguments
 * $default **mixed**
 
 
@@ -145,7 +144,7 @@ Methods
 * Visibility: **public**
 
 
-#### Arguments
+##### Arguments
 * $description **mixed**
 
 
@@ -174,7 +173,7 @@ Methods
 * Visibility: **public**
 
 
-#### Arguments
+##### Arguments
 * $format **mixed**
 
 
@@ -203,7 +202,7 @@ Methods
 * Visibility: **public**
 
 
-#### Arguments
+##### Arguments
 * $name **mixed**
 
 
@@ -232,7 +231,7 @@ Methods
 * Visibility: **public**
 
 
-#### Arguments
+##### Arguments
 * $type **mixed**
 
 

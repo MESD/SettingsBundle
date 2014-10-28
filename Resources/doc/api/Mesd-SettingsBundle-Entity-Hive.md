@@ -1,5 +1,4 @@
-Mesd\SettingsBundle\Entity\Hive
-===============
+##Mesd\SettingsBundle\Entity\Hive
 
 Hive
 
@@ -113,7 +112,7 @@ Set name
 * Visibility: **public**
 
 
-#### Arguments
+##### Arguments
 * $name **string**
 
 
@@ -142,7 +141,7 @@ Set description
 * Visibility: **public**
 
 
-#### Arguments
+##### Arguments
 * $description **string**
 
 
@@ -171,7 +170,7 @@ Set definedAtHive
 * Visibility: **public**
 
 
-#### Arguments
+##### Arguments
 * $definedAtHive **boolean**
 
 
@@ -200,7 +199,7 @@ Add cluster
 * Visibility: **public**
 
 
-#### Arguments
+##### Arguments
 * $cluster **[Mesd\SettingsBundle\Entity\Cluster](Mesd-SettingsBundle-Entity-Cluster.md)**
 
 
@@ -216,7 +215,7 @@ Remove cluster
 * Visibility: **public**
 
 
-#### Arguments
+##### Arguments
 * $cluster **[Mesd\SettingsBundle\Entity\Cluster](Mesd-SettingsBundle-Entity-Cluster.md)**
 
 

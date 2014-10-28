@@ -1,5 +1,4 @@
-Mesd\SettingsBundle\Model\Definition\SettingNodeFloat
-===============
+##Mesd\SettingsBundle\Model\Definition\SettingNodeFloat
 
 
 
@@ -54,7 +53,7 @@ Methods
 * Visibility: **public**
 
 
-#### Arguments
+##### Arguments
 * $nodeAttributes **mixed**
 
 
@@ -96,7 +95,7 @@ Methods
 * Visibility: **public**
 
 
-#### Arguments
+##### Arguments
 * $digits **mixed**
 
 
@@ -125,7 +124,7 @@ Methods
 * Visibility: **public**
 
 
-#### Arguments
+##### Arguments
 * $precision **mixed**
 
 

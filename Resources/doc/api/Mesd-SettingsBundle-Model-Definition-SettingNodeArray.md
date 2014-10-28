@@ -1,5 +1,4 @@
-Mesd\SettingsBundle\Model\Definition\SettingNodeArray
-===============
+##Mesd\SettingsBundle\Model\Definition\SettingNodeArray
 
 
 
@@ -54,7 +53,7 @@ Methods
 * Visibility: **public**
 
 
-#### Arguments
+##### Arguments
 * $nodeAttributes **mixed**
 
 
@@ -96,7 +95,7 @@ Methods
 * Visibility: **public**
 
 
-#### Arguments
+##### Arguments
 * $prototype **mixed**
 
 
@@ -125,7 +124,7 @@ Methods
 * Visibility: **public**
 
 
-#### Arguments
+##### Arguments
 * $node **mixed**
 
 

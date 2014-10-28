@@ -1,5 +1,4 @@
-Mesd\SettingsBundle\Model\Definition\DefinitionValidator
-===============
+##Mesd\SettingsBundle\Model\Definition\DefinitionValidator
 
 
 
@@ -54,7 +53,7 @@ Methods
 * Visibility: **public**
 
 
-#### Arguments
+##### Arguments
 * $definition **array**
 * $settingsManager **mixed**
 
@@ -110,7 +109,7 @@ Methods
 * Visibility: **private**
 
 
-#### Arguments
+##### Arguments
 * $nodeName **mixed**
 * $nodeAttributes **mixed**
 * $key **mixed**
@@ -128,7 +127,7 @@ Methods
 * Visibility: **private**
 
 
-#### Arguments
+##### Arguments
 * $nodeName **mixed**
 * $nodeAttributes **mixed**
 * $key **mixed**
@@ -146,7 +145,7 @@ Methods
 * Visibility: **private**
 
 
-#### Arguments
+##### Arguments
 * $nodeName **mixed**
 * $nodeAttributes **mixed**
 * $key **mixed**
@@ -164,7 +163,7 @@ Methods
 * Visibility: **private**
 
 
-#### Arguments
+##### Arguments
 * $nodeName **mixed**
 * $nodeAttributes **mixed**
 * $key **mixed**
@@ -182,7 +181,7 @@ Methods
 * Visibility: **private**
 
 
-#### Arguments
+##### Arguments
 * $nodeName **mixed**
 * $nodeAttributes **mixed**
 * $key **mixed**

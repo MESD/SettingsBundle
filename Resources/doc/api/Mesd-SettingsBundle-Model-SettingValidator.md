@@ -1,5 +1,4 @@
-Mesd\SettingsBundle\Model\SettingValidator
-===============
+##Mesd\SettingsBundle\Model\SettingValidator
 
 
 
@@ -76,7 +75,7 @@ Methods
 * Visibility: **public**
 
 
-#### Arguments
+##### Arguments
 * $settingNode **[Mesd\SettingsBundle\Model\Definition\SettingNode](Mesd-SettingsBundle-Model-Definition-SettingNode.md)**
 * $setting **[Mesd\SettingsBundle\Model\Setting](Mesd-SettingsBundle-Model-Setting.md)**
 
