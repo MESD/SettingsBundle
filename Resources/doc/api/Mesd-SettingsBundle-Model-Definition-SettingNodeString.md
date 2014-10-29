@@ -30,7 +30,7 @@ Properties
 
 
 
-    private mixed $length
+    private  $length
 
 
 

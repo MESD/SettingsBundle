@@ -30,7 +30,7 @@ Properties
 
 
 
-    private mixed $default
+    private  $default
 
 
 
@@ -43,7 +43,7 @@ Properties
 
 
 
-    private mixed $description
+    private  $description
 
 
 
@@ -56,7 +56,7 @@ Properties
 
 
 
-    private mixed $format
+    private  $format
 
 
 
@@ -69,7 +69,7 @@ Properties
 
 
 
-    private mixed $name
+    private  $name
 
 
 
@@ -82,7 +82,7 @@ Properties
 
 
 
-    private mixed $type
+    private  $type
 
 
 

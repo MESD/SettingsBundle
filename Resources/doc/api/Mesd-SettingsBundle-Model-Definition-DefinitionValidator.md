@@ -30,7 +30,7 @@ Properties
 
 
 
-    private mixed $definition
+    private  $definition
 
 
 
@@ -43,7 +43,7 @@ Properties
 
 
 
-    private mixed $settingsManager
+    private  $settingsManager
 
 
 

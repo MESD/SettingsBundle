@@ -30,7 +30,7 @@ Properties
 
 
 
-    private mixed $prototype
+    private  $prototype
 
 
 
@@ -43,7 +43,7 @@ Properties
 
 
 
-    private mixed $node
+    private  $node
 
 
 

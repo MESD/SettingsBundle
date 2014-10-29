@@ -30,7 +30,7 @@ Properties
 
 
 
-    private mixed $bundleStorage
+    private  $bundleStorage
 
 
 
@@ -43,7 +43,7 @@ Properties
 
 
 
-    private mixed $kernel
+    private  $kernel
 
 
 
@@ -56,7 +56,7 @@ Properties
 
 
 
-    private mixed $settingManager
+    private  $settingManager
 
 
 

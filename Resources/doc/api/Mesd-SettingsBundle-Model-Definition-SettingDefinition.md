@@ -30,7 +30,7 @@ Properties
 
 
 
-    private mixed $key
+    private  $key
 
 
 
@@ -43,7 +43,7 @@ Properties
 
 
 
-    private mixed $hive
+    private  $hive
 
 
 
@@ -56,7 +56,7 @@ Properties
 
 
 
-    private mixed $type
+    private  $type
 
 
 
@@ -69,7 +69,7 @@ Properties
 
 
 
-    private mixed $filePath
+    private  $filePath
 
 
 
@@ -82,7 +82,7 @@ Properties
 
 
 
-    private mixed $settingNode
+    private  $settingNode
 
 
 

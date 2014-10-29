@@ -30,7 +30,7 @@ Properties
 
 
 
-    private mixed $digits
+    private  $digits
 
 
 
@@ -43,7 +43,7 @@ Properties
 
 
 
-    private mixed $precision
+    private  $precision
 
 
 

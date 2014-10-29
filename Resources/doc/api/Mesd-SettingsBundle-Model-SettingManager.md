@@ -30,7 +30,7 @@ Properties
 
 
 
-    private mixed $container
+    private  $container
 
 
 

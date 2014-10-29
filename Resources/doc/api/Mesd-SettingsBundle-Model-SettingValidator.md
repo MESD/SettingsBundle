@@ -30,7 +30,7 @@ Properties
 
 
 
-    private mixed $setting
+    private  $setting
 
 
 
@@ -43,7 +43,7 @@ Properties
 
 
 
-    private mixed $settingNode
+    private  $settingNode
 
 
 
@@ -56,7 +56,7 @@ Properties
 
 
 
-    private mixed $valid
+    private  $valid
 
 
 
@@ -69,7 +69,7 @@ Properties
 
 
 
-    private mixed $validationMessage
+    private  $validationMessage
 
 
 

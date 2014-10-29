@@ -30,7 +30,7 @@ Properties
 
 
 
-    private mixed $digits
+    private  $digits
 
 
 
