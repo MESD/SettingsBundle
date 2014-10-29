@@ -22,7 +22,9 @@ Properties
 ----------
 
 
-**$key**
+**$key**  |  
+
+
 
     private mixed $key
 
@@ -31,11 +33,9 @@ Properties
 
 
 
+**$hive**  |  
 
 
-
-
-**$hive**
 
     private mixed $hive
 
@@ -44,11 +44,9 @@ Properties
 
 
 
+**$type**  |  
 
 
-
-
-**$type**
 
     private mixed $type
 
@@ -57,11 +55,9 @@ Properties
 
 
 
+**$filePath**  |  
 
 
-
-
-**$filePath**
 
     private mixed $filePath
 
@@ -70,17 +66,11 @@ Properties
 
 
 
+**$settingNode**  |  
 
 
-
-
-**$settingNode**
 
     private mixed $settingNode
-
-
-
-
 
 
 

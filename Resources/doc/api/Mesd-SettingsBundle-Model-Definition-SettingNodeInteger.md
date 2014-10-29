@@ -22,13 +22,11 @@ Properties
 ----------
 
 
-**$digits**
+**$digits**  |  
+
+
 
     private mixed $digits
-
-
-
-
 
 
 

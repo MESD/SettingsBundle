@@ -22,7 +22,9 @@ Properties
 ----------
 
 
-**$setting**
+**$setting**  |  
+
+
 
     private mixed $setting
 
@@ -31,11 +33,9 @@ Properties
 
 
 
+**$settingNode**  |  
 
 
-
-
-**$settingNode**
 
     private mixed $settingNode
 
@@ -44,11 +44,9 @@ Properties
 
 
 
+**$valid**  |  
 
 
-
-
-**$valid**
 
     private mixed $valid
 
@@ -57,17 +55,11 @@ Properties
 
 
 
+**$validationMessage**  |  
 
 
-
-
-**$validationMessage**
 
     private mixed $validationMessage
-
-
-
-
 
 
 

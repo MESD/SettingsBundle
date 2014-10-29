@@ -22,52 +22,44 @@ Properties
 ----------
 
 
-**$name**
+**$name**  |  The setting name
+
+
 
     private string $name
 
-The setting name
 
 
 
 
 
+**$value**  |  The setting value
 
 
-
-**$value**
 
     private mixed $value
 
-The setting value
 
 
 
 
 
+**$settingNode**  |  SettingNode from the SettingDefinition
 
 
-
-**$settingNode**
 
     private SettingNode $settingNode
 
-SettingNode from the SettingDefinition
 
 
 
 
 
+**$cluster**  |  Cluster Entity
 
 
-
-**$cluster**
 
     private Cluster $cluster
-
-Cluster Entity
-
-
 
 
 

@@ -22,13 +22,11 @@ Properties
 ----------
 
 
-**$length**
+**$length**  |  
+
+
 
     private mixed $length
-
-
-
-
 
 
 

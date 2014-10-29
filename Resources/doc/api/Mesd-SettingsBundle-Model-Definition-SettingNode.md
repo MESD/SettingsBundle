@@ -22,7 +22,9 @@ Properties
 ----------
 
 
-**$default**
+**$default**  |  
+
+
 
     private mixed $default
 
@@ -31,11 +33,9 @@ Properties
 
 
 
+**$description**  |  
 
 
-
-
-**$description**
 
     private mixed $description
 
@@ -44,11 +44,9 @@ Properties
 
 
 
+**$format**  |  
 
 
-
-
-**$format**
 
     private mixed $format
 
@@ -57,11 +55,9 @@ Properties
 
 
 
+**$name**  |  
 
 
-
-
-**$name**
 
     private mixed $name
 
@@ -70,17 +66,11 @@ Properties
 
 
 
+**$type**  |  
 
 
-
-
-**$type**
 
     private mixed $type
-
-
-
-
 
 
 

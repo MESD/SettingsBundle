@@ -22,7 +22,9 @@ Properties
 ----------
 
 
-**$prototype**
+**$prototype**  |  
+
+
 
     private mixed $prototype
 
@@ -31,17 +33,11 @@ Properties
 
 
 
+**$node**  |  
 
 
-
-
-**$node**
 
     private mixed $node
-
-
-
-
 
 
 

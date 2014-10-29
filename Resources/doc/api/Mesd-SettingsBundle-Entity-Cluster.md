@@ -22,7 +22,9 @@ Properties
 ----------
 
 
-**$id**
+**$id**  |  
+
+
 
     private integer $id
 
@@ -31,11 +33,9 @@ Properties
 
 
 
+**$name**  |  
 
 
-
-
-**$name**
 
     private string $name
 
@@ -44,11 +44,9 @@ Properties
 
 
 
+**$description**  |  
 
 
-
-
-**$description**
 
     private string $description
 
@@ -57,11 +55,9 @@ Properties
 
 
 
+**$setting**  |  
 
 
-
-
-**$setting**
 
     private array $setting
 
@@ -70,17 +66,11 @@ Properties
 
 
 
+**$hive**  |  
 
 
-
-
-**$hive**
 
     private Hive $hive
-
-
-
-
 
 
 

@@ -22,7 +22,9 @@ Properties
 ----------
 
 
-**$bundleStorage**
+**$bundleStorage**  |  
+
+
 
     private mixed $bundleStorage
 
@@ -31,11 +33,9 @@ Properties
 
 
 
+**$kernel**  |  
 
 
-
-
-**$kernel**
 
     private mixed $kernel
 
@@ -44,17 +44,11 @@ Properties
 
 
 
+**$settingManager**  |  
 
 
-
-
-**$settingManager**
 
     private mixed $settingManager
-
-
-
-
 
 
 
