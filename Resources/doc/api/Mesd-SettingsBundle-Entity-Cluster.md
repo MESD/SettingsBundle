@@ -84,7 +84,7 @@ Methods
 public **getId** (  )
 
 
-    Get id
+Get id
 
 
 
@@ -100,7 +100,7 @@ public **getId** (  )
 public **setName** ( string $name )
 
 
-    Set name
+Set name
 
 
 
@@ -109,9 +109,9 @@ public **setName** ( string $name )
 
 
 
-**Arguments**:
+**Parameters**:
 
-$name string 
+> $name string 
 
 
 --
@@ -120,7 +120,7 @@ $name string
 public **getName** (  )
 
 
-    Get name
+Get name
 
 
 
@@ -136,7 +136,7 @@ public **getName** (  )
 public **setDescription** ( string $description )
 
 
-    Set description
+Set description
 
 
 
@@ -145,9 +145,9 @@ public **setDescription** ( string $description )
 
 
 
-**Arguments**:
+**Parameters**:
 
-$description string 
+> $description string 
 
 
 --
@@ -156,7 +156,7 @@ $description string
 public **getDescription** (  )
 
 
-    Get description
+Get description
 
 
 
@@ -172,7 +172,7 @@ public **getDescription** (  )
 public **addSetting** ( \Mesd\SettingsBundle\Entity\Mesd\SettingsBundle\Model\Setting $setting )
 
 
-    Add Setting
+Add Setting
 
 
 
@@ -181,9 +181,9 @@ public **addSetting** ( \Mesd\SettingsBundle\Entity\Mesd\SettingsBundle\Model\Se
 
 
 
-**Arguments**:
+**Parameters**:
 
-$setting Mesd\SettingsBundle\Entity\Mesd\SettingsBundle\Model\Setting 
+> $setting Mesd\SettingsBundle\Entity\Mesd\SettingsBundle\Model\Setting 
 
 
 --
@@ -192,7 +192,7 @@ $setting Mesd\SettingsBundle\Entity\Mesd\SettingsBundle\Model\Setting
 public **getSettingArray** (  )
 
 
-    Get setting Array
+Get setting Array
 
 
 
@@ -208,7 +208,7 @@ public **getSettingArray** (  )
 public **getSetting** ( $settingName )
 
 
-    Get setting
+Get setting
 
 
 
@@ -217,9 +217,9 @@ public **getSetting** ( $settingName )
 
 
 
-**Arguments**:
+**Parameters**:
 
-$settingName mixed 
+> $settingName mixed 
 
 
 --
@@ -228,7 +228,7 @@ $settingName mixed
 public **removeSetting** ( \Mesd\SettingsBundle\Entity\Mesd\SettingsBundle\Model\Setting $setting )
 
 
-    Remove Setting
+Remove Setting
 
 
 
@@ -237,9 +237,9 @@ public **removeSetting** ( \Mesd\SettingsBundle\Entity\Mesd\SettingsBundle\Model
 
 
 
-**Arguments**:
+**Parameters**:
 
-$setting Mesd\SettingsBundle\Entity\Mesd\SettingsBundle\Model\Setting 
+> $setting Mesd\SettingsBundle\Entity\Mesd\SettingsBundle\Model\Setting 
 
 
 --
@@ -248,7 +248,7 @@ $setting Mesd\SettingsBundle\Entity\Mesd\SettingsBundle\Model\Setting
 public **setHive** ( \Mesd\SettingsBundle\Entity\Hive $hive )
 
 
-    Set hive
+Set hive
 
 
 
@@ -257,9 +257,9 @@ public **setHive** ( \Mesd\SettingsBundle\Entity\Hive $hive )
 
 
 
-**Arguments**:
+**Parameters**:
 
-$hive [Mesd\SettingsBundle\Entity\Hive](Mesd-SettingsBundle-Entity-Hive.md) 
+> $hive [Mesd\SettingsBundle\Entity\Hive](Mesd-SettingsBundle-Entity-Hive.md) 
 
 
 --
@@ -268,7 +268,7 @@ $hive [Mesd\SettingsBundle\Entity\Hive](Mesd-SettingsBundle-Entity-Hive.md)
 public **getHive** (  )
 
 
-    Get hive
+Get hive
 
 
 

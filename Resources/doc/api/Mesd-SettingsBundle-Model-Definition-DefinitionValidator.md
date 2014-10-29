@@ -51,7 +51,6 @@ Methods
 public **__construct** ( array $definition, $settingsManager )
 
 
-    
 
 
 
@@ -60,10 +59,11 @@ public **__construct** ( array $definition, $settingsManager )
 
 
 
-**Arguments**:
 
-$definition array 
-$settingsManager mixed 
+**Parameters**:
+
+> $definition array 
+> $settingsManager mixed 
 
 
 --
@@ -72,7 +72,7 @@ $settingsManager mixed
 public **validate** (  )
 
 
-    
+
 
 
 
@@ -88,7 +88,7 @@ public **validate** (  )
 private **validateStructure** (  )
 
 
-    
+
 
 
 
@@ -104,7 +104,7 @@ private **validateStructure** (  )
 private **validateNodes** (  )
 
 
-    
+
 
 
 
@@ -120,7 +120,6 @@ private **validateNodes** (  )
 private **validateNodeArray** ( $nodeName, $nodeAttributes, $key )
 
 
-    
 
 
 
@@ -129,11 +128,12 @@ private **validateNodeArray** ( $nodeName, $nodeAttributes, $key )
 
 
 
-**Arguments**:
 
-$nodeName mixed 
-$nodeAttributes mixed 
-$key mixed 
+**Parameters**:
+
+> $nodeName mixed 
+> $nodeAttributes mixed 
+> $key mixed 
 
 
 --
@@ -142,7 +142,6 @@ $key mixed
 private **validateNodeBoolean** ( $nodeName, $nodeAttributes, $key )
 
 
-    
 
 
 
@@ -151,11 +150,12 @@ private **validateNodeBoolean** ( $nodeName, $nodeAttributes, $key )
 
 
 
-**Arguments**:
 
-$nodeName mixed 
-$nodeAttributes mixed 
-$key mixed 
+**Parameters**:
+
+> $nodeName mixed 
+> $nodeAttributes mixed 
+> $key mixed 
 
 
 --
@@ -164,7 +164,6 @@ $key mixed
 private **validateNodeFloat** ( $nodeName, $nodeAttributes, $key )
 
 
-    
 
 
 
@@ -173,11 +172,12 @@ private **validateNodeFloat** ( $nodeName, $nodeAttributes, $key )
 
 
 
-**Arguments**:
 
-$nodeName mixed 
-$nodeAttributes mixed 
-$key mixed 
+**Parameters**:
+
+> $nodeName mixed 
+> $nodeAttributes mixed 
+> $key mixed 
 
 
 --
@@ -186,7 +186,6 @@ $key mixed
 private **validateNodeInteger** ( $nodeName, $nodeAttributes, $key )
 
 
-    
 
 
 
@@ -195,11 +194,12 @@ private **validateNodeInteger** ( $nodeName, $nodeAttributes, $key )
 
 
 
-**Arguments**:
 
-$nodeName mixed 
-$nodeAttributes mixed 
-$key mixed 
+**Parameters**:
+
+> $nodeName mixed 
+> $nodeAttributes mixed 
+> $key mixed 
 
 
 --
@@ -208,7 +208,6 @@ $key mixed
 private **validateNodeString** ( $nodeName, $nodeAttributes, $key )
 
 
-    
 
 
 
@@ -217,11 +216,12 @@ private **validateNodeString** ( $nodeName, $nodeAttributes, $key )
 
 
 
-**Arguments**:
 
-$nodeName mixed 
-$nodeAttributes mixed 
-$key mixed 
+**Parameters**:
+
+> $nodeName mixed 
+> $nodeAttributes mixed 
+> $key mixed 
 
 
 --

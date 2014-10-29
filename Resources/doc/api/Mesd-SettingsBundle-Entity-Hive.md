@@ -84,7 +84,7 @@ Methods
 public **__construct** (  )
 
 
-    Constructor
+Constructor
 
 
 
@@ -100,7 +100,7 @@ public **__construct** (  )
 public **getId** (  )
 
 
-    Get id
+Get id
 
 
 
@@ -116,7 +116,7 @@ public **getId** (  )
 public **setName** ( string $name )
 
 
-    Set name
+Set name
 
 
 
@@ -125,9 +125,9 @@ public **setName** ( string $name )
 
 
 
-**Arguments**:
+**Parameters**:
 
-$name string 
+> $name string 
 
 
 --
@@ -136,7 +136,7 @@ $name string
 public **getName** (  )
 
 
-    Get name
+Get name
 
 
 
@@ -152,7 +152,7 @@ public **getName** (  )
 public **setDescription** ( string $description )
 
 
-    Set description
+Set description
 
 
 
@@ -161,9 +161,9 @@ public **setDescription** ( string $description )
 
 
 
-**Arguments**:
+**Parameters**:
 
-$description string 
+> $description string 
 
 
 --
@@ -172,7 +172,7 @@ $description string
 public **getDescription** (  )
 
 
-    Get description
+Get description
 
 
 
@@ -188,7 +188,7 @@ public **getDescription** (  )
 public **setDefinedAtHive** ( boolean $definedAtHive )
 
 
-    Set definedAtHive
+Set definedAtHive
 
 
 
@@ -197,9 +197,9 @@ public **setDefinedAtHive** ( boolean $definedAtHive )
 
 
 
-**Arguments**:
+**Parameters**:
 
-$definedAtHive boolean 
+> $definedAtHive boolean 
 
 
 --
@@ -208,7 +208,7 @@ $definedAtHive boolean
 public **getDefinedAtHive** (  )
 
 
-    Get definedAtHive
+Get definedAtHive
 
 
 
@@ -224,7 +224,7 @@ public **getDefinedAtHive** (  )
 public **addCluster** ( \Mesd\SettingsBundle\Entity\Cluster $cluster )
 
 
-    Add cluster
+Add cluster
 
 
 
@@ -233,9 +233,9 @@ public **addCluster** ( \Mesd\SettingsBundle\Entity\Cluster $cluster )
 
 
 
-**Arguments**:
+**Parameters**:
 
-$cluster [Mesd\SettingsBundle\Entity\Cluster](Mesd-SettingsBundle-Entity-Cluster.md) 
+> $cluster [Mesd\SettingsBundle\Entity\Cluster](Mesd-SettingsBundle-Entity-Cluster.md) 
 
 
 --
@@ -244,7 +244,7 @@ $cluster [Mesd\SettingsBundle\Entity\Cluster](Mesd-SettingsBundle-Entity-Cluster
 public **removeCluster** ( \Mesd\SettingsBundle\Entity\Cluster $cluster )
 
 
-    Remove cluster
+Remove cluster
 
 
 
@@ -253,9 +253,9 @@ public **removeCluster** ( \Mesd\SettingsBundle\Entity\Cluster $cluster )
 
 
 
-**Arguments**:
+**Parameters**:
 
-$cluster [Mesd\SettingsBundle\Entity\Cluster](Mesd-SettingsBundle-Entity-Cluster.md) 
+> $cluster [Mesd\SettingsBundle\Entity\Cluster](Mesd-SettingsBundle-Entity-Cluster.md) 
 
 
 --
@@ -264,7 +264,7 @@ $cluster [Mesd\SettingsBundle\Entity\Cluster](Mesd-SettingsBundle-Entity-Cluster
 public **getCluster** (  )
 
 
-    Get cluster
+Get cluster
 
 
 

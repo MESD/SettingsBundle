@@ -51,7 +51,6 @@ Methods
 public **__construct** ( $nodeAttributes )
 
 
-    
 
 
 
@@ -60,9 +59,10 @@ public **__construct** ( $nodeAttributes )
 
 
 
-**Arguments**:
 
-$nodeAttributes mixed 
+**Parameters**:
+
+> $nodeAttributes mixed 
 
 
 --
@@ -71,7 +71,7 @@ $nodeAttributes mixed
 public **dumpToArray** (  )
 
 
-    
+
 
 
 
@@ -87,7 +87,7 @@ public **dumpToArray** (  )
 public **getPrototype** (  )
 
 
-    
+
 
 
 
@@ -103,7 +103,6 @@ public **getPrototype** (  )
 public **setPrototype** ( $prototype )
 
 
-    
 
 
 
@@ -112,9 +111,10 @@ public **setPrototype** ( $prototype )
 
 
 
-**Arguments**:
 
-$prototype mixed 
+**Parameters**:
+
+> $prototype mixed 
 
 
 --
@@ -123,7 +123,7 @@ $prototype mixed
 public **getNode** (  )
 
 
-    
+
 
 
 
@@ -139,7 +139,6 @@ public **getNode** (  )
 public **setNode** ( $node )
 
 
-    
 
 
 
@@ -148,9 +147,10 @@ public **setNode** ( $node )
 
 
 
-**Arguments**:
 
-$node mixed 
+**Parameters**:
+
+> $node mixed 
 
 
 --

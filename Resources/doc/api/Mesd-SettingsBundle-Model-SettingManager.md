@@ -40,7 +40,6 @@ Methods
 public **__construct** ( \Symfony\Component\DependencyInjection\ContainerInterface $container )
 
 
-    
 
 
 
@@ -49,9 +48,10 @@ public **__construct** ( \Symfony\Component\DependencyInjection\ContainerInterfa
 
 
 
-**Arguments**:
 
-$container Symfony\Component\DependencyInjection\ContainerInterface 
+**Parameters**:
+
+> $container Symfony\Component\DependencyInjection\ContainerInterface 
 
 
 --
@@ -60,7 +60,7 @@ $container Symfony\Component\DependencyInjection\ContainerInterface
 public **clusterExists** ( string $hiveName, string $clusterName )
 
 
-    Check if cluster exisits
+Check if cluster exisits
 
 Determines if the specified cluster exisits
 in the database.
@@ -70,10 +70,10 @@ in the database.
 
 
 
-**Arguments**:
+**Parameters**:
 
-$hiveName string 
-$clusterName string 
+> $hiveName string 
+> $clusterName string 
 
 
 --
@@ -82,7 +82,7 @@ $clusterName string
 public **createCluster** ( string $hiveName, string $clusterName, string $description )
 
 
-    Create a cluster
+Create a cluster
 
 Creates a new cluster in database
 
@@ -91,11 +91,11 @@ Creates a new cluster in database
 
 
 
-**Arguments**:
+**Parameters**:
 
-$hiveName string 
-$clusterName string 
-$description string 
+> $hiveName string 
+> $clusterName string 
+> $description string 
 
 
 --
@@ -104,7 +104,7 @@ $description string
 public **createHive** ( string $hiveName, string $description, boolean $definedAtHive )
 
 
-    Create a hive
+Create a hive
 
 Creates a new hive in database
 
@@ -113,11 +113,11 @@ Creates a new hive in database
 
 
 
-**Arguments**:
+**Parameters**:
 
-$hiveName string 
-$description string 
-$definedAtHive boolean 
+> $hiveName string 
+> $description string 
+> $definedAtHive boolean 
 
 
 --
@@ -126,7 +126,7 @@ $definedAtHive boolean
 public **deleteCluster** ( string $hiveName, string $clusterName )
 
 
-    Delete cluster
+Delete cluster
 
 Delete the specified cluster or throw Exception.
 
@@ -135,10 +135,10 @@ Delete the specified cluster or throw Exception.
 
 
 
-**Arguments**:
+**Parameters**:
 
-$hiveName string 
-$clusterName string 
+> $hiveName string 
+> $clusterName string 
 
 
 --
@@ -147,7 +147,7 @@ $clusterName string
 public **deleteHive** ( string $hiveName )
 
 
-    Delete hive
+Delete hive
 
 Delete the specified hive or throw Exception.
 
@@ -156,9 +156,9 @@ Delete the specified hive or throw Exception.
 
 
 
-**Arguments**:
+**Parameters**:
 
-$hiveName string 
+> $hiveName string 
 
 
 --
@@ -167,7 +167,7 @@ $hiveName string
 public **deleteHiveClusters** ( string $hiveName )
 
 
-    Delete hive clusters
+Delete hive clusters
 
 Delete all the clusters attched to specific hive.
 
@@ -176,9 +176,9 @@ Delete all the clusters attched to specific hive.
 
 
 
-**Arguments**:
+**Parameters**:
 
-$hiveName string 
+> $hiveName string 
 
 
 --
@@ -187,7 +187,7 @@ $hiveName string
 public **hiveExists** ( string $hiveName )
 
 
-    Check if hive exisits
+Check if hive exisits
 
 Determines if the specified hive exisits
 in the database.
@@ -197,9 +197,9 @@ in the database.
 
 
 
-**Arguments**:
+**Parameters**:
 
-$hiveName string 
+> $hiveName string 
 
 
 --
@@ -208,7 +208,7 @@ $hiveName string
 public **hiveHasClusters** ( string $hiveName )
 
 
-    Check if hive has clusters
+Check if hive has clusters
 
 Determines if the specified hive has clusters
 exisiting in the database.
@@ -218,9 +218,9 @@ exisiting in the database.
 
 
 
-**Arguments**:
+**Parameters**:
 
-$hiveName string 
+> $hiveName string 
 
 
 --
@@ -229,7 +229,7 @@ $hiveName string
 public **loadCluster** ( string $hiveName, string $clusterName )
 
 
-    Load cluster
+Load cluster
 
 Load the specified cluster or throw Exception.
 
@@ -238,10 +238,10 @@ Load the specified cluster or throw Exception.
 
 
 
-**Arguments**:
+**Parameters**:
 
-$hiveName string 
-$clusterName string 
+> $hiveName string 
+> $clusterName string 
 
 
 --
@@ -250,7 +250,7 @@ $clusterName string
 public **loadHive** ( string $hiveName )
 
 
-    Load hive
+Load hive
 
 Load the specified hive or throw Exception.
 
@@ -259,9 +259,9 @@ Load the specified hive or throw Exception.
 
 
 
-**Arguments**:
+**Parameters**:
 
-$hiveName string 
+> $hiveName string 
 
 
 --
@@ -270,7 +270,7 @@ $hiveName string
 public **loadSetting** ( string $hiveName, string $clusterName, string $settingName, boolean $loadDefinition )
 
 
-    Load setting
+Load setting
 
 Load the specified setting object or throw Exception.
 
@@ -284,12 +284,12 @@ is needed.
 
 
 
-**Arguments**:
+**Parameters**:
 
-$hiveName string 
-$clusterName string 
-$settingName string 
-$loadDefinition boolean  - &lt;p&gt;(optional)&lt;/p&gt;
+> $hiveName string 
+> $clusterName string 
+> $settingName string 
+> $loadDefinition boolean  - &lt;p&gt;(optional)&lt;/p&gt;
 
 
 --
@@ -298,7 +298,7 @@ $loadDefinition boolean  - &lt;p&gt;(optional)&lt;/p&gt;
 public **loadSettingValue** ( string $hiveName, string $clusterName, string $settingName )
 
 
-    Load setting value
+Load setting value
 
 Load the specified setting value or throw Exception.
 
@@ -307,11 +307,11 @@ Load the specified setting value or throw Exception.
 
 
 
-**Arguments**:
+**Parameters**:
 
-$hiveName string 
-$clusterName string 
-$settingName string 
+> $hiveName string 
+> $clusterName string 
+> $settingName string 
 
 
 --
@@ -320,7 +320,7 @@ $settingName string
 public **saveSetting** ( mixed $setting )
 
 
-    Save setting
+Save setting
 
 Save the specified setting object or throw Exception.
 
@@ -329,9 +329,9 @@ Save the specified setting object or throw Exception.
 
 
 
-**Arguments**:
+**Parameters**:
 
-$setting mixed 
+> $setting mixed 
 
 
 --
@@ -340,7 +340,7 @@ $setting mixed
 public **saveSettingValue** ( string $hiveName, string $clusterName, string $settingName, mixed $settingValue )
 
 
-    Save setting value
+Save setting value
 
 Save the specified setting value or throw Exception.
 
@@ -349,12 +349,12 @@ Save the specified setting value or throw Exception.
 
 
 
-**Arguments**:
+**Parameters**:
 
-$hiveName string 
-$clusterName string 
-$settingName string 
-$settingValue mixed 
+> $hiveName string 
+> $clusterName string 
+> $settingName string 
+> $settingValue mixed 
 
 
 --

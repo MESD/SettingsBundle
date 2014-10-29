@@ -40,7 +40,6 @@ Methods
 public **__construct** ( $nodeAttributes )
 
 
-    
 
 
 
@@ -49,9 +48,10 @@ public **__construct** ( $nodeAttributes )
 
 
 
-**Arguments**:
 
-$nodeAttributes mixed 
+**Parameters**:
+
+> $nodeAttributes mixed 
 
 
 --
@@ -60,7 +60,7 @@ $nodeAttributes mixed
 public **dumpToArray** (  )
 
 
-    
+
 
 
 
@@ -76,7 +76,7 @@ public **dumpToArray** (  )
 public **getLength** (  )
 
 
-    
+
 
 
 
@@ -92,7 +92,6 @@ public **getLength** (  )
 public **setLength** ( $length )
 
 
-    
 
 
 
@@ -101,9 +100,10 @@ public **setLength** ( $length )
 
 
 
-**Arguments**:
 
-$length mixed 
+**Parameters**:
+
+> $length mixed 
 
 
 --

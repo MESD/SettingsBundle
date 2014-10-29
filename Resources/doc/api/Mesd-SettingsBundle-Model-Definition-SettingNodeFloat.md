@@ -51,7 +51,6 @@ Methods
 public **__construct** ( $nodeAttributes )
 
 
-    
 
 
 
@@ -60,9 +59,10 @@ public **__construct** ( $nodeAttributes )
 
 
 
-**Arguments**:
 
-$nodeAttributes mixed 
+**Parameters**:
+
+> $nodeAttributes mixed 
 
 
 --
@@ -71,7 +71,7 @@ $nodeAttributes mixed
 public **dumpToArray** (  )
 
 
-    
+
 
 
 
@@ -87,7 +87,7 @@ public **dumpToArray** (  )
 public **getDigits** (  )
 
 
-    
+
 
 
 
@@ -103,7 +103,6 @@ public **getDigits** (  )
 public **setDigits** ( $digits )
 
 
-    
 
 
 
@@ -112,9 +111,10 @@ public **setDigits** ( $digits )
 
 
 
-**Arguments**:
 
-$digits mixed 
+**Parameters**:
+
+> $digits mixed 
 
 
 --
@@ -123,7 +123,7 @@ $digits mixed
 public **getPrecision** (  )
 
 
-    
+
 
 
 
@@ -139,7 +139,6 @@ public **getPrecision** (  )
 public **setPrecision** ( $precision )
 
 
-    
 
 
 
@@ -148,9 +147,10 @@ public **setPrecision** ( $precision )
 
 
 
-**Arguments**:
 
-$precision mixed 
+**Parameters**:
+
+> $precision mixed 
 
 
 --

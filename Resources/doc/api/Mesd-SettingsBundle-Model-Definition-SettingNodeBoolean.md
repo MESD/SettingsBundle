@@ -27,7 +27,6 @@ Methods
 public **__construct** ( $nodeAttributes )
 
 
-    
 
 
 
@@ -36,9 +35,10 @@ public **__construct** ( $nodeAttributes )
 
 
 
-**Arguments**:
 
-$nodeAttributes mixed 
+**Parameters**:
+
+> $nodeAttributes mixed 
 
 
 --
@@ -47,7 +47,7 @@ $nodeAttributes mixed
 public **dumpToArray** (  )
 
 
-    
+
 
 
 

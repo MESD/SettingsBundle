@@ -84,7 +84,6 @@ Methods
 public **__construct** ( $nodeData )
 
 
-    
 
 
 
@@ -93,9 +92,10 @@ public **__construct** ( $nodeData )
 
 
 
-**Arguments**:
 
-$nodeData mixed 
+**Parameters**:
+
+> $nodeData mixed 
 
 
 --
@@ -104,7 +104,7 @@ $nodeData mixed
 public **getDefault** (  )
 
 
-    
+
 
 
 
@@ -120,7 +120,6 @@ public **getDefault** (  )
 public **setDefault** ( $default )
 
 
-    
 
 
 
@@ -129,9 +128,10 @@ public **setDefault** ( $default )
 
 
 
-**Arguments**:
 
-$default mixed 
+**Parameters**:
+
+> $default mixed 
 
 
 --
@@ -140,7 +140,7 @@ $default mixed
 public **getDescription** (  )
 
 
-    
+
 
 
 
@@ -156,7 +156,6 @@ public **getDescription** (  )
 public **setDescription** ( $description )
 
 
-    
 
 
 
@@ -165,9 +164,10 @@ public **setDescription** ( $description )
 
 
 
-**Arguments**:
 
-$description mixed 
+**Parameters**:
+
+> $description mixed 
 
 
 --
@@ -176,7 +176,7 @@ $description mixed
 public **getFormat** (  )
 
 
-    
+
 
 
 
@@ -192,7 +192,6 @@ public **getFormat** (  )
 public **setFormat** ( $format )
 
 
-    
 
 
 
@@ -201,9 +200,10 @@ public **setFormat** ( $format )
 
 
 
-**Arguments**:
 
-$format mixed 
+**Parameters**:
+
+> $format mixed 
 
 
 --
@@ -212,7 +212,7 @@ $format mixed
 public **getName** (  )
 
 
-    
+
 
 
 
@@ -228,7 +228,6 @@ public **getName** (  )
 public **setName** ( $name )
 
 
-    
 
 
 
@@ -237,9 +236,10 @@ public **setName** ( $name )
 
 
 
-**Arguments**:
 
-$name mixed 
+**Parameters**:
+
+> $name mixed 
 
 
 --
@@ -248,7 +248,7 @@ $name mixed
 public **getType** (  )
 
 
-    
+
 
 
 
@@ -264,7 +264,6 @@ public **getType** (  )
 public **setType** ( $type )
 
 
-    
 
 
 
@@ -273,9 +272,10 @@ public **setType** ( $type )
 
 
 
-**Arguments**:
 
-$type mixed 
+**Parameters**:
+
+> $type mixed 
 
 
 --
