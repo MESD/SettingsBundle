@@ -78,11 +78,13 @@ class MesdSettingsExtension extends Extension
         }
 
         // Throw exception is user listed bundle not in kernel
-        if (0 < count($config['bundles'])) {
-            throw new \Exception(sprintf(
-                'MesdSetttingsBundle Config Error - You configured the following bundles which are not loadad in the kernel: %s',
-                implode(', ', array_keys($config['bundles']))
-            ));
+        if(isset( $config['bundles'])) {
+            if (0 < count($config['bundles'])) {
+                throw new \Exception(sprintf(
+                    'MesdSetttingsBundle Config Error - You configured the following bundles which are not loadad in the kernel: %s',
+                    implode(', ', array_keys($config['bundles']))
+                ));
+            }
         }
 
         // Register configured bundles as a parameter
