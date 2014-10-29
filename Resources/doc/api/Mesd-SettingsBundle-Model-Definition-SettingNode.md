@@ -84,7 +84,7 @@ Methods
 public **__construct** ( $nodeData )
 
 
-> 
+    
 
 
 
@@ -104,7 +104,7 @@ public **__construct** ( $nodeData )
 public **getDefault** (  )
 
 
-> 
+    
 
 
 
@@ -120,7 +120,7 @@ public **getDefault** (  )
 public **setDefault** ( $default )
 
 
-> 
+    
 
 
 
@@ -140,7 +140,7 @@ public **setDefault** ( $default )
 public **getDescription** (  )
 
 
-> 
+    
 
 
 
@@ -156,7 +156,7 @@ public **getDescription** (  )
 public **setDescription** ( $description )
 
 
-> 
+    
 
 
 
@@ -176,7 +176,7 @@ public **setDescription** ( $description )
 public **getFormat** (  )
 
 
-> 
+    
 
 
 
@@ -192,7 +192,7 @@ public **getFormat** (  )
 public **setFormat** ( $format )
 
 
-> 
+    
 
 
 
@@ -212,7 +212,7 @@ public **setFormat** ( $format )
 public **getName** (  )
 
 
-> 
+    
 
 
 
@@ -228,7 +228,7 @@ public **getName** (  )
 public **setName** ( $name )
 
 
-> 
+    
 
 
 
@@ -248,7 +248,7 @@ public **setName** ( $name )
 public **getType** (  )
 
 
-> 
+    
 
 
 
@@ -264,7 +264,7 @@ public **getType** (  )
 public **setType** ( $type )
 
 
-> 
+    
 
 
 

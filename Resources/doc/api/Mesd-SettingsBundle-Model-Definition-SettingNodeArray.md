@@ -51,7 +51,7 @@ Methods
 public **__construct** ( $nodeAttributes )
 
 
-> 
+    
 
 
 
@@ -71,7 +71,7 @@ public **__construct** ( $nodeAttributes )
 public **dumpToArray** (  )
 
 
-> 
+    
 
 
 
@@ -87,7 +87,7 @@ public **dumpToArray** (  )
 public **getPrototype** (  )
 
 
-> 
+    
 
 
 
@@ -103,7 +103,7 @@ public **getPrototype** (  )
 public **setPrototype** ( $prototype )
 
 
-> 
+    
 
 
 
@@ -123,7 +123,7 @@ public **setPrototype** ( $prototype )
 public **getNode** (  )
 
 
-> 
+    
 
 
 
@@ -139,7 +139,7 @@ public **getNode** (  )
 public **setNode** ( $node )
 
 
-> 
+    
 
 
 

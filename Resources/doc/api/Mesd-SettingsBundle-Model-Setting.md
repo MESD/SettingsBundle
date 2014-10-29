@@ -48,7 +48,7 @@ Properties
 
 
 
-    private \Mesd\SettingsBundle\Model\Definition\SettingNode $settingNode
+    private SettingNode $settingNode
 
 
 
@@ -59,7 +59,7 @@ Properties
 
 
 
-    private \Mesd\SettingsBundle\Entity\Cluster $cluster
+    private Cluster $cluster
 
 
 
@@ -73,7 +73,7 @@ Methods
 public **isSettingNodeLoaded** (  )
 
 
-> Is SettingNode loaded
+    Is SettingNode loaded
 
 Determine if the SettingNode has been loaded.
 
@@ -97,7 +97,7 @@ not loaded the SettingNode.
 public **getName** (  )
 
 
-> Get Setting Name
+    Get Setting Name
 
 
 
@@ -113,7 +113,7 @@ public **getName** (  )
 public **setName** ( string $name )
 
 
-> Set Setting Name
+    Set Setting Name
 
 
 
@@ -133,7 +133,7 @@ public **setName** ( string $name )
 public **getValue** (  )
 
 
-> Get Setting Value
+    Get Setting Value
 
 
 
@@ -149,7 +149,7 @@ public **getValue** (  )
 public **setValue** ( mixed $value )
 
 
-> Set Setting Value
+    Set Setting Value
 
 
 
@@ -169,7 +169,7 @@ public **setValue** ( mixed $value )
 public **getCluster** (  )
 
 
-> Get cluster
+    Get cluster
 
 
 
@@ -185,7 +185,7 @@ public **getCluster** (  )
 public **setCluster** ( \Mesd\SettingsBundle\Entity\Cluster $cluster )
 
 
-> Set cluster
+    Set cluster
 
 
 
@@ -205,7 +205,7 @@ public **setCluster** ( \Mesd\SettingsBundle\Entity\Cluster $cluster )
 public **getSettingNode** (  )
 
 
-> Get SettingNode definition
+    Get SettingNode definition
 
 Get the SettingNode definition, if it has been loaded. See
 isSettingNodeLoaded() for more details.
@@ -222,7 +222,7 @@ isSettingNodeLoaded() for more details.
 public **setSettingNode** ( \Mesd\SettingsBundle\Model\Definition\SettingNode $settingNode )
 
 
-> Set SettingNode definition
+    Set SettingNode definition
 
 
 

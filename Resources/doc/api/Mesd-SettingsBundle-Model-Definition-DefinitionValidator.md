@@ -51,7 +51,7 @@ Methods
 public **__construct** ( array $definition, $settingsManager )
 
 
-> 
+    
 
 
 
@@ -72,7 +72,7 @@ public **__construct** ( array $definition, $settingsManager )
 public **validate** (  )
 
 
-> 
+    
 
 
 
@@ -88,7 +88,7 @@ public **validate** (  )
 private **validateStructure** (  )
 
 
-> 
+    
 
 
 
@@ -104,7 +104,7 @@ private **validateStructure** (  )
 private **validateNodes** (  )
 
 
-> 
+    
 
 
 
@@ -120,7 +120,7 @@ private **validateNodes** (  )
 private **validateNodeArray** ( $nodeName, $nodeAttributes, $key )
 
 
-> 
+    
 
 
 
@@ -142,7 +142,7 @@ private **validateNodeArray** ( $nodeName, $nodeAttributes, $key )
 private **validateNodeBoolean** ( $nodeName, $nodeAttributes, $key )
 
 
-> 
+    
 
 
 
@@ -164,7 +164,7 @@ private **validateNodeBoolean** ( $nodeName, $nodeAttributes, $key )
 private **validateNodeFloat** ( $nodeName, $nodeAttributes, $key )
 
 
-> 
+    
 
 
 
@@ -186,7 +186,7 @@ private **validateNodeFloat** ( $nodeName, $nodeAttributes, $key )
 private **validateNodeInteger** ( $nodeName, $nodeAttributes, $key )
 
 
-> 
+    
 
 
 
@@ -208,7 +208,7 @@ private **validateNodeInteger** ( $nodeName, $nodeAttributes, $key )
 private **validateNodeString** ( $nodeName, $nodeAttributes, $key )
 
 
-> 
+    
 
 
 

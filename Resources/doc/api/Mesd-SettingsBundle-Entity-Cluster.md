@@ -70,7 +70,7 @@ Properties
 
 
 
-    private \Mesd\SettingsBundle\Entity\Hive $hive
+    private Hive $hive
 
 
 
@@ -84,7 +84,7 @@ Methods
 public **getId** (  )
 
 
-> Get id
+    Get id
 
 
 
@@ -100,7 +100,7 @@ public **getId** (  )
 public **setName** ( string $name )
 
 
-> Set name
+    Set name
 
 
 
@@ -120,7 +120,7 @@ public **setName** ( string $name )
 public **getName** (  )
 
 
-> Get name
+    Get name
 
 
 
@@ -136,7 +136,7 @@ public **getName** (  )
 public **setDescription** ( string $description )
 
 
-> Set description
+    Set description
 
 
 
@@ -156,7 +156,7 @@ public **setDescription** ( string $description )
 public **getDescription** (  )
 
 
-> Get description
+    Get description
 
 
 
@@ -172,7 +172,7 @@ public **getDescription** (  )
 public **addSetting** ( \Mesd\SettingsBundle\Entity\Mesd\SettingsBundle\Model\Setting $setting )
 
 
-> Add Setting
+    Add Setting
 
 
 
@@ -192,7 +192,7 @@ public **addSetting** ( \Mesd\SettingsBundle\Entity\Mesd\SettingsBundle\Model\Se
 public **getSettingArray** (  )
 
 
-> Get setting Array
+    Get setting Array
 
 
 
@@ -208,7 +208,7 @@ public **getSettingArray** (  )
 public **getSetting** ( $settingName )
 
 
-> Get setting
+    Get setting
 
 
 
@@ -228,7 +228,7 @@ public **getSetting** ( $settingName )
 public **removeSetting** ( \Mesd\SettingsBundle\Entity\Mesd\SettingsBundle\Model\Setting $setting )
 
 
-> Remove Setting
+    Remove Setting
 
 
 
@@ -248,7 +248,7 @@ public **removeSetting** ( \Mesd\SettingsBundle\Entity\Mesd\SettingsBundle\Model
 public **setHive** ( \Mesd\SettingsBundle\Entity\Hive $hive )
 
 
-> Set hive
+    Set hive
 
 
 
@@ -268,7 +268,7 @@ public **setHive** ( \Mesd\SettingsBundle\Entity\Hive $hive )
 public **getHive** (  )
 
 
-> Get hive
+    Get hive
 
 
 

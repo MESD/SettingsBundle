@@ -40,7 +40,7 @@ Methods
 public **__construct** ( $nodeAttributes )
 
 
-> 
+    
 
 
 
@@ -60,7 +60,7 @@ public **__construct** ( $nodeAttributes )
 public **dumpToArray** (  )
 
 
-> 
+    
 
 
 
@@ -76,7 +76,7 @@ public **dumpToArray** (  )
 public **getDigits** (  )
 
 
-> 
+    
 
 
 
@@ -92,7 +92,7 @@ public **getDigits** (  )
 public **setDigits** ( $digits )
 
 
-> 
+    
 
 
 

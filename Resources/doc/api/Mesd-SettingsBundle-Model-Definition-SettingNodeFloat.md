@@ -51,7 +51,7 @@ Methods
 public **__construct** ( $nodeAttributes )
 
 
-> 
+    
 
 
 
@@ -71,7 +71,7 @@ public **__construct** ( $nodeAttributes )
 public **dumpToArray** (  )
 
 
-> 
+    
 
 
 
@@ -87,7 +87,7 @@ public **dumpToArray** (  )
 public **getDigits** (  )
 
 
-> 
+    
 
 
 
@@ -103,7 +103,7 @@ public **getDigits** (  )
 public **setDigits** ( $digits )
 
 
-> 
+    
 
 
 
@@ -123,7 +123,7 @@ public **setDigits** ( $digits )
 public **getPrecision** (  )
 
 
-> 
+    
 
 
 
@@ -139,7 +139,7 @@ public **getPrecision** (  )
 public **setPrecision** ( $precision )
 
 
-> 
+    
 
 
 

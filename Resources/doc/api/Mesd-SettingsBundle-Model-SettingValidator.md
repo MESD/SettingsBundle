@@ -73,7 +73,7 @@ Methods
 public **__construct** ( \Mesd\SettingsBundle\Model\Definition\SettingNode $settingNode, \Mesd\SettingsBundle\Model\Setting $setting )
 
 
-> 
+    
 
 
 
@@ -94,9 +94,9 @@ public **__construct** ( \Mesd\SettingsBundle\Model\Definition\SettingNode $sett
 public **sanitize** (  )
 
 
-> Sanitize a setting
+    Sanitize a setting
 
-Clean the setting so that it matches it's SettingNode
+Clean the setting so that it matches it&#039;s SettingNode
 definition.
 
 
@@ -111,7 +111,7 @@ definition.
 public **validate** (  )
 
 
-> Validate a setting
+    Validate a setting
 
 
 
@@ -127,7 +127,7 @@ public **validate** (  )
 public **sanitizeArray** (  )
 
 
-> Sanitize an array setting
+    Sanitize an array setting
 
 
 
@@ -143,7 +143,7 @@ public **sanitizeArray** (  )
 public **sanitizeBoolean** (  )
 
 
-> Sanitize a boolean setting
+    Sanitize a boolean setting
 
 
 
@@ -159,7 +159,7 @@ public **sanitizeBoolean** (  )
 public **sanitizeFloat** (  )
 
 
-> Sanitize a float setting
+    Sanitize a float setting
 
 
 
@@ -175,7 +175,7 @@ public **sanitizeFloat** (  )
 public **sanitizeString** (  )
 
 
-> Sanitize a string setting
+    Sanitize a string setting
 
 
 
@@ -191,7 +191,7 @@ public **sanitizeString** (  )
 protected **sanitizeDigits** (  )
 
 
-> Sanitize digits
+    Sanitize digits
 
 
 
@@ -207,7 +207,7 @@ protected **sanitizeDigits** (  )
 protected **sanitizeLength** (  )
 
 
-> Sanitize length
+    Sanitize length
 
 
 
@@ -223,7 +223,7 @@ protected **sanitizeLength** (  )
 protected **sanitizePrecision** (  )
 
 
-> Sanitize precision
+    Sanitize precision
 
 
 
@@ -239,7 +239,7 @@ protected **sanitizePrecision** (  )
 protected **sanitizeType** (  )
 
 
-> Sanitize data type
+    Sanitize data type
 
 
 
@@ -255,7 +255,7 @@ protected **sanitizeType** (  )
 protected **validateArray** (  )
 
 
-> Validate an array setting
+    Validate an array setting
 
 
 
@@ -271,7 +271,7 @@ protected **validateArray** (  )
 protected **validateBoolean** (  )
 
 
-> Validate a boolean setting
+    Validate a boolean setting
 
 
 
@@ -287,7 +287,7 @@ protected **validateBoolean** (  )
 protected **validateFloat** (  )
 
 
-> Validate a float setting
+    Validate a float setting
 
 
 
@@ -303,7 +303,7 @@ protected **validateFloat** (  )
 protected **validateInteger** (  )
 
 
-> Validate a integer setting
+    Validate a integer setting
 
 
 
@@ -319,7 +319,7 @@ protected **validateInteger** (  )
 protected **validateString** (  )
 
 
-> Validate a string setting
+    Validate a string setting
 
 
 
@@ -335,7 +335,7 @@ protected **validateString** (  )
 protected **validateDigits** (  )
 
 
-> Validate digits
+    Validate digits
 
 
 
@@ -351,7 +351,7 @@ protected **validateDigits** (  )
 protected **validateLength** (  )
 
 
-> Validate length
+    Validate length
 
 
 
@@ -367,7 +367,7 @@ protected **validateLength** (  )
 protected **validatePrecision** (  )
 
 
-> Validate precision
+    Validate precision
 
 
 
@@ -383,7 +383,7 @@ protected **validatePrecision** (  )
 protected **validateType** (  )
 
 
-> Validate data type
+    Validate data type
 
 
 

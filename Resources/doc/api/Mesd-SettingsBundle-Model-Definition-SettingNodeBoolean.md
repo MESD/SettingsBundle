@@ -27,7 +27,7 @@ Methods
 public **__construct** ( $nodeAttributes )
 
 
-> 
+    
 
 
 
@@ -47,7 +47,7 @@ public **__construct** ( $nodeAttributes )
 public **dumpToArray** (  )
 
 
-> 
+    
 
 
 

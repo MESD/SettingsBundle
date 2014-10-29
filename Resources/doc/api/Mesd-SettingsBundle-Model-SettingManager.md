@@ -40,7 +40,7 @@ Methods
 public **__construct** ( \Symfony\Component\DependencyInjection\ContainerInterface $container )
 
 
-> 
+    
 
 
 
@@ -60,7 +60,7 @@ public **__construct** ( \Symfony\Component\DependencyInjection\ContainerInterfa
 public **clusterExists** ( string $hiveName, string $clusterName )
 
 
-> Check if cluster exisits
+    Check if cluster exisits
 
 Determines if the specified cluster exisits
 in the database.
@@ -82,7 +82,7 @@ in the database.
 public **createCluster** ( string $hiveName, string $clusterName, string $description )
 
 
-> Create a cluster
+    Create a cluster
 
 Creates a new cluster in database
 
@@ -104,7 +104,7 @@ Creates a new cluster in database
 public **createHive** ( string $hiveName, string $description, boolean $definedAtHive )
 
 
-> Create a hive
+    Create a hive
 
 Creates a new hive in database
 
@@ -126,7 +126,7 @@ Creates a new hive in database
 public **deleteCluster** ( string $hiveName, string $clusterName )
 
 
-> Delete cluster
+    Delete cluster
 
 Delete the specified cluster or throw Exception.
 
@@ -147,7 +147,7 @@ Delete the specified cluster or throw Exception.
 public **deleteHive** ( string $hiveName )
 
 
-> Delete hive
+    Delete hive
 
 Delete the specified hive or throw Exception.
 
@@ -167,7 +167,7 @@ Delete the specified hive or throw Exception.
 public **deleteHiveClusters** ( string $hiveName )
 
 
-> Delete hive clusters
+    Delete hive clusters
 
 Delete all the clusters attched to specific hive.
 
@@ -187,7 +187,7 @@ Delete all the clusters attched to specific hive.
 public **hiveExists** ( string $hiveName )
 
 
-> Check if hive exisits
+    Check if hive exisits
 
 Determines if the specified hive exisits
 in the database.
@@ -208,7 +208,7 @@ in the database.
 public **hiveHasClusters** ( string $hiveName )
 
 
-> Check if hive has clusters
+    Check if hive has clusters
 
 Determines if the specified hive has clusters
 exisiting in the database.
@@ -229,7 +229,7 @@ exisiting in the database.
 public **loadCluster** ( string $hiveName, string $clusterName )
 
 
-> Load cluster
+    Load cluster
 
 Load the specified cluster or throw Exception.
 
@@ -250,7 +250,7 @@ Load the specified cluster or throw Exception.
 public **loadHive** ( string $hiveName )
 
 
-> Load hive
+    Load hive
 
 Load the specified hive or throw Exception.
 
@@ -270,7 +270,7 @@ Load the specified hive or throw Exception.
 public **loadSetting** ( string $hiveName, string $clusterName, string $settingName, boolean $loadDefinition )
 
 
-> Load setting
+    Load setting
 
 Load the specified setting object or throw Exception.
 
@@ -298,7 +298,7 @@ is needed.
 public **loadSettingValue** ( string $hiveName, string $clusterName, string $settingName )
 
 
-> Load setting value
+    Load setting value
 
 Load the specified setting value or throw Exception.
 
@@ -320,7 +320,7 @@ Load the specified setting value or throw Exception.
 public **saveSetting** ( mixed $setting )
 
 
-> Save setting
+    Save setting
 
 Save the specified setting object or throw Exception.
 
@@ -340,7 +340,7 @@ Save the specified setting object or throw Exception.
 public **saveSettingValue** ( string $hiveName, string $clusterName, string $settingName, mixed $settingValue )
 
 
-> Save setting value
+    Save setting value
 
 Save the specified setting value or throw Exception.
 
