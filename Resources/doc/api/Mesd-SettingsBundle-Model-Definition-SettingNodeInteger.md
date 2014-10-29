@@ -1,10 +1,6 @@
 Mesd\SettingsBundle\Model\Definition\SettingNodeInteger
 ---------------
 
-    
-
-    
-
 
 **Class name**: SettingNodeInteger
 
@@ -13,6 +9,12 @@ Mesd\SettingsBundle\Model\Definition\SettingNodeInteger
 
 
 
+
+
+
+    
+
+    
 
 
 

@@ -1,10 +1,6 @@
 Mesd\SettingsBundle\Entity\Cluster
 ---------------
 
-    Cluster
-
-    
-
 
 **Class name**: Cluster
 
@@ -13,6 +9,12 @@ Mesd\SettingsBundle\Entity\Cluster
 
 
 
+
+
+
+    Cluster
+
+    
 
 
 

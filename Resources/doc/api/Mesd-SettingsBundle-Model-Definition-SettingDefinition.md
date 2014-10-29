@@ -1,10 +1,6 @@
 Mesd\SettingsBundle\Model\Definition\SettingDefinition
 ---------------
 
-    
-
-    
-
 
 **Class name**: SettingDefinition
 
@@ -13,6 +9,12 @@ Mesd\SettingsBundle\Model\Definition\SettingDefinition
 
 
 
+
+
+
+    
+
+    
 
 
 

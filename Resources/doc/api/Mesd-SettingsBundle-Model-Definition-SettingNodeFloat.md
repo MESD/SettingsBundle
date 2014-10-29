@@ -1,10 +1,6 @@
 Mesd\SettingsBundle\Model\Definition\SettingNodeFloat
 ---------------
 
-    
-
-    
-
 
 **Class name**: SettingNodeFloat
 
@@ -13,6 +9,12 @@ Mesd\SettingsBundle\Model\Definition\SettingNodeFloat
 
 
 
+
+
+
+    
+
+    
 
 
 

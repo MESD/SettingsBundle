@@ -1,10 +1,6 @@
 Mesd\SettingsBundle\Entity\Hive
 ---------------
 
-    Hive
-
-    
-
 
 **Class name**: Hive
 
@@ -13,6 +9,12 @@ Mesd\SettingsBundle\Entity\Hive
 
 
 
+
+
+
+    Hive
+
+    
 
 
 

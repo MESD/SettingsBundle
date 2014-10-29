@@ -1,10 +1,6 @@
 Mesd\SettingsBundle\Model\Definition\DefinitionManager
 ---------------
 
-    
-
-    
-
 
 **Class name**: DefinitionManager
 
@@ -13,6 +9,12 @@ Mesd\SettingsBundle\Model\Definition\DefinitionManager
 
 
 
+
+
+
+    
+
+    
 
 
 

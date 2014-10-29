@@ -1,10 +1,6 @@
 Mesd\SettingsBundle\Model\SettingManager
 ---------------
 
-    
-
-    
-
 
 **Class name**: SettingManager
 
@@ -13,6 +9,12 @@ Mesd\SettingsBundle\Model\SettingManager
 
 
 
+
+
+
+    
+
+    
 
 
 

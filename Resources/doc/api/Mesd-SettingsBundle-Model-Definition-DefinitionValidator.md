@@ -1,10 +1,6 @@
 Mesd\SettingsBundle\Model\Definition\DefinitionValidator
 ---------------
 
-    
-
-    
-
 
 **Class name**: DefinitionValidator
 
@@ -13,6 +9,12 @@ Mesd\SettingsBundle\Model\Definition\DefinitionValidator
 
 
 
+
+
+
+    
+
+    
 
 
 

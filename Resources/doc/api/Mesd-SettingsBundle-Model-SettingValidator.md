@@ -1,10 +1,6 @@
 Mesd\SettingsBundle\Model\SettingValidator
 ---------------
 
-    
-
-    
-
 
 **Class name**: SettingValidator
 
@@ -13,6 +9,12 @@ Mesd\SettingsBundle\Model\SettingValidator
 
 
 
+
+
+
+    
+
+    
 
 
 

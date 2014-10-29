@@ -1,10 +1,6 @@
 Mesd\SettingsBundle\Model\Definition\SettingNode
 ---------------
 
-    
-
-    
-
 
 **Class name**: SettingNode
 
@@ -13,6 +9,12 @@ Mesd\SettingsBundle\Model\Definition\SettingNode
 
 
 
+
+
+
+    
+
+    
 
 
 

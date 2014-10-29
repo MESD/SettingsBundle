@@ -1,10 +1,6 @@
 Mesd\SettingsBundle\Model\Definition\SettingNodeArray
 ---------------
 
-    
-
-    
-
 
 **Class name**: SettingNodeArray
 
@@ -13,6 +9,12 @@ Mesd\SettingsBundle\Model\Definition\SettingNodeArray
 
 
 
+
+
+
+    
+
+    
 
 
 

@@ -1,10 +1,6 @@
 Mesd\SettingsBundle\Model\Setting
 ---------------
 
-    Setting.
-
-    
-
 
 **Class name**: Setting
 
@@ -13,6 +9,12 @@ Mesd\SettingsBundle\Model\Setting
 
 
 
+
+
+
+    Setting.
+
+    
 
 
 
