@@ -24,7 +24,9 @@ Properties
 ----------
 
 
-**$setting**  
+**$setting**
+
+
 
 
 
@@ -35,7 +37,9 @@ Properties
 
 
 
-**$settingNode**  
+**$settingNode**
+
+
 
 
 
@@ -46,7 +50,9 @@ Properties
 
 
 
-**$valid**  
+**$valid**
+
+
 
 
 
@@ -57,7 +63,9 @@ Properties
 
 
 
-**$validationMessage**  
+**$validationMessage**
+
+
 
 
 

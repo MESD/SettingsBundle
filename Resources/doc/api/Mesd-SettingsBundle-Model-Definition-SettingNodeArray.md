@@ -24,7 +24,9 @@ Properties
 ----------
 
 
-**$prototype**  
+**$prototype**
+
+
 
 
 
@@ -35,7 +37,9 @@ Properties
 
 
 
-**$node**  
+**$node**
+
+
 
 
 

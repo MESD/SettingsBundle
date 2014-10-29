@@ -24,7 +24,9 @@ Properties
 ----------
 
 
-**$bundleStorage**  
+**$bundleStorage**
+
+
 
 
 
@@ -35,7 +37,9 @@ Properties
 
 
 
-**$kernel**  
+**$kernel**
+
+
 
 
 
@@ -46,7 +50,9 @@ Properties
 
 
 
-**$settingManager**  
+**$settingManager**
+
+
 
 
 

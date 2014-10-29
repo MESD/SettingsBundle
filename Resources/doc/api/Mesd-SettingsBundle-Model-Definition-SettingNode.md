@@ -24,7 +24,9 @@ Properties
 ----------
 
 
-**$default**  
+**$default**
+
+
 
 
 
@@ -35,7 +37,9 @@ Properties
 
 
 
-**$description**  
+**$description**
+
+
 
 
 
@@ -46,7 +50,9 @@ Properties
 
 
 
-**$format**  
+**$format**
+
+
 
 
 
@@ -57,7 +63,9 @@ Properties
 
 
 
-**$name**  
+**$name**
+
+
 
 
 
@@ -68,7 +76,9 @@ Properties
 
 
 
-**$type**  
+**$type**
+
+
 
 
 

@@ -24,7 +24,9 @@ Properties
 ----------
 
 
-**$definition**  
+**$definition**
+
+
 
 
 
@@ -35,7 +37,9 @@ Properties
 
 
 
-**$settingsManager**  
+**$settingsManager**
+
+
 
 
 

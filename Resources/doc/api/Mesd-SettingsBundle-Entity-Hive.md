@@ -24,7 +24,9 @@ Properties
 ----------
 
 
-**$id**  
+**$id**
+
+
 
 
 
@@ -35,7 +37,9 @@ Properties
 
 
 
-**$name**  
+**$name**
+
+
 
 
 
@@ -46,7 +50,9 @@ Properties
 
 
 
-**$description**  
+**$description**
+
+
 
 
 
@@ -57,7 +63,9 @@ Properties
 
 
 
-**$definedAtHive**  
+**$definedAtHive**
+
+
 
 
 
@@ -68,7 +76,9 @@ Properties
 
 
 
-**$cluster**  
+**$cluster**
+
+
 
 
 
