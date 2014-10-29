@@ -50,11 +50,9 @@ public **__construct** ( $nodeAttributes )
 
 
 **Parameters**:
-
-> $nodeAttributes mixed 
-
-
---
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| $nodeAttributes | mixed |  |
 
 
 public **dumpToArray** (  )
@@ -70,9 +68,6 @@ public **dumpToArray** (  )
 
 
 
---
-
-
 public **getDigits** (  )
 
 
@@ -84,9 +79,6 @@ public **getDigits** (  )
 
 
 
-
-
---
 
 
 public **setDigits** ( $digits )
@@ -102,9 +94,7 @@ public **setDigits** ( $digits )
 
 
 **Parameters**:
-
-> $digits mixed 
-
-
---
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| $digits | mixed |  |
 

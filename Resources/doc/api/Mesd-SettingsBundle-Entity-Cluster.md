@@ -94,9 +94,6 @@ Get id
 
 
 
---
-
-
 public **setName** ( string $name )
 
 
@@ -110,11 +107,9 @@ Set name
 
 
 **Parameters**:
-
-> $name string 
-
-
---
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| $name | string |  |
 
 
 public **getName** (  )
@@ -130,9 +125,6 @@ Get name
 
 
 
---
-
-
 public **setDescription** ( string $description )
 
 
@@ -146,11 +138,9 @@ Set description
 
 
 **Parameters**:
-
-> $description string 
-
-
---
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| $description | string |  |
 
 
 public **getDescription** (  )
@@ -166,9 +156,6 @@ Get description
 
 
 
---
-
-
 public **addSetting** ( \Mesd\SettingsBundle\Entity\Mesd\SettingsBundle\Model\Setting $setting )
 
 
@@ -182,11 +169,9 @@ Add Setting
 
 
 **Parameters**:
-
-> $setting Mesd\SettingsBundle\Entity\Mesd\SettingsBundle\Model\Setting 
-
-
---
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| $setting | Mesd\SettingsBundle\Entity\Mesd\SettingsBundle\Model\Setting |  |
 
 
 public **getSettingArray** (  )
@@ -202,9 +187,6 @@ Get setting Array
 
 
 
---
-
-
 public **getSetting** ( $settingName )
 
 
@@ -218,11 +200,9 @@ Get setting
 
 
 **Parameters**:
-
-> $settingName mixed 
-
-
---
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| $settingName | mixed |  |
 
 
 public **removeSetting** ( \Mesd\SettingsBundle\Entity\Mesd\SettingsBundle\Model\Setting $setting )
@@ -238,11 +218,9 @@ Remove Setting
 
 
 **Parameters**:
-
-> $setting Mesd\SettingsBundle\Entity\Mesd\SettingsBundle\Model\Setting 
-
-
---
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| $setting | Mesd\SettingsBundle\Entity\Mesd\SettingsBundle\Model\Setting |  |
 
 
 public **setHive** ( \Mesd\SettingsBundle\Entity\Hive $hive )
@@ -258,11 +236,9 @@ Set hive
 
 
 **Parameters**:
-
-> $hive [Mesd\SettingsBundle\Entity\Hive](Mesd-SettingsBundle-Entity-Hive.md) 
-
-
---
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| $hive | [Mesd\SettingsBundle\Entity\Hive](Mesd-SettingsBundle-Entity-Hive.md) |  |
 
 
 public **getHive** (  )
@@ -276,7 +252,4 @@ Get hive
 
 
 
-
-
---
 

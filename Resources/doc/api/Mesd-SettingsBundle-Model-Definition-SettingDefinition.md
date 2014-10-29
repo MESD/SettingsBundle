@@ -94,9 +94,6 @@ public **__construct** (  )
 
 
 
---
-
-
 public **getKey** (  )
 
 
@@ -108,9 +105,6 @@ public **getKey** (  )
 
 
 
-
-
---
 
 
 public **setKey** ( $key )
@@ -126,11 +120,9 @@ public **setKey** ( $key )
 
 
 **Parameters**:
-
-> $key mixed 
-
-
---
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| $key | mixed |  |
 
 
 public **getHive** (  )
@@ -146,9 +138,6 @@ public **getHive** (  )
 
 
 
---
-
-
 public **setHive** ( $hive )
 
 
@@ -162,11 +151,9 @@ public **setHive** ( $hive )
 
 
 **Parameters**:
-
-> $hive mixed 
-
-
---
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| $hive | mixed |  |
 
 
 public **getType** (  )
@@ -182,9 +169,6 @@ public **getType** (  )
 
 
 
---
-
-
 public **setType** ( $type )
 
 
@@ -198,11 +182,9 @@ public **setType** ( $type )
 
 
 **Parameters**:
-
-> $type mixed 
-
-
---
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| $type | mixed |  |
 
 
 public **getFilePath** (  )
@@ -218,9 +200,6 @@ public **getFilePath** (  )
 
 
 
---
-
-
 public **setFilePath** ( $filePath )
 
 
@@ -234,11 +213,9 @@ public **setFilePath** ( $filePath )
 
 
 **Parameters**:
-
-> $filePath mixed 
-
-
---
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| $filePath | mixed |  |
 
 
 public **addSettingNode** ( \Mesd\SettingsBundle\Model\Definition\Mesd\SettingsBundle\Model\Definition\SettingNode $settingNode )
@@ -254,11 +231,9 @@ Add SettingNode
 
 
 **Parameters**:
-
-> $settingNode Mesd\SettingsBundle\Model\Definition\Mesd\SettingsBundle\Model\Definition\SettingNode 
-
-
---
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| $settingNode | Mesd\SettingsBundle\Model\Definition\Mesd\SettingsBundle\Model\Definition\SettingNode |  |
 
 
 public **getSettingNode** ( string $name )
@@ -274,11 +249,9 @@ Get SettingNode
 
 
 **Parameters**:
-
-> $name string 
-
-
---
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| $name | string |  |
 
 
 public **getSettingNodes** (  )
@@ -294,9 +267,6 @@ Get SettingNodes
 
 
 
---
-
-
 public **removeSettingNode** ( \Mesd\SettingsBundle\Model\Definition\Mesd\SettingsBundle\Model\Definition\SettingNode $settingNode )
 
 
@@ -310,11 +280,9 @@ Remove SettingNode
 
 
 **Parameters**:
-
-> $settingNode Mesd\SettingsBundle\Model\Definition\Mesd\SettingsBundle\Model\Definition\SettingNode 
-
-
---
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| $settingNode | Mesd\SettingsBundle\Model\Definition\Mesd\SettingsBundle\Model\Definition\SettingNode |  |
 
 
 public **removeSettingNodeByName** ( string $name )
@@ -330,9 +298,7 @@ Remove SettingNode by name
 
 
 **Parameters**:
-
-> $name string 
-
-
---
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| $name | string |  |
 
