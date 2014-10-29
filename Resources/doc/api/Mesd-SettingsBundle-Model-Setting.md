@@ -73,7 +73,7 @@ Methods
 public **isSettingNodeLoaded** (  )
 
 
-    Is SettingNode loaded
+> Is SettingNode loaded
 
 Determine if the SettingNode has been loaded.
 
@@ -89,8 +89,6 @@ not loaded the SettingNode.
 
 
 
-This method is defined by Setting
-
 
 
 --
@@ -99,15 +97,13 @@ This method is defined by Setting
 public **getName** (  )
 
 
-    Get Setting Name
+> Get Setting Name
 
 
 
 
 
 
-
-This method is defined by Setting
 
 
 
@@ -117,15 +113,13 @@ This method is defined by Setting
 public **setName** ( string $name )
 
 
-    Set Setting Name
+> Set Setting Name
 
 
 
 
 
 
-
-This method is defined by Setting
 
 
     **Arguments**:
@@ -139,15 +133,13 @@ This method is defined by Setting
 public **getValue** (  )
 
 
-    Get Setting Value
+> Get Setting Value
 
 
 
 
 
 
-
-This method is defined by Setting
 
 
 
@@ -157,15 +149,13 @@ This method is defined by Setting
 public **setValue** ( mixed $value )
 
 
-    Set Setting Value
+> Set Setting Value
 
 
 
 
 
 
-
-This method is defined by Setting
 
 
     **Arguments**:
@@ -179,15 +169,13 @@ This method is defined by Setting
 public **getCluster** (  )
 
 
-    Get cluster
+> Get cluster
 
 
 
 
 
 
-
-This method is defined by Setting
 
 
 
@@ -197,20 +185,18 @@ This method is defined by Setting
 public **setCluster** ( \Mesd\SettingsBundle\Entity\Cluster $cluster )
 
 
-    Set cluster
+> Set cluster
 
 
 
 
 
 
-
-This method is defined by Setting
 
 
     **Arguments**:
 
-    **$cluster** \Mesd\SettingsBundle\Entity\Cluster 
+    **$cluster** [Mesd\SettingsBundle\Entity\Cluster](Mesd-SettingsBundle-Entity-Cluster.md) 
 
 
 --
@@ -219,7 +205,7 @@ This method is defined by Setting
 public **getSettingNode** (  )
 
 
-    Get SettingNode definition
+> Get SettingNode definition
 
 Get the SettingNode definition, if it has been loaded. See
 isSettingNodeLoaded() for more details.
@@ -227,8 +213,6 @@ isSettingNodeLoaded() for more details.
 
 
 
-
-This method is defined by Setting
 
 
 
@@ -238,20 +222,18 @@ This method is defined by Setting
 public **setSettingNode** ( \Mesd\SettingsBundle\Model\Definition\SettingNode $settingNode )
 
 
-    Set SettingNode definition
+> Set SettingNode definition
 
 
 
 
 
 
-
-This method is defined by Setting
 
 
     **Arguments**:
 
-    **$settingNode** \Mesd\SettingsBundle\Model\Definition\SettingNode 
+    **$settingNode** [Mesd\SettingsBundle\Model\Definition\SettingNode](Mesd-SettingsBundle-Model-Definition-SettingNode.md) 
 
 
 --

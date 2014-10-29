@@ -51,15 +51,13 @@ Methods
 public **__construct** ( $nodeAttributes )
 
 
-    
+> 
 
 
 
 
 
 
-
-This method is defined by SettingNodeFloat
 
 
     **Arguments**:
@@ -73,15 +71,13 @@ This method is defined by SettingNodeFloat
 public **dumpToArray** (  )
 
 
-    
+> 
 
 
 
 
 
 
-
-This method is defined by SettingNodeFloat
 
 
 
@@ -91,15 +87,13 @@ This method is defined by SettingNodeFloat
 public **getDigits** (  )
 
 
-    
+> 
 
 
 
 
 
 
-
-This method is defined by SettingNodeFloat
 
 
 
@@ -109,15 +103,13 @@ This method is defined by SettingNodeFloat
 public **setDigits** ( $digits )
 
 
-    
+> 
 
 
 
 
 
 
-
-This method is defined by SettingNodeFloat
 
 
     **Arguments**:
@@ -131,15 +123,13 @@ This method is defined by SettingNodeFloat
 public **getPrecision** (  )
 
 
-    
+> 
 
 
 
 
 
 
-
-This method is defined by SettingNodeFloat
 
 
 
@@ -149,15 +139,13 @@ This method is defined by SettingNodeFloat
 public **setPrecision** ( $precision )
 
 
-    
+> 
 
 
 
 
 
 
-
-This method is defined by SettingNodeFloat
 
 
     **Arguments**:

@@ -84,15 +84,13 @@ Methods
 public **getId** (  )
 
 
-    Get id
+> Get id
 
 
 
 
 
 
-
-This method is defined by Cluster
 
 
 
@@ -102,15 +100,13 @@ This method is defined by Cluster
 public **setName** ( string $name )
 
 
-    Set name
+> Set name
 
 
 
 
 
 
-
-This method is defined by Cluster
 
 
     **Arguments**:
@@ -124,15 +120,13 @@ This method is defined by Cluster
 public **getName** (  )
 
 
-    Get name
+> Get name
 
 
 
 
 
 
-
-This method is defined by Cluster
 
 
 
@@ -142,15 +136,13 @@ This method is defined by Cluster
 public **setDescription** ( string $description )
 
 
-    Set description
+> Set description
 
 
 
 
 
 
-
-This method is defined by Cluster
 
 
     **Arguments**:
@@ -164,15 +156,13 @@ This method is defined by Cluster
 public **getDescription** (  )
 
 
-    Get description
+> Get description
 
 
 
 
 
 
-
-This method is defined by Cluster
 
 
 
@@ -182,20 +172,18 @@ This method is defined by Cluster
 public **addSetting** ( \Mesd\SettingsBundle\Entity\Mesd\SettingsBundle\Model\Setting $setting )
 
 
-    Add Setting
+> Add Setting
 
 
 
 
 
 
-
-This method is defined by Cluster
 
 
     **Arguments**:
 
-    **$setting** \Mesd\SettingsBundle\Entity\Mesd\SettingsBundle\Model\Setting 
+    **$setting** Mesd\SettingsBundle\Entity\Mesd\SettingsBundle\Model\Setting 
 
 
 --
@@ -204,15 +192,13 @@ This method is defined by Cluster
 public **getSettingArray** (  )
 
 
-    Get setting Array
+> Get setting Array
 
 
 
 
 
 
-
-This method is defined by Cluster
 
 
 
@@ -222,15 +208,13 @@ This method is defined by Cluster
 public **getSetting** ( $settingName )
 
 
-    Get setting
+> Get setting
 
 
 
 
 
 
-
-This method is defined by Cluster
 
 
     **Arguments**:
@@ -244,20 +228,18 @@ This method is defined by Cluster
 public **removeSetting** ( \Mesd\SettingsBundle\Entity\Mesd\SettingsBundle\Model\Setting $setting )
 
 
-    Remove Setting
+> Remove Setting
 
 
 
 
 
 
-
-This method is defined by Cluster
 
 
     **Arguments**:
 
-    **$setting** \Mesd\SettingsBundle\Entity\Mesd\SettingsBundle\Model\Setting 
+    **$setting** Mesd\SettingsBundle\Entity\Mesd\SettingsBundle\Model\Setting 
 
 
 --
@@ -266,20 +248,18 @@ This method is defined by Cluster
 public **setHive** ( \Mesd\SettingsBundle\Entity\Hive $hive )
 
 
-    Set hive
+> Set hive
 
 
 
 
 
 
-
-This method is defined by Cluster
 
 
     **Arguments**:
 
-    **$hive** \Mesd\SettingsBundle\Entity\Hive 
+    **$hive** [Mesd\SettingsBundle\Entity\Hive](Mesd-SettingsBundle-Entity-Hive.md) 
 
 
 --
@@ -288,15 +268,13 @@ This method is defined by Cluster
 public **getHive** (  )
 
 
-    Get hive
+> Get hive
 
 
 
 
 
 
-
-This method is defined by Cluster
 
 
 

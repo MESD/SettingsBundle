@@ -40,20 +40,18 @@ Methods
 public **__construct** ( \Symfony\Component\DependencyInjection\ContainerInterface $container )
 
 
-    
+> 
 
 
 
 
 
 
-
-This method is defined by SettingManager
 
 
     **Arguments**:
 
-    **$container** \Symfony\Component\DependencyInjection\ContainerInterface 
+    **$container** Symfony\Component\DependencyInjection\ContainerInterface 
 
 
 --
@@ -62,7 +60,7 @@ This method is defined by SettingManager
 public **clusterExists** ( string $hiveName, string $clusterName )
 
 
-    Check if cluster exisits
+> Check if cluster exisits
 
 Determines if the specified cluster exisits
 in the database.
@@ -70,8 +68,6 @@ in the database.
 
 
 
-
-This method is defined by SettingManager
 
 
     **Arguments**:
@@ -86,15 +82,13 @@ This method is defined by SettingManager
 public **createCluster** ( string $hiveName, string $clusterName, string $description )
 
 
-    Create a cluster
+> Create a cluster
 
 Creates a new cluster in database
 
 
 
 
-
-This method is defined by SettingManager
 
 
     **Arguments**:
@@ -110,15 +104,13 @@ This method is defined by SettingManager
 public **createHive** ( string $hiveName, string $description, boolean $definedAtHive )
 
 
-    Create a hive
+> Create a hive
 
 Creates a new hive in database
 
 
 
 
-
-This method is defined by SettingManager
 
 
     **Arguments**:
@@ -134,15 +126,13 @@ This method is defined by SettingManager
 public **deleteCluster** ( string $hiveName, string $clusterName )
 
 
-    Delete cluster
+> Delete cluster
 
 Delete the specified cluster or throw Exception.
 
 
 
 
-
-This method is defined by SettingManager
 
 
     **Arguments**:
@@ -157,15 +147,13 @@ This method is defined by SettingManager
 public **deleteHive** ( string $hiveName )
 
 
-    Delete hive
+> Delete hive
 
 Delete the specified hive or throw Exception.
 
 
 
 
-
-This method is defined by SettingManager
 
 
     **Arguments**:
@@ -179,15 +167,13 @@ This method is defined by SettingManager
 public **deleteHiveClusters** ( string $hiveName )
 
 
-    Delete hive clusters
+> Delete hive clusters
 
 Delete all the clusters attched to specific hive.
 
 
 
 
-
-This method is defined by SettingManager
 
 
     **Arguments**:
@@ -201,7 +187,7 @@ This method is defined by SettingManager
 public **hiveExists** ( string $hiveName )
 
 
-    Check if hive exisits
+> Check if hive exisits
 
 Determines if the specified hive exisits
 in the database.
@@ -209,8 +195,6 @@ in the database.
 
 
 
-
-This method is defined by SettingManager
 
 
     **Arguments**:
@@ -224,7 +208,7 @@ This method is defined by SettingManager
 public **hiveHasClusters** ( string $hiveName )
 
 
-    Check if hive has clusters
+> Check if hive has clusters
 
 Determines if the specified hive has clusters
 exisiting in the database.
@@ -232,8 +216,6 @@ exisiting in the database.
 
 
 
-
-This method is defined by SettingManager
 
 
     **Arguments**:
@@ -247,15 +229,13 @@ This method is defined by SettingManager
 public **loadCluster** ( string $hiveName, string $clusterName )
 
 
-    Load cluster
+> Load cluster
 
 Load the specified cluster or throw Exception.
 
 
 
 
-
-This method is defined by SettingManager
 
 
     **Arguments**:
@@ -270,15 +250,13 @@ This method is defined by SettingManager
 public **loadHive** ( string $hiveName )
 
 
-    Load hive
+> Load hive
 
 Load the specified hive or throw Exception.
 
 
 
 
-
-This method is defined by SettingManager
 
 
     **Arguments**:
@@ -292,7 +270,7 @@ This method is defined by SettingManager
 public **loadSetting** ( string $hiveName, string $clusterName, string $settingName, boolean $loadDefinition )
 
 
-    Load setting
+> Load setting
 
 Load the specified setting object or throw Exception.
 
@@ -304,8 +282,6 @@ is needed.
 
 
 
-
-This method is defined by SettingManager
 
 
     **Arguments**:
@@ -322,15 +298,13 @@ This method is defined by SettingManager
 public **loadSettingValue** ( string $hiveName, string $clusterName, string $settingName )
 
 
-    Load setting value
+> Load setting value
 
 Load the specified setting value or throw Exception.
 
 
 
 
-
-This method is defined by SettingManager
 
 
     **Arguments**:
@@ -346,15 +320,13 @@ This method is defined by SettingManager
 public **saveSetting** ( mixed $setting )
 
 
-    Save setting
+> Save setting
 
 Save the specified setting object or throw Exception.
 
 
 
 
-
-This method is defined by SettingManager
 
 
     **Arguments**:
@@ -368,15 +340,13 @@ This method is defined by SettingManager
 public **saveSettingValue** ( string $hiveName, string $clusterName, string $settingName, mixed $settingValue )
 
 
-    Save setting value
+> Save setting value
 
 Save the specified setting value or throw Exception.
 
 
 
 
-
-This method is defined by SettingManager
 
 
     **Arguments**:

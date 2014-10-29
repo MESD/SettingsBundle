@@ -40,15 +40,13 @@ Methods
 public **__construct** ( $nodeAttributes )
 
 
-    
+> 
 
 
 
 
 
 
-
-This method is defined by SettingNodeInteger
 
 
     **Arguments**:
@@ -62,15 +60,13 @@ This method is defined by SettingNodeInteger
 public **dumpToArray** (  )
 
 
-    
+> 
 
 
 
 
 
 
-
-This method is defined by SettingNodeInteger
 
 
 
@@ -80,15 +76,13 @@ This method is defined by SettingNodeInteger
 public **getDigits** (  )
 
 
-    
+> 
 
 
 
 
 
 
-
-This method is defined by SettingNodeInteger
 
 
 
@@ -98,15 +92,13 @@ This method is defined by SettingNodeInteger
 public **setDigits** ( $digits )
 
 
-    
+> 
 
 
 
 
 
 
-
-This method is defined by SettingNodeInteger
 
 
     **Arguments**:

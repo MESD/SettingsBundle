@@ -84,15 +84,13 @@ Methods
 public **__construct** (  )
 
 
-    Constructor
+> Constructor
 
 
 
 
 
 
-
-This method is defined by Hive
 
 
 
@@ -102,15 +100,13 @@ This method is defined by Hive
 public **getId** (  )
 
 
-    Get id
+> Get id
 
 
 
 
 
 
-
-This method is defined by Hive
 
 
 
@@ -120,15 +116,13 @@ This method is defined by Hive
 public **setName** ( string $name )
 
 
-    Set name
+> Set name
 
 
 
 
 
 
-
-This method is defined by Hive
 
 
     **Arguments**:
@@ -142,15 +136,13 @@ This method is defined by Hive
 public **getName** (  )
 
 
-    Get name
+> Get name
 
 
 
 
 
 
-
-This method is defined by Hive
 
 
 
@@ -160,15 +152,13 @@ This method is defined by Hive
 public **setDescription** ( string $description )
 
 
-    Set description
+> Set description
 
 
 
 
 
 
-
-This method is defined by Hive
 
 
     **Arguments**:
@@ -182,15 +172,13 @@ This method is defined by Hive
 public **getDescription** (  )
 
 
-    Get description
+> Get description
 
 
 
 
 
 
-
-This method is defined by Hive
 
 
 
@@ -200,15 +188,13 @@ This method is defined by Hive
 public **setDefinedAtHive** ( boolean $definedAtHive )
 
 
-    Set definedAtHive
+> Set definedAtHive
 
 
 
 
 
 
-
-This method is defined by Hive
 
 
     **Arguments**:
@@ -222,15 +208,13 @@ This method is defined by Hive
 public **getDefinedAtHive** (  )
 
 
-    Get definedAtHive
+> Get definedAtHive
 
 
 
 
 
 
-
-This method is defined by Hive
 
 
 
@@ -240,20 +224,18 @@ This method is defined by Hive
 public **addCluster** ( \Mesd\SettingsBundle\Entity\Cluster $cluster )
 
 
-    Add cluster
+> Add cluster
 
 
 
 
 
 
-
-This method is defined by Hive
 
 
     **Arguments**:
 
-    **$cluster** \Mesd\SettingsBundle\Entity\Cluster 
+    **$cluster** [Mesd\SettingsBundle\Entity\Cluster](Mesd-SettingsBundle-Entity-Cluster.md) 
 
 
 --
@@ -262,20 +244,18 @@ This method is defined by Hive
 public **removeCluster** ( \Mesd\SettingsBundle\Entity\Cluster $cluster )
 
 
-    Remove cluster
+> Remove cluster
 
 
 
 
 
 
-
-This method is defined by Hive
 
 
     **Arguments**:
 
-    **$cluster** \Mesd\SettingsBundle\Entity\Cluster 
+    **$cluster** [Mesd\SettingsBundle\Entity\Cluster](Mesd-SettingsBundle-Entity-Cluster.md) 
 
 
 --
@@ -284,15 +264,13 @@ This method is defined by Hive
 public **getCluster** (  )
 
 
-    Get cluster
+> Get cluster
 
 
 
 
 
 
-
-This method is defined by Hive
 
 
 

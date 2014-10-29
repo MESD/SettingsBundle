@@ -40,15 +40,13 @@ Methods
 public **__construct** ( $nodeAttributes )
 
 
-    
+> 
 
 
 
 
 
 
-
-This method is defined by SettingNodeString
 
 
     **Arguments**:
@@ -62,15 +60,13 @@ This method is defined by SettingNodeString
 public **dumpToArray** (  )
 
 
-    
+> 
 
 
 
 
 
 
-
-This method is defined by SettingNodeString
 
 
 
@@ -80,15 +76,13 @@ This method is defined by SettingNodeString
 public **getLength** (  )
 
 
-    
+> 
 
 
 
 
 
 
-
-This method is defined by SettingNodeString
 
 
 
@@ -98,15 +92,13 @@ This method is defined by SettingNodeString
 public **setLength** ( $length )
 
 
-    
+> 
 
 
 
 
 
 
-
-This method is defined by SettingNodeString
 
 
     **Arguments**:

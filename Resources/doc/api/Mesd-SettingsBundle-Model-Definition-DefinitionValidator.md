@@ -51,15 +51,13 @@ Methods
 public **__construct** ( array $definition, $settingsManager )
 
 
-    
+> 
 
 
 
 
 
 
-
-This method is defined by DefinitionValidator
 
 
     **Arguments**:
@@ -74,15 +72,13 @@ This method is defined by DefinitionValidator
 public **validate** (  )
 
 
-    
+> 
 
 
 
 
 
 
-
-This method is defined by DefinitionValidator
 
 
 
@@ -92,15 +88,13 @@ This method is defined by DefinitionValidator
 private **validateStructure** (  )
 
 
-    
+> 
 
 
 
 
 
 
-
-This method is defined by DefinitionValidator
 
 
 
@@ -110,15 +104,13 @@ This method is defined by DefinitionValidator
 private **validateNodes** (  )
 
 
-    
+> 
 
 
 
 
 
 
-
-This method is defined by DefinitionValidator
 
 
 
@@ -128,15 +120,13 @@ This method is defined by DefinitionValidator
 private **validateNodeArray** ( $nodeName, $nodeAttributes, $key )
 
 
-    
+> 
 
 
 
 
 
 
-
-This method is defined by DefinitionValidator
 
 
     **Arguments**:
@@ -152,15 +142,13 @@ This method is defined by DefinitionValidator
 private **validateNodeBoolean** ( $nodeName, $nodeAttributes, $key )
 
 
-    
+> 
 
 
 
 
 
 
-
-This method is defined by DefinitionValidator
 
 
     **Arguments**:
@@ -176,15 +164,13 @@ This method is defined by DefinitionValidator
 private **validateNodeFloat** ( $nodeName, $nodeAttributes, $key )
 
 
-    
+> 
 
 
 
 
 
 
-
-This method is defined by DefinitionValidator
 
 
     **Arguments**:
@@ -200,15 +186,13 @@ This method is defined by DefinitionValidator
 private **validateNodeInteger** ( $nodeName, $nodeAttributes, $key )
 
 
-    
+> 
 
 
 
 
 
 
-
-This method is defined by DefinitionValidator
 
 
     **Arguments**:
@@ -224,15 +208,13 @@ This method is defined by DefinitionValidator
 private **validateNodeString** ( $nodeName, $nodeAttributes, $key )
 
 
-    
+> 
 
 
 
 
 
 
-
-This method is defined by DefinitionValidator
 
 
     **Arguments**:

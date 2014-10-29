@@ -84,15 +84,13 @@ Methods
 public **__construct** (  )
 
 
-    
+> 
 
 
 
 
 
 
-
-This method is defined by SettingDefinition
 
 
 
@@ -102,15 +100,13 @@ This method is defined by SettingDefinition
 public **getKey** (  )
 
 
-    
+> 
 
 
 
 
 
 
-
-This method is defined by SettingDefinition
 
 
 
@@ -120,15 +116,13 @@ This method is defined by SettingDefinition
 public **setKey** ( $key )
 
 
-    
+> 
 
 
 
 
 
 
-
-This method is defined by SettingDefinition
 
 
     **Arguments**:
@@ -142,15 +136,13 @@ This method is defined by SettingDefinition
 public **getHive** (  )
 
 
-    
+> 
 
 
 
 
 
 
-
-This method is defined by SettingDefinition
 
 
 
@@ -160,15 +152,13 @@ This method is defined by SettingDefinition
 public **setHive** ( $hive )
 
 
-    
+> 
 
 
 
 
 
 
-
-This method is defined by SettingDefinition
 
 
     **Arguments**:
@@ -182,15 +172,13 @@ This method is defined by SettingDefinition
 public **getType** (  )
 
 
-    
+> 
 
 
 
 
 
 
-
-This method is defined by SettingDefinition
 
 
 
@@ -200,15 +188,13 @@ This method is defined by SettingDefinition
 public **setType** ( $type )
 
 
-    
+> 
 
 
 
 
 
 
-
-This method is defined by SettingDefinition
 
 
     **Arguments**:
@@ -222,15 +208,13 @@ This method is defined by SettingDefinition
 public **getFilePath** (  )
 
 
-    
+> 
 
 
 
 
 
 
-
-This method is defined by SettingDefinition
 
 
 
@@ -240,15 +224,13 @@ This method is defined by SettingDefinition
 public **setFilePath** ( $filePath )
 
 
-    
+> 
 
 
 
 
 
 
-
-This method is defined by SettingDefinition
 
 
     **Arguments**:
@@ -262,20 +244,18 @@ This method is defined by SettingDefinition
 public **addSettingNode** ( \Mesd\SettingsBundle\Model\Definition\Mesd\SettingsBundle\Model\Definition\SettingNode $settingNode )
 
 
-    Add SettingNode
+> Add SettingNode
 
 
 
 
 
 
-
-This method is defined by SettingDefinition
 
 
     **Arguments**:
 
-    **$settingNode** \Mesd\SettingsBundle\Model\Definition\Mesd\SettingsBundle\Model\Definition\SettingNode 
+    **$settingNode** Mesd\SettingsBundle\Model\Definition\Mesd\SettingsBundle\Model\Definition\SettingNode 
 
 
 --
@@ -284,15 +264,13 @@ This method is defined by SettingDefinition
 public **getSettingNode** ( string $name )
 
 
-    Get SettingNode
+> Get SettingNode
 
 
 
 
 
 
-
-This method is defined by SettingDefinition
 
 
     **Arguments**:
@@ -306,15 +284,13 @@ This method is defined by SettingDefinition
 public **getSettingNodes** (  )
 
 
-    Get SettingNodes
+> Get SettingNodes
 
 
 
 
 
 
-
-This method is defined by SettingDefinition
 
 
 
@@ -324,20 +300,18 @@ This method is defined by SettingDefinition
 public **removeSettingNode** ( \Mesd\SettingsBundle\Model\Definition\Mesd\SettingsBundle\Model\Definition\SettingNode $settingNode )
 
 
-    Remove SettingNode
+> Remove SettingNode
 
 
 
 
 
 
-
-This method is defined by SettingDefinition
 
 
     **Arguments**:
 
-    **$settingNode** \Mesd\SettingsBundle\Model\Definition\Mesd\SettingsBundle\Model\Definition\SettingNode 
+    **$settingNode** Mesd\SettingsBundle\Model\Definition\Mesd\SettingsBundle\Model\Definition\SettingNode 
 
 
 --
@@ -346,15 +320,13 @@ This method is defined by SettingDefinition
 public **removeSettingNodeByName** ( string $name )
 
 
-    Remove SettingNode by name
+> Remove SettingNode by name
 
 
 
 
 
 
-
-This method is defined by SettingDefinition
 
 
     **Arguments**:

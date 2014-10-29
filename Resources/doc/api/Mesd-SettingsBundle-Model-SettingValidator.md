@@ -73,21 +73,19 @@ Methods
 public **__construct** ( \Mesd\SettingsBundle\Model\Definition\SettingNode $settingNode, \Mesd\SettingsBundle\Model\Setting $setting )
 
 
-    
+> 
 
 
 
 
 
 
-
-This method is defined by SettingValidator
 
 
     **Arguments**:
 
-    **$settingNode** \Mesd\SettingsBundle\Model\Definition\SettingNode 
-    **$setting** \Mesd\SettingsBundle\Model\Setting 
+    **$settingNode** [Mesd\SettingsBundle\Model\Definition\SettingNode](Mesd-SettingsBundle-Model-Definition-SettingNode.md) 
+    **$setting** [Mesd\SettingsBundle\Model\Setting](Mesd-SettingsBundle-Model-Setting.md) 
 
 
 --
@@ -96,7 +94,7 @@ This method is defined by SettingValidator
 public **sanitize** (  )
 
 
-    Sanitize a setting
+> Sanitize a setting
 
 Clean the setting so that it matches it's SettingNode
 definition.
@@ -104,8 +102,6 @@ definition.
 
 
 
-
-This method is defined by SettingValidator
 
 
 
@@ -115,15 +111,13 @@ This method is defined by SettingValidator
 public **validate** (  )
 
 
-    Validate a setting
+> Validate a setting
 
 
 
 
 
 
-
-This method is defined by SettingValidator
 
 
 
@@ -133,15 +127,13 @@ This method is defined by SettingValidator
 public **sanitizeArray** (  )
 
 
-    Sanitize an array setting
+> Sanitize an array setting
 
 
 
 
 
 
-
-This method is defined by SettingValidator
 
 
 
@@ -151,15 +143,13 @@ This method is defined by SettingValidator
 public **sanitizeBoolean** (  )
 
 
-    Sanitize a boolean setting
+> Sanitize a boolean setting
 
 
 
 
 
 
-
-This method is defined by SettingValidator
 
 
 
@@ -169,15 +159,13 @@ This method is defined by SettingValidator
 public **sanitizeFloat** (  )
 
 
-    Sanitize a float setting
+> Sanitize a float setting
 
 
 
 
 
 
-
-This method is defined by SettingValidator
 
 
 
@@ -187,15 +175,13 @@ This method is defined by SettingValidator
 public **sanitizeString** (  )
 
 
-    Sanitize a string setting
+> Sanitize a string setting
 
 
 
 
 
 
-
-This method is defined by SettingValidator
 
 
 
@@ -205,15 +191,13 @@ This method is defined by SettingValidator
 protected **sanitizeDigits** (  )
 
 
-    Sanitize digits
+> Sanitize digits
 
 
 
 
 
 
-
-This method is defined by SettingValidator
 
 
 
@@ -223,15 +207,13 @@ This method is defined by SettingValidator
 protected **sanitizeLength** (  )
 
 
-    Sanitize length
+> Sanitize length
 
 
 
 
 
 
-
-This method is defined by SettingValidator
 
 
 
@@ -241,15 +223,13 @@ This method is defined by SettingValidator
 protected **sanitizePrecision** (  )
 
 
-    Sanitize precision
+> Sanitize precision
 
 
 
 
 
 
-
-This method is defined by SettingValidator
 
 
 
@@ -259,15 +239,13 @@ This method is defined by SettingValidator
 protected **sanitizeType** (  )
 
 
-    Sanitize data type
+> Sanitize data type
 
 
 
 
 
 
-
-This method is defined by SettingValidator
 
 
 
@@ -277,15 +255,13 @@ This method is defined by SettingValidator
 protected **validateArray** (  )
 
 
-    Validate an array setting
+> Validate an array setting
 
 
 
 
 
 
-
-This method is defined by SettingValidator
 
 
 
@@ -295,15 +271,13 @@ This method is defined by SettingValidator
 protected **validateBoolean** (  )
 
 
-    Validate a boolean setting
+> Validate a boolean setting
 
 
 
 
 
 
-
-This method is defined by SettingValidator
 
 
 
@@ -313,15 +287,13 @@ This method is defined by SettingValidator
 protected **validateFloat** (  )
 
 
-    Validate a float setting
+> Validate a float setting
 
 
 
 
 
 
-
-This method is defined by SettingValidator
 
 
 
@@ -331,15 +303,13 @@ This method is defined by SettingValidator
 protected **validateInteger** (  )
 
 
-    Validate a integer setting
+> Validate a integer setting
 
 
 
 
 
 
-
-This method is defined by SettingValidator
 
 
 
@@ -349,15 +319,13 @@ This method is defined by SettingValidator
 protected **validateString** (  )
 
 
-    Validate a string setting
+> Validate a string setting
 
 
 
 
 
 
-
-This method is defined by SettingValidator
 
 
 
@@ -367,15 +335,13 @@ This method is defined by SettingValidator
 protected **validateDigits** (  )
 
 
-    Validate digits
+> Validate digits
 
 
 
 
 
 
-
-This method is defined by SettingValidator
 
 
 
@@ -385,15 +351,13 @@ This method is defined by SettingValidator
 protected **validateLength** (  )
 
 
-    Validate length
+> Validate length
 
 
 
 
 
 
-
-This method is defined by SettingValidator
 
 
 
@@ -403,15 +367,13 @@ This method is defined by SettingValidator
 protected **validatePrecision** (  )
 
 
-    Validate precision
+> Validate precision
 
 
 
 
 
 
-
-This method is defined by SettingValidator
 
 
 
@@ -421,15 +383,13 @@ This method is defined by SettingValidator
 protected **validateType** (  )
 
 
-    Validate data type
+> Validate data type
 
 
 
 
 
 
-
-This method is defined by SettingValidator
 
 
 

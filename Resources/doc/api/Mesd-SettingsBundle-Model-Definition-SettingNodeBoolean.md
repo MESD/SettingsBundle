@@ -27,15 +27,13 @@ Methods
 public **__construct** ( $nodeAttributes )
 
 
-    
+> 
 
 
 
 
 
 
-
-This method is defined by SettingNodeBoolean
 
 
     **Arguments**:
@@ -49,15 +47,13 @@ This method is defined by SettingNodeBoolean
 public **dumpToArray** (  )
 
 
-    
+> 
 
 
 
 
 
 
-
-This method is defined by SettingNodeBoolean
 
 
 

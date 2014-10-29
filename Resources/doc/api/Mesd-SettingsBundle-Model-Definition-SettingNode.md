@@ -84,15 +84,13 @@ Methods
 public **__construct** ( $nodeData )
 
 
-    
+> 
 
 
 
 
 
 
-
-This method is defined by SettingNode
 
 
     **Arguments**:
@@ -106,15 +104,13 @@ This method is defined by SettingNode
 public **getDefault** (  )
 
 
-    
+> 
 
 
 
 
 
 
-
-This method is defined by SettingNode
 
 
 
@@ -124,15 +120,13 @@ This method is defined by SettingNode
 public **setDefault** ( $default )
 
 
-    
+> 
 
 
 
 
 
 
-
-This method is defined by SettingNode
 
 
     **Arguments**:
@@ -146,15 +140,13 @@ This method is defined by SettingNode
 public **getDescription** (  )
 
 
-    
+> 
 
 
 
 
 
 
-
-This method is defined by SettingNode
 
 
 
@@ -164,15 +156,13 @@ This method is defined by SettingNode
 public **setDescription** ( $description )
 
 
-    
+> 
 
 
 
 
 
 
-
-This method is defined by SettingNode
 
 
     **Arguments**:
@@ -186,15 +176,13 @@ This method is defined by SettingNode
 public **getFormat** (  )
 
 
-    
+> 
 
 
 
 
 
 
-
-This method is defined by SettingNode
 
 
 
@@ -204,15 +192,13 @@ This method is defined by SettingNode
 public **setFormat** ( $format )
 
 
-    
+> 
 
 
 
 
 
 
-
-This method is defined by SettingNode
 
 
     **Arguments**:
@@ -226,15 +212,13 @@ This method is defined by SettingNode
 public **getName** (  )
 
 
-    
+> 
 
 
 
 
 
 
-
-This method is defined by SettingNode
 
 
 
@@ -244,15 +228,13 @@ This method is defined by SettingNode
 public **setName** ( $name )
 
 
-    
+> 
 
 
 
 
 
 
-
-This method is defined by SettingNode
 
 
     **Arguments**:
@@ -266,15 +248,13 @@ This method is defined by SettingNode
 public **getType** (  )
 
 
-    
+> 
 
 
 
 
 
 
-
-This method is defined by SettingNode
 
 
 
@@ -284,15 +264,13 @@ This method is defined by SettingNode
 public **setType** ( $type )
 
 
-    
+> 
 
 
 
 
 
 
-
-This method is defined by SettingNode
 
 
     **Arguments**:

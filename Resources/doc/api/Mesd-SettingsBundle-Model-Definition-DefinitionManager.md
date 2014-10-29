@@ -62,22 +62,20 @@ Methods
 public **__construct** ( $bundleStorage, $kernel, \Mesd\SettingsBundle\Model\SettingManager $settingManager )
 
 
-    
+> 
 
 
 
 
 
 
-
-This method is defined by DefinitionManager
 
 
     **Arguments**:
 
     **$bundleStorage** mixed 
     **$kernel** mixed 
-    **$settingManager** \Mesd\SettingsBundle\Model\SettingManager 
+    **$settingManager** [Mesd\SettingsBundle\Model\SettingManager](Mesd-SettingsBundle-Model-SettingManager.md) 
 
 
 --
@@ -86,15 +84,13 @@ This method is defined by DefinitionManager
 public **buildFileName** ( string $hiveName, string $clusterName )
 
 
-    Builds a file name based on a hive [ and cluster ].
+> Builds a file name based on a hive [ and cluster ].
 
 
 
 
 
 
-
-This method is defined by DefinitionManager
 
 
     **Arguments**:
@@ -109,20 +105,18 @@ This method is defined by DefinitionManager
 private **buildFileNameFromDefinition** ( \Mesd\SettingsBundle\Model\Definition\SettingDefinition $SettingDefinition )
 
 
-    Builds a file name based on SettingDefinition.
+> Builds a file name based on SettingDefinition.
 
 
 
 
 
 
-
-This method is defined by DefinitionManager
 
 
     **Arguments**:
 
-    **$SettingDefinition** \Mesd\SettingsBundle\Model\Definition\SettingDefinition 
+    **$SettingDefinition** [Mesd\SettingsBundle\Model\Definition\SettingDefinition](Mesd-SettingsBundle-Model-Definition-SettingDefinition.md) 
 
 
 --
@@ -131,7 +125,7 @@ This method is defined by DefinitionManager
 public **createFile** ( string $fileName, string $filePath )
 
 
-    Create file path for new definition file
+> Create file path for new definition file
 
 Create a fully qualified file path for a new definition file
 and ensure that the directory structure is in place. The actual
@@ -140,8 +134,6 @@ file will be created in the saveFile() method.
 
 
 
-
-This method is defined by DefinitionManager
 
 
     **Arguments**:
@@ -156,15 +148,13 @@ This method is defined by DefinitionManager
 public **fileExists** ( string $file )
 
 
-    Determine if a given file exists
+> Determine if a given file exists
 
 
 
 
 
 
-
-This method is defined by DefinitionManager
 
 
     **Arguments**:
@@ -178,7 +168,7 @@ This method is defined by DefinitionManager
 public **loadFile** ( string $hiveName, string $clusterName )
 
 
-    Load a setting definition file
+> Load a setting definition file
 
 Loads a setting definition file by hive [ and cluster name ],
 parses the yaml content, and returns a SettingDefinition object.
@@ -186,8 +176,6 @@ parses the yaml content, and returns a SettingDefinition object.
 
 
 
-
-This method is defined by DefinitionManager
 
 
     **Arguments**:
@@ -202,7 +190,7 @@ This method is defined by DefinitionManager
 public **locateFile** ( string $fileName, string $filePath )
 
 
-    Locate a setting definition file
+> Locate a setting definition file
 
 Checks $filePath
   -or-
@@ -213,8 +201,6 @@ fully qualifed file name or false.
 
 
 
-
-This method is defined by DefinitionManager
 
 
     **Arguments**:
@@ -229,7 +215,7 @@ This method is defined by DefinitionManager
 public **saveFile** ( \Mesd\SettingsBundle\Model\Definition\SettingDefinition $settingDefinition )
 
 
-    Save a SettingDefinition to a yaml file
+> Save a SettingDefinition to a yaml file
 
 Saves a SettingDefinition to a yaml setting file. If the file
 does not exist, it will be created. The SettingDefinition
@@ -239,12 +225,10 @@ will be validated before being saved.
 
 
 
-This method is defined by DefinitionManager
-
 
     **Arguments**:
 
-    **$settingDefinition** \Mesd\SettingsBundle\Model\Definition\SettingDefinition 
+    **$settingDefinition** [Mesd\SettingsBundle\Model\Definition\SettingDefinition](Mesd-SettingsBundle-Model-Definition-SettingDefinition.md) 
 
 
 --
@@ -253,7 +237,7 @@ This method is defined by DefinitionManager
 private **serialize** ( \Mesd\SettingsBundle\Model\Definition\SettingDefinition $settingDefinition )
 
 
-    Serialize a SettingDefinition
+> Serialize a SettingDefinition
 
 Serializes a SettingDefinition so it can be saved to
 a yaml file.
@@ -262,12 +246,10 @@ a yaml file.
 
 
 
-This method is defined by DefinitionManager
-
 
     **Arguments**:
 
-    **$settingDefinition** \Mesd\SettingsBundle\Model\Definition\SettingDefinition 
+    **$settingDefinition** [Mesd\SettingsBundle\Model\Definition\SettingDefinition](Mesd-SettingsBundle-Model-Definition-SettingDefinition.md) 
 
 
 --
@@ -276,7 +258,7 @@ This method is defined by DefinitionManager
 private **unserialize** ( string $fileContents, $file )
 
 
-    Unserialize a setting definition yaml
+> Unserialize a setting definition yaml
 
 Unserializes a setting definition yaml file, validates the
 content, and converts the data into a SettingDefinition.
@@ -284,8 +266,6 @@ content, and converts the data into a SettingDefinition.
 
 
 
-
-This method is defined by DefinitionManager
 
 
     **Arguments**:
@@ -300,7 +280,7 @@ This method is defined by DefinitionManager
 public **getBundleStorage** (  )
 
 
-    Get bundleStorage
+> Get bundleStorage
 
 BundleStorage holds the aviable bundle paths and defualt
 storage location for Setting Definition files.
@@ -308,8 +288,6 @@ storage location for Setting Definition files.
 
 
 
-
-This method is defined by DefinitionManager
 
 
 
