@@ -72,7 +72,7 @@ Set Setting Name
 --
 
 ##### Arguments:
-**$name** string - &lt;p&gt;Setting Name&lt;/p&gt;
+**$name** string - Setting Name
 
 --
 
@@ -93,7 +93,7 @@ Set Setting Value
 --
 
 ##### Arguments
-**$value** mixed - &lt;p&gt;Setting Value&lt;/p&gt;
+**$value** mixed - Setting Value
 
 --
 
