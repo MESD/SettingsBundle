@@ -11,7 +11,7 @@
 
 namespace Mesd\SettingsBundle\Model;
 
-use Symfony\Component\DependencyInjection\ContainerInterface as Container;
+use Doctrine\Common\Persistence\ObjectManager;
 use Mesd\SettingsBundle\Entity\Hive;
 use Mesd\SettingsBundle\Entity\Cluster;
 use Mesd\SettingsBundle\Model\Definition\DefinitionManager;
@@ -26,11 +26,18 @@ use Mesd\SettingsBundle\Model\SettingValidator;
 class SettingManager {
 
     /**
-     * Symfony service container
+     * Doctrine entity manger
      *
-     * @var Container
+     * @var ObjectManager
      */
-    private $container;
+     private $objectManager;
+
+     /**
+     * Setting definition manager service
+     *
+     * @var DefinitionManager
+     */
+     private $definitionManager;
 
 
     /**
@@ -39,9 +46,10 @@ class SettingManager {
      * @param Container $container
      * @return self
      */
-    public function __construct(Container $container)
+    public function __construct(ObjectManager $objectManager, DefinitionManager $definitionManager)
     {
-        $this->container = $container;
+        $this->objectManager     = $objectManager;
+        $this->definitionManager = $definitionManager;
     }
 
 
@@ -105,12 +113,10 @@ class SettingManager {
         $hive->addCluster($cluster);
 
         // Populate settings from SettingDefinition
-        $definitionManager = $this->container->get('mesd_settings.definition_manager');
+        $fileName = $this->definitionManager->buildFileName($hiveName, $clusterName);
 
-        $fileName = $definitionManager->buildFileName($hiveName, $clusterName);
-
-        if ($definitionManager->locateFile($fileName)) {
-            $settingDefinition = $definitionManager->loadFile($hiveName, $clusterName);
+        if ($this->definitionManager->locateFile($fileName)) {
+            $settingDefinition = $this->definitionManager->loadFile($hiveName, $clusterName);
 
             foreach ($settingDefinition->getSettingNodes() as $key => $node) {
                 $setting = new Setting();
@@ -120,8 +126,8 @@ class SettingManager {
             }
         }
 
-        $this->container->get('doctrine.orm.entity_manager')->persist($cluster);
-        $this->container->get('doctrine.orm.entity_manager')->flush();
+        $this->objectManager->persist($cluster);
+        $this->objectManager->flush();
 
         return $cluster;
     }
@@ -169,8 +175,8 @@ class SettingManager {
             throw new \Exception(sprintf('The hive %s and Cluster %s combination do not exist', $hiveName, $clusterName));
         }
 
-        $this->container->get('doctrine.orm.entity_manager')->remove($cluster);
-        $this->container->get('doctrine.orm.entity_manager')->flush($cluster);
+        $this->objectManager->remove($cluster);
+        $this->objectManager->flush();
 
         return true;
     }
@@ -192,8 +198,8 @@ class SettingManager {
 
         $hive = $this->loadHive($hiveName);
 
-        $this->container->get('doctrine.orm.entity_manager')->remove($hive);
-        $this->container->get('doctrine.orm.entity_manager')->flush();
+        $this->objectManager->remove($hive);
+        $this->objectManager->flush();
 
         return true;
     }
@@ -215,10 +221,10 @@ class SettingManager {
         }
 
         foreach ($hive->getCluster() as $key => $cluster) {
-            $this->container->get('doctrine.orm.entity_manager')->remove($cluster);
+            $this->objectManager->remove($cluster);
         }
 
-        $this->container->get('doctrine.orm.entity_manager')->flush();
+        $this->objectManager->flush();
 
         return true;
     }
@@ -335,7 +341,7 @@ class SettingManager {
         }
 
         if (true === $loadDefinition) {
-            $settingDefinition = $this->container->get('mesd_settings.definition_manager')->loadFile($hiveName, $clusterName);
+            $settingDefinition = $this->definitionManager->loadFile($hiveName, $clusterName);
 
             $setting->setSettingNode(
                 $settingDefinition->getSettingNode($settingName)
@@ -381,7 +387,7 @@ class SettingManager {
      */
     public function saveSetting(Setting $setting)
     {
-        $settingDefinition = $this->container->get('mesd_settings.definition_manager')
+        $settingDefinition = $this->definitionManager
             ->loadFile(
                 $setting->getCluster()->getHive()->getName(),
                 $setting->getCluster()->getName()
@@ -408,8 +414,8 @@ class SettingManager {
 
         $cluster->addSetting($setting);
 
-        $this->container->get('doctrine.orm.entity_manager')->persist($cluster);
-        $this->container->get('doctrine.orm.entity_manager')->flush();
+        $this->objectManager->persist($cluster);
+        $this->objectManager->flush();
 
         return $setting;
     }
@@ -439,7 +445,7 @@ class SettingManager {
             ));
         }
 
-        $settingDefinition = $this->container->get('mesd_settings.definition_manager')->loadFile($hiveName, $clusterName);
+        $settingDefinition = $this->definitionManager->loadFile($hiveName, $clusterName);
 
         $setting->setValue($settingValue);
 
@@ -463,8 +469,8 @@ class SettingManager {
 
         $cluster->addSetting($setting);
 
-        $this->container->get('doctrine.orm.entity_manager')->persist($cluster);
-        $this->container->get('doctrine.orm.entity_manager')->flush();
+        $this->objectManager->persist($cluster);
+        $this->objectManager->flush();
 
         return $setting;
     }

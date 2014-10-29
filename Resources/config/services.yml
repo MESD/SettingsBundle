@@ -3,10 +3,10 @@ parameters:
     mesd_settings.setting_manager.class: Mesd\SettingsBundle\Model\SettingManager
 
 services:
-    mesd_settings.setting_manager:
-        class: %mesd_settings.setting_manager.class%
-        arguments: [@service_container]
-
     mesd_settings.definition_manager:
         class: %mesd_settings.definition_manager.class%
-        arguments: [%mesd_settings.bundle_storage%, @kernel, @mesd_settings.setting_manager]
+        arguments: [%mesd_settings.bundle_storage%, @kernel]
+
+    mesd_settings.setting_manager:
+        class: %mesd_settings.setting_manager.class%
+        arguments: [@doctrine.orm.entity_manager, @mesd_settings.definition_manager]
