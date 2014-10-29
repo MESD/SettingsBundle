@@ -1,5 +1,5 @@
 ###Mesd\SettingsBundle\Model\Setting
-----
+
 
     Setting.
 
