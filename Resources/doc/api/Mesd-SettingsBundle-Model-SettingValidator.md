@@ -82,10 +82,10 @@ public **__construct** ( \Mesd\SettingsBundle\Model\Definition\SettingNode $sett
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$settingNode** [Mesd\SettingsBundle\Model\Definition\SettingNode](Mesd-SettingsBundle-Model-Definition-SettingNode.md) 
-    **$setting** [Mesd\SettingsBundle\Model\Setting](Mesd-SettingsBundle-Model-Setting.md) 
+$settingNode [Mesd\SettingsBundle\Model\Definition\SettingNode](Mesd-SettingsBundle-Model-Definition-SettingNode.md) 
+$setting [Mesd\SettingsBundle\Model\Setting](Mesd-SettingsBundle-Model-Setting.md) 
 
 
 --

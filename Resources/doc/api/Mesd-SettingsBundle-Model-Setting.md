@@ -122,9 +122,9 @@ public **setName** ( string $name )
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$name** string  - &lt;p&gt;Setting Name&lt;/p&gt;
+$name string  - &lt;p&gt;Setting Name&lt;/p&gt;
 
 
 --
@@ -158,9 +158,9 @@ public **setValue** ( mixed $value )
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$value** mixed  - &lt;p&gt;Setting Value&lt;/p&gt;
+$value mixed  - &lt;p&gt;Setting Value&lt;/p&gt;
 
 
 --
@@ -194,9 +194,9 @@ public **setCluster** ( \Mesd\SettingsBundle\Entity\Cluster $cluster )
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$cluster** [Mesd\SettingsBundle\Entity\Cluster](Mesd-SettingsBundle-Entity-Cluster.md) 
+$cluster [Mesd\SettingsBundle\Entity\Cluster](Mesd-SettingsBundle-Entity-Cluster.md) 
 
 
 --
@@ -231,9 +231,9 @@ public **setSettingNode** ( \Mesd\SettingsBundle\Model\Definition\SettingNode $s
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$settingNode** [Mesd\SettingsBundle\Model\Definition\SettingNode](Mesd-SettingsBundle-Model-Definition-SettingNode.md) 
+$settingNode [Mesd\SettingsBundle\Model\Definition\SettingNode](Mesd-SettingsBundle-Model-Definition-SettingNode.md) 
 
 
 --

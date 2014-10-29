@@ -125,9 +125,9 @@ public **setKey** ( $key )
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$key** mixed 
+$key mixed 
 
 
 --
@@ -161,9 +161,9 @@ public **setHive** ( $hive )
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$hive** mixed 
+$hive mixed 
 
 
 --
@@ -197,9 +197,9 @@ public **setType** ( $type )
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$type** mixed 
+$type mixed 
 
 
 --
@@ -233,9 +233,9 @@ public **setFilePath** ( $filePath )
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$filePath** mixed 
+$filePath mixed 
 
 
 --
@@ -253,9 +253,9 @@ public **addSettingNode** ( \Mesd\SettingsBundle\Model\Definition\Mesd\SettingsB
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$settingNode** Mesd\SettingsBundle\Model\Definition\Mesd\SettingsBundle\Model\Definition\SettingNode 
+$settingNode Mesd\SettingsBundle\Model\Definition\Mesd\SettingsBundle\Model\Definition\SettingNode 
 
 
 --
@@ -273,9 +273,9 @@ public **getSettingNode** ( string $name )
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$name** string 
+$name string 
 
 
 --
@@ -309,9 +309,9 @@ public **removeSettingNode** ( \Mesd\SettingsBundle\Model\Definition\Mesd\Settin
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$settingNode** Mesd\SettingsBundle\Model\Definition\Mesd\SettingsBundle\Model\Definition\SettingNode 
+$settingNode Mesd\SettingsBundle\Model\Definition\Mesd\SettingsBundle\Model\Definition\SettingNode 
 
 
 --
@@ -329,9 +329,9 @@ public **removeSettingNodeByName** ( string $name )
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$name** string 
+$name string 
 
 
 --

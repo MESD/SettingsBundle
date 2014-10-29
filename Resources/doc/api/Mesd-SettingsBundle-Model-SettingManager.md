@@ -49,9 +49,9 @@ public **__construct** ( \Symfony\Component\DependencyInjection\ContainerInterfa
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$container** Symfony\Component\DependencyInjection\ContainerInterface 
+$container Symfony\Component\DependencyInjection\ContainerInterface 
 
 
 --
@@ -70,10 +70,10 @@ in the database.
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$hiveName** string 
-    **$clusterName** string 
+$hiveName string 
+$clusterName string 
 
 
 --
@@ -91,11 +91,11 @@ Creates a new cluster in database
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$hiveName** string 
-    **$clusterName** string 
-    **$description** string 
+$hiveName string 
+$clusterName string 
+$description string 
 
 
 --
@@ -113,11 +113,11 @@ Creates a new hive in database
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$hiveName** string 
-    **$description** string 
-    **$definedAtHive** boolean 
+$hiveName string 
+$description string 
+$definedAtHive boolean 
 
 
 --
@@ -135,10 +135,10 @@ Delete the specified cluster or throw Exception.
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$hiveName** string 
-    **$clusterName** string 
+$hiveName string 
+$clusterName string 
 
 
 --
@@ -156,9 +156,9 @@ Delete the specified hive or throw Exception.
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$hiveName** string 
+$hiveName string 
 
 
 --
@@ -176,9 +176,9 @@ Delete all the clusters attched to specific hive.
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$hiveName** string 
+$hiveName string 
 
 
 --
@@ -197,9 +197,9 @@ in the database.
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$hiveName** string 
+$hiveName string 
 
 
 --
@@ -218,9 +218,9 @@ exisiting in the database.
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$hiveName** string 
+$hiveName string 
 
 
 --
@@ -238,10 +238,10 @@ Load the specified cluster or throw Exception.
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$hiveName** string 
-    **$clusterName** string 
+$hiveName string 
+$clusterName string 
 
 
 --
@@ -259,9 +259,9 @@ Load the specified hive or throw Exception.
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$hiveName** string 
+$hiveName string 
 
 
 --
@@ -284,12 +284,12 @@ is needed.
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$hiveName** string 
-    **$clusterName** string 
-    **$settingName** string 
-    **$loadDefinition** boolean  - &lt;p&gt;(optional)&lt;/p&gt;
+$hiveName string 
+$clusterName string 
+$settingName string 
+$loadDefinition boolean  - &lt;p&gt;(optional)&lt;/p&gt;
 
 
 --
@@ -307,11 +307,11 @@ Load the specified setting value or throw Exception.
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$hiveName** string 
-    **$clusterName** string 
-    **$settingName** string 
+$hiveName string 
+$clusterName string 
+$settingName string 
 
 
 --
@@ -329,9 +329,9 @@ Save the specified setting object or throw Exception.
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$setting** mixed 
+$setting mixed 
 
 
 --
@@ -349,12 +349,12 @@ Save the specified setting value or throw Exception.
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$hiveName** string 
-    **$clusterName** string 
-    **$settingName** string 
-    **$settingValue** mixed 
+$hiveName string 
+$clusterName string 
+$settingName string 
+$settingValue mixed 
 
 
 --

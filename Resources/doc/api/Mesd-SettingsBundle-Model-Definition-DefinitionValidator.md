@@ -60,10 +60,10 @@ public **__construct** ( array $definition, $settingsManager )
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$definition** array 
-    **$settingsManager** mixed 
+$definition array 
+$settingsManager mixed 
 
 
 --
@@ -129,11 +129,11 @@ private **validateNodeArray** ( $nodeName, $nodeAttributes, $key )
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$nodeName** mixed 
-    **$nodeAttributes** mixed 
-    **$key** mixed 
+$nodeName mixed 
+$nodeAttributes mixed 
+$key mixed 
 
 
 --
@@ -151,11 +151,11 @@ private **validateNodeBoolean** ( $nodeName, $nodeAttributes, $key )
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$nodeName** mixed 
-    **$nodeAttributes** mixed 
-    **$key** mixed 
+$nodeName mixed 
+$nodeAttributes mixed 
+$key mixed 
 
 
 --
@@ -173,11 +173,11 @@ private **validateNodeFloat** ( $nodeName, $nodeAttributes, $key )
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$nodeName** mixed 
-    **$nodeAttributes** mixed 
-    **$key** mixed 
+$nodeName mixed 
+$nodeAttributes mixed 
+$key mixed 
 
 
 --
@@ -195,11 +195,11 @@ private **validateNodeInteger** ( $nodeName, $nodeAttributes, $key )
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$nodeName** mixed 
-    **$nodeAttributes** mixed 
-    **$key** mixed 
+$nodeName mixed 
+$nodeAttributes mixed 
+$key mixed 
 
 
 --
@@ -217,11 +217,11 @@ private **validateNodeString** ( $nodeName, $nodeAttributes, $key )
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$nodeName** mixed 
-    **$nodeAttributes** mixed 
-    **$key** mixed 
+$nodeName mixed 
+$nodeAttributes mixed 
+$key mixed 
 
 
 --

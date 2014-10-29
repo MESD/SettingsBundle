@@ -49,9 +49,9 @@ public **__construct** ( $nodeAttributes )
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$nodeAttributes** mixed 
+$nodeAttributes mixed 
 
 
 --
@@ -101,9 +101,9 @@ public **setLength** ( $length )
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$length** mixed 
+$length mixed 
 
 
 --

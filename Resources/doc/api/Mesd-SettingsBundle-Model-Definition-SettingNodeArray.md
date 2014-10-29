@@ -60,9 +60,9 @@ public **__construct** ( $nodeAttributes )
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$nodeAttributes** mixed 
+$nodeAttributes mixed 
 
 
 --
@@ -112,9 +112,9 @@ public **setPrototype** ( $prototype )
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$prototype** mixed 
+$prototype mixed 
 
 
 --
@@ -148,9 +148,9 @@ public **setNode** ( $node )
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$node** mixed 
+$node mixed 
 
 
 --

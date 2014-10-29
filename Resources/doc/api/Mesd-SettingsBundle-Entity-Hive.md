@@ -125,9 +125,9 @@ public **setName** ( string $name )
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$name** string 
+$name string 
 
 
 --
@@ -161,9 +161,9 @@ public **setDescription** ( string $description )
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$description** string 
+$description string 
 
 
 --
@@ -197,9 +197,9 @@ public **setDefinedAtHive** ( boolean $definedAtHive )
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$definedAtHive** boolean 
+$definedAtHive boolean 
 
 
 --
@@ -233,9 +233,9 @@ public **addCluster** ( \Mesd\SettingsBundle\Entity\Cluster $cluster )
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$cluster** [Mesd\SettingsBundle\Entity\Cluster](Mesd-SettingsBundle-Entity-Cluster.md) 
+$cluster [Mesd\SettingsBundle\Entity\Cluster](Mesd-SettingsBundle-Entity-Cluster.md) 
 
 
 --
@@ -253,9 +253,9 @@ public **removeCluster** ( \Mesd\SettingsBundle\Entity\Cluster $cluster )
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$cluster** [Mesd\SettingsBundle\Entity\Cluster](Mesd-SettingsBundle-Entity-Cluster.md) 
+$cluster [Mesd\SettingsBundle\Entity\Cluster](Mesd-SettingsBundle-Entity-Cluster.md) 
 
 
 --

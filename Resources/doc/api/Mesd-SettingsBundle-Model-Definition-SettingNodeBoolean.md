@@ -36,9 +36,9 @@ public **__construct** ( $nodeAttributes )
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$nodeAttributes** mixed 
+$nodeAttributes mixed 
 
 
 --

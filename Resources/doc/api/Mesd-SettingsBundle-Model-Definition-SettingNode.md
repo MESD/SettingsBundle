@@ -93,9 +93,9 @@ public **__construct** ( $nodeData )
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$nodeData** mixed 
+$nodeData mixed 
 
 
 --
@@ -129,9 +129,9 @@ public **setDefault** ( $default )
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$default** mixed 
+$default mixed 
 
 
 --
@@ -165,9 +165,9 @@ public **setDescription** ( $description )
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$description** mixed 
+$description mixed 
 
 
 --
@@ -201,9 +201,9 @@ public **setFormat** ( $format )
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$format** mixed 
+$format mixed 
 
 
 --
@@ -237,9 +237,9 @@ public **setName** ( $name )
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$name** mixed 
+$name mixed 
 
 
 --
@@ -273,9 +273,9 @@ public **setType** ( $type )
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$type** mixed 
+$type mixed 
 
 
 --

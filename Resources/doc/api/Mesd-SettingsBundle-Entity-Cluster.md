@@ -109,9 +109,9 @@ public **setName** ( string $name )
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$name** string 
+$name string 
 
 
 --
@@ -145,9 +145,9 @@ public **setDescription** ( string $description )
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$description** string 
+$description string 
 
 
 --
@@ -181,9 +181,9 @@ public **addSetting** ( \Mesd\SettingsBundle\Entity\Mesd\SettingsBundle\Model\Se
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$setting** Mesd\SettingsBundle\Entity\Mesd\SettingsBundle\Model\Setting 
+$setting Mesd\SettingsBundle\Entity\Mesd\SettingsBundle\Model\Setting 
 
 
 --
@@ -217,9 +217,9 @@ public **getSetting** ( $settingName )
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$settingName** mixed 
+$settingName mixed 
 
 
 --
@@ -237,9 +237,9 @@ public **removeSetting** ( \Mesd\SettingsBundle\Entity\Mesd\SettingsBundle\Model
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$setting** Mesd\SettingsBundle\Entity\Mesd\SettingsBundle\Model\Setting 
+$setting Mesd\SettingsBundle\Entity\Mesd\SettingsBundle\Model\Setting 
 
 
 --
@@ -257,9 +257,9 @@ public **setHive** ( \Mesd\SettingsBundle\Entity\Hive $hive )
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$hive** [Mesd\SettingsBundle\Entity\Hive](Mesd-SettingsBundle-Entity-Hive.md) 
+$hive [Mesd\SettingsBundle\Entity\Hive](Mesd-SettingsBundle-Entity-Hive.md) 
 
 
 --

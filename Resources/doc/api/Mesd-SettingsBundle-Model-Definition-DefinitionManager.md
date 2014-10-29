@@ -71,11 +71,11 @@ public **__construct** ( $bundleStorage, $kernel, \Mesd\SettingsBundle\Model\Set
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$bundleStorage** mixed 
-    **$kernel** mixed 
-    **$settingManager** [Mesd\SettingsBundle\Model\SettingManager](Mesd-SettingsBundle-Model-SettingManager.md) 
+$bundleStorage mixed 
+$kernel mixed 
+$settingManager [Mesd\SettingsBundle\Model\SettingManager](Mesd-SettingsBundle-Model-SettingManager.md) 
 
 
 --
@@ -93,10 +93,10 @@ public **buildFileName** ( string $hiveName, string $clusterName )
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$hiveName** string 
-    **$clusterName** string 
+$hiveName string 
+$clusterName string 
 
 
 --
@@ -114,9 +114,9 @@ private **buildFileNameFromDefinition** ( \Mesd\SettingsBundle\Model\Definition\
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$SettingDefinition** [Mesd\SettingsBundle\Model\Definition\SettingDefinition](Mesd-SettingsBundle-Model-Definition-SettingDefinition.md) 
+$SettingDefinition [Mesd\SettingsBundle\Model\Definition\SettingDefinition](Mesd-SettingsBundle-Model-Definition-SettingDefinition.md) 
 
 
 --
@@ -136,10 +136,10 @@ file will be created in the saveFile() method.
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$fileName** string 
-    **$filePath** string 
+$fileName string 
+$filePath string 
 
 
 --
@@ -157,9 +157,9 @@ public **fileExists** ( string $file )
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$file** string 
+$file string 
 
 
 --
@@ -178,10 +178,10 @@ parses the yaml content, and returns a SettingDefinition object.
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$hiveName** string 
-    **$clusterName** string 
+$hiveName string 
+$clusterName string 
 
 
 --
@@ -203,10 +203,10 @@ fully qualifed file name or false.
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$fileName** string 
-    **$filePath** string 
+$fileName string 
+$filePath string 
 
 
 --
@@ -226,9 +226,9 @@ will be validated before being saved.
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$settingDefinition** [Mesd\SettingsBundle\Model\Definition\SettingDefinition](Mesd-SettingsBundle-Model-Definition-SettingDefinition.md) 
+$settingDefinition [Mesd\SettingsBundle\Model\Definition\SettingDefinition](Mesd-SettingsBundle-Model-Definition-SettingDefinition.md) 
 
 
 --
@@ -247,9 +247,9 @@ a yaml file.
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$settingDefinition** [Mesd\SettingsBundle\Model\Definition\SettingDefinition](Mesd-SettingsBundle-Model-Definition-SettingDefinition.md) 
+$settingDefinition [Mesd\SettingsBundle\Model\Definition\SettingDefinition](Mesd-SettingsBundle-Model-Definition-SettingDefinition.md) 
 
 
 --
@@ -268,10 +268,10 @@ content, and converts the data into a SettingDefinition.
 
 
 
-    **Arguments**:
+**Arguments**:
 
-    **$fileContents** string 
-    **$file** mixed 
+$fileContents string 
+$file mixed 
 
 
 --
