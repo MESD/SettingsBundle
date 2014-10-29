@@ -1,6 +1,7 @@
-##Mesd\SettingsBundle\Model\Setting
+###Mesd\SettingsBundle\Model\Setting
+----
 
-Setting.
+    Setting.
 
 
 
@@ -21,11 +22,11 @@ Properties
 ----------
 
 
-### $name
+**$name** The setting name
 
     private string $name
 
-The setting name
+
 
 
 
