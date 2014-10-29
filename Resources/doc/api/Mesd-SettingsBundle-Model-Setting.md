@@ -184,7 +184,7 @@ Get cluster
 
 --
 
-public **setCluster** ( \Mesd\SettingsBundle\Entity\Cluster $cluster )
+public **setCluster** ( Cluster $cluster )
 
 
 Set cluster
@@ -219,7 +219,7 @@ isSettingNodeLoaded() for more details.
 
 --
 
-public **setSettingNode** ( \Mesd\SettingsBundle\Model\Definition\SettingNode $settingNode )
+public **setSettingNode** ( SettingNode $settingNode )
 
 
 Set SettingNode definition

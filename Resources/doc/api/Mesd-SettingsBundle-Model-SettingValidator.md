@@ -80,7 +80,7 @@ Methods
 -------
 
 
-public **__construct** ( \Mesd\SettingsBundle\Model\Definition\SettingNode $settingNode, \Mesd\SettingsBundle\Model\Setting $setting )
+public **__construct** (  $settingNode,  $setting )
 
 
 

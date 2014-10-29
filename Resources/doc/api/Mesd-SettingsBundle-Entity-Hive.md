@@ -223,7 +223,7 @@ Get definedAtHive
 
 --
 
-public **addCluster** ( \Mesd\SettingsBundle\Entity\Cluster $cluster )
+public **addCluster** ( Cluster $cluster )
 
 
 Add cluster
@@ -243,7 +243,7 @@ Add cluster
 
 --
 
-public **removeCluster** ( \Mesd\SettingsBundle\Entity\Cluster $cluster )
+public **removeCluster** ( Cluster $cluster )
 
 
 Remove cluster

@@ -243,7 +243,7 @@ public **setFilePath** ( $filePath )
 
 --
 
-public **addSettingNode** ( \Mesd\SettingsBundle\Model\Definition\Mesd\SettingsBundle\Model\Definition\SettingNode $settingNode )
+public **addSettingNode** ( SettingNode $settingNode )
 
 
 Add SettingNode
@@ -297,7 +297,7 @@ Get SettingNodes
 
 --
 
-public **removeSettingNode** ( \Mesd\SettingsBundle\Model\Definition\Mesd\SettingsBundle\Model\Definition\SettingNode $settingNode )
+public **removeSettingNode** ( SettingNode $settingNode )
 
 
 Remove SettingNode

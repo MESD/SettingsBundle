@@ -54,7 +54,7 @@ Methods
 -------
 
 
-public **__construct** ( array $definition, $settingsManager )
+public **__construct** (  $definition, $settingsManager )
 
 
 

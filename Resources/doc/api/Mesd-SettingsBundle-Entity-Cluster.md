@@ -175,7 +175,7 @@ Get description
 
 --
 
-public **addSetting** ( \Mesd\SettingsBundle\Entity\Mesd\SettingsBundle\Model\Setting $setting )
+public **addSetting** ( Setting $setting )
 
 
 Add Setting
@@ -229,7 +229,7 @@ Get setting
 
 --
 
-public **removeSetting** ( \Mesd\SettingsBundle\Entity\Mesd\SettingsBundle\Model\Setting $setting )
+public **removeSetting** ( Setting $setting )
 
 
 Remove Setting
@@ -249,7 +249,7 @@ Remove Setting
 
 --
 
-public **setHive** ( \Mesd\SettingsBundle\Entity\Hive $hive )
+public **setHive** ( Hive $hive )
 
 
 Set hive

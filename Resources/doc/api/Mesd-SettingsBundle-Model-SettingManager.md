@@ -41,7 +41,7 @@ Methods
 -------
 
 
-public **__construct** ( \Symfony\Component\DependencyInjection\ContainerInterface $container )
+public **__construct** (  $container )
 
 
 

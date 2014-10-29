@@ -67,7 +67,7 @@ Methods
 -------
 
 
-public **__construct** ( $bundleStorage, $kernel, \Mesd\SettingsBundle\Model\SettingManager $settingManager )
+public **__construct** ( $bundleStorage, $kernel,  $settingManager )
 
 
 
@@ -110,7 +110,7 @@ Builds a file name based on a hive [ and cluster ].
 
 --
 
-private **buildFileNameFromDefinition** ( \Mesd\SettingsBundle\Model\Definition\SettingDefinition $SettingDefinition )
+private **buildFileNameFromDefinition** (  $SettingDefinition )
 
 
 Builds a file name based on SettingDefinition.
@@ -220,7 +220,7 @@ fully qualifed file name or false.
 
 --
 
-public **saveFile** ( \Mesd\SettingsBundle\Model\Definition\SettingDefinition $settingDefinition )
+public **saveFile** (  $settingDefinition )
 
 
 Save a SettingDefinition to a yaml file
@@ -242,7 +242,7 @@ will be validated before being saved.
 
 --
 
-private **serialize** ( \Mesd\SettingsBundle\Model\Definition\SettingDefinition $settingDefinition )
+private **serialize** (  $settingDefinition )
 
 
 Serialize a SettingDefinition
