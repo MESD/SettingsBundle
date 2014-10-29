@@ -69,8 +69,6 @@ public **setName**
 
 Set Setting Name
 
---
-
 ##### Arguments:
 **$name** string - Setting Name
 
@@ -90,8 +88,6 @@ public **setValue**
 
 Set Setting Value
 
---
-
 ##### Arguments
 **$value** mixed - Setting Value
 
@@ -108,8 +104,6 @@ Get cluster
 public **setCluster**
 
     Mesd\SettingsBundle\Model\Setting::setCluster(\Mesd\SettingsBundle\Entity\Cluster $cluster)
-
---
 
 ##### Arguments
 **$cluster** [Mesd\SettingsBundle\Entity\Cluster](Mesd-SettingsBundle-Entity-Cluster.md)
