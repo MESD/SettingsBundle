@@ -1,18 +1,34 @@
 <?php
 
+/**
+ * This file is part of the MesdSettingsBundle.
+ *
+ * (c) MESD <appdev@mesd.k12.or.us>
+ *
+ * For the full copyright and license information, please view the LICENSE.md
+ * file that was distributed with this source code.
+ */
+
 namespace Mesd\SettingsBundle\Model\Definition;
 
-
+/**
+ * Setting definition validator.
+ *
+ * @author David Cramblett <dcramble@mesd.k12.or.us>
+ */
 class DefinitionValidator
 {
+    /**
+     * Setting Definition Array
+     *
+     * @var array
+     */
     private $definition;
-    private $settingsManager;
 
 
-    public function __construct (array $definition, $settingsManager)
+    public function __construct (array $definition)
     {
-        $this->definition      = $definition;
-        $this->settingsManager = $settingsManager;
+        $this->definition = $definition;
     }
 
 

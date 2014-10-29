@@ -1,19 +1,62 @@
 <?php
 
+/**
+ * This file is part of the MesdSettingsBundle.
+ *
+ * (c) MESD <appdev@mesd.k12.or.us>
+ *
+ * For the full copyright and license information, please view the LICENSE.md
+ * file that was distributed with this source code.
+ */
+
 namespace Mesd\SettingsBundle\Model;
 
 use Mesd\SettingsBundle\Model\Definition\SettingNode;
 use Mesd\SettingsBundle\Model\Setting;
 
+/**
+ * Validates settings to ensure they match the setting definition.
+ *
+ * @author David Cramblett <dcramble@mesd.k12.or.us>
+ */
 class SettingValidator {
 
+    /**
+     * The Setting
+     *
+     * @var Setting
+     */
     private $setting;
+
+    /**
+     * The SettingNode
+     *
+     * @var SettingNode
+     */
     private $settingNode;
+
+    /**
+     * Setting validation status
+     *
+     * @var boolean
+     */
     private $valid;
+
+    /**
+     * Setting validation error messages
+     *
+     * @var string
+     */
     private $validationMessage;
 
 
-
+    /**
+     * Constructor
+     *
+     * @param SettingNode $settingNode
+     * @param Setting $setting
+     * @return self
+     */
     public function __construct(SettingNode $settingNode, Setting $setting)
     {
          $this->setting     = $setting;
@@ -22,9 +65,7 @@ class SettingValidator {
 
 
     /**
-     * Sanitize a setting
-     *
-     * Clean the setting so that it matches it's SettingNode
+     * Clean the setting value so that it matches it's SettingNode
      * definition.
      *
      * @return SettingNode
@@ -60,7 +101,7 @@ class SettingValidator {
     /**
      * Sanitize an array setting
      *
-     * @return boolean true|false
+     * @return boolean
      */
     public function sanitizeArray()
     {
@@ -73,7 +114,7 @@ class SettingValidator {
     /**
      * Sanitize a boolean setting
      *
-     * @return boolean true|false
+     * @return boolean
      */
     public function sanitizeBoolean()
     {
@@ -86,7 +127,7 @@ class SettingValidator {
     /**
      * Sanitize a float setting
      *
-     * @return boolean true|false
+     * @return boolean
      */
     public function sanitizeFloat()
     {
@@ -101,7 +142,7 @@ class SettingValidator {
     /**
      * Sanitize a string setting
      *
-     * @return boolean true|false
+     * @return boolean
      */
     public function sanitizeString()
     {
@@ -115,7 +156,7 @@ class SettingValidator {
     /**
      * Sanitize digits
      *
-     * @return boolean true|false
+     * @return boolean
      */
     protected function sanitizeDigits()
     {
@@ -133,7 +174,7 @@ class SettingValidator {
     /**
      * Sanitize length
      *
-     * @return boolean true|false
+     * @return boolean
      */
     protected function sanitizeLength()
     {
@@ -151,7 +192,7 @@ class SettingValidator {
     /**
      * Sanitize precision
      *
-     * @return boolean true|false
+     * @return boolean
      */
     protected function sanitizePrecision()
     {
@@ -169,7 +210,7 @@ class SettingValidator {
     /**
      * Sanitize data type
      *
-     * @return boolean true|false
+     * @return boolean
      */
     protected function sanitizeType()
     {
@@ -199,7 +240,7 @@ class SettingValidator {
     /**
      * Validate an array setting
      *
-     * @return boolean true|false
+     * @return boolean
      */
     protected function validateArray()
     {
@@ -214,7 +255,7 @@ class SettingValidator {
     /**
      * Validate a boolean setting
      *
-     * @return boolean true|false
+     * @return boolean
      */
     protected function validateBoolean()
     {
@@ -229,7 +270,7 @@ class SettingValidator {
     /**
      * Validate a float setting
      *
-     * @return boolean true|false
+     * @return boolean
      */
     protected function validateFloat()
     {
@@ -248,7 +289,7 @@ class SettingValidator {
     /**
      * Validate a integer setting
      *
-     * @return boolean true|false
+     * @return boolean
      */
     protected function validateInteger()
     {
@@ -265,7 +306,7 @@ class SettingValidator {
     /**
      * Validate a string setting
      *
-     * @return boolean true|false
+     * @return boolean
      */
     protected function validateString()
     {
@@ -282,7 +323,7 @@ class SettingValidator {
     /**
      * Validate digits
      *
-     * @return boolean true|false
+     * @return boolean
      */
     protected function validateDigits()
     {
@@ -307,7 +348,7 @@ class SettingValidator {
     /**
      * Validate length
      *
-     * @return boolean true|false
+     * @return boolean
      */
     protected function validateLength()
     {
@@ -332,7 +373,7 @@ class SettingValidator {
     /**
      * Validate precision
      *
-     * @return boolean true|false
+     * @return boolean
      */
     protected function validatePrecision()
     {
@@ -361,7 +402,7 @@ class SettingValidator {
     /**
      * Validate data type
      *
-     * @return boolean true|false
+     * @return boolean
      */
     protected function validateType()
     {
