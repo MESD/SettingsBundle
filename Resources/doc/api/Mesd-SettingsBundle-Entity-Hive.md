@@ -239,7 +239,7 @@ Add cluster
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| $cluster | [Mesd\SettingsBundle\Entity\Cluster](Mesd-SettingsBundle-Entity-Cluster.md) |  |
+| $cluster | [Cluster](Mesd-SettingsBundle-Entity-Cluster.md) |  |
 
 --
 
@@ -259,7 +259,7 @@ Remove cluster
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| $cluster | [Mesd\SettingsBundle\Entity\Cluster](Mesd-SettingsBundle-Entity-Cluster.md) |  |
+| $cluster | [Cluster](Mesd-SettingsBundle-Entity-Cluster.md) |  |
 
 --
 

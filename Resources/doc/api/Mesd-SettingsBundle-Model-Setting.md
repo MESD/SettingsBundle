@@ -200,7 +200,7 @@ Set cluster
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| $cluster | [Mesd\SettingsBundle\Entity\Cluster](Mesd-SettingsBundle-Entity-Cluster.md) |  |
+| $cluster | [Cluster](Mesd-SettingsBundle-Entity-Cluster.md) |  |
 
 --
 
@@ -235,6 +235,6 @@ Set SettingNode definition
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| $settingNode | [Mesd\SettingsBundle\Model\Definition\SettingNode](Mesd-SettingsBundle-Model-Definition-SettingNode.md) |  |
+| $settingNode | [SettingNode](Mesd-SettingsBundle-Model-Definition-SettingNode.md) |  |
 
 --

@@ -265,7 +265,7 @@ Set hive
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| $hive | [Mesd\SettingsBundle\Entity\Hive](Mesd-SettingsBundle-Entity-Hive.md) |  |
+| $hive | [Hive](Mesd-SettingsBundle-Entity-Hive.md) |  |
 
 --
 
