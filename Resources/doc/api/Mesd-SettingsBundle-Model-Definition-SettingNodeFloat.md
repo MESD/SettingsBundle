@@ -1,8 +1,9 @@
-##Mesd\SettingsBundle\Model\Definition\SettingNodeFloat
+Mesd\SettingsBundle\Model\Definition\SettingNodeFloat
+---------------
 
+    
 
-
-
+    
 
 
 **Class name**: SettingNodeFloat
@@ -21,7 +22,9 @@ Properties
 ----------
 
 
-### $digits
+**$digits** 
+
+
 
     private mixed $digits
 
@@ -29,10 +32,10 @@ Properties
 
 
 
-* Visibility: **private**
+
+**$precision** 
 
 
-### $precision
 
     private mixed $precision
 
@@ -40,14 +43,12 @@ Properties
 
 
 
-* Visibility: **private**
-
 
 Methods
 -------
 
 
-### __construct
+public **__construct**
 
     mixed Mesd\SettingsBundle\Model\Definition\SettingNodeFloat::__construct($nodeAttributes)
 
@@ -55,15 +56,18 @@ Methods
 
 
 
-* Visibility: **public**
-
-
-##### Arguments
-* $nodeAttributes **mixed**
 
 
 
-### dumpToArray
+
+
+
+**Arguments**:
+**$nodeAttributes** mixed 
+
+
+
+public **dumpToArray**
 
     mixed Mesd\SettingsBundle\Model\Definition\SettingNodeFloat::dumpToArray()
 
@@ -71,12 +75,15 @@ Methods
 
 
 
-* Visibility: **public**
 
 
 
 
-### getDigits
+
+
+
+
+public **getDigits**
 
     mixed Mesd\SettingsBundle\Model\Definition\SettingNodeFloat::getDigits()
 
@@ -84,12 +91,15 @@ Methods
 
 
 
-* Visibility: **public**
 
 
 
 
-### setDigits
+
+
+
+
+public **setDigits**
 
     mixed Mesd\SettingsBundle\Model\Definition\SettingNodeFloat::setDigits($digits)
 
@@ -97,15 +107,18 @@ Methods
 
 
 
-* Visibility: **public**
-
-
-##### Arguments
-* $digits **mixed**
 
 
 
-### getPrecision
+
+
+
+**Arguments**:
+**$digits** mixed 
+
+
+
+public **getPrecision**
 
     mixed Mesd\SettingsBundle\Model\Definition\SettingNodeFloat::getPrecision()
 
@@ -113,12 +126,15 @@ Methods
 
 
 
-* Visibility: **public**
 
 
 
 
-### setPrecision
+
+
+
+
+public **setPrecision**
 
     mixed Mesd\SettingsBundle\Model\Definition\SettingNodeFloat::setPrecision($precision)
 
@@ -126,10 +142,13 @@ Methods
 
 
 
-* Visibility: **public**
 
 
-##### Arguments
-* $precision **mixed**
+
+
+
+
+**Arguments**:
+**$precision** mixed 
 
 

@@ -1,8 +1,9 @@
-##Mesd\SettingsBundle\Model\Definition\SettingNode
+Mesd\SettingsBundle\Model\Definition\SettingNode
+---------------
 
+    
 
-
-
+    
 
 
 **Class name**: SettingNode
@@ -21,7 +22,9 @@ Properties
 ----------
 
 
-### $default
+**$default** 
+
+
 
     private mixed $default
 
@@ -29,10 +32,10 @@ Properties
 
 
 
-* Visibility: **private**
+
+**$description** 
 
 
-### $description
 
     private mixed $description
 
@@ -40,10 +43,10 @@ Properties
 
 
 
-* Visibility: **private**
+
+**$format** 
 
 
-### $format
 
     private mixed $format
 
@@ -51,10 +54,10 @@ Properties
 
 
 
-* Visibility: **private**
+
+**$name** 
 
 
-### $name
 
     private mixed $name
 
@@ -62,10 +65,10 @@ Properties
 
 
 
-* Visibility: **private**
+
+**$type** 
 
 
-### $type
 
     private mixed $type
 
@@ -73,14 +76,12 @@ Properties
 
 
 
-* Visibility: **private**
-
 
 Methods
 -------
 
 
-### __construct
+public **__construct**
 
     mixed Mesd\SettingsBundle\Model\Definition\SettingNode::__construct($nodeData)
 
@@ -88,15 +89,18 @@ Methods
 
 
 
-* Visibility: **public**
-
-
-##### Arguments
-* $nodeData **mixed**
 
 
 
-### getDefault
+
+
+
+**Arguments**:
+**$nodeData** mixed 
+
+
+
+public **getDefault**
 
     mixed Mesd\SettingsBundle\Model\Definition\SettingNode::getDefault()
 
@@ -104,12 +108,15 @@ Methods
 
 
 
-* Visibility: **public**
 
 
 
 
-### setDefault
+
+
+
+
+public **setDefault**
 
     mixed Mesd\SettingsBundle\Model\Definition\SettingNode::setDefault($default)
 
@@ -117,15 +124,18 @@ Methods
 
 
 
-* Visibility: **public**
-
-
-##### Arguments
-* $default **mixed**
 
 
 
-### getDescription
+
+
+
+**Arguments**:
+**$default** mixed 
+
+
+
+public **getDescription**
 
     mixed Mesd\SettingsBundle\Model\Definition\SettingNode::getDescription()
 
@@ -133,12 +143,15 @@ Methods
 
 
 
-* Visibility: **public**
 
 
 
 
-### setDescription
+
+
+
+
+public **setDescription**
 
     mixed Mesd\SettingsBundle\Model\Definition\SettingNode::setDescription($description)
 
@@ -146,15 +159,18 @@ Methods
 
 
 
-* Visibility: **public**
-
-
-##### Arguments
-* $description **mixed**
 
 
 
-### getFormat
+
+
+
+**Arguments**:
+**$description** mixed 
+
+
+
+public **getFormat**
 
     mixed Mesd\SettingsBundle\Model\Definition\SettingNode::getFormat()
 
@@ -162,12 +178,15 @@ Methods
 
 
 
-* Visibility: **public**
 
 
 
 
-### setFormat
+
+
+
+
+public **setFormat**
 
     mixed Mesd\SettingsBundle\Model\Definition\SettingNode::setFormat($format)
 
@@ -175,15 +194,18 @@ Methods
 
 
 
-* Visibility: **public**
-
-
-##### Arguments
-* $format **mixed**
 
 
 
-### getName
+
+
+
+**Arguments**:
+**$format** mixed 
+
+
+
+public **getName**
 
     mixed Mesd\SettingsBundle\Model\Definition\SettingNode::getName()
 
@@ -191,12 +213,15 @@ Methods
 
 
 
-* Visibility: **public**
 
 
 
 
-### setName
+
+
+
+
+public **setName**
 
     mixed Mesd\SettingsBundle\Model\Definition\SettingNode::setName($name)
 
@@ -204,15 +229,18 @@ Methods
 
 
 
-* Visibility: **public**
-
-
-##### Arguments
-* $name **mixed**
 
 
 
-### getType
+
+
+
+**Arguments**:
+**$name** mixed 
+
+
+
+public **getType**
 
     mixed Mesd\SettingsBundle\Model\Definition\SettingNode::getType()
 
@@ -220,12 +248,15 @@ Methods
 
 
 
-* Visibility: **public**
 
 
 
 
-### setType
+
+
+
+
+public **setType**
 
     mixed Mesd\SettingsBundle\Model\Definition\SettingNode::setType($type)
 
@@ -233,10 +264,13 @@ Methods
 
 
 
-* Visibility: **public**
 
 
-##### Arguments
-* $type **mixed**
+
+
+
+
+**Arguments**:
+**$type** mixed 
 
 

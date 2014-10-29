@@ -1,8 +1,9 @@
-##Mesd\SettingsBundle\Model\Definition\SettingNodeBoolean
+Mesd\SettingsBundle\Model\Definition\SettingNodeBoolean
+---------------
 
+    
 
-
-
+    
 
 
 **Class name**: SettingNodeBoolean
@@ -23,7 +24,7 @@ Methods
 -------
 
 
-### __construct
+public **__construct**
 
     mixed Mesd\SettingsBundle\Model\Definition\SettingNodeBoolean::__construct($nodeAttributes)
 
@@ -31,15 +32,18 @@ Methods
 
 
 
-* Visibility: **public**
-
-
-##### Arguments
-* $nodeAttributes **mixed**
 
 
 
-### dumpToArray
+
+
+
+**Arguments**:
+**$nodeAttributes** mixed 
+
+
+
+public **dumpToArray**
 
     mixed Mesd\SettingsBundle\Model\Definition\SettingNodeBoolean::dumpToArray()
 
@@ -47,7 +51,10 @@ Methods
 
 
 
-* Visibility: **public**
+
+
+
+
 
 
 

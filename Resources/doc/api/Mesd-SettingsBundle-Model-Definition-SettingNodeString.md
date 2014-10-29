@@ -1,8 +1,9 @@
-##Mesd\SettingsBundle\Model\Definition\SettingNodeString
+Mesd\SettingsBundle\Model\Definition\SettingNodeString
+---------------
 
+    
 
-
-
+    
 
 
 **Class name**: SettingNodeString
@@ -21,7 +22,9 @@ Properties
 ----------
 
 
-### $length
+**$length** 
+
+
 
     private mixed $length
 
@@ -29,14 +32,12 @@ Properties
 
 
 
-* Visibility: **private**
-
 
 Methods
 -------
 
 
-### __construct
+public **__construct**
 
     mixed Mesd\SettingsBundle\Model\Definition\SettingNodeString::__construct($nodeAttributes)
 
@@ -44,15 +45,18 @@ Methods
 
 
 
-* Visibility: **public**
-
-
-##### Arguments
-* $nodeAttributes **mixed**
 
 
 
-### dumpToArray
+
+
+
+**Arguments**:
+**$nodeAttributes** mixed 
+
+
+
+public **dumpToArray**
 
     mixed Mesd\SettingsBundle\Model\Definition\SettingNodeString::dumpToArray()
 
@@ -60,12 +64,15 @@ Methods
 
 
 
-* Visibility: **public**
 
 
 
 
-### getLength
+
+
+
+
+public **getLength**
 
     mixed Mesd\SettingsBundle\Model\Definition\SettingNodeString::getLength()
 
@@ -73,12 +80,15 @@ Methods
 
 
 
-* Visibility: **public**
 
 
 
 
-### setLength
+
+
+
+
+public **setLength**
 
     mixed Mesd\SettingsBundle\Model\Definition\SettingNodeString::setLength($length)
 
@@ -86,10 +96,13 @@ Methods
 
 
 
-* Visibility: **public**
 
 
-##### Arguments
-* $length **mixed**
+
+
+
+
+**Arguments**:
+**$length** mixed 
 
 

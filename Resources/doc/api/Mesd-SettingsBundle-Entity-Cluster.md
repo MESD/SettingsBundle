@@ -1,8 +1,9 @@
-##Mesd\SettingsBundle\Entity\Cluster
+Mesd\SettingsBundle\Entity\Cluster
+---------------
 
-Cluster
+    Cluster
 
-
+    
 
 
 **Class name**: Cluster
@@ -21,7 +22,9 @@ Properties
 ----------
 
 
-### $id
+**$id** 
+
+
 
     private integer $id
 
@@ -29,10 +32,10 @@ Properties
 
 
 
-* Visibility: **private**
+
+**$name** 
 
 
-### $name
 
     private string $name
 
@@ -40,10 +43,10 @@ Properties
 
 
 
-* Visibility: **private**
+
+**$description** 
 
 
-### $description
 
     private string $description
 
@@ -51,10 +54,10 @@ Properties
 
 
 
-* Visibility: **private**
+
+**$setting** 
 
 
-### $setting
 
     private array $setting
 
@@ -62,10 +65,10 @@ Properties
 
 
 
-* Visibility: **private**
+
+**$hive** 
 
 
-### $hive
 
     private \Mesd\SettingsBundle\Entity\Hive $hive
 
@@ -73,14 +76,12 @@ Properties
 
 
 
-* Visibility: **private**
-
 
 Methods
 -------
 
 
-### getId
+public **getId**
 
     integer Mesd\SettingsBundle\Entity\Cluster::getId()
 
@@ -88,12 +89,15 @@ Get id
 
 
 
-* Visibility: **public**
 
 
 
 
-### setName
+
+
+
+
+public **setName**
 
     \Mesd\SettingsBundle\Entity\Cluster Mesd\SettingsBundle\Entity\Cluster::setName(string $name)
 
@@ -101,15 +105,18 @@ Set name
 
 
 
-* Visibility: **public**
-
-
-##### Arguments
-* $name **string**
 
 
 
-### getName
+
+
+
+**Arguments**:
+**$name** string 
+
+
+
+public **getName**
 
     string Mesd\SettingsBundle\Entity\Cluster::getName()
 
@@ -117,12 +124,15 @@ Get name
 
 
 
-* Visibility: **public**
 
 
 
 
-### setDescription
+
+
+
+
+public **setDescription**
 
     \Mesd\SettingsBundle\Entity\Cluster Mesd\SettingsBundle\Entity\Cluster::setDescription(string $description)
 
@@ -130,15 +140,18 @@ Set description
 
 
 
-* Visibility: **public**
-
-
-##### Arguments
-* $description **string**
 
 
 
-### getDescription
+
+
+
+**Arguments**:
+**$description** string 
+
+
+
+public **getDescription**
 
     string Mesd\SettingsBundle\Entity\Cluster::getDescription()
 
@@ -146,12 +159,15 @@ Get description
 
 
 
-* Visibility: **public**
 
 
 
 
-### addSetting
+
+
+
+
+public **addSetting**
 
     \Mesd\SettingsBundle\Entity\Cluster Mesd\SettingsBundle\Entity\Cluster::addSetting(\Mesd\SettingsBundle\Entity\Mesd\SettingsBundle\Model\Setting $setting)
 
@@ -159,15 +175,18 @@ Add Setting
 
 
 
-* Visibility: **public**
-
-
-##### Arguments
-* $setting **Mesd\SettingsBundle\Entity\Mesd\SettingsBundle\Model\Setting**
 
 
 
-### getSettingArray
+
+
+
+**Arguments**:
+**$setting** Mesd\SettingsBundle\Entity\Mesd\SettingsBundle\Model\Setting 
+
+
+
+public **getSettingArray**
 
     array Mesd\SettingsBundle\Entity\Cluster::getSettingArray()
 
@@ -175,12 +194,15 @@ Get setting Array
 
 
 
-* Visibility: **public**
 
 
 
 
-### getSetting
+
+
+
+
+public **getSetting**
 
     \Mesd\SettingsBundle\Entity\Mesd\SettingsBundle\Model\Setting Mesd\SettingsBundle\Entity\Cluster::getSetting($settingName)
 
@@ -188,15 +210,18 @@ Get setting
 
 
 
-* Visibility: **public**
-
-
-##### Arguments
-* $settingName **mixed**
 
 
 
-### removeSetting
+
+
+
+**Arguments**:
+**$settingName** mixed 
+
+
+
+public **removeSetting**
 
     \Mesd\SettingsBundle\Entity\Cluster Mesd\SettingsBundle\Entity\Cluster::removeSetting(\Mesd\SettingsBundle\Entity\Mesd\SettingsBundle\Model\Setting $setting)
 
@@ -204,15 +229,18 @@ Remove Setting
 
 
 
-* Visibility: **public**
-
-
-##### Arguments
-* $setting **Mesd\SettingsBundle\Entity\Mesd\SettingsBundle\Model\Setting**
 
 
 
-### setHive
+
+
+
+**Arguments**:
+**$setting** Mesd\SettingsBundle\Entity\Mesd\SettingsBundle\Model\Setting 
+
+
+
+public **setHive**
 
     \Mesd\SettingsBundle\Entity\Cluster Mesd\SettingsBundle\Entity\Cluster::setHive(\Mesd\SettingsBundle\Entity\Hive $hive)
 
@@ -220,15 +248,18 @@ Set hive
 
 
 
-* Visibility: **public**
-
-
-##### Arguments
-* $hive **[Mesd\SettingsBundle\Entity\Hive](Mesd-SettingsBundle-Entity-Hive.md)**
 
 
 
-### getHive
+
+
+
+**Arguments**:
+**$hive** [Mesd\SettingsBundle\Entity\Hive](Mesd-SettingsBundle-Entity-Hive.md) 
+
+
+
+public **getHive**
 
     \Mesd\SettingsBundle\Entity\Hive Mesd\SettingsBundle\Entity\Cluster::getHive()
 
@@ -236,7 +267,10 @@ Get hive
 
 
 
-* Visibility: **public**
+
+
+
+
 
 
 

@@ -1,8 +1,9 @@
-##Mesd\SettingsBundle\Model\Definition\SettingDefinition
+Mesd\SettingsBundle\Model\Definition\SettingDefinition
+---------------
 
+    
 
-
-
+    
 
 
 **Class name**: SettingDefinition
@@ -21,7 +22,9 @@ Properties
 ----------
 
 
-### $key
+**$key** 
+
+
 
     private mixed $key
 
@@ -29,10 +32,10 @@ Properties
 
 
 
-* Visibility: **private**
+
+**$hive** 
 
 
-### $hive
 
     private mixed $hive
 
@@ -40,10 +43,10 @@ Properties
 
 
 
-* Visibility: **private**
+
+**$type** 
 
 
-### $type
 
     private mixed $type
 
@@ -51,10 +54,10 @@ Properties
 
 
 
-* Visibility: **private**
+
+**$filePath** 
 
 
-### $filePath
 
     private mixed $filePath
 
@@ -62,10 +65,10 @@ Properties
 
 
 
-* Visibility: **private**
+
+**$settingNode** 
 
 
-### $settingNode
 
     private mixed $settingNode
 
@@ -73,14 +76,12 @@ Properties
 
 
 
-* Visibility: **private**
-
 
 Methods
 -------
 
 
-### __construct
+public **__construct**
 
     mixed Mesd\SettingsBundle\Model\Definition\SettingDefinition::__construct()
 
@@ -88,12 +89,15 @@ Methods
 
 
 
-* Visibility: **public**
 
 
 
 
-### getKey
+
+
+
+
+public **getKey**
 
     mixed Mesd\SettingsBundle\Model\Definition\SettingDefinition::getKey()
 
@@ -101,12 +105,15 @@ Methods
 
 
 
-* Visibility: **public**
 
 
 
 
-### setKey
+
+
+
+
+public **setKey**
 
     mixed Mesd\SettingsBundle\Model\Definition\SettingDefinition::setKey($key)
 
@@ -114,15 +121,18 @@ Methods
 
 
 
-* Visibility: **public**
-
-
-##### Arguments
-* $key **mixed**
 
 
 
-### getHive
+
+
+
+**Arguments**:
+**$key** mixed 
+
+
+
+public **getHive**
 
     mixed Mesd\SettingsBundle\Model\Definition\SettingDefinition::getHive()
 
@@ -130,12 +140,15 @@ Methods
 
 
 
-* Visibility: **public**
 
 
 
 
-### setHive
+
+
+
+
+public **setHive**
 
     mixed Mesd\SettingsBundle\Model\Definition\SettingDefinition::setHive($hive)
 
@@ -143,15 +156,18 @@ Methods
 
 
 
-* Visibility: **public**
-
-
-##### Arguments
-* $hive **mixed**
 
 
 
-### getType
+
+
+
+**Arguments**:
+**$hive** mixed 
+
+
+
+public **getType**
 
     mixed Mesd\SettingsBundle\Model\Definition\SettingDefinition::getType()
 
@@ -159,12 +175,15 @@ Methods
 
 
 
-* Visibility: **public**
 
 
 
 
-### setType
+
+
+
+
+public **setType**
 
     mixed Mesd\SettingsBundle\Model\Definition\SettingDefinition::setType($type)
 
@@ -172,15 +191,18 @@ Methods
 
 
 
-* Visibility: **public**
-
-
-##### Arguments
-* $type **mixed**
 
 
 
-### getFilePath
+
+
+
+**Arguments**:
+**$type** mixed 
+
+
+
+public **getFilePath**
 
     mixed Mesd\SettingsBundle\Model\Definition\SettingDefinition::getFilePath()
 
@@ -188,12 +210,15 @@ Methods
 
 
 
-* Visibility: **public**
 
 
 
 
-### setFilePath
+
+
+
+
+public **setFilePath**
 
     mixed Mesd\SettingsBundle\Model\Definition\SettingDefinition::setFilePath($filePath)
 
@@ -201,15 +226,18 @@ Methods
 
 
 
-* Visibility: **public**
-
-
-##### Arguments
-* $filePath **mixed**
 
 
 
-### addSettingNode
+
+
+
+**Arguments**:
+**$filePath** mixed 
+
+
+
+public **addSettingNode**
 
     \Mesd\SettingsBundle\Model\Definition\SettingDefinition Mesd\SettingsBundle\Model\Definition\SettingDefinition::addSettingNode(\Mesd\SettingsBundle\Model\Definition\Mesd\SettingsBundle\Model\Definition\SettingNode $settingNode)
 
@@ -217,15 +245,18 @@ Add SettingNode
 
 
 
-* Visibility: **public**
-
-
-##### Arguments
-* $settingNode **Mesd\SettingsBundle\Model\Definition\Mesd\SettingsBundle\Model\Definition\SettingNode**
 
 
 
-### getSettingNode
+
+
+
+**Arguments**:
+**$settingNode** Mesd\SettingsBundle\Model\Definition\Mesd\SettingsBundle\Model\Definition\SettingNode 
+
+
+
+public **getSettingNode**
 
     \Mesd\SettingsBundle\Model\Definition\Mesd\SettingsBundle\Model\Definition\SettingNode Mesd\SettingsBundle\Model\Definition\SettingDefinition::getSettingNode(string $name)
 
@@ -233,15 +264,18 @@ Get SettingNode
 
 
 
-* Visibility: **public**
-
-
-##### Arguments
-* $name **string**
 
 
 
-### getSettingNodes
+
+
+
+**Arguments**:
+**$name** string 
+
+
+
+public **getSettingNodes**
 
     \Mesd\SettingsBundle\Model\Definition\Doctrine\Common\Collections\ArrayCollection() Mesd\SettingsBundle\Model\Definition\SettingDefinition::getSettingNodes()
 
@@ -249,12 +283,15 @@ Get SettingNodes
 
 
 
-* Visibility: **public**
 
 
 
 
-### removeSettingNode
+
+
+
+
+public **removeSettingNode**
 
     \Mesd\SettingsBundle\Model\Definition\SettingDefinition Mesd\SettingsBundle\Model\Definition\SettingDefinition::removeSettingNode(\Mesd\SettingsBundle\Model\Definition\Mesd\SettingsBundle\Model\Definition\SettingNode $settingNode)
 
@@ -262,15 +299,18 @@ Remove SettingNode
 
 
 
-* Visibility: **public**
-
-
-##### Arguments
-* $settingNode **Mesd\SettingsBundle\Model\Definition\Mesd\SettingsBundle\Model\Definition\SettingNode**
 
 
 
-### removeSettingNodeByName
+
+
+
+**Arguments**:
+**$settingNode** Mesd\SettingsBundle\Model\Definition\Mesd\SettingsBundle\Model\Definition\SettingNode 
+
+
+
+public **removeSettingNodeByName**
 
     \Mesd\SettingsBundle\Model\Definition\SettingDefinition Mesd\SettingsBundle\Model\Definition\SettingDefinition::removeSettingNodeByName(string $name)
 
@@ -278,10 +318,13 @@ Remove SettingNode by name
 
 
 
-* Visibility: **public**
 
 
-##### Arguments
-* $name **string**
+
+
+
+
+**Arguments**:
+**$name** string 
 
 

@@ -1,8 +1,9 @@
-##Mesd\SettingsBundle\Entity\Hive
+Mesd\SettingsBundle\Entity\Hive
+---------------
 
-Hive
+    Hive
 
-
+    
 
 
 **Class name**: Hive
@@ -21,7 +22,9 @@ Properties
 ----------
 
 
-### $id
+**$id** 
+
+
 
     private integer $id
 
@@ -29,10 +32,10 @@ Properties
 
 
 
-* Visibility: **private**
+
+**$name** 
 
 
-### $name
 
     private string $name
 
@@ -40,10 +43,10 @@ Properties
 
 
 
-* Visibility: **private**
+
+**$description** 
 
 
-### $description
 
     private string $description
 
@@ -51,10 +54,10 @@ Properties
 
 
 
-* Visibility: **private**
+
+**$definedAtHive** 
 
 
-### $definedAtHive
 
     private boolean $definedAtHive
 
@@ -62,10 +65,10 @@ Properties
 
 
 
-* Visibility: **private**
+
+**$cluster** 
 
 
-### $cluster
 
     private \Doctrine\Common\Collections\Collection $cluster
 
@@ -73,14 +76,12 @@ Properties
 
 
 
-* Visibility: **private**
-
 
 Methods
 -------
 
 
-### __construct
+public **__construct**
 
     mixed Mesd\SettingsBundle\Entity\Hive::__construct()
 
@@ -88,12 +89,15 @@ Constructor
 
 
 
-* Visibility: **public**
 
 
 
 
-### getId
+
+
+
+
+public **getId**
 
     integer Mesd\SettingsBundle\Entity\Hive::getId()
 
@@ -101,12 +105,15 @@ Get id
 
 
 
-* Visibility: **public**
 
 
 
 
-### setName
+
+
+
+
+public **setName**
 
     \Mesd\SettingsBundle\Entity\Hive Mesd\SettingsBundle\Entity\Hive::setName(string $name)
 
@@ -114,15 +121,18 @@ Set name
 
 
 
-* Visibility: **public**
-
-
-##### Arguments
-* $name **string**
 
 
 
-### getName
+
+
+
+**Arguments**:
+**$name** string 
+
+
+
+public **getName**
 
     string Mesd\SettingsBundle\Entity\Hive::getName()
 
@@ -130,12 +140,15 @@ Get name
 
 
 
-* Visibility: **public**
 
 
 
 
-### setDescription
+
+
+
+
+public **setDescription**
 
     \Mesd\SettingsBundle\Entity\Hive Mesd\SettingsBundle\Entity\Hive::setDescription(string $description)
 
@@ -143,15 +156,18 @@ Set description
 
 
 
-* Visibility: **public**
-
-
-##### Arguments
-* $description **string**
 
 
 
-### getDescription
+
+
+
+**Arguments**:
+**$description** string 
+
+
+
+public **getDescription**
 
     string Mesd\SettingsBundle\Entity\Hive::getDescription()
 
@@ -159,12 +175,15 @@ Get description
 
 
 
-* Visibility: **public**
 
 
 
 
-### setDefinedAtHive
+
+
+
+
+public **setDefinedAtHive**
 
     \Mesd\SettingsBundle\Entity\Hive Mesd\SettingsBundle\Entity\Hive::setDefinedAtHive(boolean $definedAtHive)
 
@@ -172,15 +191,18 @@ Set definedAtHive
 
 
 
-* Visibility: **public**
-
-
-##### Arguments
-* $definedAtHive **boolean**
 
 
 
-### getDefinedAtHive
+
+
+
+**Arguments**:
+**$definedAtHive** boolean 
+
+
+
+public **getDefinedAtHive**
 
     boolean Mesd\SettingsBundle\Entity\Hive::getDefinedAtHive()
 
@@ -188,12 +210,15 @@ Get definedAtHive
 
 
 
-* Visibility: **public**
 
 
 
 
-### addCluster
+
+
+
+
+public **addCluster**
 
     \Mesd\SettingsBundle\Entity\Hive Mesd\SettingsBundle\Entity\Hive::addCluster(\Mesd\SettingsBundle\Entity\Cluster $cluster)
 
@@ -201,15 +226,18 @@ Add cluster
 
 
 
-* Visibility: **public**
-
-
-##### Arguments
-* $cluster **[Mesd\SettingsBundle\Entity\Cluster](Mesd-SettingsBundle-Entity-Cluster.md)**
 
 
 
-### removeCluster
+
+
+
+**Arguments**:
+**$cluster** [Mesd\SettingsBundle\Entity\Cluster](Mesd-SettingsBundle-Entity-Cluster.md) 
+
+
+
+public **removeCluster**
 
     mixed Mesd\SettingsBundle\Entity\Hive::removeCluster(\Mesd\SettingsBundle\Entity\Cluster $cluster)
 
@@ -217,15 +245,18 @@ Remove cluster
 
 
 
-* Visibility: **public**
-
-
-##### Arguments
-* $cluster **[Mesd\SettingsBundle\Entity\Cluster](Mesd-SettingsBundle-Entity-Cluster.md)**
 
 
 
-### getCluster
+
+
+
+**Arguments**:
+**$cluster** [Mesd\SettingsBundle\Entity\Cluster](Mesd-SettingsBundle-Entity-Cluster.md) 
+
+
+
+public **getCluster**
 
     \Doctrine\Common\Collections\Collection Mesd\SettingsBundle\Entity\Hive::getCluster()
 
@@ -233,7 +264,10 @@ Get cluster
 
 
 
-* Visibility: **public**
+
+
+
+
 
 
 

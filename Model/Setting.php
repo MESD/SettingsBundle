@@ -158,7 +158,7 @@ class Setting {
      * Get the SettingNode definition, if it has been loaded. See
      * isSettingNodeLoaded() for more details.
      *
-     * @return SettingNode|Excption
+     * @return SettingNode|Exception
      */
     public function getSettingNode()
     {

@@ -1,8 +1,9 @@
-##Mesd\SettingsBundle\Model\Definition\DefinitionValidator
+Mesd\SettingsBundle\Model\Definition\DefinitionValidator
+---------------
 
+    
 
-
-
+    
 
 
 **Class name**: DefinitionValidator
@@ -21,7 +22,9 @@ Properties
 ----------
 
 
-### $definition
+**$definition** 
+
+
 
     private mixed $definition
 
@@ -29,10 +32,10 @@ Properties
 
 
 
-* Visibility: **private**
+
+**$settingsManager** 
 
 
-### $settingsManager
 
     private mixed $settingsManager
 
@@ -40,14 +43,12 @@ Properties
 
 
 
-* Visibility: **private**
-
 
 Methods
 -------
 
 
-### __construct
+public **__construct**
 
     mixed Mesd\SettingsBundle\Model\Definition\DefinitionValidator::__construct(array $definition, $settingsManager)
 
@@ -55,16 +56,19 @@ Methods
 
 
 
-* Visibility: **public**
-
-
-##### Arguments
-* $definition **array**
-* $settingsManager **mixed**
 
 
 
-### validate
+
+
+
+**Arguments**:
+**$definition** array 
+**$settingsManager** mixed 
+
+
+
+public **validate**
 
     mixed Mesd\SettingsBundle\Model\Definition\DefinitionValidator::validate()
 
@@ -72,12 +76,15 @@ Methods
 
 
 
-* Visibility: **public**
 
 
 
 
-### validateStructure
+
+
+
+
+private **validateStructure**
 
     mixed Mesd\SettingsBundle\Model\Definition\DefinitionValidator::validateStructure()
 
@@ -85,12 +92,15 @@ Methods
 
 
 
-* Visibility: **private**
 
 
 
 
-### validateNodes
+
+
+
+
+private **validateNodes**
 
     mixed Mesd\SettingsBundle\Model\Definition\DefinitionValidator::validateNodes()
 
@@ -98,12 +108,15 @@ Methods
 
 
 
-* Visibility: **private**
 
 
 
 
-### validateNodeArray
+
+
+
+
+private **validateNodeArray**
 
     mixed Mesd\SettingsBundle\Model\Definition\DefinitionValidator::validateNodeArray($nodeName, $nodeAttributes, $key)
 
@@ -111,17 +124,20 @@ Methods
 
 
 
-* Visibility: **private**
-
-
-##### Arguments
-* $nodeName **mixed**
-* $nodeAttributes **mixed**
-* $key **mixed**
 
 
 
-### validateNodeBoolean
+
+
+
+**Arguments**:
+**$nodeName** mixed 
+**$nodeAttributes** mixed 
+**$key** mixed 
+
+
+
+private **validateNodeBoolean**
 
     mixed Mesd\SettingsBundle\Model\Definition\DefinitionValidator::validateNodeBoolean($nodeName, $nodeAttributes, $key)
 
@@ -129,17 +145,20 @@ Methods
 
 
 
-* Visibility: **private**
-
-
-##### Arguments
-* $nodeName **mixed**
-* $nodeAttributes **mixed**
-* $key **mixed**
 
 
 
-### validateNodeFloat
+
+
+
+**Arguments**:
+**$nodeName** mixed 
+**$nodeAttributes** mixed 
+**$key** mixed 
+
+
+
+private **validateNodeFloat**
 
     mixed Mesd\SettingsBundle\Model\Definition\DefinitionValidator::validateNodeFloat($nodeName, $nodeAttributes, $key)
 
@@ -147,17 +166,20 @@ Methods
 
 
 
-* Visibility: **private**
-
-
-##### Arguments
-* $nodeName **mixed**
-* $nodeAttributes **mixed**
-* $key **mixed**
 
 
 
-### validateNodeInteger
+
+
+
+**Arguments**:
+**$nodeName** mixed 
+**$nodeAttributes** mixed 
+**$key** mixed 
+
+
+
+private **validateNodeInteger**
 
     mixed Mesd\SettingsBundle\Model\Definition\DefinitionValidator::validateNodeInteger($nodeName, $nodeAttributes, $key)
 
@@ -165,17 +187,20 @@ Methods
 
 
 
-* Visibility: **private**
-
-
-##### Arguments
-* $nodeName **mixed**
-* $nodeAttributes **mixed**
-* $key **mixed**
 
 
 
-### validateNodeString
+
+
+
+**Arguments**:
+**$nodeName** mixed 
+**$nodeAttributes** mixed 
+**$key** mixed 
+
+
+
+private **validateNodeString**
 
     mixed Mesd\SettingsBundle\Model\Definition\DefinitionValidator::validateNodeString($nodeName, $nodeAttributes, $key)
 
@@ -183,12 +208,15 @@ Methods
 
 
 
-* Visibility: **private**
 
 
-##### Arguments
-* $nodeName **mixed**
-* $nodeAttributes **mixed**
-* $key **mixed**
+
+
+
+
+**Arguments**:
+**$nodeName** mixed 
+**$nodeAttributes** mixed 
+**$key** mixed 
 
 

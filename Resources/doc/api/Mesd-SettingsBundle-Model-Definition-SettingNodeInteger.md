@@ -1,8 +1,9 @@
-##Mesd\SettingsBundle\Model\Definition\SettingNodeInteger
+Mesd\SettingsBundle\Model\Definition\SettingNodeInteger
+---------------
 
+    
 
-
-
+    
 
 
 **Class name**: SettingNodeInteger
@@ -21,7 +22,9 @@ Properties
 ----------
 
 
-### $digits
+**$digits** 
+
+
 
     private mixed $digits
 
@@ -29,14 +32,12 @@ Properties
 
 
 
-* Visibility: **private**
-
 
 Methods
 -------
 
 
-### __construct
+public **__construct**
 
     mixed Mesd\SettingsBundle\Model\Definition\SettingNodeInteger::__construct($nodeAttributes)
 
@@ -44,15 +45,18 @@ Methods
 
 
 
-* Visibility: **public**
-
-
-##### Arguments
-* $nodeAttributes **mixed**
 
 
 
-### dumpToArray
+
+
+
+**Arguments**:
+**$nodeAttributes** mixed 
+
+
+
+public **dumpToArray**
 
     mixed Mesd\SettingsBundle\Model\Definition\SettingNodeInteger::dumpToArray()
 
@@ -60,12 +64,15 @@ Methods
 
 
 
-* Visibility: **public**
 
 
 
 
-### getDigits
+
+
+
+
+public **getDigits**
 
     mixed Mesd\SettingsBundle\Model\Definition\SettingNodeInteger::getDigits()
 
@@ -73,12 +80,15 @@ Methods
 
 
 
-* Visibility: **public**
 
 
 
 
-### setDigits
+
+
+
+
+public **setDigits**
 
     mixed Mesd\SettingsBundle\Model\Definition\SettingNodeInteger::setDigits($digits)
 
@@ -86,10 +96,13 @@ Methods
 
 
 
-* Visibility: **public**
 
 
-##### Arguments
-* $digits **mixed**
+
+
+
+
+**Arguments**:
+**$digits** mixed 
 
 

@@ -1,8 +1,9 @@
-##Mesd\SettingsBundle\Model\Definition\SettingNodeArray
+Mesd\SettingsBundle\Model\Definition\SettingNodeArray
+---------------
 
+    
 
-
-
+    
 
 
 **Class name**: SettingNodeArray
@@ -21,7 +22,9 @@ Properties
 ----------
 
 
-### $prototype
+**$prototype** 
+
+
 
     private mixed $prototype
 
@@ -29,10 +32,10 @@ Properties
 
 
 
-* Visibility: **private**
+
+**$node** 
 
 
-### $node
 
     private mixed $node
 
@@ -40,14 +43,12 @@ Properties
 
 
 
-* Visibility: **private**
-
 
 Methods
 -------
 
 
-### __construct
+public **__construct**
 
     mixed Mesd\SettingsBundle\Model\Definition\SettingNodeArray::__construct($nodeAttributes)
 
@@ -55,15 +56,18 @@ Methods
 
 
 
-* Visibility: **public**
-
-
-##### Arguments
-* $nodeAttributes **mixed**
 
 
 
-### dumpToArray
+
+
+
+**Arguments**:
+**$nodeAttributes** mixed 
+
+
+
+public **dumpToArray**
 
     mixed Mesd\SettingsBundle\Model\Definition\SettingNodeArray::dumpToArray()
 
@@ -71,12 +75,15 @@ Methods
 
 
 
-* Visibility: **public**
 
 
 
 
-### getPrototype
+
+
+
+
+public **getPrototype**
 
     mixed Mesd\SettingsBundle\Model\Definition\SettingNodeArray::getPrototype()
 
@@ -84,12 +91,15 @@ Methods
 
 
 
-* Visibility: **public**
 
 
 
 
-### setPrototype
+
+
+
+
+public **setPrototype**
 
     mixed Mesd\SettingsBundle\Model\Definition\SettingNodeArray::setPrototype($prototype)
 
@@ -97,15 +107,18 @@ Methods
 
 
 
-* Visibility: **public**
-
-
-##### Arguments
-* $prototype **mixed**
 
 
 
-### getNode
+
+
+
+**Arguments**:
+**$prototype** mixed 
+
+
+
+public **getNode**
 
     mixed Mesd\SettingsBundle\Model\Definition\SettingNodeArray::getNode()
 
@@ -113,12 +126,15 @@ Methods
 
 
 
-* Visibility: **public**
 
 
 
 
-### setNode
+
+
+
+
+public **setNode**
 
     mixed Mesd\SettingsBundle\Model\Definition\SettingNodeArray::setNode($node)
 
@@ -126,10 +142,13 @@ Methods
 
 
 
-* Visibility: **public**
 
 
-##### Arguments
-* $node **mixed**
+
+
+
+
+**Arguments**:
+**$node** mixed 
 
 
