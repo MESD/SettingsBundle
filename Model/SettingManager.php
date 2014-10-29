@@ -43,7 +43,8 @@ class SettingManager {
     /**
      * Constructor
      *
-     * @param Container $container
+     * @param ObjectManager $objectManager
+     * @param DefinitionManager $definitionManager
      * @return self
      */
     public function __construct(ObjectManager $objectManager, DefinitionManager $definitionManager)

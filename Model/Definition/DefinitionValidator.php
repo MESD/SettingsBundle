@@ -26,12 +26,22 @@ class DefinitionValidator
     private $definition;
 
 
+    /**
+     * Constructor
+     *
+     * @param array $definition
+     * @return self
+     */
     public function __construct (array $definition)
     {
         $this->definition = $definition;
     }
 
 
+    /**
+     * Validate setting definition or thorw Exception
+     *
+     */
     public function validate()
     {
         $this->validateStructure();
@@ -39,6 +49,10 @@ class DefinitionValidator
     }
 
 
+    /**
+     * Validate setting definition file structure
+     *
+     */
     private function validateStructure()
     {
         // Validate key element
@@ -110,6 +124,10 @@ class DefinitionValidator
     }
 
 
+    /**
+     * Validate setting definition nodes
+     *
+     */
     private function validateNodes()
     {
         $key = array_keys($this->definition)[0];
@@ -146,6 +164,13 @@ class DefinitionValidator
     }
 
 
+    /**
+     * Validate setting definition array node
+     *
+     * @param string $nodeName
+     * @param array  $nodeAttributes
+     * @param string $key
+     */
     private function validateNodeArray($nodeName, $nodeAttributes, $key)
     {
         // Is prototype set?
@@ -307,6 +332,13 @@ class DefinitionValidator
     }
 
 
+    /**
+     * Validate setting definition boolean node
+     *
+     * @param string $nodeName
+     * @param array  $nodeAttributes
+     * @param string $key
+     */
     private function validateNodeBoolean($nodeName, $nodeAttributes, $key)
     {
         // If default is set, ensure it's type is boolean
@@ -341,6 +373,13 @@ class DefinitionValidator
     }
 
 
+    /**
+     * Validate setting definition float node
+     *
+     * @param string $nodeName
+     * @param array  $nodeAttributes
+     * @param string $key
+     */
     private function validateNodeFloat($nodeName, $nodeAttributes, $key)
     {
         // Is digits set and valid?
@@ -454,6 +493,13 @@ class DefinitionValidator
     }
 
 
+    /**
+     * Validate setting definition integer node
+     *
+     * @param string $nodeName
+     * @param array  $nodeAttributes
+     * @param string $key
+     */
     private function validateNodeInteger($nodeName, $nodeAttributes, $key)
     {
         // Is digits set and valid?
@@ -525,6 +571,13 @@ class DefinitionValidator
     }
 
 
+    /**
+     * Validate setting definition string node
+     *
+     * @param string $nodeName
+     * @param array  $nodeAttributes
+     * @param string $key
+     */
     private function validateNodeString($nodeName, $nodeAttributes, $key)
     {
         // Is length set and valid?
