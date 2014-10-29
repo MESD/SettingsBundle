@@ -50,6 +50,7 @@ public **__construct** ( $nodeAttributes )
 
 
 **Parameters**:
+
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $nodeAttributes | mixed |  |
@@ -95,6 +96,7 @@ public **setLength** ( $length )
 
 
 **Parameters**:
+
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $length | mixed |  |

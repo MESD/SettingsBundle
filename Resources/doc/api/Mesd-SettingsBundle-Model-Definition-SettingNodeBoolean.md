@@ -37,6 +37,7 @@ public **__construct** ( $nodeAttributes )
 
 
 **Parameters**:
+
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $nodeAttributes | mixed |  |

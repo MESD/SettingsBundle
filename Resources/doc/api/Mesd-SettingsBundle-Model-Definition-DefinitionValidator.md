@@ -61,6 +61,7 @@ public **__construct** ( array $definition, $settingsManager )
 
 
 **Parameters**:
+
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $definition | array |  |
@@ -121,6 +122,7 @@ private **validateNodeArray** ( $nodeName, $nodeAttributes, $key )
 
 
 **Parameters**:
+
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $nodeName | mixed |  |
@@ -144,6 +146,7 @@ private **validateNodeBoolean** ( $nodeName, $nodeAttributes, $key )
 
 
 **Parameters**:
+
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $nodeName | mixed |  |
@@ -167,6 +170,7 @@ private **validateNodeFloat** ( $nodeName, $nodeAttributes, $key )
 
 
 **Parameters**:
+
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $nodeName | mixed |  |
@@ -190,6 +194,7 @@ private **validateNodeInteger** ( $nodeName, $nodeAttributes, $key )
 
 
 **Parameters**:
+
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $nodeName | mixed |  |
@@ -213,6 +218,7 @@ private **validateNodeString** ( $nodeName, $nodeAttributes, $key )
 
 
 **Parameters**:
+
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $nodeName | mixed |  |

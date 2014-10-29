@@ -50,6 +50,7 @@ public **__construct** ( \Symfony\Component\DependencyInjection\ContainerInterfa
 
 
 **Parameters**:
+
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $container | Symfony\Component\DependencyInjection\ContainerInterface |  |
@@ -70,6 +71,7 @@ in the database.
 
 
 **Parameters**:
+
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $hiveName | string |  |
@@ -91,6 +93,7 @@ Creates a new cluster in database
 
 
 **Parameters**:
+
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $hiveName | string |  |
@@ -114,6 +117,7 @@ Creates a new hive in database
 
 
 **Parameters**:
+
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $hiveName | string |  |
@@ -137,6 +141,7 @@ Delete the specified cluster or throw Exception.
 
 
 **Parameters**:
+
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $hiveName | string |  |
@@ -158,6 +163,7 @@ Delete the specified hive or throw Exception.
 
 
 **Parameters**:
+
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $hiveName | string |  |
@@ -177,6 +183,7 @@ Delete all the clusters attched to specific hive.
 
 
 **Parameters**:
+
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $hiveName | string |  |
@@ -197,6 +204,7 @@ in the database.
 
 
 **Parameters**:
+
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $hiveName | string |  |
@@ -217,6 +225,7 @@ exisiting in the database.
 
 
 **Parameters**:
+
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $hiveName | string |  |
@@ -236,6 +245,7 @@ Load the specified cluster or throw Exception.
 
 
 **Parameters**:
+
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $hiveName | string |  |
@@ -257,6 +267,7 @@ Load the specified hive or throw Exception.
 
 
 **Parameters**:
+
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $hiveName | string |  |
@@ -281,6 +292,7 @@ is needed.
 
 
 **Parameters**:
+
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $hiveName | string |  |
@@ -306,6 +318,7 @@ Load the specified setting value or throw Exception.
 
 
 **Parameters**:
+
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $hiveName | string |  |
@@ -329,6 +342,7 @@ Save the specified setting object or throw Exception.
 
 
 **Parameters**:
+
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $setting | mixed |  |
@@ -348,6 +362,7 @@ Save the specified setting value or throw Exception.
 
 
 **Parameters**:
+
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $hiveName | string |  |

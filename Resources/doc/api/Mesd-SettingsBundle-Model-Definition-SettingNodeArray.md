@@ -61,6 +61,7 @@ public **__construct** ( $nodeAttributes )
 
 
 **Parameters**:
+
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $nodeAttributes | mixed |  |
@@ -106,6 +107,7 @@ public **setPrototype** ( $prototype )
 
 
 **Parameters**:
+
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $prototype | mixed |  |
@@ -138,6 +140,7 @@ public **setNode** ( $node )
 
 
 **Parameters**:
+
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $node | mixed |  |

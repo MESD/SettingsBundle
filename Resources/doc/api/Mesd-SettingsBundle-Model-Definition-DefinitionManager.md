@@ -72,6 +72,7 @@ public **__construct** ( $bundleStorage, $kernel, \Mesd\SettingsBundle\Model\Set
 
 
 **Parameters**:
+
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $bundleStorage | mixed |  |
@@ -95,6 +96,7 @@ Builds a file name based on a hive [ and cluster ].
 
 
 **Parameters**:
+
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $hiveName | string |  |
@@ -116,6 +118,7 @@ Builds a file name based on SettingDefinition.
 
 
 **Parameters**:
+
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $SettingDefinition | [Mesd\SettingsBundle\Model\Definition\SettingDefinition](Mesd-SettingsBundle-Model-Definition-SettingDefinition.md) |  |
@@ -137,6 +140,7 @@ file will be created in the saveFile() method.
 
 
 **Parameters**:
+
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $fileName | string |  |
@@ -158,6 +162,7 @@ Determine if a given file exists
 
 
 **Parameters**:
+
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $file | string |  |
@@ -178,6 +183,7 @@ parses the yaml content, and returns a SettingDefinition object.
 
 
 **Parameters**:
+
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $hiveName | string |  |
@@ -203,6 +209,7 @@ fully qualifed file name or false.
 
 
 **Parameters**:
+
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $fileName | string |  |
@@ -226,6 +233,7 @@ will be validated before being saved.
 
 
 **Parameters**:
+
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $settingDefinition | [Mesd\SettingsBundle\Model\Definition\SettingDefinition](Mesd-SettingsBundle-Model-Definition-SettingDefinition.md) |  |
@@ -246,6 +254,7 @@ a yaml file.
 
 
 **Parameters**:
+
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $settingDefinition | [Mesd\SettingsBundle\Model\Definition\SettingDefinition](Mesd-SettingsBundle-Model-Definition-SettingDefinition.md) |  |
@@ -266,6 +275,7 @@ content, and converts the data into a SettingDefinition.
 
 
 **Parameters**:
+
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $fileContents | string |  |

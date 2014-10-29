@@ -117,6 +117,7 @@ Set Setting Name
 
 
 **Parameters**:
+
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $name | string | &lt;p&gt;Setting Name&lt;/p&gt; |
@@ -149,6 +150,7 @@ Set Setting Value
 
 
 **Parameters**:
+
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $value | mixed | &lt;p&gt;Setting Value&lt;/p&gt; |
@@ -181,6 +183,7 @@ Set cluster
 
 
 **Parameters**:
+
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $cluster | [Mesd\SettingsBundle\Entity\Cluster](Mesd-SettingsBundle-Entity-Cluster.md) |  |
@@ -214,6 +217,7 @@ Set SettingNode definition
 
 
 **Parameters**:
+
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $settingNode | [Mesd\SettingsBundle\Model\Definition\SettingNode](Mesd-SettingsBundle-Model-Definition-SettingNode.md) |  |

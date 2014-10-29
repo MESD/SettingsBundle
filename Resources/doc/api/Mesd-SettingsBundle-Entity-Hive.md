@@ -120,6 +120,7 @@ Set name
 
 
 **Parameters**:
+
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $name | string |  |
@@ -152,6 +153,7 @@ Set description
 
 
 **Parameters**:
+
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $description | string |  |
@@ -184,6 +186,7 @@ Set definedAtHive
 
 
 **Parameters**:
+
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $definedAtHive | boolean |  |
@@ -216,6 +219,7 @@ Add cluster
 
 
 **Parameters**:
+
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $cluster | [Mesd\SettingsBundle\Entity\Cluster](Mesd-SettingsBundle-Entity-Cluster.md) |  |
@@ -235,6 +239,7 @@ Remove cluster
 
 
 **Parameters**:
+
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $cluster | [Mesd\SettingsBundle\Entity\Cluster](Mesd-SettingsBundle-Entity-Cluster.md) |  |

@@ -107,6 +107,7 @@ Set name
 
 
 **Parameters**:
+
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $name | string |  |
@@ -139,6 +140,7 @@ Set description
 
 
 **Parameters**:
+
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $description | string |  |
@@ -171,6 +173,7 @@ Add Setting
 
 
 **Parameters**:
+
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $setting | Mesd\SettingsBundle\Entity\Mesd\SettingsBundle\Model\Setting |  |
@@ -203,6 +206,7 @@ Get setting
 
 
 **Parameters**:
+
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $settingName | mixed |  |
@@ -222,6 +226,7 @@ Remove Setting
 
 
 **Parameters**:
+
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $setting | Mesd\SettingsBundle\Entity\Mesd\SettingsBundle\Model\Setting |  |
@@ -241,6 +246,7 @@ Set hive
 
 
 **Parameters**:
+
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $hive | [Mesd\SettingsBundle\Entity\Hive](Mesd-SettingsBundle-Entity-Hive.md) |  |
