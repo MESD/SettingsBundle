@@ -24,7 +24,7 @@ Properties
 ----------
 
 
-**$digits**  |  
+**$digits**  
 
 
 
@@ -35,7 +35,7 @@ Properties
 
 
 
-**$precision**  |  
+**$precision**  
 
 
 

@@ -24,7 +24,7 @@ Properties
 ----------
 
 
-**$name**  |  The setting name
+**$name**  The setting name
 
 
 
@@ -35,7 +35,7 @@ Properties
 
 
 
-**$value**  |  The setting value
+**$value**  The setting value
 
 
 
@@ -46,7 +46,7 @@ Properties
 
 
 
-**$settingNode**  |  SettingNode from the SettingDefinition
+**$settingNode**  SettingNode from the SettingDefinition
 
 
 
@@ -57,7 +57,7 @@ Properties
 
 
 
-**$cluster**  |  Cluster Entity
+**$cluster**  Cluster Entity
 
 
 

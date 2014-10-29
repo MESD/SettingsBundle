@@ -24,7 +24,7 @@ Properties
 ----------
 
 
-**$digits**  |  
+**$digits**  
 
 
 

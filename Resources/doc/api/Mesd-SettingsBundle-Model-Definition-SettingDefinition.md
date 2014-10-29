@@ -24,7 +24,7 @@ Properties
 ----------
 
 
-**$key**  |  
+**$key**  
 
 
 
@@ -35,7 +35,7 @@ Properties
 
 
 
-**$hive**  |  
+**$hive**  
 
 
 
@@ -46,7 +46,7 @@ Properties
 
 
 
-**$type**  |  
+**$type**  
 
 
 
@@ -57,7 +57,7 @@ Properties
 
 
 
-**$filePath**  |  
+**$filePath**  
 
 
 
@@ -68,7 +68,7 @@ Properties
 
 
 
-**$settingNode**  |  
+**$settingNode**  
 
 
 

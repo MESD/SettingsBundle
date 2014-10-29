@@ -24,7 +24,7 @@ Properties
 ----------
 
 
-**$id**  |  
+**$id**  
 
 
 
@@ -35,7 +35,7 @@ Properties
 
 
 
-**$name**  |  
+**$name**  
 
 
 
@@ -46,7 +46,7 @@ Properties
 
 
 
-**$description**  |  
+**$description**  
 
 
 
@@ -57,7 +57,7 @@ Properties
 
 
 
-**$setting**  |  
+**$setting**  
 
 
 
@@ -68,7 +68,7 @@ Properties
 
 
 
-**$hive**  |  
+**$hive**  
 
 
 
