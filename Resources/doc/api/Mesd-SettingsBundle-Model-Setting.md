@@ -1,6 +1,8 @@
 ###Mesd\SettingsBundle\Model\Setting
 
-    Setting long descriptio
+    Setting
+    
+    Setting long description
 
 
 
