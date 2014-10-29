@@ -65,9 +65,7 @@ public **__construct** ( array $definition, $settingsManager )
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $definition | array |  |
-
 | $settingsManager | mixed |  |
-
 
 
 public **validate** (  )
@@ -126,11 +124,8 @@ private **validateNodeArray** ( $nodeName, $nodeAttributes, $key )
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $nodeName | mixed |  |
-
 | $nodeAttributes | mixed |  |
-
 | $key | mixed |  |
-
 
 
 private **validateNodeBoolean** ( $nodeName, $nodeAttributes, $key )
@@ -150,11 +145,8 @@ private **validateNodeBoolean** ( $nodeName, $nodeAttributes, $key )
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $nodeName | mixed |  |
-
 | $nodeAttributes | mixed |  |
-
 | $key | mixed |  |
-
 
 
 private **validateNodeFloat** ( $nodeName, $nodeAttributes, $key )
@@ -174,11 +166,8 @@ private **validateNodeFloat** ( $nodeName, $nodeAttributes, $key )
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $nodeName | mixed |  |
-
 | $nodeAttributes | mixed |  |
-
 | $key | mixed |  |
-
 
 
 private **validateNodeInteger** ( $nodeName, $nodeAttributes, $key )
@@ -198,11 +187,8 @@ private **validateNodeInteger** ( $nodeName, $nodeAttributes, $key )
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $nodeName | mixed |  |
-
 | $nodeAttributes | mixed |  |
-
 | $key | mixed |  |
-
 
 
 private **validateNodeString** ( $nodeName, $nodeAttributes, $key )
@@ -222,9 +208,6 @@ private **validateNodeString** ( $nodeName, $nodeAttributes, $key )
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $nodeName | mixed |  |
-
 | $nodeAttributes | mixed |  |
-
 | $key | mixed |  |
-
 

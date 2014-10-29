@@ -67,7 +67,6 @@ public **__construct** ( $nodeAttributes )
 | $nodeAttributes | mixed |  |
 
 
-
 public **dumpToArray** (  )
 
 
@@ -113,7 +112,6 @@ public **setPrototype** ( $prototype )
 | $prototype | mixed |  |
 
 
-
 public **getNode** (  )
 
 
@@ -144,5 +142,4 @@ public **setNode** ( $node )
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $node | mixed |  |
-
 
