@@ -1,7 +1,9 @@
-###Mesd\SettingsBundle\Model\Setting
+##Mesd\SettingsBundle\Model\Setting
 
 
-    Setting.
+Setting.
+
+    Setting long description
 
 
 
