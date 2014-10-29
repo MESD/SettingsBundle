@@ -1,5 +1,14 @@
 <?php
 
+/**
+ * This file is part of the MesdSettingsBundle.
+ *
+ * (c) MESD <appdev@mesd.k12.or.us>
+ *
+ * For the full copyright and license information, please view the LICENSE.md
+ * file that was distributed with this source code.
+ */
+
 namespace Mesd\SettingsBundle\Model;
 
 use Symfony\Component\DependencyInjection\ContainerInterface as Container;
@@ -9,11 +18,27 @@ use Mesd\SettingsBundle\Model\Definition\DefinitionManager;
 use Mesd\SettingsBundle\Model\Setting;
 use Mesd\SettingsBundle\Model\SettingValidator;
 
+/**
+ * Service for manging settings.
+ *
+ * @author David Cramblett <dcramble@mesd.k12.or.us>
+ */
 class SettingManager {
 
+    /**
+     * Symfony service container
+     *
+     * @var Container
+     */
     private $container;
 
 
+    /**
+     * Constructor
+     *
+     * @param Container $container
+     * @return self
+     */
     public function __construct(Container $container)
     {
         $this->container = $container;
@@ -52,8 +77,6 @@ class SettingManager {
 
 
     /**
-     * Create a cluster
-     *
      * Creates a new cluster in database
      *
      * @param string $hiveName
@@ -105,8 +128,6 @@ class SettingManager {
 
 
     /**
-     * Create a hive
-     *
      * Creates a new hive in database
      *
      * @param string $hiveName
@@ -134,8 +155,6 @@ class SettingManager {
 
 
     /**
-     * Delete cluster
-     *
      * Delete the specified cluster or throw Exception.
      *
      * @param string $hiveName
@@ -158,8 +177,6 @@ class SettingManager {
 
 
     /**
-     * Delete hive
-     *
      * Delete the specified hive or throw Exception.
      *
      * @param string $hiveName
@@ -183,8 +200,6 @@ class SettingManager {
 
 
     /**
-     * Delete hive clusters
-     *
      * Delete all the clusters attched to specific hive.
      *
      * @param string $hiveName
@@ -210,8 +225,6 @@ class SettingManager {
 
 
     /**
-     * Check if hive exisits
-     *
      * Determines if the specified hive exisits
      * in the database.
      *
@@ -229,8 +242,6 @@ class SettingManager {
 
 
     /**
-     * Check if hive has clusters
-     *
      * Determines if the specified hive has clusters
      * exisiting in the database.
      *
@@ -258,8 +269,6 @@ class SettingManager {
 
 
     /**
-     * Load cluster
-     *
      * Load the specified cluster or throw Exception.
      *
      * @param string $hiveName
@@ -279,8 +288,6 @@ class SettingManager {
 
 
     /**
-     * Load hive
-     *
      * Load the specified hive or throw Exception.
      *
      * @param string $hiveName
@@ -299,8 +306,6 @@ class SettingManager {
 
 
     /**
-     * Load setting
-     *
      * Load the specified setting object or throw Exception.
      *
      * Optionaly, load the SettingNode definition and set it within the
@@ -311,8 +316,8 @@ class SettingManager {
      * @param string $hiveName
      * @param string $clusterName
      * @param string $settingName
-     * @param boolean $loadDefinition (optional)
-     * @return Mesd\SettingsBundle\Model\Setting|Exception
+     * @param boolean $loadDefinition [optional]
+     * @return Setting|Exception
      */
     public function loadSetting($hiveName, $clusterName, $settingName, $loadDefinition = false)
     {
@@ -342,8 +347,6 @@ class SettingManager {
 
 
     /**
-     * Load setting value
-     *
      * Load the specified setting value or throw Exception.
      *
      * @param string $hiveName
@@ -371,12 +374,10 @@ class SettingManager {
 
 
     /**
-     * Save setting
-     *
      * Save the specified setting object or throw Exception.
      *
      * @param mixed $setting
-     * @return Mesd\SettingsBundle\Model\Setting|Exception
+     * @return Setting|Exception
      */
     public function saveSetting(Setting $setting)
     {
@@ -415,8 +416,6 @@ class SettingManager {
 
 
     /**
-     * Save setting value
-     *
      * Save the specified setting value or throw Exception.
      *
      * @param string $hiveName

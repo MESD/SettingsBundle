@@ -12,7 +12,7 @@ Mesd\SettingsBundle\Model\SettingManager
 
 
 
-    
+    Service for manging settings.
 
     
 
@@ -26,11 +26,11 @@ Properties
 
 **$container**
 
+Symfony service container
 
 
 
-
-    private  $container
+    private ContainerInterface $container
 
 
 
@@ -41,10 +41,10 @@ Methods
 -------
 
 
-public **__construct** (  $container )
+public **__construct** ( ContainerInterface $container )
 
 
-
+Constructor
 
 
 
@@ -86,9 +86,9 @@ in the database.
 public **createCluster** ( string $hiveName, string $clusterName, string $description )
 
 
-Create a cluster
-
 Creates a new cluster in database
+
+
 
 
 
@@ -108,9 +108,9 @@ Creates a new cluster in database
 public **createHive** ( string $hiveName, string $description, boolean $definedAtHive )
 
 
-Create a hive
-
 Creates a new hive in database
+
+
 
 
 
@@ -130,9 +130,9 @@ Creates a new hive in database
 public **deleteCluster** ( string $hiveName, string $clusterName )
 
 
-Delete cluster
-
 Delete the specified cluster or throw Exception.
+
+
 
 
 
@@ -151,9 +151,9 @@ Delete the specified cluster or throw Exception.
 public **deleteHive** ( string $hiveName )
 
 
-Delete hive
-
 Delete the specified hive or throw Exception.
+
+
 
 
 
@@ -171,9 +171,9 @@ Delete the specified hive or throw Exception.
 public **deleteHiveClusters** ( string $hiveName )
 
 
-Delete hive clusters
-
 Delete all the clusters attched to specific hive.
+
+
 
 
 
@@ -191,10 +191,10 @@ Delete all the clusters attched to specific hive.
 public **hiveExists** ( string $hiveName )
 
 
-Check if hive exisits
-
 Determines if the specified hive exisits
 in the database.
+
+
 
 
 
@@ -212,10 +212,10 @@ in the database.
 public **hiveHasClusters** ( string $hiveName )
 
 
-Check if hive has clusters
-
 Determines if the specified hive has clusters
 exisiting in the database.
+
+
 
 
 
@@ -233,9 +233,9 @@ exisiting in the database.
 public **loadCluster** ( string $hiveName, string $clusterName )
 
 
-Load cluster
-
 Load the specified cluster or throw Exception.
+
+
 
 
 
@@ -254,9 +254,9 @@ Load the specified cluster or throw Exception.
 public **loadHive** ( string $hiveName )
 
 
-Load hive
-
 Load the specified hive or throw Exception.
+
+
 
 
 
@@ -273,8 +273,6 @@ Load the specified hive or throw Exception.
 
 public **loadSetting** ( string $hiveName, string $clusterName, string $settingName, boolean $loadDefinition )
 
-
-Load setting
 
 Load the specified setting object or throw Exception.
 
@@ -295,16 +293,16 @@ is needed.
 | $hiveName | string |  |
 | $clusterName | string |  |
 | $settingName | string |  |
-| $loadDefinition | boolean | &lt;p&gt;(optional)&lt;/p&gt; |
+| $loadDefinition | boolean | &lt;p&gt;[optional]&lt;/p&gt; |
 
 --
 
 public **loadSettingValue** ( string $hiveName, string $clusterName, string $settingName )
 
 
-Load setting value
-
 Load the specified setting value or throw Exception.
+
+
 
 
 
@@ -324,9 +322,9 @@ Load the specified setting value or throw Exception.
 public **saveSetting** ( mixed $setting )
 
 
-Save setting
-
 Save the specified setting object or throw Exception.
+
+
 
 
 
@@ -344,9 +342,9 @@ Save the specified setting object or throw Exception.
 public **saveSettingValue** ( string $hiveName, string $clusterName, string $settingName, mixed $settingValue )
 
 
-Save setting value
-
 Save the specified setting value or throw Exception.
+
+
 
 
 

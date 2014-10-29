@@ -12,7 +12,7 @@ Mesd\SettingsBundle\Model\Setting
 
 
 
-    Setting.
+    Cluster setting after being unserialized from the database.
 
     
 

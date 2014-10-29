@@ -15,7 +15,7 @@ use Mesd\SettingsBundle\Entity\Cluster;
 use Mesd\SettingsBundle\Model\Definition\SettingNode;
 
 /**
- * Setting.
+ * Cluster setting after being unserialized from the database.
  *
  * @author David Cramblett <dcramble@mesd.k12.or.us>
  */
