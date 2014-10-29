@@ -1,9 +1,9 @@
 Mesd\SettingsBundle\Model\Setting
 ---------------
 
-> Setting.
+    Setting.
 
-> 
+    
 
 
 **Class name**: Setting
@@ -93,7 +93,7 @@ not loaded the SettingNode.
 
 
 
----
+--
 
 
 public **getName**
@@ -111,7 +111,7 @@ Get Setting Name
 
 
 
----
+--
 
 
 public **setName**
@@ -128,11 +128,12 @@ Set Setting Name
 
 
 
-**Arguments**:
-**$name** string  - &lt;p&gt;Setting Name&lt;/p&gt;
+    **Arguments**:
+
+    **$name** string  - &lt;p&gt;Setting Name&lt;/p&gt;
 
 
----
+--
 
 
 public **getValue**
@@ -150,7 +151,7 @@ Get Setting Value
 
 
 
----
+--
 
 
 public **setValue**
@@ -167,11 +168,12 @@ Set Setting Value
 
 
 
-**Arguments**:
-**$value** mixed  - &lt;p&gt;Setting Value&lt;/p&gt;
+    **Arguments**:
+
+    **$value** mixed  - &lt;p&gt;Setting Value&lt;/p&gt;
 
 
----
+--
 
 
 public **getCluster**
@@ -189,7 +191,7 @@ Get cluster
 
 
 
----
+--
 
 
 public **setCluster**
@@ -206,11 +208,12 @@ Set cluster
 
 
 
-**Arguments**:
-**$cluster** [Mesd\SettingsBundle\Entity\Cluster](Mesd-SettingsBundle-Entity-Cluster.md) 
+    **Arguments**:
+
+    **$cluster** [Mesd\SettingsBundle\Entity\Cluster](Mesd-SettingsBundle-Entity-Cluster.md) 
 
 
----
+--
 
 
 public **getSettingNode**
@@ -229,7 +232,7 @@ isSettingNodeLoaded() for more details.
 
 
 
----
+--
 
 
 public **setSettingNode**
@@ -246,9 +249,10 @@ Set SettingNode definition
 
 
 
-**Arguments**:
-**$settingNode** [Mesd\SettingsBundle\Model\Definition\SettingNode](Mesd-SettingsBundle-Model-Definition-SettingNode.md) 
+    **Arguments**:
+
+    **$settingNode** [Mesd\SettingsBundle\Model\Definition\SettingNode](Mesd-SettingsBundle-Model-Definition-SettingNode.md) 
 
 
----
+--
 

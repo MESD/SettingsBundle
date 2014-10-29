@@ -1,9 +1,9 @@
 Mesd\SettingsBundle\Model\Definition\SettingNodeFloat
 ---------------
 
-> 
+    
 
-> 
+    
 
 
 **Class name**: SettingNodeFloat
@@ -62,11 +62,12 @@ public **__construct**
 
 
 
-**Arguments**:
-**$nodeAttributes** mixed 
+    **Arguments**:
+
+    **$nodeAttributes** mixed 
 
 
----
+--
 
 
 public **dumpToArray**
@@ -84,7 +85,7 @@ public **dumpToArray**
 
 
 
----
+--
 
 
 public **getDigits**
@@ -102,7 +103,7 @@ public **getDigits**
 
 
 
----
+--
 
 
 public **setDigits**
@@ -119,11 +120,12 @@ public **setDigits**
 
 
 
-**Arguments**:
-**$digits** mixed 
+    **Arguments**:
+
+    **$digits** mixed 
 
 
----
+--
 
 
 public **getPrecision**
@@ -141,7 +143,7 @@ public **getPrecision**
 
 
 
----
+--
 
 
 public **setPrecision**
@@ -158,9 +160,10 @@ public **setPrecision**
 
 
 
-**Arguments**:
-**$precision** mixed 
+    **Arguments**:
+
+    **$precision** mixed 
 
 
----
+--
 

@@ -1,9 +1,9 @@
 Mesd\SettingsBundle\Entity\Cluster
 ---------------
 
-> Cluster
+    Cluster
 
-> 
+    
 
 
 **Class name**: Cluster
@@ -96,7 +96,7 @@ Get id
 
 
 
----
+--
 
 
 public **setName**
@@ -113,11 +113,12 @@ Set name
 
 
 
-**Arguments**:
-**$name** string 
+    **Arguments**:
+
+    **$name** string 
 
 
----
+--
 
 
 public **getName**
@@ -135,7 +136,7 @@ Get name
 
 
 
----
+--
 
 
 public **setDescription**
@@ -152,11 +153,12 @@ Set description
 
 
 
-**Arguments**:
-**$description** string 
+    **Arguments**:
+
+    **$description** string 
 
 
----
+--
 
 
 public **getDescription**
@@ -174,7 +176,7 @@ Get description
 
 
 
----
+--
 
 
 public **addSetting**
@@ -191,11 +193,12 @@ Add Setting
 
 
 
-**Arguments**:
-**$setting** Mesd\SettingsBundle\Entity\Mesd\SettingsBundle\Model\Setting 
+    **Arguments**:
+
+    **$setting** Mesd\SettingsBundle\Entity\Mesd\SettingsBundle\Model\Setting 
 
 
----
+--
 
 
 public **getSettingArray**
@@ -213,7 +216,7 @@ Get setting Array
 
 
 
----
+--
 
 
 public **getSetting**
@@ -230,11 +233,12 @@ Get setting
 
 
 
-**Arguments**:
-**$settingName** mixed 
+    **Arguments**:
+
+    **$settingName** mixed 
 
 
----
+--
 
 
 public **removeSetting**
@@ -251,11 +255,12 @@ Remove Setting
 
 
 
-**Arguments**:
-**$setting** Mesd\SettingsBundle\Entity\Mesd\SettingsBundle\Model\Setting 
+    **Arguments**:
+
+    **$setting** Mesd\SettingsBundle\Entity\Mesd\SettingsBundle\Model\Setting 
 
 
----
+--
 
 
 public **setHive**
@@ -272,11 +277,12 @@ Set hive
 
 
 
-**Arguments**:
-**$hive** [Mesd\SettingsBundle\Entity\Hive](Mesd-SettingsBundle-Entity-Hive.md) 
+    **Arguments**:
+
+    **$hive** [Mesd\SettingsBundle\Entity\Hive](Mesd-SettingsBundle-Entity-Hive.md) 
 
 
----
+--
 
 
 public **getHive**
@@ -294,5 +300,5 @@ Get hive
 
 
 
----
+--
 

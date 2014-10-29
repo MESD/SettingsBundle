@@ -1,9 +1,9 @@
 Mesd\SettingsBundle\Model\SettingManager
 ---------------
 
-> 
+    
 
-> 
+    
 
 
 **Class name**: SettingManager
@@ -51,11 +51,12 @@ public **__construct**
 
 
 
-**Arguments**:
-**$container** Symfony\Component\DependencyInjection\ContainerInterface 
+    **Arguments**:
+
+    **$container** Symfony\Component\DependencyInjection\ContainerInterface 
 
 
----
+--
 
 
 public **clusterExists**
@@ -73,12 +74,13 @@ in the database.
 
 
 
-**Arguments**:
-**$hiveName** string 
-**$clusterName** string 
+    **Arguments**:
+
+    **$hiveName** string 
+    **$clusterName** string 
 
 
----
+--
 
 
 public **createCluster**
@@ -95,13 +97,14 @@ Creates a new cluster in database
 
 
 
-**Arguments**:
-**$hiveName** string 
-**$clusterName** string 
-**$description** string 
+    **Arguments**:
+
+    **$hiveName** string 
+    **$clusterName** string 
+    **$description** string 
 
 
----
+--
 
 
 public **createHive**
@@ -118,13 +121,14 @@ Creates a new hive in database
 
 
 
-**Arguments**:
-**$hiveName** string 
-**$description** string 
-**$definedAtHive** boolean 
+    **Arguments**:
+
+    **$hiveName** string 
+    **$description** string 
+    **$definedAtHive** boolean 
 
 
----
+--
 
 
 public **deleteCluster**
@@ -141,12 +145,13 @@ Delete the specified cluster or throw Exception.
 
 
 
-**Arguments**:
-**$hiveName** string 
-**$clusterName** string 
+    **Arguments**:
+
+    **$hiveName** string 
+    **$clusterName** string 
 
 
----
+--
 
 
 public **deleteHive**
@@ -163,11 +168,12 @@ Delete the specified hive or throw Exception.
 
 
 
-**Arguments**:
-**$hiveName** string 
+    **Arguments**:
+
+    **$hiveName** string 
 
 
----
+--
 
 
 public **deleteHiveClusters**
@@ -184,11 +190,12 @@ Delete all the clusters attched to specific hive.
 
 
 
-**Arguments**:
-**$hiveName** string 
+    **Arguments**:
+
+    **$hiveName** string 
 
 
----
+--
 
 
 public **hiveExists**
@@ -206,11 +213,12 @@ in the database.
 
 
 
-**Arguments**:
-**$hiveName** string 
+    **Arguments**:
+
+    **$hiveName** string 
 
 
----
+--
 
 
 public **hiveHasClusters**
@@ -228,11 +236,12 @@ exisiting in the database.
 
 
 
-**Arguments**:
-**$hiveName** string 
+    **Arguments**:
+
+    **$hiveName** string 
 
 
----
+--
 
 
 public **loadCluster**
@@ -249,12 +258,13 @@ Load the specified cluster or throw Exception.
 
 
 
-**Arguments**:
-**$hiveName** string 
-**$clusterName** string 
+    **Arguments**:
+
+    **$hiveName** string 
+    **$clusterName** string 
 
 
----
+--
 
 
 public **loadHive**
@@ -271,11 +281,12 @@ Load the specified hive or throw Exception.
 
 
 
-**Arguments**:
-**$hiveName** string 
+    **Arguments**:
+
+    **$hiveName** string 
 
 
----
+--
 
 
 public **loadSetting**
@@ -297,14 +308,15 @@ is needed.
 
 
 
-**Arguments**:
-**$hiveName** string 
-**$clusterName** string 
-**$settingName** string 
-**$loadDefinition** boolean  - &lt;p&gt;(optional)&lt;/p&gt;
+    **Arguments**:
+
+    **$hiveName** string 
+    **$clusterName** string 
+    **$settingName** string 
+    **$loadDefinition** boolean  - &lt;p&gt;(optional)&lt;/p&gt;
 
 
----
+--
 
 
 public **loadSettingValue**
@@ -321,13 +333,14 @@ Load the specified setting value or throw Exception.
 
 
 
-**Arguments**:
-**$hiveName** string 
-**$clusterName** string 
-**$settingName** string 
+    **Arguments**:
+
+    **$hiveName** string 
+    **$clusterName** string 
+    **$settingName** string 
 
 
----
+--
 
 
 public **saveSetting**
@@ -344,11 +357,12 @@ Save the specified setting object or throw Exception.
 
 
 
-**Arguments**:
-**$setting** mixed 
+    **Arguments**:
+
+    **$setting** mixed 
 
 
----
+--
 
 
 public **saveSettingValue**
@@ -365,12 +379,13 @@ Save the specified setting value or throw Exception.
 
 
 
-**Arguments**:
-**$hiveName** string 
-**$clusterName** string 
-**$settingName** string 
-**$settingValue** mixed 
+    **Arguments**:
+
+    **$hiveName** string 
+    **$clusterName** string 
+    **$settingName** string 
+    **$settingValue** mixed 
 
 
----
+--
 

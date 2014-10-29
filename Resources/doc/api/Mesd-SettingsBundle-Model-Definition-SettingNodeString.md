@@ -1,9 +1,9 @@
 Mesd\SettingsBundle\Model\Definition\SettingNodeString
 ---------------
 
-> 
+    
 
-> 
+    
 
 
 **Class name**: SettingNodeString
@@ -51,11 +51,12 @@ public **__construct**
 
 
 
-**Arguments**:
-**$nodeAttributes** mixed 
+    **Arguments**:
+
+    **$nodeAttributes** mixed 
 
 
----
+--
 
 
 public **dumpToArray**
@@ -73,7 +74,7 @@ public **dumpToArray**
 
 
 
----
+--
 
 
 public **getLength**
@@ -91,7 +92,7 @@ public **getLength**
 
 
 
----
+--
 
 
 public **setLength**
@@ -108,9 +109,10 @@ public **setLength**
 
 
 
-**Arguments**:
-**$length** mixed 
+    **Arguments**:
+
+    **$length** mixed 
 
 
----
+--
 

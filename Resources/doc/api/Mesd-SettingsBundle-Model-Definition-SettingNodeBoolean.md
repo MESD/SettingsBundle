@@ -1,9 +1,9 @@
 Mesd\SettingsBundle\Model\Definition\SettingNodeBoolean
 ---------------
 
-> 
+    
 
-> 
+    
 
 
 **Class name**: SettingNodeBoolean
@@ -38,11 +38,12 @@ public **__construct**
 
 
 
-**Arguments**:
-**$nodeAttributes** mixed 
+    **Arguments**:
+
+    **$nodeAttributes** mixed 
 
 
----
+--
 
 
 public **dumpToArray**
@@ -60,5 +61,5 @@ public **dumpToArray**
 
 
 
----
+--
 

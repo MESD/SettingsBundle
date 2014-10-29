@@ -1,9 +1,9 @@
 Mesd\SettingsBundle\Model\Definition\SettingNode
 ---------------
 
-> 
+    
 
-> 
+    
 
 
 **Class name**: SettingNode
@@ -95,11 +95,12 @@ public **__construct**
 
 
 
-**Arguments**:
-**$nodeData** mixed 
+    **Arguments**:
+
+    **$nodeData** mixed 
 
 
----
+--
 
 
 public **getDefault**
@@ -117,7 +118,7 @@ public **getDefault**
 
 
 
----
+--
 
 
 public **setDefault**
@@ -134,11 +135,12 @@ public **setDefault**
 
 
 
-**Arguments**:
-**$default** mixed 
+    **Arguments**:
+
+    **$default** mixed 
 
 
----
+--
 
 
 public **getDescription**
@@ -156,7 +158,7 @@ public **getDescription**
 
 
 
----
+--
 
 
 public **setDescription**
@@ -173,11 +175,12 @@ public **setDescription**
 
 
 
-**Arguments**:
-**$description** mixed 
+    **Arguments**:
+
+    **$description** mixed 
 
 
----
+--
 
 
 public **getFormat**
@@ -195,7 +198,7 @@ public **getFormat**
 
 
 
----
+--
 
 
 public **setFormat**
@@ -212,11 +215,12 @@ public **setFormat**
 
 
 
-**Arguments**:
-**$format** mixed 
+    **Arguments**:
+
+    **$format** mixed 
 
 
----
+--
 
 
 public **getName**
@@ -234,7 +238,7 @@ public **getName**
 
 
 
----
+--
 
 
 public **setName**
@@ -251,11 +255,12 @@ public **setName**
 
 
 
-**Arguments**:
-**$name** mixed 
+    **Arguments**:
+
+    **$name** mixed 
 
 
----
+--
 
 
 public **getType**
@@ -273,7 +278,7 @@ public **getType**
 
 
 
----
+--
 
 
 public **setType**
@@ -290,9 +295,10 @@ public **setType**
 
 
 
-**Arguments**:
-**$type** mixed 
+    **Arguments**:
+
+    **$type** mixed 
 
 
----
+--
 

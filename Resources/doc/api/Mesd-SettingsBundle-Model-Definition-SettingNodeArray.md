@@ -1,9 +1,9 @@
 Mesd\SettingsBundle\Model\Definition\SettingNodeArray
 ---------------
 
-> 
+    
 
-> 
+    
 
 
 **Class name**: SettingNodeArray
@@ -62,11 +62,12 @@ public **__construct**
 
 
 
-**Arguments**:
-**$nodeAttributes** mixed 
+    **Arguments**:
+
+    **$nodeAttributes** mixed 
 
 
----
+--
 
 
 public **dumpToArray**
@@ -84,7 +85,7 @@ public **dumpToArray**
 
 
 
----
+--
 
 
 public **getPrototype**
@@ -102,7 +103,7 @@ public **getPrototype**
 
 
 
----
+--
 
 
 public **setPrototype**
@@ -119,11 +120,12 @@ public **setPrototype**
 
 
 
-**Arguments**:
-**$prototype** mixed 
+    **Arguments**:
+
+    **$prototype** mixed 
 
 
----
+--
 
 
 public **getNode**
@@ -141,7 +143,7 @@ public **getNode**
 
 
 
----
+--
 
 
 public **setNode**
@@ -158,9 +160,10 @@ public **setNode**
 
 
 
-**Arguments**:
-**$node** mixed 
+    **Arguments**:
+
+    **$node** mixed 
 
 
----
+--
 

@@ -1,9 +1,9 @@
 Mesd\SettingsBundle\Entity\Hive
 ---------------
 
-> Hive
+    Hive
 
-> 
+    
 
 
 **Class name**: Hive
@@ -96,7 +96,7 @@ Constructor
 
 
 
----
+--
 
 
 public **getId**
@@ -114,7 +114,7 @@ Get id
 
 
 
----
+--
 
 
 public **setName**
@@ -131,11 +131,12 @@ Set name
 
 
 
-**Arguments**:
-**$name** string 
+    **Arguments**:
+
+    **$name** string 
 
 
----
+--
 
 
 public **getName**
@@ -153,7 +154,7 @@ Get name
 
 
 
----
+--
 
 
 public **setDescription**
@@ -170,11 +171,12 @@ Set description
 
 
 
-**Arguments**:
-**$description** string 
+    **Arguments**:
+
+    **$description** string 
 
 
----
+--
 
 
 public **getDescription**
@@ -192,7 +194,7 @@ Get description
 
 
 
----
+--
 
 
 public **setDefinedAtHive**
@@ -209,11 +211,12 @@ Set definedAtHive
 
 
 
-**Arguments**:
-**$definedAtHive** boolean 
+    **Arguments**:
+
+    **$definedAtHive** boolean 
 
 
----
+--
 
 
 public **getDefinedAtHive**
@@ -231,7 +234,7 @@ Get definedAtHive
 
 
 
----
+--
 
 
 public **addCluster**
@@ -248,11 +251,12 @@ Add cluster
 
 
 
-**Arguments**:
-**$cluster** [Mesd\SettingsBundle\Entity\Cluster](Mesd-SettingsBundle-Entity-Cluster.md) 
+    **Arguments**:
+
+    **$cluster** [Mesd\SettingsBundle\Entity\Cluster](Mesd-SettingsBundle-Entity-Cluster.md) 
 
 
----
+--
 
 
 public **removeCluster**
@@ -269,11 +273,12 @@ Remove cluster
 
 
 
-**Arguments**:
-**$cluster** [Mesd\SettingsBundle\Entity\Cluster](Mesd-SettingsBundle-Entity-Cluster.md) 
+    **Arguments**:
+
+    **$cluster** [Mesd\SettingsBundle\Entity\Cluster](Mesd-SettingsBundle-Entity-Cluster.md) 
 
 
----
+--
 
 
 public **getCluster**
@@ -291,5 +296,5 @@ Get cluster
 
 
 
----
+--
 

@@ -1,9 +1,9 @@
 Mesd\SettingsBundle\Model\Definition\DefinitionValidator
 ---------------
 
-> 
+    
 
-> 
+    
 
 
 **Class name**: DefinitionValidator
@@ -62,12 +62,13 @@ public **__construct**
 
 
 
-**Arguments**:
-**$definition** array 
-**$settingsManager** mixed 
+    **Arguments**:
+
+    **$definition** array 
+    **$settingsManager** mixed 
 
 
----
+--
 
 
 public **validate**
@@ -85,7 +86,7 @@ public **validate**
 
 
 
----
+--
 
 
 private **validateStructure**
@@ -103,7 +104,7 @@ private **validateStructure**
 
 
 
----
+--
 
 
 private **validateNodes**
@@ -121,7 +122,7 @@ private **validateNodes**
 
 
 
----
+--
 
 
 private **validateNodeArray**
@@ -138,13 +139,14 @@ private **validateNodeArray**
 
 
 
-**Arguments**:
-**$nodeName** mixed 
-**$nodeAttributes** mixed 
-**$key** mixed 
+    **Arguments**:
+
+    **$nodeName** mixed 
+    **$nodeAttributes** mixed 
+    **$key** mixed 
 
 
----
+--
 
 
 private **validateNodeBoolean**
@@ -161,13 +163,14 @@ private **validateNodeBoolean**
 
 
 
-**Arguments**:
-**$nodeName** mixed 
-**$nodeAttributes** mixed 
-**$key** mixed 
+    **Arguments**:
+
+    **$nodeName** mixed 
+    **$nodeAttributes** mixed 
+    **$key** mixed 
 
 
----
+--
 
 
 private **validateNodeFloat**
@@ -184,13 +187,14 @@ private **validateNodeFloat**
 
 
 
-**Arguments**:
-**$nodeName** mixed 
-**$nodeAttributes** mixed 
-**$key** mixed 
+    **Arguments**:
+
+    **$nodeName** mixed 
+    **$nodeAttributes** mixed 
+    **$key** mixed 
 
 
----
+--
 
 
 private **validateNodeInteger**
@@ -207,13 +211,14 @@ private **validateNodeInteger**
 
 
 
-**Arguments**:
-**$nodeName** mixed 
-**$nodeAttributes** mixed 
-**$key** mixed 
+    **Arguments**:
+
+    **$nodeName** mixed 
+    **$nodeAttributes** mixed 
+    **$key** mixed 
 
 
----
+--
 
 
 private **validateNodeString**
@@ -230,11 +235,12 @@ private **validateNodeString**
 
 
 
-**Arguments**:
-**$nodeName** mixed 
-**$nodeAttributes** mixed 
-**$key** mixed 
+    **Arguments**:
+
+    **$nodeName** mixed 
+    **$nodeAttributes** mixed 
+    **$key** mixed 
 
 
----
+--
 

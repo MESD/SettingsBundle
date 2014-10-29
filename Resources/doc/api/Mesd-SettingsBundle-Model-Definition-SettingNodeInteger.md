@@ -1,9 +1,9 @@
 Mesd\SettingsBundle\Model\Definition\SettingNodeInteger
 ---------------
 
-> 
+    
 
-> 
+    
 
 
 **Class name**: SettingNodeInteger
@@ -51,11 +51,12 @@ public **__construct**
 
 
 
-**Arguments**:
-**$nodeAttributes** mixed 
+    **Arguments**:
+
+    **$nodeAttributes** mixed 
 
 
----
+--
 
 
 public **dumpToArray**
@@ -73,7 +74,7 @@ public **dumpToArray**
 
 
 
----
+--
 
 
 public **getDigits**
@@ -91,7 +92,7 @@ public **getDigits**
 
 
 
----
+--
 
 
 public **setDigits**
@@ -108,9 +109,10 @@ public **setDigits**
 
 
 
-**Arguments**:
-**$digits** mixed 
+    **Arguments**:
+
+    **$digits** mixed 
 
 
----
+--
 
