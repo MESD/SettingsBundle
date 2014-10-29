@@ -1,29 +1,59 @@
 <?php
 
+/**
+ * This file is part of the MesdSettingsBundle.
+ *
+ * (c) MESD <appdev@mesd.k12.or.us>
+ *
+ * For the full copyright and license information, please view the LICENSE.md
+ * file that was distributed with this source code.
+ */
+
 namespace Mesd\SettingsBundle\Model\Definition;
 
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\HttpKernel\Config\FileLocator;
+use Symfony\Component\HttpKernel\KernelInterface;
 use Symfony\Component\Yaml\Dumper;
 use Symfony\Component\Yaml\Parser;
 use Mesd\SettingsBundle\Model\Definition\DefinitionValidator;
 use Mesd\SettingsBundle\Model\Definition\SettingDefinition;
 use Mesd\SettingsBundle\Model\Definition\SettingNode;
-use Mesd\SettingsBundle\Model\SettingManager;
 
+/**
+ * Service for managing setting definitions.
+ *
+ * @author David Cramblett <dcramble@mesd.k12.or.us>
+ */
 class DefinitionManager
 {
 
+    /**
+     * The storage locations avilable for
+     * setting definition files.
+     *
+     * @var array
+     */
     private $bundleStorage;
+
+    /**
+     * Symfony kernerl interface
+     *
+     * @var KernelInterface
+     */
     private $kernel;
-    private $settingManager;
 
-
-    public function __construct ($bundleStorage, $kernel, SettingManager $settingManager)
+    /**
+     * Constructor
+     *
+     * @param array $bundleStorage
+     * @param KernelInterface $kernel
+     * @return self
+     */
+    public function __construct ($bundleStorage, KernelInterface $kernel)
     {
-        $this->bundleStorage   = $bundleStorage;
-        $this->kernel          = $kernel;
-        $this->settingManager  = $settingManager;
+        $this->bundleStorage = $bundleStorage;
+        $this->kernel        = $kernel;
     }
 
 
@@ -36,10 +66,8 @@ class DefinitionManager
      */
     public function buildFileName($hiveName, $clusterName = null)
     {
-        $hive = $this->settingManager->loadHive($hiveName);
-
         $filename = (
-            false === $hive->getDefinedAtHive() ?
+            null !== $clusterName ?
             strtolower($hiveName) . '-' . strtolower($clusterName) . '.yml' :
             strtolower($hiveName) . '.yml'
         );
@@ -51,15 +79,15 @@ class DefinitionManager
     /**
      * Builds a file name based on SettingDefinition.
      *
-     * @param SettingDefinition
+     * @param SettingDefinition $settingDefinition
      * @return string $filename
      */
-    private function buildFileNameFromDefinition(SettingDefinition $SettingDefinition)
+    private function buildFileNameFromDefinition(SettingDefinition $settingDefinition)
     {
         $filename = (
-            'cluster' == $SettingDefinition->getType() ?
-            strtolower($SettingDefinition->getHive()) . '-' . strtolower($SettingDefinition->getKey()) . '.yml' :
-            strtolower($SettingDefinition->getKey()) . '.yml'
+            'cluster' == $settingDefinition->getType() ?
+            strtolower($settingDefinition->getHive()) . '-' . strtolower($settingDefinition->getKey()) . '.yml' :
+            strtolower($settingDefinition->getKey()) . '.yml'
         );
 
         return $filename;
@@ -67,14 +95,12 @@ class DefinitionManager
 
 
     /**
-     * Create file path for new definition file
-     *
      * Create a fully qualified file path for a new definition file
      * and ensure that the directory structure is in place. The actual
      * file will be created in the saveFile() method.
      *
      * @param string $fileName
-     * @param string $filePath
+     * @param string $filePath [optional]
      * @return string|Exception
      */
     public function createFile($fileName, $filePath = null)
@@ -119,7 +145,7 @@ class DefinitionManager
      * Determine if a given file exists
      *
      * @param string $file
-     * @return boolean true|false
+     * @return boolean
      */
     public function fileExists($file)
     {
@@ -129,13 +155,11 @@ class DefinitionManager
 
 
     /**
-     * Load a setting definition file
-     *
      * Loads a setting definition file by hive [ and cluster name ],
      * parses the yaml content, and returns a SettingDefinition object.
      *
      * @param string $hiveName
-     * @param string $clusterName
+     * @param string $clusterName [optional]
      * @return SettingDefinition
      */
     public function loadFile($hiveName, $clusterName = null)
@@ -170,7 +194,7 @@ class DefinitionManager
      *
      * @param string $fileName
      * @param string $filePath
-     * @return string|false
+     * @return string|boolean
      */
     public function locateFile($fileName, $filePath = null)
     {
@@ -199,8 +223,6 @@ class DefinitionManager
 
 
     /**
-     * Save a SettingDefinition to a yaml file
-     *
      * Saves a SettingDefinition to a yaml setting file. If the file
      * does not exist, it will be created. The SettingDefinition
      * will be validated before being saved.
@@ -218,7 +240,7 @@ class DefinitionManager
 
         $serializedDefinition = $this->serialize($settingDefinition);
 
-        $validator = new DefinitionValidator($serializedDefinition, $this->settingManager);
+        $validator = new DefinitionValidator($serializedDefinition);
         $validator->validate();
 
         $dumper = new Dumper();
@@ -232,8 +254,6 @@ class DefinitionManager
 
 
     /**
-     * Serialize a SettingDefinition
-     *
      * Serializes a SettingDefinition so it can be saved to
      * a yaml file.
      *
@@ -267,17 +287,16 @@ class DefinitionManager
 
 
     /**
-     * Unserialize a setting definition yaml
-     *
      * Unserializes a setting definition yaml file, validates the
      * content, and converts the data into a SettingDefinition.
      *
      * @param string $fileContents
+     * @param string $file
      * @return SettingDefinition
      */
     private function unserialize($fileContents, $file)
     {
-        $validator = new DefinitionValidator($fileContents, $this->settingManager);
+        $validator = new DefinitionValidator($fileContents);
         $validator->validate();
 
         $key = array_keys($fileContents)[0];
@@ -320,5 +339,4 @@ class DefinitionManager
     {
         return $this->bundleStorage;
     }
-
 }
