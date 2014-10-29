@@ -79,6 +79,7 @@ public **__construct** ( $bundleStorage, $kernel, \Mesd\SettingsBundle\Model\Set
 | $kernel | mixed |  |
 | $settingManager | [Mesd\SettingsBundle\Model\SettingManager](Mesd-SettingsBundle-Model-SettingManager.md) |  |
 
+--
 
 public **buildFileName** ( string $hiveName, string $clusterName )
 
@@ -99,6 +100,7 @@ Builds a file name based on a hive [ and cluster ].
 | $hiveName | string |  |
 | $clusterName | string |  |
 
+--
 
 private **buildFileNameFromDefinition** ( \Mesd\SettingsBundle\Model\Definition\SettingDefinition $SettingDefinition )
 
@@ -118,6 +120,7 @@ Builds a file name based on SettingDefinition.
 |-----------|------|-------------|
 | $SettingDefinition | [Mesd\SettingsBundle\Model\Definition\SettingDefinition](Mesd-SettingsBundle-Model-Definition-SettingDefinition.md) |  |
 
+--
 
 public **createFile** ( string $fileName, string $filePath )
 
@@ -140,6 +143,7 @@ file will be created in the saveFile() method.
 | $fileName | string |  |
 | $filePath | string |  |
 
+--
 
 public **fileExists** ( string $file )
 
@@ -159,6 +163,7 @@ Determine if a given file exists
 |-----------|------|-------------|
 | $file | string |  |
 
+--
 
 public **loadFile** ( string $hiveName, string $clusterName )
 
@@ -180,6 +185,7 @@ parses the yaml content, and returns a SettingDefinition object.
 | $hiveName | string |  |
 | $clusterName | string |  |
 
+--
 
 public **locateFile** ( string $fileName, string $filePath )
 
@@ -204,6 +210,7 @@ fully qualifed file name or false.
 | $fileName | string |  |
 | $filePath | string |  |
 
+--
 
 public **saveFile** ( \Mesd\SettingsBundle\Model\Definition\SettingDefinition $settingDefinition )
 
@@ -225,6 +232,7 @@ will be validated before being saved.
 |-----------|------|-------------|
 | $settingDefinition | [Mesd\SettingsBundle\Model\Definition\SettingDefinition](Mesd-SettingsBundle-Model-Definition-SettingDefinition.md) |  |
 
+--
 
 private **serialize** ( \Mesd\SettingsBundle\Model\Definition\SettingDefinition $settingDefinition )
 
@@ -245,6 +253,7 @@ a yaml file.
 |-----------|------|-------------|
 | $settingDefinition | [Mesd\SettingsBundle\Model\Definition\SettingDefinition](Mesd-SettingsBundle-Model-Definition-SettingDefinition.md) |  |
 
+--
 
 private **unserialize** ( string $fileContents, $file )
 
@@ -266,6 +275,7 @@ content, and converts the data into a SettingDefinition.
 | $fileContents | string |  |
 | $file | mixed |  |
 
+--
 
 public **getBundleStorage** (  )
 
@@ -274,7 +284,6 @@ Get bundleStorage
 
 BundleStorage holds the aviable bundle paths and defualt
 storage location for Setting Definition files.
-
 
 
 

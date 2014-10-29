@@ -93,6 +93,7 @@ public **__construct** (  )
 
 
 
+--
 
 public **getKey** (  )
 
@@ -106,6 +107,7 @@ public **getKey** (  )
 
 
 
+--
 
 public **setKey** ( $key )
 
@@ -125,6 +127,7 @@ public **setKey** ( $key )
 |-----------|------|-------------|
 | $key | mixed |  |
 
+--
 
 public **getHive** (  )
 
@@ -138,6 +141,7 @@ public **getHive** (  )
 
 
 
+--
 
 public **setHive** ( $hive )
 
@@ -157,6 +161,7 @@ public **setHive** ( $hive )
 |-----------|------|-------------|
 | $hive | mixed |  |
 
+--
 
 public **getType** (  )
 
@@ -170,6 +175,7 @@ public **getType** (  )
 
 
 
+--
 
 public **setType** ( $type )
 
@@ -189,6 +195,7 @@ public **setType** ( $type )
 |-----------|------|-------------|
 | $type | mixed |  |
 
+--
 
 public **getFilePath** (  )
 
@@ -202,6 +209,7 @@ public **getFilePath** (  )
 
 
 
+--
 
 public **setFilePath** ( $filePath )
 
@@ -221,6 +229,7 @@ public **setFilePath** ( $filePath )
 |-----------|------|-------------|
 | $filePath | mixed |  |
 
+--
 
 public **addSettingNode** ( \Mesd\SettingsBundle\Model\Definition\Mesd\SettingsBundle\Model\Definition\SettingNode $settingNode )
 
@@ -240,6 +249,7 @@ Add SettingNode
 |-----------|------|-------------|
 | $settingNode | Mesd\SettingsBundle\Model\Definition\Mesd\SettingsBundle\Model\Definition\SettingNode |  |
 
+--
 
 public **getSettingNode** ( string $name )
 
@@ -259,6 +269,7 @@ Get SettingNode
 |-----------|------|-------------|
 | $name | string |  |
 
+--
 
 public **getSettingNodes** (  )
 
@@ -272,6 +283,7 @@ Get SettingNodes
 
 
 
+--
 
 public **removeSettingNode** ( \Mesd\SettingsBundle\Model\Definition\Mesd\SettingsBundle\Model\Definition\SettingNode $settingNode )
 
@@ -291,6 +303,7 @@ Remove SettingNode
 |-----------|------|-------------|
 | $settingNode | Mesd\SettingsBundle\Model\Definition\Mesd\SettingsBundle\Model\Definition\SettingNode |  |
 
+--
 
 public **removeSettingNodeByName** ( string $name )
 
@@ -309,6 +322,5 @@ Remove SettingNode by name
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $name | string |  |
-
 
 --

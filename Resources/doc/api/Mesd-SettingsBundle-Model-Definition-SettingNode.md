@@ -99,6 +99,7 @@ public **__construct** ( $nodeData )
 |-----------|------|-------------|
 | $nodeData | mixed |  |
 
+--
 
 public **getDefault** (  )
 
@@ -112,6 +113,7 @@ public **getDefault** (  )
 
 
 
+--
 
 public **setDefault** ( $default )
 
@@ -131,6 +133,7 @@ public **setDefault** ( $default )
 |-----------|------|-------------|
 | $default | mixed |  |
 
+--
 
 public **getDescription** (  )
 
@@ -144,6 +147,7 @@ public **getDescription** (  )
 
 
 
+--
 
 public **setDescription** ( $description )
 
@@ -163,6 +167,7 @@ public **setDescription** ( $description )
 |-----------|------|-------------|
 | $description | mixed |  |
 
+--
 
 public **getFormat** (  )
 
@@ -176,6 +181,7 @@ public **getFormat** (  )
 
 
 
+--
 
 public **setFormat** ( $format )
 
@@ -195,6 +201,7 @@ public **setFormat** ( $format )
 |-----------|------|-------------|
 | $format | mixed |  |
 
+--
 
 public **getName** (  )
 
@@ -208,6 +215,7 @@ public **getName** (  )
 
 
 
+--
 
 public **setName** ( $name )
 
@@ -227,6 +235,7 @@ public **setName** ( $name )
 |-----------|------|-------------|
 | $name | mixed |  |
 
+--
 
 public **getType** (  )
 
@@ -240,6 +249,7 @@ public **getType** (  )
 
 
 
+--
 
 public **setType** ( $type )
 
@@ -258,6 +268,5 @@ public **setType** ( $type )
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $type | mixed |  |
-
 
 --

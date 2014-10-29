@@ -93,6 +93,7 @@ Constructor
 
 
 
+--
 
 public **getId** (  )
 
@@ -106,6 +107,7 @@ Get id
 
 
 
+--
 
 public **setName** ( string $name )
 
@@ -125,6 +127,7 @@ Set name
 |-----------|------|-------------|
 | $name | string |  |
 
+--
 
 public **getName** (  )
 
@@ -138,6 +141,7 @@ Get name
 
 
 
+--
 
 public **setDescription** ( string $description )
 
@@ -157,6 +161,7 @@ Set description
 |-----------|------|-------------|
 | $description | string |  |
 
+--
 
 public **getDescription** (  )
 
@@ -170,6 +175,7 @@ Get description
 
 
 
+--
 
 public **setDefinedAtHive** ( boolean $definedAtHive )
 
@@ -189,6 +195,7 @@ Set definedAtHive
 |-----------|------|-------------|
 | $definedAtHive | boolean |  |
 
+--
 
 public **getDefinedAtHive** (  )
 
@@ -202,6 +209,7 @@ Get definedAtHive
 
 
 
+--
 
 public **addCluster** ( \Mesd\SettingsBundle\Entity\Cluster $cluster )
 
@@ -221,6 +229,7 @@ Add cluster
 |-----------|------|-------------|
 | $cluster | [Mesd\SettingsBundle\Entity\Cluster](Mesd-SettingsBundle-Entity-Cluster.md) |  |
 
+--
 
 public **removeCluster** ( \Mesd\SettingsBundle\Entity\Cluster $cluster )
 
@@ -240,12 +249,12 @@ Remove cluster
 |-----------|------|-------------|
 | $cluster | [Mesd\SettingsBundle\Entity\Cluster](Mesd-SettingsBundle-Entity-Cluster.md) |  |
 
+--
 
 public **getCluster** (  )
 
 
 Get cluster
-
 
 
 

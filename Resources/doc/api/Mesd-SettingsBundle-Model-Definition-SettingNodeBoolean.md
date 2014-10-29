@@ -42,9 +42,9 @@ public **__construct** ( $nodeAttributes )
 |-----------|------|-------------|
 | $nodeAttributes | mixed |  |
 
+--
 
 public **dumpToArray** (  )
-
 
 
 
