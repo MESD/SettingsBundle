@@ -1,9 +1,9 @@
 Mesd\SettingsBundle\Model\Definition\SettingNodeString
 ---------------
 
-    
+> 
 
-    
+> 
 
 
 **Class name**: SettingNodeString

@@ -1,9 +1,9 @@
 Mesd\SettingsBundle\Model\Definition\DefinitionManager
 ---------------
 
-    
+> 
 
-    
+> 
 
 
 **Class name**: DefinitionManager

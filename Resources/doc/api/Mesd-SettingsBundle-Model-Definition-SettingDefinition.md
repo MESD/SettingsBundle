@@ -1,9 +1,9 @@
 Mesd\SettingsBundle\Model\Definition\SettingDefinition
 ---------------
 
-    
+> 
 
-    
+> 
 
 
 **Class name**: SettingDefinition

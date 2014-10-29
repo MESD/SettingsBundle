@@ -1,9 +1,9 @@
 Mesd\SettingsBundle\Model\Definition\SettingNodeBoolean
 ---------------
 
-    
+> 
 
-    
+> 
 
 
 **Class name**: SettingNodeBoolean

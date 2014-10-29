@@ -1,9 +1,9 @@
 Mesd\SettingsBundle\Model\SettingValidator
 ---------------
 
-    
+> 
 
-    
+> 
 
 
 **Class name**: SettingValidator

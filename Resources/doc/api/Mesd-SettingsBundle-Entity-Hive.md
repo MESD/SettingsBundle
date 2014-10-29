@@ -1,9 +1,9 @@
 Mesd\SettingsBundle\Entity\Hive
 ---------------
 
-    Hive
+> Hive
 
-    
+> 
 
 
 **Class name**: Hive

@@ -1,9 +1,9 @@
 Mesd\SettingsBundle\Model\Definition\SettingNodeArray
 ---------------
 
-    
+> 
 
-    
+> 
 
 
 **Class name**: SettingNodeArray
