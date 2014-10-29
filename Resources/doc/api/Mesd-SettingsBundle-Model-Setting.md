@@ -70,11 +70,10 @@ Methods
 -------
 
 
-public **isSettingNodeLoaded**
+public **isSettingNodeLoaded** (  )
 
-    boolean Mesd\SettingsBundle\Model\Setting::isSettingNodeLoaded()
 
-Is SettingNode loaded
+    Is SettingNode loaded
 
 Determine if the SettingNode has been loaded.
 
@@ -90,42 +89,43 @@ not loaded the SettingNode.
 
 
 
+This method is defined by Setting
 
 
 
 --
 
 
-public **getName**
+public **getName** (  )
 
-    string Mesd\SettingsBundle\Model\Setting::getName()
 
-Get Setting Name
-
+    Get Setting Name
 
 
 
 
 
 
+
+This method is defined by Setting
 
 
 
 --
 
 
-public **setName**
+public **setName** ( string $name )
 
-    \Mesd\SettingsBundle\Model\Setting Mesd\SettingsBundle\Model\Setting::setName(string $name)
 
-Set Setting Name
-
+    Set Setting Name
 
 
 
 
 
 
+
+This method is defined by Setting
 
 
     **Arguments**:
@@ -136,36 +136,36 @@ Set Setting Name
 --
 
 
-public **getValue**
+public **getValue** (  )
 
-    mixed Mesd\SettingsBundle\Model\Setting::getValue()
 
-Get Setting Value
-
+    Get Setting Value
 
 
 
 
 
 
+
+This method is defined by Setting
 
 
 
 --
 
 
-public **setValue**
+public **setValue** ( mixed $value )
 
-    \Mesd\SettingsBundle\Model\Setting Mesd\SettingsBundle\Model\Setting::setValue(mixed $value)
 
-Set Setting Value
-
+    Set Setting Value
 
 
 
 
 
 
+
+This method is defined by Setting
 
 
     **Arguments**:
@@ -176,51 +176,50 @@ Set Setting Value
 --
 
 
-public **getCluster**
+public **getCluster** (  )
 
-    \Mesd\SettingsBundle\Entity\Cluster Mesd\SettingsBundle\Model\Setting::getCluster()
 
-Get cluster
-
+    Get cluster
 
 
 
 
 
 
+
+This method is defined by Setting
 
 
 
 --
 
 
-public **setCluster**
+public **setCluster** ( \Mesd\SettingsBundle\Entity\Cluster $cluster )
 
-    \Mesd\SettingsBundle\Model\Setting Mesd\SettingsBundle\Model\Setting::setCluster(\Mesd\SettingsBundle\Entity\Cluster $cluster)
 
-Set cluster
-
+    Set cluster
 
 
 
 
 
 
+
+This method is defined by Setting
 
 
     **Arguments**:
 
-    **$cluster** [Mesd\SettingsBundle\Entity\Cluster](Mesd-SettingsBundle-Entity-Cluster.md) 
+    **$cluster** \Mesd\SettingsBundle\Entity\Cluster 
 
 
 --
 
 
-public **getSettingNode**
+public **getSettingNode** (  )
 
-    \Mesd\SettingsBundle\Model\Definition\SettingNode|\Mesd\SettingsBundle\Model\Exception Mesd\SettingsBundle\Model\Setting::getSettingNode()
 
-Get SettingNode definition
+    Get SettingNode definition
 
 Get the SettingNode definition, if it has been loaded. See
 isSettingNodeLoaded() for more details.
@@ -229,29 +228,30 @@ isSettingNodeLoaded() for more details.
 
 
 
+This method is defined by Setting
 
 
 
 --
 
 
-public **setSettingNode**
+public **setSettingNode** ( \Mesd\SettingsBundle\Model\Definition\SettingNode $settingNode )
 
-    \Mesd\SettingsBundle\Model\Setting Mesd\SettingsBundle\Model\Setting::setSettingNode(\Mesd\SettingsBundle\Model\Definition\SettingNode $settingNode)
 
-Set SettingNode definition
-
+    Set SettingNode definition
 
 
 
 
 
 
+
+This method is defined by Setting
 
 
     **Arguments**:
 
-    **$settingNode** [Mesd\SettingsBundle\Model\Definition\SettingNode](Mesd-SettingsBundle-Model-Definition-SettingNode.md) 
+    **$settingNode** \Mesd\SettingsBundle\Model\Definition\SettingNode 
 
 
 --

@@ -37,18 +37,18 @@ Methods
 -------
 
 
-public **__construct**
-
-    mixed Mesd\SettingsBundle\Model\Definition\SettingNodeInteger::__construct($nodeAttributes)
+public **__construct** ( $nodeAttributes )
 
 
-
+    
 
 
 
 
 
 
+
+This method is defined by SettingNodeInteger
 
 
     **Arguments**:
@@ -59,12 +59,10 @@ public **__construct**
 --
 
 
-public **dumpToArray**
-
-    mixed Mesd\SettingsBundle\Model\Definition\SettingNodeInteger::dumpToArray()
+public **dumpToArray** (  )
 
 
-
+    
 
 
 
@@ -72,41 +70,43 @@ public **dumpToArray**
 
 
 
-
-
---
-
-
-public **getDigits**
-
-    mixed Mesd\SettingsBundle\Model\Definition\SettingNodeInteger::getDigits()
-
-
-
-
-
-
-
-
-
+This method is defined by SettingNodeInteger
 
 
 
 --
 
 
-public **setDigits**
-
-    mixed Mesd\SettingsBundle\Model\Definition\SettingNodeInteger::setDigits($digits)
+public **getDigits** (  )
 
 
-
+    
 
 
 
 
 
 
+
+This method is defined by SettingNodeInteger
+
+
+
+--
+
+
+public **setDigits** ( $digits )
+
+
+    
+
+
+
+
+
+
+
+This method is defined by SettingNodeInteger
 
 
     **Arguments**:

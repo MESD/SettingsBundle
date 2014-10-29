@@ -81,18 +81,18 @@ Methods
 -------
 
 
-public **__construct**
-
-    mixed Mesd\SettingsBundle\Model\Definition\SettingNode::__construct($nodeData)
+public **__construct** ( $nodeData )
 
 
-
+    
 
 
 
 
 
 
+
+This method is defined by SettingNode
 
 
     **Arguments**:
@@ -103,36 +103,36 @@ public **__construct**
 --
 
 
-public **getDefault**
-
-    mixed Mesd\SettingsBundle\Model\Definition\SettingNode::getDefault()
+public **getDefault** (  )
 
 
-
+    
 
 
 
 
 
 
+
+This method is defined by SettingNode
 
 
 
 --
 
 
-public **setDefault**
-
-    mixed Mesd\SettingsBundle\Model\Definition\SettingNode::setDefault($default)
+public **setDefault** ( $default )
 
 
-
+    
 
 
 
 
 
 
+
+This method is defined by SettingNode
 
 
     **Arguments**:
@@ -143,36 +143,36 @@ public **setDefault**
 --
 
 
-public **getDescription**
-
-    mixed Mesd\SettingsBundle\Model\Definition\SettingNode::getDescription()
+public **getDescription** (  )
 
 
-
+    
 
 
 
 
 
 
+
+This method is defined by SettingNode
 
 
 
 --
 
 
-public **setDescription**
-
-    mixed Mesd\SettingsBundle\Model\Definition\SettingNode::setDescription($description)
+public **setDescription** ( $description )
 
 
-
+    
 
 
 
 
 
 
+
+This method is defined by SettingNode
 
 
     **Arguments**:
@@ -183,36 +183,36 @@ public **setDescription**
 --
 
 
-public **getFormat**
-
-    mixed Mesd\SettingsBundle\Model\Definition\SettingNode::getFormat()
+public **getFormat** (  )
 
 
-
+    
 
 
 
 
 
 
+
+This method is defined by SettingNode
 
 
 
 --
 
 
-public **setFormat**
-
-    mixed Mesd\SettingsBundle\Model\Definition\SettingNode::setFormat($format)
+public **setFormat** ( $format )
 
 
-
+    
 
 
 
 
 
 
+
+This method is defined by SettingNode
 
 
     **Arguments**:
@@ -223,36 +223,36 @@ public **setFormat**
 --
 
 
-public **getName**
-
-    mixed Mesd\SettingsBundle\Model\Definition\SettingNode::getName()
+public **getName** (  )
 
 
-
+    
 
 
 
 
 
 
+
+This method is defined by SettingNode
 
 
 
 --
 
 
-public **setName**
-
-    mixed Mesd\SettingsBundle\Model\Definition\SettingNode::setName($name)
+public **setName** ( $name )
 
 
-
+    
 
 
 
 
 
 
+
+This method is defined by SettingNode
 
 
     **Arguments**:
@@ -263,36 +263,36 @@ public **setName**
 --
 
 
-public **getType**
-
-    mixed Mesd\SettingsBundle\Model\Definition\SettingNode::getType()
+public **getType** (  )
 
 
-
+    
 
 
 
 
 
 
+
+This method is defined by SettingNode
 
 
 
 --
 
 
-public **setType**
-
-    mixed Mesd\SettingsBundle\Model\Definition\SettingNode::setType($type)
+public **setType** ( $type )
 
 
-
+    
 
 
 
 
 
 
+
+This method is defined by SettingNode
 
 
     **Arguments**:

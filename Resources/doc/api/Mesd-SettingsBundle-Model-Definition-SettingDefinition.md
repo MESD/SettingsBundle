@@ -81,12 +81,10 @@ Methods
 -------
 
 
-public **__construct**
-
-    mixed Mesd\SettingsBundle\Model\Definition\SettingDefinition::__construct()
+public **__construct** (  )
 
 
-
+    
 
 
 
@@ -94,41 +92,43 @@ public **__construct**
 
 
 
-
-
---
-
-
-public **getKey**
-
-    mixed Mesd\SettingsBundle\Model\Definition\SettingDefinition::getKey()
-
-
-
-
-
-
-
-
-
+This method is defined by SettingDefinition
 
 
 
 --
 
 
-public **setKey**
-
-    mixed Mesd\SettingsBundle\Model\Definition\SettingDefinition::setKey($key)
+public **getKey** (  )
 
 
-
+    
 
 
 
 
 
 
+
+This method is defined by SettingDefinition
+
+
+
+--
+
+
+public **setKey** ( $key )
+
+
+    
+
+
+
+
+
+
+
+This method is defined by SettingDefinition
 
 
     **Arguments**:
@@ -139,36 +139,36 @@ public **setKey**
 --
 
 
-public **getHive**
-
-    mixed Mesd\SettingsBundle\Model\Definition\SettingDefinition::getHive()
+public **getHive** (  )
 
 
-
+    
 
 
 
 
 
 
+
+This method is defined by SettingDefinition
 
 
 
 --
 
 
-public **setHive**
-
-    mixed Mesd\SettingsBundle\Model\Definition\SettingDefinition::setHive($hive)
+public **setHive** ( $hive )
 
 
-
+    
 
 
 
 
 
 
+
+This method is defined by SettingDefinition
 
 
     **Arguments**:
@@ -179,36 +179,36 @@ public **setHive**
 --
 
 
-public **getType**
-
-    mixed Mesd\SettingsBundle\Model\Definition\SettingDefinition::getType()
+public **getType** (  )
 
 
-
+    
 
 
 
 
 
 
+
+This method is defined by SettingDefinition
 
 
 
 --
 
 
-public **setType**
-
-    mixed Mesd\SettingsBundle\Model\Definition\SettingDefinition::setType($type)
+public **setType** ( $type )
 
 
-
+    
 
 
 
 
 
 
+
+This method is defined by SettingDefinition
 
 
     **Arguments**:
@@ -219,36 +219,36 @@ public **setType**
 --
 
 
-public **getFilePath**
-
-    mixed Mesd\SettingsBundle\Model\Definition\SettingDefinition::getFilePath()
+public **getFilePath** (  )
 
 
-
+    
 
 
 
 
 
 
+
+This method is defined by SettingDefinition
 
 
 
 --
 
 
-public **setFilePath**
-
-    mixed Mesd\SettingsBundle\Model\Definition\SettingDefinition::setFilePath($filePath)
+public **setFilePath** ( $filePath )
 
 
-
+    
 
 
 
 
 
 
+
+This method is defined by SettingDefinition
 
 
     **Arguments**:
@@ -259,40 +259,40 @@ public **setFilePath**
 --
 
 
-public **addSettingNode**
+public **addSettingNode** ( \Mesd\SettingsBundle\Model\Definition\Mesd\SettingsBundle\Model\Definition\SettingNode $settingNode )
 
-    \Mesd\SettingsBundle\Model\Definition\SettingDefinition Mesd\SettingsBundle\Model\Definition\SettingDefinition::addSettingNode(\Mesd\SettingsBundle\Model\Definition\Mesd\SettingsBundle\Model\Definition\SettingNode $settingNode)
 
-Add SettingNode
-
+    Add SettingNode
 
 
 
 
 
 
+
+This method is defined by SettingDefinition
 
 
     **Arguments**:
 
-    **$settingNode** Mesd\SettingsBundle\Model\Definition\Mesd\SettingsBundle\Model\Definition\SettingNode 
+    **$settingNode** \Mesd\SettingsBundle\Model\Definition\Mesd\SettingsBundle\Model\Definition\SettingNode 
 
 
 --
 
 
-public **getSettingNode**
+public **getSettingNode** ( string $name )
 
-    \Mesd\SettingsBundle\Model\Definition\Mesd\SettingsBundle\Model\Definition\SettingNode Mesd\SettingsBundle\Model\Definition\SettingDefinition::getSettingNode(string $name)
 
-Get SettingNode
-
+    Get SettingNode
 
 
 
 
 
 
+
+This method is defined by SettingDefinition
 
 
     **Arguments**:
@@ -303,58 +303,58 @@ Get SettingNode
 --
 
 
-public **getSettingNodes**
+public **getSettingNodes** (  )
 
-    \Mesd\SettingsBundle\Model\Definition\Doctrine\Common\Collections\ArrayCollection() Mesd\SettingsBundle\Model\Definition\SettingDefinition::getSettingNodes()
 
-Get SettingNodes
-
+    Get SettingNodes
 
 
 
 
 
 
+
+This method is defined by SettingDefinition
 
 
 
 --
 
 
-public **removeSettingNode**
+public **removeSettingNode** ( \Mesd\SettingsBundle\Model\Definition\Mesd\SettingsBundle\Model\Definition\SettingNode $settingNode )
 
-    \Mesd\SettingsBundle\Model\Definition\SettingDefinition Mesd\SettingsBundle\Model\Definition\SettingDefinition::removeSettingNode(\Mesd\SettingsBundle\Model\Definition\Mesd\SettingsBundle\Model\Definition\SettingNode $settingNode)
 
-Remove SettingNode
-
+    Remove SettingNode
 
 
 
 
 
 
+
+This method is defined by SettingDefinition
 
 
     **Arguments**:
 
-    **$settingNode** Mesd\SettingsBundle\Model\Definition\Mesd\SettingsBundle\Model\Definition\SettingNode 
+    **$settingNode** \Mesd\SettingsBundle\Model\Definition\Mesd\SettingsBundle\Model\Definition\SettingNode 
 
 
 --
 
 
-public **removeSettingNodeByName**
+public **removeSettingNodeByName** ( string $name )
 
-    \Mesd\SettingsBundle\Model\Definition\SettingDefinition Mesd\SettingsBundle\Model\Definition\SettingDefinition::removeSettingNodeByName(string $name)
 
-Remove SettingNode by name
-
+    Remove SettingNode by name
 
 
 
 
 
 
+
+This method is defined by SettingDefinition
 
 
     **Arguments**:

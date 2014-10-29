@@ -81,36 +81,36 @@ Methods
 -------
 
 
-public **getId**
+public **getId** (  )
 
-    integer Mesd\SettingsBundle\Entity\Cluster::getId()
 
-Get id
-
+    Get id
 
 
 
 
 
 
+
+This method is defined by Cluster
 
 
 
 --
 
 
-public **setName**
+public **setName** ( string $name )
 
-    \Mesd\SettingsBundle\Entity\Cluster Mesd\SettingsBundle\Entity\Cluster::setName(string $name)
 
-Set name
-
+    Set name
 
 
 
 
 
 
+
+This method is defined by Cluster
 
 
     **Arguments**:
@@ -121,36 +121,36 @@ Set name
 --
 
 
-public **getName**
+public **getName** (  )
 
-    string Mesd\SettingsBundle\Entity\Cluster::getName()
 
-Get name
-
+    Get name
 
 
 
 
 
 
+
+This method is defined by Cluster
 
 
 
 --
 
 
-public **setDescription**
+public **setDescription** ( string $description )
 
-    \Mesd\SettingsBundle\Entity\Cluster Mesd\SettingsBundle\Entity\Cluster::setDescription(string $description)
 
-Set description
-
+    Set description
 
 
 
 
 
 
+
+This method is defined by Cluster
 
 
     **Arguments**:
@@ -161,76 +161,76 @@ Set description
 --
 
 
-public **getDescription**
+public **getDescription** (  )
 
-    string Mesd\SettingsBundle\Entity\Cluster::getDescription()
 
-Get description
-
+    Get description
 
 
 
 
 
 
+
+This method is defined by Cluster
 
 
 
 --
 
 
-public **addSetting**
+public **addSetting** ( \Mesd\SettingsBundle\Entity\Mesd\SettingsBundle\Model\Setting $setting )
 
-    \Mesd\SettingsBundle\Entity\Cluster Mesd\SettingsBundle\Entity\Cluster::addSetting(\Mesd\SettingsBundle\Entity\Mesd\SettingsBundle\Model\Setting $setting)
 
-Add Setting
-
+    Add Setting
 
 
 
 
 
 
+
+This method is defined by Cluster
 
 
     **Arguments**:
 
-    **$setting** Mesd\SettingsBundle\Entity\Mesd\SettingsBundle\Model\Setting 
+    **$setting** \Mesd\SettingsBundle\Entity\Mesd\SettingsBundle\Model\Setting 
 
 
 --
 
 
-public **getSettingArray**
+public **getSettingArray** (  )
 
-    array Mesd\SettingsBundle\Entity\Cluster::getSettingArray()
 
-Get setting Array
-
+    Get setting Array
 
 
 
 
 
 
+
+This method is defined by Cluster
 
 
 
 --
 
 
-public **getSetting**
+public **getSetting** ( $settingName )
 
-    \Mesd\SettingsBundle\Entity\Mesd\SettingsBundle\Model\Setting Mesd\SettingsBundle\Entity\Cluster::getSetting($settingName)
 
-Get setting
-
+    Get setting
 
 
 
 
 
 
+
+This method is defined by Cluster
 
 
     **Arguments**:
@@ -241,62 +241,62 @@ Get setting
 --
 
 
-public **removeSetting**
+public **removeSetting** ( \Mesd\SettingsBundle\Entity\Mesd\SettingsBundle\Model\Setting $setting )
 
-    \Mesd\SettingsBundle\Entity\Cluster Mesd\SettingsBundle\Entity\Cluster::removeSetting(\Mesd\SettingsBundle\Entity\Mesd\SettingsBundle\Model\Setting $setting)
 
-Remove Setting
-
+    Remove Setting
 
 
 
 
 
 
+
+This method is defined by Cluster
 
 
     **Arguments**:
 
-    **$setting** Mesd\SettingsBundle\Entity\Mesd\SettingsBundle\Model\Setting 
+    **$setting** \Mesd\SettingsBundle\Entity\Mesd\SettingsBundle\Model\Setting 
 
 
 --
 
 
-public **setHive**
+public **setHive** ( \Mesd\SettingsBundle\Entity\Hive $hive )
 
-    \Mesd\SettingsBundle\Entity\Cluster Mesd\SettingsBundle\Entity\Cluster::setHive(\Mesd\SettingsBundle\Entity\Hive $hive)
 
-Set hive
-
+    Set hive
 
 
 
 
 
 
+
+This method is defined by Cluster
 
 
     **Arguments**:
 
-    **$hive** [Mesd\SettingsBundle\Entity\Hive](Mesd-SettingsBundle-Entity-Hive.md) 
+    **$hive** \Mesd\SettingsBundle\Entity\Hive 
 
 
 --
 
 
-public **getHive**
+public **getHive** (  )
 
-    \Mesd\SettingsBundle\Entity\Hive Mesd\SettingsBundle\Entity\Cluster::getHive()
 
-Get hive
-
+    Get hive
 
 
 
 
 
 
+
+This method is defined by Cluster
 
 
 

@@ -37,18 +37,18 @@ Methods
 -------
 
 
-public **__construct**
-
-    mixed Mesd\SettingsBundle\Model\Definition\SettingNodeString::__construct($nodeAttributes)
+public **__construct** ( $nodeAttributes )
 
 
-
+    
 
 
 
 
 
 
+
+This method is defined by SettingNodeString
 
 
     **Arguments**:
@@ -59,12 +59,10 @@ public **__construct**
 --
 
 
-public **dumpToArray**
-
-    mixed Mesd\SettingsBundle\Model\Definition\SettingNodeString::dumpToArray()
+public **dumpToArray** (  )
 
 
-
+    
 
 
 
@@ -72,41 +70,43 @@ public **dumpToArray**
 
 
 
-
-
---
-
-
-public **getLength**
-
-    mixed Mesd\SettingsBundle\Model\Definition\SettingNodeString::getLength()
-
-
-
-
-
-
-
-
-
+This method is defined by SettingNodeString
 
 
 
 --
 
 
-public **setLength**
-
-    mixed Mesd\SettingsBundle\Model\Definition\SettingNodeString::setLength($length)
+public **getLength** (  )
 
 
-
+    
 
 
 
 
 
 
+
+This method is defined by SettingNodeString
+
+
+
+--
+
+
+public **setLength** ( $length )
+
+
+    
+
+
+
+
+
+
+
+This method is defined by SettingNodeString
 
 
     **Arguments**:

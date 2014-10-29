@@ -70,34 +70,33 @@ Methods
 -------
 
 
-public **__construct**
-
-    mixed Mesd\SettingsBundle\Model\SettingValidator::__construct(\Mesd\SettingsBundle\Model\Definition\SettingNode $settingNode, \Mesd\SettingsBundle\Model\Setting $setting)
+public **__construct** ( \Mesd\SettingsBundle\Model\Definition\SettingNode $settingNode, \Mesd\SettingsBundle\Model\Setting $setting )
 
 
-
+    
 
 
 
 
 
 
+
+This method is defined by SettingValidator
 
 
     **Arguments**:
 
-    **$settingNode** [Mesd\SettingsBundle\Model\Definition\SettingNode](Mesd-SettingsBundle-Model-Definition-SettingNode.md) 
-    **$setting** [Mesd\SettingsBundle\Model\Setting](Mesd-SettingsBundle-Model-Setting.md) 
+    **$settingNode** \Mesd\SettingsBundle\Model\Definition\SettingNode 
+    **$setting** \Mesd\SettingsBundle\Model\Setting 
 
 
 --
 
 
-public **sanitize**
+public **sanitize** (  )
 
-    \Mesd\SettingsBundle\Model\Definition\SettingNode Mesd\SettingsBundle\Model\SettingValidator::sanitize()
 
-Sanitize a setting
+    Sanitize a setting
 
 Clean the setting so that it matches it's SettingNode
 definition.
@@ -106,18 +105,17 @@ definition.
 
 
 
+This method is defined by SettingValidator
 
 
 
 --
 
 
-public **validate**
+public **validate** (  )
 
-    array Mesd\SettingsBundle\Model\SettingValidator::validate()
 
-Validate a setting
-
+    Validate a setting
 
 
 
@@ -125,35 +123,17 @@ Validate a setting
 
 
 
-
-
---
-
-
-public **sanitizeArray**
-
-    boolean Mesd\SettingsBundle\Model\SettingValidator::sanitizeArray()
-
-Sanitize an array setting
-
-
-
-
-
-
-
+This method is defined by SettingValidator
 
 
 
 --
 
 
-public **sanitizeBoolean**
+public **sanitizeArray** (  )
 
-    boolean Mesd\SettingsBundle\Model\SettingValidator::sanitizeBoolean()
 
-Sanitize a boolean setting
-
+    Sanitize an array setting
 
 
 
@@ -161,35 +141,17 @@ Sanitize a boolean setting
 
 
 
-
-
---
-
-
-public **sanitizeFloat**
-
-    boolean Mesd\SettingsBundle\Model\SettingValidator::sanitizeFloat()
-
-Sanitize a float setting
-
-
-
-
-
-
-
+This method is defined by SettingValidator
 
 
 
 --
 
 
-public **sanitizeString**
+public **sanitizeBoolean** (  )
 
-    boolean Mesd\SettingsBundle\Model\SettingValidator::sanitizeString()
 
-Sanitize a string setting
-
+    Sanitize a boolean setting
 
 
 
@@ -197,35 +159,17 @@ Sanitize a string setting
 
 
 
-
-
---
-
-
-protected **sanitizeDigits**
-
-    boolean Mesd\SettingsBundle\Model\SettingValidator::sanitizeDigits()
-
-Sanitize digits
-
-
-
-
-
-
-
+This method is defined by SettingValidator
 
 
 
 --
 
 
-protected **sanitizeLength**
+public **sanitizeFloat** (  )
 
-    boolean Mesd\SettingsBundle\Model\SettingValidator::sanitizeLength()
 
-Sanitize length
-
+    Sanitize a float setting
 
 
 
@@ -233,35 +177,17 @@ Sanitize length
 
 
 
-
-
---
-
-
-protected **sanitizePrecision**
-
-    boolean Mesd\SettingsBundle\Model\SettingValidator::sanitizePrecision()
-
-Sanitize precision
-
-
-
-
-
-
-
+This method is defined by SettingValidator
 
 
 
 --
 
 
-protected **sanitizeType**
+public **sanitizeString** (  )
 
-    boolean Mesd\SettingsBundle\Model\SettingValidator::sanitizeType()
 
-Sanitize data type
-
+    Sanitize a string setting
 
 
 
@@ -269,35 +195,17 @@ Sanitize data type
 
 
 
-
-
---
-
-
-protected **validateArray**
-
-    boolean Mesd\SettingsBundle\Model\SettingValidator::validateArray()
-
-Validate an array setting
-
-
-
-
-
-
-
+This method is defined by SettingValidator
 
 
 
 --
 
 
-protected **validateBoolean**
+protected **sanitizeDigits** (  )
 
-    boolean Mesd\SettingsBundle\Model\SettingValidator::validateBoolean()
 
-Validate a boolean setting
-
+    Sanitize digits
 
 
 
@@ -305,35 +213,17 @@ Validate a boolean setting
 
 
 
-
-
---
-
-
-protected **validateFloat**
-
-    boolean Mesd\SettingsBundle\Model\SettingValidator::validateFloat()
-
-Validate a float setting
-
-
-
-
-
-
-
+This method is defined by SettingValidator
 
 
 
 --
 
 
-protected **validateInteger**
+protected **sanitizeLength** (  )
 
-    boolean Mesd\SettingsBundle\Model\SettingValidator::validateInteger()
 
-Validate a integer setting
-
+    Sanitize length
 
 
 
@@ -341,35 +231,17 @@ Validate a integer setting
 
 
 
-
-
---
-
-
-protected **validateString**
-
-    boolean Mesd\SettingsBundle\Model\SettingValidator::validateString()
-
-Validate a string setting
-
-
-
-
-
-
-
+This method is defined by SettingValidator
 
 
 
 --
 
 
-protected **validateDigits**
+protected **sanitizePrecision** (  )
 
-    boolean Mesd\SettingsBundle\Model\SettingValidator::validateDigits()
 
-Validate digits
-
+    Sanitize precision
 
 
 
@@ -377,59 +249,187 @@ Validate digits
 
 
 
-
-
---
-
-
-protected **validateLength**
-
-    boolean Mesd\SettingsBundle\Model\SettingValidator::validateLength()
-
-Validate length
-
-
-
-
-
-
-
+This method is defined by SettingValidator
 
 
 
 --
 
 
-protected **validatePrecision**
+protected **sanitizeType** (  )
 
-    boolean Mesd\SettingsBundle\Model\SettingValidator::validatePrecision()
 
-Validate precision
-
+    Sanitize data type
 
 
 
 
 
 
+
+This method is defined by SettingValidator
 
 
 
 --
 
 
-protected **validateType**
+protected **validateArray** (  )
 
-    boolean Mesd\SettingsBundle\Model\SettingValidator::validateType()
 
-Validate data type
-
+    Validate an array setting
 
 
 
 
 
 
+
+This method is defined by SettingValidator
+
+
+
+--
+
+
+protected **validateBoolean** (  )
+
+
+    Validate a boolean setting
+
+
+
+
+
+
+
+This method is defined by SettingValidator
+
+
+
+--
+
+
+protected **validateFloat** (  )
+
+
+    Validate a float setting
+
+
+
+
+
+
+
+This method is defined by SettingValidator
+
+
+
+--
+
+
+protected **validateInteger** (  )
+
+
+    Validate a integer setting
+
+
+
+
+
+
+
+This method is defined by SettingValidator
+
+
+
+--
+
+
+protected **validateString** (  )
+
+
+    Validate a string setting
+
+
+
+
+
+
+
+This method is defined by SettingValidator
+
+
+
+--
+
+
+protected **validateDigits** (  )
+
+
+    Validate digits
+
+
+
+
+
+
+
+This method is defined by SettingValidator
+
+
+
+--
+
+
+protected **validateLength** (  )
+
+
+    Validate length
+
+
+
+
+
+
+
+This method is defined by SettingValidator
+
+
+
+--
+
+
+protected **validatePrecision** (  )
+
+
+    Validate precision
+
+
+
+
+
+
+
+This method is defined by SettingValidator
+
+
+
+--
+
+
+protected **validateType** (  )
+
+
+    Validate data type
+
+
+
+
+
+
+
+This method is defined by SettingValidator
 
 
 

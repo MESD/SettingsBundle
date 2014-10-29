@@ -48,18 +48,18 @@ Methods
 -------
 
 
-public **__construct**
-
-    mixed Mesd\SettingsBundle\Model\Definition\SettingNodeArray::__construct($nodeAttributes)
+public **__construct** ( $nodeAttributes )
 
 
-
+    
 
 
 
 
 
 
+
+This method is defined by SettingNodeArray
 
 
     **Arguments**:
@@ -70,12 +70,10 @@ public **__construct**
 --
 
 
-public **dumpToArray**
-
-    mixed Mesd\SettingsBundle\Model\Definition\SettingNodeArray::dumpToArray()
+public **dumpToArray** (  )
 
 
-
+    
 
 
 
@@ -83,41 +81,43 @@ public **dumpToArray**
 
 
 
-
-
---
-
-
-public **getPrototype**
-
-    mixed Mesd\SettingsBundle\Model\Definition\SettingNodeArray::getPrototype()
-
-
-
-
-
-
-
-
-
+This method is defined by SettingNodeArray
 
 
 
 --
 
 
-public **setPrototype**
-
-    mixed Mesd\SettingsBundle\Model\Definition\SettingNodeArray::setPrototype($prototype)
+public **getPrototype** (  )
 
 
-
+    
 
 
 
 
 
 
+
+This method is defined by SettingNodeArray
+
+
+
+--
+
+
+public **setPrototype** ( $prototype )
+
+
+    
+
+
+
+
+
+
+
+This method is defined by SettingNodeArray
 
 
     **Arguments**:
@@ -128,36 +128,36 @@ public **setPrototype**
 --
 
 
-public **getNode**
-
-    mixed Mesd\SettingsBundle\Model\Definition\SettingNodeArray::getNode()
+public **getNode** (  )
 
 
-
+    
 
 
 
 
 
 
+
+This method is defined by SettingNodeArray
 
 
 
 --
 
 
-public **setNode**
-
-    mixed Mesd\SettingsBundle\Model\Definition\SettingNodeArray::setNode($node)
+public **setNode** ( $node )
 
 
-
+    
 
 
 
 
 
 
+
+This method is defined by SettingNodeArray
 
 
     **Arguments**:

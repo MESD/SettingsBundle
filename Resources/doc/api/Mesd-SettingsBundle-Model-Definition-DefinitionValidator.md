@@ -48,18 +48,18 @@ Methods
 -------
 
 
-public **__construct**
-
-    mixed Mesd\SettingsBundle\Model\Definition\DefinitionValidator::__construct(array $definition, $settingsManager)
+public **__construct** ( array $definition, $settingsManager )
 
 
-
+    
 
 
 
 
 
 
+
+This method is defined by DefinitionValidator
 
 
     **Arguments**:
@@ -71,12 +71,10 @@ public **__construct**
 --
 
 
-public **validate**
-
-    mixed Mesd\SettingsBundle\Model\Definition\DefinitionValidator::validate()
+public **validate** (  )
 
 
-
+    
 
 
 
@@ -84,59 +82,61 @@ public **validate**
 
 
 
-
-
---
-
-
-private **validateStructure**
-
-    mixed Mesd\SettingsBundle\Model\Definition\DefinitionValidator::validateStructure()
-
-
-
-
-
-
-
-
-
+This method is defined by DefinitionValidator
 
 
 
 --
 
 
-private **validateNodes**
-
-    mixed Mesd\SettingsBundle\Model\Definition\DefinitionValidator::validateNodes()
+private **validateStructure** (  )
 
 
-
+    
 
 
 
 
 
 
+
+This method is defined by DefinitionValidator
 
 
 
 --
 
 
-private **validateNodeArray**
-
-    mixed Mesd\SettingsBundle\Model\Definition\DefinitionValidator::validateNodeArray($nodeName, $nodeAttributes, $key)
+private **validateNodes** (  )
 
 
-
+    
 
 
 
 
 
 
+
+This method is defined by DefinitionValidator
+
+
+
+--
+
+
+private **validateNodeArray** ( $nodeName, $nodeAttributes, $key )
+
+
+    
+
+
+
+
+
+
+
+This method is defined by DefinitionValidator
 
 
     **Arguments**:
@@ -149,12 +149,10 @@ private **validateNodeArray**
 --
 
 
-private **validateNodeBoolean**
-
-    mixed Mesd\SettingsBundle\Model\Definition\DefinitionValidator::validateNodeBoolean($nodeName, $nodeAttributes, $key)
+private **validateNodeBoolean** ( $nodeName, $nodeAttributes, $key )
 
 
-
+    
 
 
 
@@ -162,29 +160,7 @@ private **validateNodeBoolean**
 
 
 
-
-    **Arguments**:
-
-    **$nodeName** mixed 
-    **$nodeAttributes** mixed 
-    **$key** mixed 
-
-
---
-
-
-private **validateNodeFloat**
-
-    mixed Mesd\SettingsBundle\Model\Definition\DefinitionValidator::validateNodeFloat($nodeName, $nodeAttributes, $key)
-
-
-
-
-
-
-
-
-
+This method is defined by DefinitionValidator
 
 
     **Arguments**:
@@ -197,18 +173,18 @@ private **validateNodeFloat**
 --
 
 
-private **validateNodeInteger**
-
-    mixed Mesd\SettingsBundle\Model\Definition\DefinitionValidator::validateNodeInteger($nodeName, $nodeAttributes, $key)
+private **validateNodeFloat** ( $nodeName, $nodeAttributes, $key )
 
 
-
+    
 
 
 
 
 
 
+
+This method is defined by DefinitionValidator
 
 
     **Arguments**:
@@ -221,18 +197,42 @@ private **validateNodeInteger**
 --
 
 
-private **validateNodeString**
-
-    mixed Mesd\SettingsBundle\Model\Definition\DefinitionValidator::validateNodeString($nodeName, $nodeAttributes, $key)
+private **validateNodeInteger** ( $nodeName, $nodeAttributes, $key )
 
 
-
+    
 
 
 
 
 
 
+
+This method is defined by DefinitionValidator
+
+
+    **Arguments**:
+
+    **$nodeName** mixed 
+    **$nodeAttributes** mixed 
+    **$key** mixed 
+
+
+--
+
+
+private **validateNodeString** ( $nodeName, $nodeAttributes, $key )
+
+
+    
+
+
+
+
+
+
+
+This method is defined by DefinitionValidator
 
 
     **Arguments**:

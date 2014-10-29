@@ -37,33 +37,32 @@ Methods
 -------
 
 
-public **__construct**
-
-    mixed Mesd\SettingsBundle\Model\SettingManager::__construct(\Symfony\Component\DependencyInjection\ContainerInterface $container)
+public **__construct** ( \Symfony\Component\DependencyInjection\ContainerInterface $container )
 
 
-
+    
 
 
 
 
 
 
+
+This method is defined by SettingManager
 
 
     **Arguments**:
 
-    **$container** Symfony\Component\DependencyInjection\ContainerInterface 
+    **$container** \Symfony\Component\DependencyInjection\ContainerInterface 
 
 
 --
 
 
-public **clusterExists**
+public **clusterExists** ( string $hiveName, string $clusterName )
 
-    \Mesd\SettingsBundle\Entity\Cluster|false Mesd\SettingsBundle\Model\SettingManager::clusterExists(string $hiveName, string $clusterName)
 
-Check if cluster exisits
+    Check if cluster exisits
 
 Determines if the specified cluster exisits
 in the database.
@@ -72,6 +71,7 @@ in the database.
 
 
 
+This method is defined by SettingManager
 
 
     **Arguments**:
@@ -83,11 +83,10 @@ in the database.
 --
 
 
-public **createCluster**
+public **createCluster** ( string $hiveName, string $clusterName, string $description )
 
-    \Mesd\SettingsBundle\Entity\Cluster Mesd\SettingsBundle\Model\SettingManager::createCluster(string $hiveName, string $clusterName, string $description)
 
-Create a cluster
+    Create a cluster
 
 Creates a new cluster in database
 
@@ -95,6 +94,7 @@ Creates a new cluster in database
 
 
 
+This method is defined by SettingManager
 
 
     **Arguments**:
@@ -107,11 +107,10 @@ Creates a new cluster in database
 --
 
 
-public **createHive**
+public **createHive** ( string $hiveName, string $description, boolean $definedAtHive )
 
-    \Mesd\SettingsBundle\Entity\Hive Mesd\SettingsBundle\Model\SettingManager::createHive(string $hiveName, string $description, boolean $definedAtHive)
 
-Create a hive
+    Create a hive
 
 Creates a new hive in database
 
@@ -119,6 +118,7 @@ Creates a new hive in database
 
 
 
+This method is defined by SettingManager
 
 
     **Arguments**:
@@ -131,11 +131,10 @@ Creates a new hive in database
 --
 
 
-public **deleteCluster**
+public **deleteCluster** ( string $hiveName, string $clusterName )
 
-    true|\Mesd\SettingsBundle\Model\Exception Mesd\SettingsBundle\Model\SettingManager::deleteCluster(string $hiveName, string $clusterName)
 
-Delete cluster
+    Delete cluster
 
 Delete the specified cluster or throw Exception.
 
@@ -143,6 +142,7 @@ Delete the specified cluster or throw Exception.
 
 
 
+This method is defined by SettingManager
 
 
     **Arguments**:
@@ -154,11 +154,10 @@ Delete the specified cluster or throw Exception.
 --
 
 
-public **deleteHive**
+public **deleteHive** ( string $hiveName )
 
-    true|\Mesd\SettingsBundle\Model\Exception Mesd\SettingsBundle\Model\SettingManager::deleteHive(string $hiveName)
 
-Delete hive
+    Delete hive
 
 Delete the specified hive or throw Exception.
 
@@ -166,6 +165,7 @@ Delete the specified hive or throw Exception.
 
 
 
+This method is defined by SettingManager
 
 
     **Arguments**:
@@ -176,11 +176,10 @@ Delete the specified hive or throw Exception.
 --
 
 
-public **deleteHiveClusters**
+public **deleteHiveClusters** ( string $hiveName )
 
-    true|false Mesd\SettingsBundle\Model\SettingManager::deleteHiveClusters(string $hiveName)
 
-Delete hive clusters
+    Delete hive clusters
 
 Delete all the clusters attched to specific hive.
 
@@ -188,6 +187,7 @@ Delete all the clusters attched to specific hive.
 
 
 
+This method is defined by SettingManager
 
 
     **Arguments**:
@@ -198,11 +198,10 @@ Delete all the clusters attched to specific hive.
 --
 
 
-public **hiveExists**
+public **hiveExists** ( string $hiveName )
 
-    \Mesd\SettingsBundle\Entity\Hive|false Mesd\SettingsBundle\Model\SettingManager::hiveExists(string $hiveName)
 
-Check if hive exisits
+    Check if hive exisits
 
 Determines if the specified hive exisits
 in the database.
@@ -211,6 +210,7 @@ in the database.
 
 
 
+This method is defined by SettingManager
 
 
     **Arguments**:
@@ -221,11 +221,10 @@ in the database.
 --
 
 
-public **hiveHasClusters**
+public **hiveHasClusters** ( string $hiveName )
 
-    \Mesd\SettingsBundle\Entity\Hive|false Mesd\SettingsBundle\Model\SettingManager::hiveHasClusters(string $hiveName)
 
-Check if hive has clusters
+    Check if hive has clusters
 
 Determines if the specified hive has clusters
 exisiting in the database.
@@ -234,6 +233,7 @@ exisiting in the database.
 
 
 
+This method is defined by SettingManager
 
 
     **Arguments**:
@@ -244,11 +244,10 @@ exisiting in the database.
 --
 
 
-public **loadCluster**
+public **loadCluster** ( string $hiveName, string $clusterName )
 
-    \Mesd\SettingsBundle\Entity\Cluster|\Mesd\SettingsBundle\Model\Exception Mesd\SettingsBundle\Model\SettingManager::loadCluster(string $hiveName, string $clusterName)
 
-Load cluster
+    Load cluster
 
 Load the specified cluster or throw Exception.
 
@@ -256,6 +255,7 @@ Load the specified cluster or throw Exception.
 
 
 
+This method is defined by SettingManager
 
 
     **Arguments**:
@@ -267,11 +267,10 @@ Load the specified cluster or throw Exception.
 --
 
 
-public **loadHive**
+public **loadHive** ( string $hiveName )
 
-    \Mesd\SettingsBundle\Entity\Hive|\Mesd\SettingsBundle\Model\Exception Mesd\SettingsBundle\Model\SettingManager::loadHive(string $hiveName)
 
-Load hive
+    Load hive
 
 Load the specified hive or throw Exception.
 
@@ -279,6 +278,7 @@ Load the specified hive or throw Exception.
 
 
 
+This method is defined by SettingManager
 
 
     **Arguments**:
@@ -289,11 +289,10 @@ Load the specified hive or throw Exception.
 --
 
 
-public **loadSetting**
+public **loadSetting** ( string $hiveName, string $clusterName, string $settingName, boolean $loadDefinition )
 
-    \Mesd\SettingsBundle\Model\Mesd\SettingsBundle\Model\Setting|\Mesd\SettingsBundle\Model\Exception Mesd\SettingsBundle\Model\SettingManager::loadSetting(string $hiveName, string $clusterName, string $settingName, boolean $loadDefinition)
 
-Load setting
+    Load setting
 
 Load the specified setting object or throw Exception.
 
@@ -306,6 +305,7 @@ is needed.
 
 
 
+This method is defined by SettingManager
 
 
     **Arguments**:
@@ -319,11 +319,10 @@ is needed.
 --
 
 
-public **loadSettingValue**
+public **loadSettingValue** ( string $hiveName, string $clusterName, string $settingName )
 
-    string|\Mesd\SettingsBundle\Model\Exception Mesd\SettingsBundle\Model\SettingManager::loadSettingValue(string $hiveName, string $clusterName, string $settingName)
 
-Load setting value
+    Load setting value
 
 Load the specified setting value or throw Exception.
 
@@ -331,6 +330,7 @@ Load the specified setting value or throw Exception.
 
 
 
+This method is defined by SettingManager
 
 
     **Arguments**:
@@ -343,11 +343,10 @@ Load the specified setting value or throw Exception.
 --
 
 
-public **saveSetting**
+public **saveSetting** ( mixed $setting )
 
-    \Mesd\SettingsBundle\Model\Mesd\SettingsBundle\Model\Setting|\Mesd\SettingsBundle\Model\Exception Mesd\SettingsBundle\Model\SettingManager::saveSetting(mixed $setting)
 
-Save setting
+    Save setting
 
 Save the specified setting object or throw Exception.
 
@@ -355,6 +354,7 @@ Save the specified setting object or throw Exception.
 
 
 
+This method is defined by SettingManager
 
 
     **Arguments**:
@@ -365,11 +365,10 @@ Save the specified setting object or throw Exception.
 --
 
 
-public **saveSettingValue**
+public **saveSettingValue** ( string $hiveName, string $clusterName, string $settingName, mixed $settingValue )
 
-    \Mesd\SettingsBundle\Model\Setting|\Mesd\SettingsBundle\Model\Exception Mesd\SettingsBundle\Model\SettingManager::saveSettingValue(string $hiveName, string $clusterName, string $settingName, mixed $settingValue)
 
-Save setting value
+    Save setting value
 
 Save the specified setting value or throw Exception.
 
@@ -377,6 +376,7 @@ Save the specified setting value or throw Exception.
 
 
 
+This method is defined by SettingManager
 
 
     **Arguments**:

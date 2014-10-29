@@ -24,18 +24,18 @@ Methods
 -------
 
 
-public **__construct**
-
-    mixed Mesd\SettingsBundle\Model\Definition\SettingNodeBoolean::__construct($nodeAttributes)
+public **__construct** ( $nodeAttributes )
 
 
-
+    
 
 
 
 
 
 
+
+This method is defined by SettingNodeBoolean
 
 
     **Arguments**:
@@ -46,18 +46,18 @@ public **__construct**
 --
 
 
-public **dumpToArray**
-
-    mixed Mesd\SettingsBundle\Model\Definition\SettingNodeBoolean::dumpToArray()
+public **dumpToArray** (  )
 
 
-
+    
 
 
 
 
 
 
+
+This method is defined by SettingNodeBoolean
 
 
 

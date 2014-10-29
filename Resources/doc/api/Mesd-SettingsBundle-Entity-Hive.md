@@ -81,12 +81,10 @@ Methods
 -------
 
 
-public **__construct**
+public **__construct** (  )
 
-    mixed Mesd\SettingsBundle\Entity\Hive::__construct()
 
-Constructor
-
+    Constructor
 
 
 
@@ -94,41 +92,43 @@ Constructor
 
 
 
-
-
---
-
-
-public **getId**
-
-    integer Mesd\SettingsBundle\Entity\Hive::getId()
-
-Get id
-
-
-
-
-
-
-
+This method is defined by Hive
 
 
 
 --
 
 
-public **setName**
+public **getId** (  )
 
-    \Mesd\SettingsBundle\Entity\Hive Mesd\SettingsBundle\Entity\Hive::setName(string $name)
 
-Set name
-
+    Get id
 
 
 
 
 
 
+
+This method is defined by Hive
+
+
+
+--
+
+
+public **setName** ( string $name )
+
+
+    Set name
+
+
+
+
+
+
+
+This method is defined by Hive
 
 
     **Arguments**:
@@ -139,36 +139,36 @@ Set name
 --
 
 
-public **getName**
+public **getName** (  )
 
-    string Mesd\SettingsBundle\Entity\Hive::getName()
 
-Get name
-
+    Get name
 
 
 
 
 
 
+
+This method is defined by Hive
 
 
 
 --
 
 
-public **setDescription**
+public **setDescription** ( string $description )
 
-    \Mesd\SettingsBundle\Entity\Hive Mesd\SettingsBundle\Entity\Hive::setDescription(string $description)
 
-Set description
-
+    Set description
 
 
 
 
 
 
+
+This method is defined by Hive
 
 
     **Arguments**:
@@ -179,36 +179,36 @@ Set description
 --
 
 
-public **getDescription**
+public **getDescription** (  )
 
-    string Mesd\SettingsBundle\Entity\Hive::getDescription()
 
-Get description
-
+    Get description
 
 
 
 
 
 
+
+This method is defined by Hive
 
 
 
 --
 
 
-public **setDefinedAtHive**
+public **setDefinedAtHive** ( boolean $definedAtHive )
 
-    \Mesd\SettingsBundle\Entity\Hive Mesd\SettingsBundle\Entity\Hive::setDefinedAtHive(boolean $definedAtHive)
 
-Set definedAtHive
-
+    Set definedAtHive
 
 
 
 
 
 
+
+This method is defined by Hive
 
 
     **Arguments**:
@@ -219,80 +219,80 @@ Set definedAtHive
 --
 
 
-public **getDefinedAtHive**
+public **getDefinedAtHive** (  )
 
-    boolean Mesd\SettingsBundle\Entity\Hive::getDefinedAtHive()
 
-Get definedAtHive
-
+    Get definedAtHive
 
 
 
 
 
 
+
+This method is defined by Hive
 
 
 
 --
 
 
-public **addCluster**
+public **addCluster** ( \Mesd\SettingsBundle\Entity\Cluster $cluster )
 
-    \Mesd\SettingsBundle\Entity\Hive Mesd\SettingsBundle\Entity\Hive::addCluster(\Mesd\SettingsBundle\Entity\Cluster $cluster)
 
-Add cluster
-
+    Add cluster
 
 
 
 
 
 
+
+This method is defined by Hive
 
 
     **Arguments**:
 
-    **$cluster** [Mesd\SettingsBundle\Entity\Cluster](Mesd-SettingsBundle-Entity-Cluster.md) 
+    **$cluster** \Mesd\SettingsBundle\Entity\Cluster 
 
 
 --
 
 
-public **removeCluster**
+public **removeCluster** ( \Mesd\SettingsBundle\Entity\Cluster $cluster )
 
-    mixed Mesd\SettingsBundle\Entity\Hive::removeCluster(\Mesd\SettingsBundle\Entity\Cluster $cluster)
 
-Remove cluster
-
+    Remove cluster
 
 
 
 
 
 
+
+This method is defined by Hive
 
 
     **Arguments**:
 
-    **$cluster** [Mesd\SettingsBundle\Entity\Cluster](Mesd-SettingsBundle-Entity-Cluster.md) 
+    **$cluster** \Mesd\SettingsBundle\Entity\Cluster 
 
 
 --
 
 
-public **getCluster**
+public **getCluster** (  )
 
-    \Doctrine\Common\Collections\Collection Mesd\SettingsBundle\Entity\Hive::getCluster()
 
-Get cluster
-
+    Get cluster
 
 
 
 
 
 
+
+This method is defined by Hive
 
 
 

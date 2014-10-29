@@ -48,18 +48,18 @@ Methods
 -------
 
 
-public **__construct**
-
-    mixed Mesd\SettingsBundle\Model\Definition\SettingNodeFloat::__construct($nodeAttributes)
+public **__construct** ( $nodeAttributes )
 
 
-
+    
 
 
 
 
 
 
+
+This method is defined by SettingNodeFloat
 
 
     **Arguments**:
@@ -70,12 +70,10 @@ public **__construct**
 --
 
 
-public **dumpToArray**
-
-    mixed Mesd\SettingsBundle\Model\Definition\SettingNodeFloat::dumpToArray()
+public **dumpToArray** (  )
 
 
-
+    
 
 
 
@@ -83,41 +81,43 @@ public **dumpToArray**
 
 
 
-
-
---
-
-
-public **getDigits**
-
-    mixed Mesd\SettingsBundle\Model\Definition\SettingNodeFloat::getDigits()
-
-
-
-
-
-
-
-
-
+This method is defined by SettingNodeFloat
 
 
 
 --
 
 
-public **setDigits**
-
-    mixed Mesd\SettingsBundle\Model\Definition\SettingNodeFloat::setDigits($digits)
+public **getDigits** (  )
 
 
-
+    
 
 
 
 
 
 
+
+This method is defined by SettingNodeFloat
+
+
+
+--
+
+
+public **setDigits** ( $digits )
+
+
+    
+
+
+
+
+
+
+
+This method is defined by SettingNodeFloat
 
 
     **Arguments**:
@@ -128,36 +128,36 @@ public **setDigits**
 --
 
 
-public **getPrecision**
-
-    mixed Mesd\SettingsBundle\Model\Definition\SettingNodeFloat::getPrecision()
+public **getPrecision** (  )
 
 
-
+    
 
 
 
 
 
 
+
+This method is defined by SettingNodeFloat
 
 
 
 --
 
 
-public **setPrecision**
-
-    mixed Mesd\SettingsBundle\Model\Definition\SettingNodeFloat::setPrecision($precision)
+public **setPrecision** ( $precision )
 
 
-
+    
 
 
 
 
 
 
+
+This method is defined by SettingNodeFloat
 
 
     **Arguments**:
