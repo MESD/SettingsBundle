@@ -75,38 +75,6 @@ class DefinitionValidator
                 )
             );
         }
-        // Check if hive is defined in database
-        else {
-            if (!$this->settingsManager
-                    ->hiveExists(
-                        $this->definition[$key]['hive']
-                    )
-                ) {
-                throw new \Exception(
-                    sprintf(
-                        "Settings Hive '%s' does not exist.",
-                        $this->definition[$key]['hive']
-                    )
-                );
-            }
-        }
-
-        // If type is cluster, check if cluster is defined in database
-        if ('cluster' == $this->definition[$key]['type']) {
-            if (!$this->settingsManager
-                    ->clusterExists(
-                        $this->definition[$key]['hive'],
-                        $key
-                    )
-                ) {
-                throw new \Exception(
-                    sprintf(
-                        "Settings Cluster '%s' does not exist.",
-                        $key
-                    )
-                );
-            }
-        }
 
 
         // Check for any additional elements that should not exisit
