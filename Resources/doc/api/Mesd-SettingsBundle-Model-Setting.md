@@ -6,73 +6,38 @@ Mesd\SettingsBundle\Model\Setting
     Setting long description
 
 
-
-
 **Class name**: Setting
 
 **Namespace**: Mesd\SettingsBundle\Model
 
 
-
-
-
-
-
-
-
 Properties
 ----------
-
 
 **$name** The setting name
 
     private string $name
 
 
-
-
-
-* Visibility: **private**
-
-
-### $value
+**$value** The setting value
 
     private mixed $value
 
-The setting value
 
-
-
-* Visibility: **private**
-
-
-### $settingNode
+**$settingNode** SettingNode from the SettingDefinition
 
     private \Mesd\SettingsBundle\Model\Definition\SettingNode $settingNode
 
-SettingNode from the SettingDefinition
 
-
-
-* Visibility: **private**
-
-
-### $cluster
+**$cluster** Cluster Entity
 
     private \Mesd\SettingsBundle\Entity\Cluster $cluster
-
-Cluster Entity
-
-
-
-* Visibility: **private**
 
 
 Methods
 -------
 
-
-### isSettingNodeLoaded
+**public isSettingNodeLoaded**
 
     boolean Mesd\SettingsBundle\Model\Setting::isSettingNodeLoaded()
 
@@ -88,66 +53,43 @@ extra time. Since the SettingNode definition data is not commonly needed
 when retrieving settings and their values, the default behavior is to
 not loaded the SettingNode.
 
-* Visibility: **public**
 
 
-
-
-### getName
+**public getName**
 
     string Mesd\SettingsBundle\Model\Setting::getName()
 
 Get Setting Name
 
 
-
-* Visibility: **public**
-
-
-
-
-### setName
+**public setName**
 
     \Mesd\SettingsBundle\Model\Setting Mesd\SettingsBundle\Model\Setting::setName(string $name)
 
 Set Setting Name
 
 
-
-* Visibility: **public**
-
-
-##### Arguments
-* $name **string** - &lt;p&gt;Setting Name&lt;/p&gt;
+#### Arguments:
+**$name** string - &lt;p&gt;Setting Name&lt;/p&gt;
 
 
 
-### getValue
+**public getValue**
 
     mixed Mesd\SettingsBundle\Model\Setting::getValue()
 
 Get Setting Value
 
 
-
-* Visibility: **public**
-
-
-
-
-### setValue
+**public setValue**
 
     \Mesd\SettingsBundle\Model\Setting Mesd\SettingsBundle\Model\Setting::setValue(mixed $value)
 
 Set Setting Value
 
 
-
-* Visibility: **public**
-
-
 ##### Arguments
-* $value **mixed** - &lt;p&gt;Setting Value&lt;/p&gt;
+**$value** mixed - &lt;p&gt;Setting Value&lt;/p&gt;
 
 
 
