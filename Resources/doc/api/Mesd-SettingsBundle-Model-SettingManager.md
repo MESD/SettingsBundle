@@ -55,6 +55,7 @@ public **__construct** ( \Symfony\Component\DependencyInjection\ContainerInterfa
 | $container | Symfony\Component\DependencyInjection\ContainerInterface |  |
 
 
+
 public **clusterExists** ( string $hiveName, string $clusterName )
 
 
@@ -72,7 +73,9 @@ in the database.
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $hiveName | string |  |
+
 | $clusterName | string |  |
+
 
 
 public **createCluster** ( string $hiveName, string $clusterName, string $description )
@@ -91,8 +94,11 @@ Creates a new cluster in database
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $hiveName | string |  |
+
 | $clusterName | string |  |
+
 | $description | string |  |
+
 
 
 public **createHive** ( string $hiveName, string $description, boolean $definedAtHive )
@@ -111,8 +117,11 @@ Creates a new hive in database
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $hiveName | string |  |
+
 | $description | string |  |
+
 | $definedAtHive | boolean |  |
+
 
 
 public **deleteCluster** ( string $hiveName, string $clusterName )
@@ -131,7 +140,9 @@ Delete the specified cluster or throw Exception.
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $hiveName | string |  |
+
 | $clusterName | string |  |
+
 
 
 public **deleteHive** ( string $hiveName )
@@ -152,6 +163,7 @@ Delete the specified hive or throw Exception.
 | $hiveName | string |  |
 
 
+
 public **deleteHiveClusters** ( string $hiveName )
 
 
@@ -168,6 +180,7 @@ Delete all the clusters attched to specific hive.
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $hiveName | string |  |
+
 
 
 public **hiveExists** ( string $hiveName )
@@ -189,6 +202,7 @@ in the database.
 | $hiveName | string |  |
 
 
+
 public **hiveHasClusters** ( string $hiveName )
 
 
@@ -208,6 +222,7 @@ exisiting in the database.
 | $hiveName | string |  |
 
 
+
 public **loadCluster** ( string $hiveName, string $clusterName )
 
 
@@ -224,7 +239,9 @@ Load the specified cluster or throw Exception.
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $hiveName | string |  |
+
 | $clusterName | string |  |
+
 
 
 public **loadHive** ( string $hiveName )
@@ -243,6 +260,7 @@ Load the specified hive or throw Exception.
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $hiveName | string |  |
+
 
 
 public **loadSetting** ( string $hiveName, string $clusterName, string $settingName, boolean $loadDefinition )
@@ -266,9 +284,13 @@ is needed.
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $hiveName | string |  |
+
 | $clusterName | string |  |
+
 | $settingName | string |  |
+
 | $loadDefinition | boolean | &lt;p&gt;(optional)&lt;/p&gt; |
+
 
 
 public **loadSettingValue** ( string $hiveName, string $clusterName, string $settingName )
@@ -287,8 +309,11 @@ Load the specified setting value or throw Exception.
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $hiveName | string |  |
+
 | $clusterName | string |  |
+
 | $settingName | string |  |
+
 
 
 public **saveSetting** ( mixed $setting )
@@ -309,6 +334,7 @@ Save the specified setting object or throw Exception.
 | $setting | mixed |  |
 
 
+
 public **saveSettingValue** ( string $hiveName, string $clusterName, string $settingName, mixed $settingValue )
 
 
@@ -325,7 +351,11 @@ Save the specified setting value or throw Exception.
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $hiveName | string |  |
+
 | $clusterName | string |  |
+
 | $settingName | string |  |
+
 | $settingValue | mixed |  |
+
 

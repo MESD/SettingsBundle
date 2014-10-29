@@ -66,6 +66,7 @@ public **__construct** ( $nodeAttributes )
 | $nodeAttributes | mixed |  |
 
 
+
 public **dumpToArray** (  )
 
 
@@ -110,6 +111,7 @@ public **setDigits** ( $digits )
 | $digits | mixed |  |
 
 
+
 public **getPrecision** (  )
 
 
@@ -139,4 +141,5 @@ public **setPrecision** ( $precision )
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $precision | mixed |  |
+
 

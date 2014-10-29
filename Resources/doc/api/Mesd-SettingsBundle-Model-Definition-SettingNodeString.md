@@ -55,6 +55,7 @@ public **__construct** ( $nodeAttributes )
 | $nodeAttributes | mixed |  |
 
 
+
 public **dumpToArray** (  )
 
 
@@ -97,4 +98,5 @@ public **setLength** ( $length )
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $length | mixed |  |
+
 

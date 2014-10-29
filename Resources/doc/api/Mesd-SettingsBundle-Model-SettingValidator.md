@@ -86,7 +86,9 @@ public **__construct** ( \Mesd\SettingsBundle\Model\Definition\SettingNode $sett
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $settingNode | [Mesd\SettingsBundle\Model\Definition\SettingNode](Mesd-SettingsBundle-Model-Definition-SettingNode.md) |  |
+
 | $setting | [Mesd\SettingsBundle\Model\Setting](Mesd-SettingsBundle-Model-Setting.md) |  |
+
 
 
 public **sanitize** (  )

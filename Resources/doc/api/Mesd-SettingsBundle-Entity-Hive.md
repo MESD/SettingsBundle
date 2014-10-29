@@ -125,6 +125,7 @@ Set name
 | $name | string |  |
 
 
+
 public **getName** (  )
 
 
@@ -154,6 +155,7 @@ Set description
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $description | string |  |
+
 
 
 public **getDescription** (  )
@@ -187,6 +189,7 @@ Set definedAtHive
 | $definedAtHive | boolean |  |
 
 
+
 public **getDefinedAtHive** (  )
 
 
@@ -218,6 +221,7 @@ Add cluster
 | $cluster | [Mesd\SettingsBundle\Entity\Cluster](Mesd-SettingsBundle-Entity-Cluster.md) |  |
 
 
+
 public **removeCluster** ( \Mesd\SettingsBundle\Entity\Cluster $cluster )
 
 
@@ -234,6 +238,7 @@ Remove cluster
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $cluster | [Mesd\SettingsBundle\Entity\Cluster](Mesd-SettingsBundle-Entity-Cluster.md) |  |
+
 
 
 public **getCluster** (  )
