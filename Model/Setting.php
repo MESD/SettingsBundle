@@ -38,14 +38,14 @@ class Setting {
     /**
      * SettingNode from the SettingDefinition
      *
-     * @var Mesd\SettingsBundle\Model\Definition\SettingNode
+     * @var SettingNode
      */
     private $settingNode;
 
     /**
      * Cluster Entity
      *
-     * @var Mesd\SettingsBundle\Entity\Cluster
+     * @var Cluster
      */
     private $cluster;
 

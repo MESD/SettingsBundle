@@ -45,7 +45,7 @@ The setting value
 
 ### $settingNode
 
-    private \Mesd\SettingsBundle\Model\Mesd\SettingsBundle\Model\Definition\SettingNode $settingNode
+    private \Mesd\SettingsBundle\Model\Definition\SettingNode $settingNode
 
 SettingNode from the SettingDefinition
 
@@ -56,7 +56,7 @@ SettingNode from the SettingDefinition
 
 ### $cluster
 
-    private \Mesd\SettingsBundle\Model\Mesd\SettingsBundle\Entity\Cluster $cluster
+    private \Mesd\SettingsBundle\Entity\Cluster $cluster
 
 Cluster Entity
 
