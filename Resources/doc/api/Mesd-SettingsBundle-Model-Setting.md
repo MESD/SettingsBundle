@@ -37,7 +37,7 @@ Properties
 Methods
 -------
 
-**public isSettingNodeLoaded**
+public **isSettingNodeLoaded**
 
     boolean Mesd\SettingsBundle\Model\Setting::isSettingNodeLoaded()
 
@@ -55,14 +55,14 @@ not loaded the SettingNode.
 
 
 
-**public getName**
+public **getName**
 
     string Mesd\SettingsBundle\Model\Setting::getName()
 
 Get Setting Name
 
 
-**public setName**
+public **setName**
 
     \Mesd\SettingsBundle\Model\Setting Mesd\SettingsBundle\Model\Setting::setName(string $name)
 
@@ -74,14 +74,14 @@ Set Setting Name
 
 
 
-**public getValue**
+public **getValue**
 
     mixed Mesd\SettingsBundle\Model\Setting::getValue()
 
 Get Setting Value
 
 
-**public setValue**
+public **setValue**
 
     \Mesd\SettingsBundle\Model\Setting Mesd\SettingsBundle\Model\Setting::setValue(mixed $value)
 
@@ -93,36 +93,25 @@ Set Setting Value
 
 
 
-### getCluster
+public **getCluster**
 
     \Mesd\SettingsBundle\Entity\Cluster Mesd\SettingsBundle\Model\Setting::getCluster()
 
 Get cluster
 
 
+public **setCluster**
 
-* Visibility: **public**
+    Mesd\SettingsBundle\Model\Setting::setCluster(\Mesd\SettingsBundle\Entity\Cluster $cluster)
 
-
-
-
-### setCluster
-
-    \Mesd\SettingsBundle\Model\Setting Mesd\SettingsBundle\Model\Setting::setCluster(\Mesd\SettingsBundle\Entity\Cluster $cluster)
-
-Set cluster
-
-
-
-* Visibility: **public**
 
 
 ##### Arguments
-* $cluster **[Mesd\SettingsBundle\Entity\Cluster](Mesd-SettingsBundle-Entity-Cluster.md)**
+**$cluster** [Mesd\SettingsBundle\Entity\Cluster](Mesd-SettingsBundle-Entity-Cluster.md)
 
 
 
-### getSettingNode
+public **getSettingNode**
 
     \Mesd\SettingsBundle\Model\Definition\SettingNode|\Mesd\SettingsBundle\Model\Excption Mesd\SettingsBundle\Model\Setting::getSettingNode()
 
@@ -131,23 +120,16 @@ Get SettingNode definition
 Get the SettingNode definition, if it has been loaded. See
 isSettingNodeLoaded() for more details.
 
-* Visibility: **public**
 
+public **setSettingNode**
 
-
-
-### setSettingNode
-
-    \Mesd\SettingsBundle\Model\Setting Mesd\SettingsBundle\Model\Setting::setSettingNode(\Mesd\SettingsBundle\Model\Definition\SettingNode $settingNode)
+ Mesd\SettingsBundle\Model\Setting::setSettingNode(\Mesd\SettingsBundle\Model\Definition\SettingNode $settingNode)
 
 Set SettingNode definition
 
 
 
-* Visibility: **public**
-
-
 ##### Arguments
-* $settingNode **[Mesd\SettingsBundle\Model\Definition\SettingNode](Mesd-SettingsBundle-Model-Definition-SettingNode.md)**
+**$settingNode** [Mesd\SettingsBundle\Model\Definition\SettingNode](Mesd-SettingsBundle-Model-Definition-SettingNode.md)
 
 
