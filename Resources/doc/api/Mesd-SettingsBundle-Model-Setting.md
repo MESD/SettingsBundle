@@ -69,7 +69,7 @@ public **setName**
 Set Setting Name
 
 
-#### Arguments:
+##### Arguments:
 **$name** string - &lt;p&gt;Setting Name&lt;/p&gt;
 
 
