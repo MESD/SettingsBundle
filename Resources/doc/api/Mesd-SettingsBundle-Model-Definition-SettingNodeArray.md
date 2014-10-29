@@ -22,7 +22,7 @@ Properties
 ----------
 
 
-**$prototype** 
+**$prototype** - 
 
 
 
@@ -33,7 +33,7 @@ Properties
 
 
 
-**$node** 
+**$node** - 
 
 
 
@@ -66,6 +66,8 @@ public **__construct**
 **$nodeAttributes** mixed 
 
 
+---
+
 
 public **dumpToArray**
 
@@ -82,6 +84,8 @@ public **dumpToArray**
 
 
 
+---
+
 
 public **getPrototype**
 
@@ -97,6 +101,8 @@ public **getPrototype**
 
 
 
+
+---
 
 
 public **setPrototype**
@@ -117,6 +123,8 @@ public **setPrototype**
 **$prototype** mixed 
 
 
+---
+
 
 public **getNode**
 
@@ -132,6 +140,8 @@ public **getNode**
 
 
 
+
+---
 
 
 public **setNode**
@@ -151,4 +161,6 @@ public **setNode**
 **Arguments**:
 **$node** mixed 
 
+
+---
 

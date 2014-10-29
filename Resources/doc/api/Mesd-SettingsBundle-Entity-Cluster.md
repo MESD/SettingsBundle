@@ -22,7 +22,7 @@ Properties
 ----------
 
 
-**$id** 
+**$id** - 
 
 
 
@@ -33,7 +33,7 @@ Properties
 
 
 
-**$name** 
+**$name** - 
 
 
 
@@ -44,7 +44,7 @@ Properties
 
 
 
-**$description** 
+**$description** - 
 
 
 
@@ -55,7 +55,7 @@ Properties
 
 
 
-**$setting** 
+**$setting** - 
 
 
 
@@ -66,7 +66,7 @@ Properties
 
 
 
-**$hive** 
+**$hive** - 
 
 
 
@@ -96,6 +96,8 @@ Get id
 
 
 
+---
+
 
 public **setName**
 
@@ -115,6 +117,8 @@ Set name
 **$name** string 
 
 
+---
+
 
 public **getName**
 
@@ -130,6 +134,8 @@ Get name
 
 
 
+
+---
 
 
 public **setDescription**
@@ -150,6 +156,8 @@ Set description
 **$description** string 
 
 
+---
+
 
 public **getDescription**
 
@@ -165,6 +173,8 @@ Get description
 
 
 
+
+---
 
 
 public **addSetting**
@@ -185,6 +195,8 @@ Add Setting
 **$setting** Mesd\SettingsBundle\Entity\Mesd\SettingsBundle\Model\Setting 
 
 
+---
+
 
 public **getSettingArray**
 
@@ -200,6 +212,8 @@ Get setting Array
 
 
 
+
+---
 
 
 public **getSetting**
@@ -220,6 +234,8 @@ Get setting
 **$settingName** mixed 
 
 
+---
+
 
 public **removeSetting**
 
@@ -238,6 +254,8 @@ Remove Setting
 **Arguments**:
 **$setting** Mesd\SettingsBundle\Entity\Mesd\SettingsBundle\Model\Setting 
 
+
+---
 
 
 public **setHive**
@@ -258,6 +276,8 @@ Set hive
 **$hive** [Mesd\SettingsBundle\Entity\Hive](Mesd-SettingsBundle-Entity-Hive.md) 
 
 
+---
+
 
 public **getHive**
 
@@ -273,4 +293,6 @@ Get hive
 
 
 
+
+---
 

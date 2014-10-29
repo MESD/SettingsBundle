@@ -22,7 +22,7 @@ Properties
 ----------
 
 
-**$default** 
+**$default** - 
 
 
 
@@ -33,7 +33,7 @@ Properties
 
 
 
-**$description** 
+**$description** - 
 
 
 
@@ -44,7 +44,7 @@ Properties
 
 
 
-**$format** 
+**$format** - 
 
 
 
@@ -55,7 +55,7 @@ Properties
 
 
 
-**$name** 
+**$name** - 
 
 
 
@@ -66,7 +66,7 @@ Properties
 
 
 
-**$type** 
+**$type** - 
 
 
 
@@ -99,6 +99,8 @@ public **__construct**
 **$nodeData** mixed 
 
 
+---
+
 
 public **getDefault**
 
@@ -114,6 +116,8 @@ public **getDefault**
 
 
 
+
+---
 
 
 public **setDefault**
@@ -134,6 +138,8 @@ public **setDefault**
 **$default** mixed 
 
 
+---
+
 
 public **getDescription**
 
@@ -149,6 +155,8 @@ public **getDescription**
 
 
 
+
+---
 
 
 public **setDescription**
@@ -169,6 +177,8 @@ public **setDescription**
 **$description** mixed 
 
 
+---
+
 
 public **getFormat**
 
@@ -184,6 +194,8 @@ public **getFormat**
 
 
 
+
+---
 
 
 public **setFormat**
@@ -204,6 +216,8 @@ public **setFormat**
 **$format** mixed 
 
 
+---
+
 
 public **getName**
 
@@ -219,6 +233,8 @@ public **getName**
 
 
 
+
+---
 
 
 public **setName**
@@ -239,6 +255,8 @@ public **setName**
 **$name** mixed 
 
 
+---
+
 
 public **getType**
 
@@ -254,6 +272,8 @@ public **getType**
 
 
 
+
+---
 
 
 public **setType**
@@ -273,4 +293,6 @@ public **setType**
 **Arguments**:
 **$type** mixed 
 
+
+---
 

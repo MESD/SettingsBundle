@@ -22,7 +22,7 @@ Properties
 ----------
 
 
-**$length** 
+**$length** - 
 
 
 
@@ -55,6 +55,8 @@ public **__construct**
 **$nodeAttributes** mixed 
 
 
+---
+
 
 public **dumpToArray**
 
@@ -71,6 +73,8 @@ public **dumpToArray**
 
 
 
+---
+
 
 public **getLength**
 
@@ -86,6 +90,8 @@ public **getLength**
 
 
 
+
+---
 
 
 public **setLength**
@@ -105,4 +111,6 @@ public **setLength**
 **Arguments**:
 **$length** mixed 
 
+
+---
 

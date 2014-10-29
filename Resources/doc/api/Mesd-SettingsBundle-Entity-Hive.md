@@ -22,7 +22,7 @@ Properties
 ----------
 
 
-**$id** 
+**$id** - 
 
 
 
@@ -33,7 +33,7 @@ Properties
 
 
 
-**$name** 
+**$name** - 
 
 
 
@@ -44,7 +44,7 @@ Properties
 
 
 
-**$description** 
+**$description** - 
 
 
 
@@ -55,7 +55,7 @@ Properties
 
 
 
-**$definedAtHive** 
+**$definedAtHive** - 
 
 
 
@@ -66,7 +66,7 @@ Properties
 
 
 
-**$cluster** 
+**$cluster** - 
 
 
 
@@ -96,6 +96,8 @@ Constructor
 
 
 
+---
+
 
 public **getId**
 
@@ -111,6 +113,8 @@ Get id
 
 
 
+
+---
 
 
 public **setName**
@@ -131,6 +135,8 @@ Set name
 **$name** string 
 
 
+---
+
 
 public **getName**
 
@@ -146,6 +152,8 @@ Get name
 
 
 
+
+---
 
 
 public **setDescription**
@@ -166,6 +174,8 @@ Set description
 **$description** string 
 
 
+---
+
 
 public **getDescription**
 
@@ -181,6 +191,8 @@ Get description
 
 
 
+
+---
 
 
 public **setDefinedAtHive**
@@ -201,6 +213,8 @@ Set definedAtHive
 **$definedAtHive** boolean 
 
 
+---
+
 
 public **getDefinedAtHive**
 
@@ -216,6 +230,8 @@ Get definedAtHive
 
 
 
+
+---
 
 
 public **addCluster**
@@ -236,6 +252,8 @@ Add cluster
 **$cluster** [Mesd\SettingsBundle\Entity\Cluster](Mesd-SettingsBundle-Entity-Cluster.md) 
 
 
+---
+
 
 public **removeCluster**
 
@@ -255,6 +273,8 @@ Remove cluster
 **$cluster** [Mesd\SettingsBundle\Entity\Cluster](Mesd-SettingsBundle-Entity-Cluster.md) 
 
 
+---
+
 
 public **getCluster**
 
@@ -270,4 +290,6 @@ Get cluster
 
 
 
+
+---
 

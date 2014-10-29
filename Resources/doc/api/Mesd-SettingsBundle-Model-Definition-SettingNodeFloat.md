@@ -22,7 +22,7 @@ Properties
 ----------
 
 
-**$digits** 
+**$digits** - 
 
 
 
@@ -33,7 +33,7 @@ Properties
 
 
 
-**$precision** 
+**$precision** - 
 
 
 
@@ -66,6 +66,8 @@ public **__construct**
 **$nodeAttributes** mixed 
 
 
+---
+
 
 public **dumpToArray**
 
@@ -82,6 +84,8 @@ public **dumpToArray**
 
 
 
+---
+
 
 public **getDigits**
 
@@ -97,6 +101,8 @@ public **getDigits**
 
 
 
+
+---
 
 
 public **setDigits**
@@ -117,6 +123,8 @@ public **setDigits**
 **$digits** mixed 
 
 
+---
+
 
 public **getPrecision**
 
@@ -132,6 +140,8 @@ public **getPrecision**
 
 
 
+
+---
 
 
 public **setPrecision**
@@ -151,4 +161,6 @@ public **setPrecision**
 **Arguments**:
 **$precision** mixed 
 
+
+---
 

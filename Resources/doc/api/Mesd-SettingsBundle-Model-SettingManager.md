@@ -22,7 +22,7 @@ Properties
 ----------
 
 
-**$container** 
+**$container** - 
 
 
 
@@ -55,6 +55,8 @@ public **__construct**
 **$container** Symfony\Component\DependencyInjection\ContainerInterface 
 
 
+---
+
 
 public **clusterExists**
 
@@ -75,6 +77,8 @@ in the database.
 **$hiveName** string 
 **$clusterName** string 
 
+
+---
 
 
 public **createCluster**
@@ -97,6 +101,8 @@ Creates a new cluster in database
 **$description** string 
 
 
+---
+
 
 public **createHive**
 
@@ -118,6 +124,8 @@ Creates a new hive in database
 **$definedAtHive** boolean 
 
 
+---
+
 
 public **deleteCluster**
 
@@ -138,6 +146,8 @@ Delete the specified cluster or throw Exception.
 **$clusterName** string 
 
 
+---
+
 
 public **deleteHive**
 
@@ -157,6 +167,8 @@ Delete the specified hive or throw Exception.
 **$hiveName** string 
 
 
+---
+
 
 public **deleteHiveClusters**
 
@@ -175,6 +187,8 @@ Delete all the clusters attched to specific hive.
 **Arguments**:
 **$hiveName** string 
 
+
+---
 
 
 public **hiveExists**
@@ -196,6 +210,8 @@ in the database.
 **$hiveName** string 
 
 
+---
+
 
 public **hiveHasClusters**
 
@@ -215,6 +231,8 @@ exisiting in the database.
 **Arguments**:
 **$hiveName** string 
 
+
+---
 
 
 public **loadCluster**
@@ -236,6 +254,8 @@ Load the specified cluster or throw Exception.
 **$clusterName** string 
 
 
+---
+
 
 public **loadHive**
 
@@ -254,6 +274,8 @@ Load the specified hive or throw Exception.
 **Arguments**:
 **$hiveName** string 
 
+
+---
 
 
 public **loadSetting**
@@ -282,6 +304,8 @@ is needed.
 **$loadDefinition** boolean  - &lt;p&gt;(optional)&lt;/p&gt;
 
 
+---
+
 
 public **loadSettingValue**
 
@@ -303,6 +327,8 @@ Load the specified setting value or throw Exception.
 **$settingName** string 
 
 
+---
+
 
 public **saveSetting**
 
@@ -321,6 +347,8 @@ Save the specified setting object or throw Exception.
 **Arguments**:
 **$setting** mixed 
 
+
+---
 
 
 public **saveSettingValue**
@@ -343,4 +371,6 @@ Save the specified setting value or throw Exception.
 **$settingName** string 
 **$settingValue** mixed 
 
+
+---
 

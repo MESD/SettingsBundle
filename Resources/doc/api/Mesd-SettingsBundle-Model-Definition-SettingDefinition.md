@@ -22,7 +22,7 @@ Properties
 ----------
 
 
-**$key** 
+**$key** - 
 
 
 
@@ -33,7 +33,7 @@ Properties
 
 
 
-**$hive** 
+**$hive** - 
 
 
 
@@ -44,7 +44,7 @@ Properties
 
 
 
-**$type** 
+**$type** - 
 
 
 
@@ -55,7 +55,7 @@ Properties
 
 
 
-**$filePath** 
+**$filePath** - 
 
 
 
@@ -66,7 +66,7 @@ Properties
 
 
 
-**$settingNode** 
+**$settingNode** - 
 
 
 
@@ -96,6 +96,8 @@ public **__construct**
 
 
 
+---
+
 
 public **getKey**
 
@@ -111,6 +113,8 @@ public **getKey**
 
 
 
+
+---
 
 
 public **setKey**
@@ -131,6 +135,8 @@ public **setKey**
 **$key** mixed 
 
 
+---
+
 
 public **getHive**
 
@@ -146,6 +152,8 @@ public **getHive**
 
 
 
+
+---
 
 
 public **setHive**
@@ -166,6 +174,8 @@ public **setHive**
 **$hive** mixed 
 
 
+---
+
 
 public **getType**
 
@@ -181,6 +191,8 @@ public **getType**
 
 
 
+
+---
 
 
 public **setType**
@@ -201,6 +213,8 @@ public **setType**
 **$type** mixed 
 
 
+---
+
 
 public **getFilePath**
 
@@ -216,6 +230,8 @@ public **getFilePath**
 
 
 
+
+---
 
 
 public **setFilePath**
@@ -236,6 +252,8 @@ public **setFilePath**
 **$filePath** mixed 
 
 
+---
+
 
 public **addSettingNode**
 
@@ -254,6 +272,8 @@ Add SettingNode
 **Arguments**:
 **$settingNode** Mesd\SettingsBundle\Model\Definition\Mesd\SettingsBundle\Model\Definition\SettingNode 
 
+
+---
 
 
 public **getSettingNode**
@@ -274,6 +294,8 @@ Get SettingNode
 **$name** string 
 
 
+---
+
 
 public **getSettingNodes**
 
@@ -289,6 +311,8 @@ Get SettingNodes
 
 
 
+
+---
 
 
 public **removeSettingNode**
@@ -309,6 +333,8 @@ Remove SettingNode
 **$settingNode** Mesd\SettingsBundle\Model\Definition\Mesd\SettingsBundle\Model\Definition\SettingNode 
 
 
+---
+
 
 public **removeSettingNodeByName**
 
@@ -327,4 +353,6 @@ Remove SettingNode by name
 **Arguments**:
 **$name** string 
 
+
+---
 

@@ -22,7 +22,7 @@ Properties
 ----------
 
 
-**$bundleStorage** 
+**$bundleStorage** - 
 
 
 
@@ -33,7 +33,7 @@ Properties
 
 
 
-**$kernel** 
+**$kernel** - 
 
 
 
@@ -44,7 +44,7 @@ Properties
 
 
 
-**$settingManager** 
+**$settingManager** - 
 
 
 
@@ -79,6 +79,8 @@ public **__construct**
 **$settingManager** [Mesd\SettingsBundle\Model\SettingManager](Mesd-SettingsBundle-Model-SettingManager.md) 
 
 
+---
+
 
 public **buildFileName**
 
@@ -99,6 +101,8 @@ Builds a file name based on a hive [ and cluster ].
 **$clusterName** string 
 
 
+---
+
 
 private **buildFileNameFromDefinition**
 
@@ -117,6 +121,8 @@ Builds a file name based on SettingDefinition.
 **Arguments**:
 **$SettingDefinition** [Mesd\SettingsBundle\Model\Definition\SettingDefinition](Mesd-SettingsBundle-Model-Definition-SettingDefinition.md) 
 
+
+---
 
 
 public **createFile**
@@ -140,6 +146,8 @@ file will be created in the saveFile() method.
 **$filePath** string 
 
 
+---
+
 
 public **fileExists**
 
@@ -158,6 +166,8 @@ Determine if a given file exists
 **Arguments**:
 **$file** string 
 
+
+---
 
 
 public **loadFile**
@@ -179,6 +189,8 @@ parses the yaml content, and returns a SettingDefinition object.
 **$hiveName** string 
 **$clusterName** string 
 
+
+---
 
 
 public **locateFile**
@@ -204,6 +216,8 @@ fully qualifed file name or false.
 **$filePath** string 
 
 
+---
+
 
 public **saveFile**
 
@@ -225,6 +239,8 @@ will be validated before being saved.
 **$settingDefinition** [Mesd\SettingsBundle\Model\Definition\SettingDefinition](Mesd-SettingsBundle-Model-Definition-SettingDefinition.md) 
 
 
+---
+
 
 private **serialize**
 
@@ -244,6 +260,8 @@ a yaml file.
 **Arguments**:
 **$settingDefinition** [Mesd\SettingsBundle\Model\Definition\SettingDefinition](Mesd-SettingsBundle-Model-Definition-SettingDefinition.md) 
 
+
+---
 
 
 private **unserialize**
@@ -266,6 +284,8 @@ content, and converts the data into a SettingDefinition.
 **$file** mixed 
 
 
+---
+
 
 public **getBundleStorage**
 
@@ -282,4 +302,6 @@ storage location for Setting Definition files.
 
 
 
+
+---
 

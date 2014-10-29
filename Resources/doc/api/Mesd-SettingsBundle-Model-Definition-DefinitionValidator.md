@@ -22,7 +22,7 @@ Properties
 ----------
 
 
-**$definition** 
+**$definition** - 
 
 
 
@@ -33,7 +33,7 @@ Properties
 
 
 
-**$settingsManager** 
+**$settingsManager** - 
 
 
 
@@ -67,6 +67,8 @@ public **__construct**
 **$settingsManager** mixed 
 
 
+---
+
 
 public **validate**
 
@@ -82,6 +84,8 @@ public **validate**
 
 
 
+
+---
 
 
 private **validateStructure**
@@ -99,6 +103,8 @@ private **validateStructure**
 
 
 
+---
+
 
 private **validateNodes**
 
@@ -114,6 +120,8 @@ private **validateNodes**
 
 
 
+
+---
 
 
 private **validateNodeArray**
@@ -136,6 +144,8 @@ private **validateNodeArray**
 **$key** mixed 
 
 
+---
+
 
 private **validateNodeBoolean**
 
@@ -156,6 +166,8 @@ private **validateNodeBoolean**
 **$nodeAttributes** mixed 
 **$key** mixed 
 
+
+---
 
 
 private **validateNodeFloat**
@@ -178,6 +190,8 @@ private **validateNodeFloat**
 **$key** mixed 
 
 
+---
+
 
 private **validateNodeInteger**
 
@@ -199,6 +213,8 @@ private **validateNodeInteger**
 **$key** mixed 
 
 
+---
+
 
 private **validateNodeString**
 
@@ -219,4 +235,6 @@ private **validateNodeString**
 **$nodeAttributes** mixed 
 **$key** mixed 
 
+
+---
 

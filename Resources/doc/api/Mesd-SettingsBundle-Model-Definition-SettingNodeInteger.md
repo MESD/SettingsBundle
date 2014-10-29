@@ -22,7 +22,7 @@ Properties
 ----------
 
 
-**$digits** 
+**$digits** - 
 
 
 
@@ -55,6 +55,8 @@ public **__construct**
 **$nodeAttributes** mixed 
 
 
+---
+
 
 public **dumpToArray**
 
@@ -71,6 +73,8 @@ public **dumpToArray**
 
 
 
+---
+
 
 public **getDigits**
 
@@ -86,6 +90,8 @@ public **getDigits**
 
 
 
+
+---
 
 
 public **setDigits**
@@ -105,4 +111,6 @@ public **setDigits**
 **Arguments**:
 **$digits** mixed 
 
+
+---
 

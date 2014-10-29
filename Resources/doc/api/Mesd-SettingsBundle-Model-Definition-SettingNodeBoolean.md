@@ -42,6 +42,8 @@ public **__construct**
 **$nodeAttributes** mixed 
 
 
+---
+
 
 public **dumpToArray**
 
@@ -57,4 +59,6 @@ public **dumpToArray**
 
 
 
+
+---
 
