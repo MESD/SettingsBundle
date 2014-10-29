@@ -53,7 +53,7 @@ extra time. Since the SettingNode definition data is not commonly needed
 when retrieving settings and their values, the default behavior is to
 not loaded the SettingNode.
 
-
+--
 
 public **getName**
 
@@ -61,6 +61,7 @@ public **getName**
 
 Get Setting Name
 
+--
 
 public **setName**
 
@@ -68,11 +69,12 @@ public **setName**
 
 Set Setting Name
 
+--
 
 ##### Arguments:
 **$name** string - &lt;p&gt;Setting Name&lt;/p&gt;
 
-
+--
 
 public **getValue**
 
@@ -80,6 +82,7 @@ public **getValue**
 
 Get Setting Value
 
+--
 
 public **setValue**
 
@@ -87,11 +90,12 @@ public **setValue**
 
 Set Setting Value
 
+--
 
 ##### Arguments
 **$value** mixed - &lt;p&gt;Setting Value&lt;/p&gt;
 
-
+--
 
 public **getCluster**
 
@@ -99,17 +103,18 @@ public **getCluster**
 
 Get cluster
 
+--
 
 public **setCluster**
 
     Mesd\SettingsBundle\Model\Setting::setCluster(\Mesd\SettingsBundle\Entity\Cluster $cluster)
 
-
+--
 
 ##### Arguments
 **$cluster** [Mesd\SettingsBundle\Entity\Cluster](Mesd-SettingsBundle-Entity-Cluster.md)
 
-
+--
 
 public **getSettingNode**
 
@@ -120,6 +125,7 @@ Get SettingNode definition
 Get the SettingNode definition, if it has been loaded. See
 isSettingNodeLoaded() for more details.
 
+--
 
 public **setSettingNode**
 
@@ -128,8 +134,5 @@ public **setSettingNode**
 Set SettingNode definition
 
 
-
 ##### Arguments
 **$settingNode** [Mesd\SettingsBundle\Model\Definition\SettingNode](Mesd-SettingsBundle-Model-Definition-SettingNode.md)
-
-
