@@ -22,9 +22,7 @@ Properties
 ----------
 
 
-**$definition** - 
-
-
+**$definition**
 
     private mixed $definition
 
@@ -33,11 +31,17 @@ Properties
 
 
 
-**$settingsManager** - 
 
 
+
+
+**$settingsManager**
 
     private mixed $settingsManager
+
+
+
+
 
 
 

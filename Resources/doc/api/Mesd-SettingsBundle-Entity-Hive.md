@@ -22,9 +22,7 @@ Properties
 ----------
 
 
-**$id** - 
-
-
+**$id**
 
     private integer $id
 
@@ -33,9 +31,11 @@ Properties
 
 
 
-**$name** - 
 
 
+
+
+**$name**
 
     private string $name
 
@@ -44,9 +44,11 @@ Properties
 
 
 
-**$description** - 
 
 
+
+
+**$description**
 
     private string $description
 
@@ -55,9 +57,11 @@ Properties
 
 
 
-**$definedAtHive** - 
 
 
+
+
+**$definedAtHive**
 
     private boolean $definedAtHive
 
@@ -66,11 +70,17 @@ Properties
 
 
 
-**$cluster** - 
 
 
+
+
+**$cluster**
 
     private Collection $cluster
+
+
+
+
 
 
 

@@ -22,9 +22,7 @@ Properties
 ----------
 
 
-**$digits** - 
-
-
+**$digits**
 
     private mixed $digits
 
@@ -33,11 +31,17 @@ Properties
 
 
 
-**$precision** - 
 
 
+
+
+**$precision**
 
     private mixed $precision
+
+
+
+
 
 
 
