@@ -35,4 +35,4 @@ This bundle is under the MIT license. See the complete license at:
 
 ###Status
 
-Beta Oct. 2014
+v1.0 Release Candidate Oct. 30, 2014
