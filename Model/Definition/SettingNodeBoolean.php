@@ -16,7 +16,7 @@ namespace Mesd\SettingsBundle\Model\Definition;
  *
  * @author David Cramblett <dcramble@mesd.k12.or.us>
  */
-class SettingNodeBoolean
+class SettingNodeBoolean implements SettingNodeTypeInterface
 {
 
     /**
