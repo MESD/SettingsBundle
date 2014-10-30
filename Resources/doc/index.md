@@ -400,3 +400,4 @@ The following additional documents are available:
 - [Using the SettingManager Service](using-setting-manager-service.md)
 - [Using the DefinitionManager Service](using-definition-manager-service.md)
 - [Storing User Settings](storing-user-settings.md)
+- [API Docs](api/ApiIndex.md)
