@@ -1,5 +1,5 @@
 API Index
-=========
+---------
 
 * Mesd
     * Mesd\SettingsBundle

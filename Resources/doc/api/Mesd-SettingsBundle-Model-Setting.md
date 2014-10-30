@@ -1,3 +1,6 @@
+[Index](ApiIndex.md)
+
+
 Mesd\SettingsBundle\Model\Setting
 ---------------
 
