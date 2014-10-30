@@ -36,7 +36,7 @@ class SettingNode
     /**
      * Setting format object
      *
-     * @var SettingNode[Type]
+     * @var SettingNodeTypeInterface
      */
     private $format;
 
@@ -129,7 +129,7 @@ class SettingNode
     /**
      * Get setting format object
      *
-     * @return SettingNode[Type]
+     * @return SettingNodeTypeInterface
      */
     public function getFormat()
     {
@@ -139,10 +139,10 @@ class SettingNode
     /**
      * Set setting default value
      *
-     * @param  SettingNode[Type] $format
+     * @param  SettingNodeTypeInterface $format
      * @return self
      */
-    public function setFormat($format)
+    public function setFormat(SettingNodeTypeInterface $format)
     {
         $this->format = $format;
 

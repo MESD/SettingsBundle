@@ -11,12 +11,14 @@
 
 namespace Mesd\SettingsBundle\Model\Definition;
 
+use Mesd\SettingsBundle\Model\Definition\SettingNodeTypeInterface;
+
 /**
  * Array setting node format data
  *
  * @author David Cramblett <dcramble@mesd.k12.or.us>
  */
-class SettingNodeArray
+class SettingNodeArray implements SettingNodeTypeInterface
 {
 
     /**
@@ -29,7 +31,7 @@ class SettingNodeArray
     /**
      * Setting node for prototype
      *
-     * @var SettingNode[Prototype]
+     * @var SettingNodeTypeInterface
      */
     private $node;
 
@@ -109,7 +111,7 @@ class SettingNodeArray
     /**
      * Get setting node
      *
-     * @return SettingNode[Prototype]
+     * @return SettingNodeTypeInterface
      */
     public function getNode()
     {
@@ -119,10 +121,10 @@ class SettingNodeArray
     /**
      * Set digits
      *
-     * @param  SettingNode[Prototype] $node
+     * @param  SettingNodeTypeInterface $node
      * @return self
      */
-    public function setNode($node)
+    public function setNode(SettingNodeTypeInterface $node)
     {
         $this->node = $node;
 
