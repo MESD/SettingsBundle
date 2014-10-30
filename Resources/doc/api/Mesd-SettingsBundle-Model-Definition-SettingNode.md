@@ -56,7 +56,7 @@ Setting format object
 
 
 
-    private SettingNode[Type] $format
+    private SettingNodeTypeInterface $format
 
 
 
@@ -195,7 +195,7 @@ Get setting format object
 
 --
 
-public **setFormat** ( SettingNode[Type] $format )
+public **setFormat** ( SettingNodeTypeInterface $format )
 
 
 Set setting default value
@@ -211,7 +211,7 @@ Set setting default value
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| $format | Mesd\SettingsBundle\Model\Definition\SettingNode[Type] |  |
+| $format | [SettingNodeTypeInterface](Mesd-SettingsBundle-Model-Definition-SettingNodeTypeInterface.md) |  |
 
 --
 

@@ -15,6 +15,7 @@ API Index
                 * [SettingNodeString](Mesd-SettingsBundle-Model-Definition-SettingNodeString.md)
                 * [SettingNodeBoolean](Mesd-SettingsBundle-Model-Definition-SettingNodeBoolean.md)
                 * [SettingNodeFloat](Mesd-SettingsBundle-Model-Definition-SettingNodeFloat.md)
+                * [SettingNodeTypeInterface](Mesd-SettingsBundle-Model-Definition-SettingNodeTypeInterface.md)
                 * [DefinitionManager](Mesd-SettingsBundle-Model-Definition-DefinitionManager.md)
                 * [DefinitionValidator](Mesd-SettingsBundle-Model-Definition-DefinitionValidator.md)
         * Mesd\SettingsBundle\Entity

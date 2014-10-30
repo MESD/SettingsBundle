@@ -8,7 +8,7 @@ Mesd\SettingsBundle\Model\Definition\SettingNodeArray
 
 
 
-
+**This class implements**: [Mesd\SettingsBundle\Model\Definition\SettingNodeTypeInterface](Mesd-SettingsBundle-Model-Definition-SettingNodeTypeInterface.md)
 
 
 
@@ -43,7 +43,7 @@ Setting node for prototype
 
 
 
-    private SettingNode[Prototype] $node
+    private SettingNodeTypeInterface $node
 
 
 
@@ -77,7 +77,7 @@ Constructor
 public **dumpToArray** (  )
 
 
-Dump format data to array
+Dump format data to array.
 
 
 
@@ -136,7 +136,7 @@ Get setting node
 
 --
 
-public **setNode** ( SettingNode[Prototype] $node )
+public **setNode** ( SettingNodeTypeInterface $node )
 
 
 Set digits
@@ -152,6 +152,6 @@ Set digits
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| $node | Mesd\SettingsBundle\Model\Definition\SettingNode[Prototype] |  |
+| $node | [SettingNodeTypeInterface](Mesd-SettingsBundle-Model-Definition-SettingNodeTypeInterface.md) |  |
 
 --

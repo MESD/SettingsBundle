@@ -76,7 +76,7 @@ Constructor
 
 --
 
-public **buildFileName** ( string $hiveName, string $clusterName )
+public **buildFileName** ( Hive $hive, Cluster $cluster )
 
 
 Builds a file name based on a hive [ and cluster ].
@@ -92,8 +92,8 @@ Builds a file name based on a hive [ and cluster ].
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| $hiveName | string |  |
-| $clusterName | string |  |
+| $hive | [Hive](Mesd-SettingsBundle-Entity-Hive.md) |  |
+| $cluster | [Cluster](Mesd-SettingsBundle-Entity-Cluster.md) |  |
 
 --
 
@@ -160,10 +160,31 @@ Determine if a given file exists
 
 --
 
-public **loadFile** ( string $hiveName, string $clusterName )
+public **loadFile** ( string $file )
 
 
-Loads a setting definition file by hive [ and cluster name ],
+Loads a setting definition file parses the yaml content
+and returns a SettingDefinition object.
+
+
+
+
+
+
+
+
+**Parameters**:
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| $file | string |  |
+
+--
+
+public **loadFileByHiveAndCluster** ( string $hive, string $cluster )
+
+
+Loads a setting definition file by hive [ and cluster],
 parses the yaml content, and returns a SettingDefinition object.
 
 
@@ -177,8 +198,8 @@ parses the yaml content, and returns a SettingDefinition object.
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| $hiveName | string |  |
-| $clusterName | string | &lt;p&gt;[optional]&lt;/p&gt; |
+| $hive | string |  |
+| $cluster | string | &lt;p&gt;[optional]&lt;/p&gt; |
 
 --
 

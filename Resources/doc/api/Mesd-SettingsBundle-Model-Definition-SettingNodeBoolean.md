@@ -8,7 +8,7 @@ Mesd\SettingsBundle\Model\Definition\SettingNodeBoolean
 
 
 
-
+**This class implements**: [Mesd\SettingsBundle\Model\Definition\SettingNodeTypeInterface](Mesd-SettingsBundle-Model-Definition-SettingNodeTypeInterface.md)
 
 
 
@@ -49,7 +49,7 @@ Constructor
 public **dumpToArray** (  )
 
 
-Dump format data to array
+Dump format data to array.
 
 
 
