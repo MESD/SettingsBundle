@@ -12,7 +12,7 @@ Mesd\SettingsBundle\Model\Definition\SettingNodeFloat
 
 
 
-    
+    Float setting node format data
 
     
 
@@ -26,11 +26,11 @@ Properties
 
 **$digits**
 
+Number of digits in float.
 
 
 
-
-    private  $digits
+    private integer $digits
 
 
 
@@ -39,11 +39,12 @@ Properties
 
 **$precision**
 
+Number of precision digits after decimal
+point in float.
 
 
 
-
-    private  $precision
+    private integer $precision
 
 
 
@@ -54,10 +55,10 @@ Methods
 -------
 
 
-public **__construct** ( $nodeAttributes )
+public **__construct** ( array $nodeAttributes )
 
 
-
+Constructor
 
 
 
@@ -70,14 +71,14 @@ public **__construct** ( $nodeAttributes )
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| $nodeAttributes | mixed |  |
+| $nodeAttributes | array | &lt;p&gt;[optional]&lt;/p&gt; |
 
 --
 
 public **dumpToArray** (  )
 
 
-
+Dump format data to array
 
 
 
@@ -91,7 +92,7 @@ public **dumpToArray** (  )
 public **getDigits** (  )
 
 
-
+Get digits
 
 
 
@@ -102,10 +103,10 @@ public **getDigits** (  )
 
 --
 
-public **setDigits** ( $digits )
+public **setDigits** ( integer $digits )
 
 
-
+Set digits
 
 
 
@@ -118,14 +119,14 @@ public **setDigits** ( $digits )
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| $digits | mixed |  |
+| $digits | integer |  |
 
 --
 
 public **getPrecision** (  )
 
 
-
+Get precision
 
 
 
@@ -136,10 +137,10 @@ public **getPrecision** (  )
 
 --
 
-public **setPrecision** ( $precision )
+public **setPrecision** ( integer $precision )
 
 
-
+Set precision
 
 
 
@@ -152,6 +153,6 @@ public **setPrecision** ( $precision )
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| $precision | mixed |  |
+| $precision | integer |  |
 
 --

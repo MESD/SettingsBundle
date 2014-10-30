@@ -12,7 +12,7 @@ Mesd\SettingsBundle\Entity\Cluster
 
 
 
-    Cluster
+    Cluster databse entity.
 
     
 
@@ -26,7 +26,7 @@ Properties
 
 **$id**
 
-
+Cluster ID
 
 
 
@@ -39,7 +39,7 @@ Properties
 
 **$name**
 
-
+Cluster name
 
 
 
@@ -52,7 +52,7 @@ Properties
 
 **$description**
 
-
+Cluster description
 
 
 
@@ -65,7 +65,7 @@ Properties
 
 **$setting**
 
-
+Cluster settings
 
 
 
@@ -78,7 +78,7 @@ Properties
 
 **$hive**
 
-
+Hive parent to cluster
 
 
 
@@ -191,7 +191,7 @@ Add Setting
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| $setting | Mesd\SettingsBundle\Entity\Mesd\SettingsBundle\Model\Setting |  |
+| $setting | [Setting](Mesd-SettingsBundle-Model-Setting.md) |  |
 
 --
 
@@ -209,7 +209,7 @@ Get setting Array
 
 --
 
-public **getSetting** ( $settingName )
+public **getSetting** ( string $settingName )
 
 
 Get setting
@@ -225,7 +225,7 @@ Get setting
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| $settingName | mixed |  |
+| $settingName | string |  |
 
 --
 
@@ -245,7 +245,7 @@ Remove Setting
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| $setting | Mesd\SettingsBundle\Entity\Mesd\SettingsBundle\Model\Setting |  |
+| $setting | [Setting](Mesd-SettingsBundle-Model-Setting.md) |  |
 
 --
 

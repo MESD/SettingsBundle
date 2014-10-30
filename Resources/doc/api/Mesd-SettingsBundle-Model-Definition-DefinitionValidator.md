@@ -12,7 +12,7 @@ Mesd\SettingsBundle\Model\Definition\DefinitionValidator
 
 
 
-    
+    Setting definition validator.
 
     
 
@@ -26,24 +26,11 @@ Properties
 
 **$definition**
 
+Setting Definition Array
 
 
 
-
-    private  $definition
-
-
-
-
-
-
-**$settingsManager**
-
-
-
-
-
-    private  $settingsManager
+    private array $definition
 
 
 
@@ -54,10 +41,10 @@ Methods
 -------
 
 
-public **__construct** (  $definition, $settingsManager )
+public **__construct** ( array $definition )
 
 
-
+Constructor
 
 
 
@@ -71,14 +58,13 @@ public **__construct** (  $definition, $settingsManager )
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $definition | array |  |
-| $settingsManager | mixed |  |
 
 --
 
 public **validate** (  )
 
 
-
+Validate setting definition or thorw Exception
 
 
 
@@ -92,7 +78,7 @@ public **validate** (  )
 private **validateStructure** (  )
 
 
-
+Validate setting definition file structure
 
 
 
@@ -106,7 +92,7 @@ private **validateStructure** (  )
 private **validateNodes** (  )
 
 
-
+Validate setting definition nodes
 
 
 
@@ -117,10 +103,10 @@ private **validateNodes** (  )
 
 --
 
-private **validateNodeArray** ( $nodeName, $nodeAttributes, $key )
+private **validateNodeArray** ( string $nodeName, array $nodeAttributes, string $key )
 
 
-
+Validate setting definition array node
 
 
 
@@ -133,16 +119,16 @@ private **validateNodeArray** ( $nodeName, $nodeAttributes, $key )
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| $nodeName | mixed |  |
-| $nodeAttributes | mixed |  |
-| $key | mixed |  |
+| $nodeName | string |  |
+| $nodeAttributes | array |  |
+| $key | string |  |
 
 --
 
-private **validateNodeBoolean** ( $nodeName, $nodeAttributes, $key )
+private **validateNodeBoolean** ( string $nodeName, array $nodeAttributes, string $key )
 
 
-
+Validate setting definition boolean node
 
 
 
@@ -155,16 +141,16 @@ private **validateNodeBoolean** ( $nodeName, $nodeAttributes, $key )
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| $nodeName | mixed |  |
-| $nodeAttributes | mixed |  |
-| $key | mixed |  |
+| $nodeName | string |  |
+| $nodeAttributes | array |  |
+| $key | string |  |
 
 --
 
-private **validateNodeFloat** ( $nodeName, $nodeAttributes, $key )
+private **validateNodeFloat** ( string $nodeName, array $nodeAttributes, string $key )
 
 
-
+Validate setting definition float node
 
 
 
@@ -177,16 +163,16 @@ private **validateNodeFloat** ( $nodeName, $nodeAttributes, $key )
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| $nodeName | mixed |  |
-| $nodeAttributes | mixed |  |
-| $key | mixed |  |
+| $nodeName | string |  |
+| $nodeAttributes | array |  |
+| $key | string |  |
 
 --
 
-private **validateNodeInteger** ( $nodeName, $nodeAttributes, $key )
+private **validateNodeInteger** ( string $nodeName, array $nodeAttributes, string $key )
 
 
-
+Validate setting definition integer node
 
 
 
@@ -199,16 +185,16 @@ private **validateNodeInteger** ( $nodeName, $nodeAttributes, $key )
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| $nodeName | mixed |  |
-| $nodeAttributes | mixed |  |
-| $key | mixed |  |
+| $nodeName | string |  |
+| $nodeAttributes | array |  |
+| $key | string |  |
 
 --
 
-private **validateNodeString** ( $nodeName, $nodeAttributes, $key )
+private **validateNodeString** ( string $nodeName, array $nodeAttributes, string $key )
 
 
-
+Validate setting definition string node
 
 
 
@@ -221,8 +207,8 @@ private **validateNodeString** ( $nodeName, $nodeAttributes, $key )
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| $nodeName | mixed |  |
-| $nodeAttributes | mixed |  |
-| $key | mixed |  |
+| $nodeName | string |  |
+| $nodeAttributes | array |  |
+| $key | string |  |
 
 --

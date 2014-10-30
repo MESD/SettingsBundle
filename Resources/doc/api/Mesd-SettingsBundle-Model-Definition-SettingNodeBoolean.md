@@ -12,7 +12,7 @@ Mesd\SettingsBundle\Model\Definition\SettingNodeBoolean
 
 
 
-    
+    Boolean setting node format data
 
     
 
@@ -26,10 +26,10 @@ Methods
 -------
 
 
-public **__construct** ( $nodeAttributes )
+public **__construct** ( array $nodeAttributes )
 
 
-
+Constructor
 
 
 
@@ -42,14 +42,14 @@ public **__construct** ( $nodeAttributes )
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| $nodeAttributes | mixed |  |
+| $nodeAttributes | array | &lt;p&gt;[optional]&lt;/p&gt; |
 
 --
 
 public **dumpToArray** (  )
 
 
-
+Dump format data to array
 
 
 

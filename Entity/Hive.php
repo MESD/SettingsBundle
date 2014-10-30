@@ -1,36 +1,59 @@
 <?php
 
+/**
+ * This file is part of the MesdSettingsBundle.
+ *
+ * (c) MESD <appdev@mesd.k12.or.us>
+ *
+ * For the full copyright and license information, please view the LICENSE.md
+ * file that was distributed with this source code.
+ */
+
 namespace Mesd\SettingsBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\Collection;
+use Mesd\SettingsBundle\Entity\Cluster;
 
 /**
- * Hive
+ * Hive databse entity.
+ *
+ * @author David Cramblett <dcramble@mesd.k12.or.us>
  */
 class Hive
 {
     /**
+     * Hive ID
+     *
      * @var integer
      */
     private $id;
 
     /**
+     * Hive name
+     *
      * @var string
      */
     private $name;
 
     /**
+     * Hive description
+     *
      * @var string
      */
     private $description;
 
     /**
+     * Settings defined at hive
+     *
      * @var boolean
      */
     private $definedAtHive;
 
     /**
-     * @var \Doctrine\Common\Collections\Collection
+     * Cluster children belonging to hive
+     *
+     * @var Collection
      */
     private $cluster;
 
@@ -39,7 +62,7 @@ class Hive
      */
     public function __construct()
     {
-        $this->cluster = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->cluster = new ArrayCollection();
     }
 
     /**
@@ -124,10 +147,10 @@ class Hive
     /**
      * Add cluster
      *
-     * @param \Mesd\SettingsBundle\Entity\Cluster $cluster
+     * @param Cluster $cluster
      * @return Hive
      */
-    public function addCluster(\Mesd\SettingsBundle\Entity\Cluster $cluster)
+    public function addCluster(Cluster $cluster)
     {
         $this->cluster[] = $cluster;
 
@@ -137,9 +160,9 @@ class Hive
     /**
      * Remove cluster
      *
-     * @param \Mesd\SettingsBundle\Entity\Cluster $cluster
+     * @param Cluster $cluster
      */
-    public function removeCluster(\Mesd\SettingsBundle\Entity\Cluster $cluster)
+    public function removeCluster(Cluster $cluster)
     {
         $this->cluster->removeElement($cluster);
     }
@@ -147,7 +170,7 @@ class Hive
     /**
      * Get cluster
      *
-     * @return \Doctrine\Common\Collections\Collection
+     * @return Collection
      */
     public function getCluster()
     {

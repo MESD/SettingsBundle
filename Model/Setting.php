@@ -79,7 +79,7 @@ class Setting {
     /**
      * Get Setting Name
      *
-     * @return string Setting Name
+     * @return string
      */
     public function getName()
     {
@@ -103,7 +103,7 @@ class Setting {
     /**
      * Get Setting Value
      *
-     * @return mixed Setting Value
+     * @return mixed
      */
     public function getValue()
     {
@@ -114,7 +114,7 @@ class Setting {
     /**
      * Set Setting Value
      *
-     * @param mixed $value Setting Value
+     * @param mixed $value
      *
      * @return self
      */

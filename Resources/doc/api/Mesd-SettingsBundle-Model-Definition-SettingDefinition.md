@@ -12,7 +12,7 @@ Mesd\SettingsBundle\Model\Definition\SettingDefinition
 
 
 
-    
+    Setting Definition once unserialized from yaml file.
 
     
 
@@ -26,24 +26,24 @@ Properties
 
 **$key**
 
+Setting definition key
 
 
 
-
-    private  $key
-
-
-
-
-
-
-**$hive**
+    private string $key
 
 
 
 
 
-    private  $hive
+
+**$hiveName**
+
+Setting definition hive name
+
+
+
+    private string $hiveName
 
 
 
@@ -52,11 +52,11 @@ Properties
 
 **$type**
 
+Setting definition type
 
 
 
-
-    private  $type
+    private string $type
 
 
 
@@ -65,11 +65,11 @@ Properties
 
 **$filePath**
 
+Setting definition file path
 
 
 
-
-    private  $filePath
+    private string $filePath
 
 
 
@@ -78,11 +78,11 @@ Properties
 
 **$settingNode**
 
+Setting definition node collection
 
 
 
-
-    private  $settingNode
+    private ArrayCollection $settingNode
 
 
 
@@ -96,7 +96,7 @@ Methods
 public **__construct** (  )
 
 
-
+Constructor
 
 
 
@@ -110,7 +110,7 @@ public **__construct** (  )
 public **getKey** (  )
 
 
-
+Get setting definition key
 
 
 
@@ -121,10 +121,10 @@ public **getKey** (  )
 
 --
 
-public **setKey** ( $key )
+public **setKey** ( string $key )
 
 
-
+Set setting definition key
 
 
 
@@ -137,14 +137,14 @@ public **setKey** ( $key )
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| $key | mixed |  |
+| $key | string |  |
 
 --
 
-public **getHive** (  )
+public **getHiveName** (  )
 
 
-
+Get setting definition hive name
 
 
 
@@ -155,10 +155,10 @@ public **getHive** (  )
 
 --
 
-public **setHive** ( $hive )
+public **setHiveName** ( string $hiveName )
 
 
-
+Set setting definition hive name
 
 
 
@@ -171,14 +171,14 @@ public **setHive** ( $hive )
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| $hive | mixed |  |
+| $hiveName | string |  |
 
 --
 
 public **getType** (  )
 
 
-
+Get setting definition type
 
 
 
@@ -189,10 +189,10 @@ public **getType** (  )
 
 --
 
-public **setType** ( $type )
+public **setType** ( string $type )
 
 
-
+Set setting definition type
 
 
 
@@ -205,14 +205,14 @@ public **setType** ( $type )
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| $type | mixed |  |
+| $type | string |  |
 
 --
 
 public **getFilePath** (  )
 
 
-
+Get setting definition file path
 
 
 
@@ -223,10 +223,10 @@ public **getFilePath** (  )
 
 --
 
-public **setFilePath** ( $filePath )
+public **setFilePath** ( string $filePath )
 
 
-
+Set setting definition file path
 
 
 
@@ -239,7 +239,7 @@ public **setFilePath** ( $filePath )
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| $filePath | mixed |  |
+| $filePath | string |  |
 
 --
 
@@ -259,14 +259,14 @@ Add SettingNode
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| $settingNode | Mesd\SettingsBundle\Model\Definition\Mesd\SettingsBundle\Model\Definition\SettingNode |  |
+| $settingNode | [SettingNode](Mesd-SettingsBundle-Model-Definition-SettingNode.md) |  |
 
 --
 
 public **getSettingNode** ( string $name )
 
 
-Get SettingNode
+Get SettingNode by node name
 
 
 
@@ -286,7 +286,7 @@ Get SettingNode
 public **getSettingNodes** (  )
 
 
-Get SettingNodes
+Get all setting nodes
 
 
 
@@ -300,7 +300,7 @@ Get SettingNodes
 public **removeSettingNode** ( SettingNode $settingNode )
 
 
-Remove SettingNode
+Remove setting node
 
 
 
@@ -313,14 +313,14 @@ Remove SettingNode
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| $settingNode | Mesd\SettingsBundle\Model\Definition\Mesd\SettingsBundle\Model\Definition\SettingNode |  |
+| $settingNode | [SettingNode](Mesd-SettingsBundle-Model-Definition-SettingNode.md) |  |
 
 --
 
 public **removeSettingNodeByName** ( string $name )
 
 
-Remove SettingNode by name
+Remove setting node by node name
 
 
 

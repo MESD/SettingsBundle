@@ -227,8 +227,8 @@ class DefinitionManager
      * does not exist, it will be created. The SettingDefinition
      * will be validated before being saved.
      *
-     * @param SettingDefinition
-     * @return string $file
+     * @param SettingDefinition $settingDefinition
+     * @return string
      */
     public function saveFile(SettingDefinition $settingDefinition)
     {
@@ -257,7 +257,7 @@ class DefinitionManager
      * Serializes a SettingDefinition so it can be saved to
      * a yaml file.
      *
-     * @param SettingDefinition
+     * @param SettingDefinition $settingDefinition
      * @return array
      */
     private function serialize(SettingDefinition $settingDefinition)

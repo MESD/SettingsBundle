@@ -12,7 +12,7 @@ Mesd\SettingsBundle\Model\Definition\DefinitionManager
 
 
 
-    
+    Service for managing setting definitions.
 
     
 
@@ -26,11 +26,12 @@ Properties
 
 **$bundleStorage**
 
+The storage locations avilable for
+setting definition files.
 
 
 
-
-    private  $bundleStorage
+    private array $bundleStorage
 
 
 
@@ -39,24 +40,11 @@ Properties
 
 **$kernel**
 
+Symfony kernerl interface
 
 
 
-
-    private  $kernel
-
-
-
-
-
-
-**$settingManager**
-
-
-
-
-
-    private  $settingManager
+    private KernelInterface $kernel
 
 
 
@@ -67,10 +55,10 @@ Methods
 -------
 
 
-public **__construct** ( $bundleStorage, $kernel,  $settingManager )
+public **__construct** ( array $bundleStorage, KernelInterface $kernel )
 
 
-
+Constructor
 
 
 
@@ -83,9 +71,8 @@ public **__construct** ( $bundleStorage, $kernel,  $settingManager )
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| $bundleStorage | mixed |  |
-| $kernel | mixed |  |
-| $settingManager | [Mesd\SettingsBundle\Model\SettingManager](Mesd-SettingsBundle-Model-SettingManager.md) |  |
+| $bundleStorage | array |  |
+| $kernel | Symfony\Component\HttpKernel\KernelInterface |  |
 
 --
 
@@ -110,7 +97,7 @@ Builds a file name based on a hive [ and cluster ].
 
 --
 
-private **buildFileNameFromDefinition** (  $SettingDefinition )
+private **buildFileNameFromDefinition** ( SettingDefinition $settingDefinition )
 
 
 Builds a file name based on SettingDefinition.
@@ -126,18 +113,18 @@ Builds a file name based on SettingDefinition.
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| $SettingDefinition | [Mesd\SettingsBundle\Model\Definition\SettingDefinition](Mesd-SettingsBundle-Model-Definition-SettingDefinition.md) |  |
+| $settingDefinition | [SettingDefinition](Mesd-SettingsBundle-Model-Definition-SettingDefinition.md) |  |
 
 --
 
 public **createFile** ( string $fileName, string $filePath )
 
 
-Create file path for new definition file
-
 Create a fully qualified file path for a new definition file
 and ensure that the directory structure is in place. The actual
 file will be created in the saveFile() method.
+
+
 
 
 
@@ -149,7 +136,7 @@ file will be created in the saveFile() method.
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $fileName | string |  |
-| $filePath | string |  |
+| $filePath | string | &lt;p&gt;[optional]&lt;/p&gt; |
 
 --
 
@@ -176,10 +163,10 @@ Determine if a given file exists
 public **loadFile** ( string $hiveName, string $clusterName )
 
 
-Load a setting definition file
-
 Loads a setting definition file by hive [ and cluster name ],
 parses the yaml content, and returns a SettingDefinition object.
+
+
 
 
 
@@ -191,7 +178,7 @@ parses the yaml content, and returns a SettingDefinition object.
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $hiveName | string |  |
-| $clusterName | string |  |
+| $clusterName | string | &lt;p&gt;[optional]&lt;/p&gt; |
 
 --
 
@@ -220,10 +207,8 @@ fully qualifed file name or false.
 
 --
 
-public **saveFile** (  $settingDefinition )
+public **saveFile** ( SettingDefinition $settingDefinition )
 
-
-Save a SettingDefinition to a yaml file
 
 Saves a SettingDefinition to a yaml setting file. If the file
 does not exist, it will be created. The SettingDefinition
@@ -234,18 +219,18 @@ will be validated before being saved.
 
 
 
+
+
 **Parameters**:
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| $settingDefinition | [Mesd\SettingsBundle\Model\Definition\SettingDefinition](Mesd-SettingsBundle-Model-Definition-SettingDefinition.md) |  |
+| $settingDefinition | [SettingDefinition](Mesd-SettingsBundle-Model-Definition-SettingDefinition.md) |  |
 
 --
 
-private **serialize** (  $settingDefinition )
+private **serialize** ( SettingDefinition $settingDefinition )
 
-
-Serialize a SettingDefinition
 
 Serializes a SettingDefinition so it can be saved to
 a yaml file.
@@ -255,21 +240,23 @@ a yaml file.
 
 
 
+
+
 **Parameters**:
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| $settingDefinition | [Mesd\SettingsBundle\Model\Definition\SettingDefinition](Mesd-SettingsBundle-Model-Definition-SettingDefinition.md) |  |
+| $settingDefinition | [SettingDefinition](Mesd-SettingsBundle-Model-Definition-SettingDefinition.md) |  |
 
 --
 
-private **unserialize** ( string $fileContents, $file )
+private **unserialize** ( string $fileContents, string $file )
 
-
-Unserialize a setting definition yaml
 
 Unserializes a setting definition yaml file, validates the
 content, and converts the data into a SettingDefinition.
+
+
 
 
 
@@ -281,7 +268,7 @@ content, and converts the data into a SettingDefinition.
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | $fileContents | string |  |
-| $file | mixed |  |
+| $file | string |  |
 
 --
 

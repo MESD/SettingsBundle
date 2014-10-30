@@ -12,7 +12,7 @@ Mesd\SettingsBundle\Model\Definition\SettingNodeString
 
 
 
-    
+    String setting node format data
 
     
 
@@ -26,11 +26,11 @@ Properties
 
 **$length**
 
+Maximum length of string
 
 
 
-
-    private  $length
+    private integer $length
 
 
 
@@ -41,10 +41,10 @@ Methods
 -------
 
 
-public **__construct** ( $nodeAttributes )
+public **__construct** ( array $nodeAttributes )
 
 
-
+Constructor
 
 
 
@@ -57,14 +57,14 @@ public **__construct** ( $nodeAttributes )
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| $nodeAttributes | mixed |  |
+| $nodeAttributes | array | &lt;p&gt;[optional]&lt;/p&gt; |
 
 --
 
 public **dumpToArray** (  )
 
 
-
+Dump format data to array
 
 
 
@@ -78,7 +78,7 @@ public **dumpToArray** (  )
 public **getLength** (  )
 
 
-
+Get maximum length of string
 
 
 
@@ -89,10 +89,10 @@ public **getLength** (  )
 
 --
 
-public **setLength** ( $length )
+public **setLength** ( integer $length )
 
 
-
+Set maximum length of string
 
 
 
@@ -105,6 +105,6 @@ public **setLength** ( $length )
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| $length | mixed |  |
+| $length | integer |  |
 
 --

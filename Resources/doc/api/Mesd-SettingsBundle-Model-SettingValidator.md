@@ -12,7 +12,7 @@ Mesd\SettingsBundle\Model\SettingValidator
 
 
 
-    
+    Validates settings to ensure they match the setting definition.
 
     
 
@@ -26,11 +26,11 @@ Properties
 
 **$setting**
 
+The Setting
 
 
 
-
-    private  $setting
+    private Setting $setting
 
 
 
@@ -39,11 +39,11 @@ Properties
 
 **$settingNode**
 
+The SettingNode
 
 
 
-
-    private  $settingNode
+    private SettingNode $settingNode
 
 
 
@@ -52,11 +52,11 @@ Properties
 
 **$valid**
 
+Setting validation status
 
 
 
-
-    private  $valid
+    private boolean $valid
 
 
 
@@ -65,11 +65,11 @@ Properties
 
 **$validationMessage**
 
+Setting validation error messages
 
 
 
-
-    private  $validationMessage
+    private string $validationMessage
 
 
 
@@ -80,10 +80,10 @@ Methods
 -------
 
 
-public **__construct** (  $settingNode,  $setting )
+public **__construct** ( SettingNode $settingNode, Setting $setting )
 
 
-
+Constructor
 
 
 
@@ -96,18 +96,18 @@ public **__construct** (  $settingNode,  $setting )
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| $settingNode | [Mesd\SettingsBundle\Model\Definition\SettingNode](Mesd-SettingsBundle-Model-Definition-SettingNode.md) |  |
-| $setting | [Mesd\SettingsBundle\Model\Setting](Mesd-SettingsBundle-Model-Setting.md) |  |
+| $settingNode | [SettingNode](Mesd-SettingsBundle-Model-Definition-SettingNode.md) |  |
+| $setting | [Setting](Mesd-SettingsBundle-Model-Setting.md) |  |
 
 --
 
 public **sanitize** (  )
 
 
-Sanitize a setting
-
-Clean the setting so that it matches it&#039;s SettingNode
+Clean the setting value so that it matches it&#039;s SettingNode
 definition.
+
+
 
 
 

@@ -1,5 +1,14 @@
 <?php
 
+/**
+ * This file is part of the MesdSettingsBundle.
+ *
+ * (c) MESD <appdev@mesd.k12.or.us>
+ *
+ * For the full copyright and license information, please view the LICENSE.md
+ * file that was distributed with this source code.
+ */
+
 namespace Mesd\SettingsBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
@@ -7,32 +16,44 @@ use Mesd\SettingsBundle\Entity\Hive;
 use Mesd\SettingsBundle\Model\Setting;
 
 /**
- * Cluster
+ * Cluster databse entity.
+ *
+ * @author David Cramblett <dcramble@mesd.k12.or.us>
  */
 class Cluster
 {
     /**
+     * Cluster ID
+     *
      * @var integer
      */
     private $id;
 
     /**
+     * Cluster name
+     *
      * @var string
      */
     private $name;
 
     /**
+     * Cluster description
+     *
      * @var string
      */
     private $description;
 
     /**
+     * Cluster settings
+     *
      * @var array
      */
     private $setting;
 
     /**
-     * @var \Mesd\SettingsBundle\Entity\Hive
+     * Hive parent to cluster
+     *
+     * @var Hive
      */
     private $hive;
 
@@ -98,7 +119,7 @@ class Cluster
     /**
      * Add Setting
      *
-     * @param Mesd\SettingsBundle\Model\Setting $setting
+     * @param Setting $setting
      * @return Cluster
      */
     public function addSetting(Setting $setting)
@@ -123,8 +144,8 @@ class Cluster
     /**
      * Get setting
      *
-     * @param  string settingName
-     * @return Mesd\SettingsBundle\Model\Setting $setting
+     * @param  string $settingName
+     * @return Setting
      */
     public function getSetting($settingName)
     {
@@ -146,7 +167,7 @@ class Cluster
     /**
      * Remove Setting
      *
-     * @param Mesd\SettingsBundle\Model\Setting $setting
+     * @param Setting $setting
      * @return Cluster
      */
     public function removeSetting(Setting $setting)
@@ -160,7 +181,7 @@ class Cluster
     /**
      * Set hive
      *
-     * @param \Mesd\SettingsBundle\Entity\Hive $hive
+     * @param Hive $hive
      * @return Cluster
      */
     public function setHive(Hive $hive = null)
@@ -174,7 +195,7 @@ class Cluster
     /**
      * Get hive
      *
-     * @return \Mesd\SettingsBundle\Entity\Hive
+     * @return Hive
      */
     public function getHive()
     {

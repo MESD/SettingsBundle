@@ -12,7 +12,7 @@ Mesd\SettingsBundle\Entity\Hive
 
 
 
-    Hive
+    Hive databse entity.
 
     
 
@@ -26,7 +26,7 @@ Properties
 
 **$id**
 
-
+Hive ID
 
 
 
@@ -39,7 +39,7 @@ Properties
 
 **$name**
 
-
+Hive name
 
 
 
@@ -52,7 +52,7 @@ Properties
 
 **$description**
 
-
+Hive description
 
 
 
@@ -65,7 +65,7 @@ Properties
 
 **$definedAtHive**
 
-
+Settings defined at hive
 
 
 
@@ -78,7 +78,7 @@ Properties
 
 **$cluster**
 
-
+Cluster children belonging to hive
 
 
 

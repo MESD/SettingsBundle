@@ -166,7 +166,7 @@ Set Setting Value
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| $value | mixed | &lt;p&gt;Setting Value&lt;/p&gt; |
+| $value | mixed |  |
 
 --
 

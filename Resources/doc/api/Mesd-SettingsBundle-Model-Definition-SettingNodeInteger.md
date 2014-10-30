@@ -12,7 +12,7 @@ Mesd\SettingsBundle\Model\Definition\SettingNodeInteger
 
 
 
-    
+    Integer setting node format data
 
     
 
@@ -26,11 +26,11 @@ Properties
 
 **$digits**
 
+Number of digits in integer
 
 
 
-
-    private  $digits
+    private integer $digits
 
 
 
@@ -41,10 +41,10 @@ Methods
 -------
 
 
-public **__construct** ( $nodeAttributes )
+public **__construct** ( array $nodeAttributes )
 
 
-
+Constructor
 
 
 
@@ -57,14 +57,14 @@ public **__construct** ( $nodeAttributes )
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| $nodeAttributes | mixed |  |
+| $nodeAttributes | array | &lt;p&gt;[optional]&lt;/p&gt; |
 
 --
 
 public **dumpToArray** (  )
 
 
-
+Dump format data to array
 
 
 
@@ -78,7 +78,7 @@ public **dumpToArray** (  )
 public **getDigits** (  )
 
 
-
+Get digits
 
 
 
@@ -89,10 +89,10 @@ public **getDigits** (  )
 
 --
 
-public **setDigits** ( $digits )
+public **setDigits** ( integer $digits )
 
 
-
+Set digits
 
 
 
@@ -105,6 +105,6 @@ public **setDigits** ( $digits )
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| $digits | mixed |  |
+| $digits | integer |  |
 
 --

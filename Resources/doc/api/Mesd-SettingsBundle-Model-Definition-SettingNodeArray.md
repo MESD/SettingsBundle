@@ -12,7 +12,7 @@ Mesd\SettingsBundle\Model\Definition\SettingNodeArray
 
 
 
-    
+    Array setting node format data
 
     
 
@@ -26,11 +26,11 @@ Properties
 
 **$prototype**
 
+Prototype for array values
 
 
 
-
-    private  $prototype
+    private integer $prototype
 
 
 
@@ -39,11 +39,11 @@ Properties
 
 **$node**
 
+Setting node for prototype
 
 
 
-
-    private  $node
+    private SettingNode[Prototype] $node
 
 
 
@@ -54,10 +54,10 @@ Methods
 -------
 
 
-public **__construct** ( $nodeAttributes )
+public **__construct** ( array $nodeAttributes )
 
 
-
+Constructor
 
 
 
@@ -70,14 +70,14 @@ public **__construct** ( $nodeAttributes )
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| $nodeAttributes | mixed |  |
+| $nodeAttributes | array | &lt;p&gt;[optional]&lt;/p&gt; |
 
 --
 
 public **dumpToArray** (  )
 
 
-
+Dump format data to array
 
 
 
@@ -91,7 +91,7 @@ public **dumpToArray** (  )
 public **getPrototype** (  )
 
 
-
+Get array prototype
 
 
 
@@ -102,10 +102,10 @@ public **getPrototype** (  )
 
 --
 
-public **setPrototype** ( $prototype )
+public **setPrototype** ( string $prototype )
 
 
-
+Set array prototype
 
 
 
@@ -118,14 +118,14 @@ public **setPrototype** ( $prototype )
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| $prototype | mixed |  |
+| $prototype | string |  |
 
 --
 
 public **getNode** (  )
 
 
-
+Get setting node
 
 
 
@@ -136,10 +136,10 @@ public **getNode** (  )
 
 --
 
-public **setNode** ( $node )
+public **setNode** ( SettingNode[Prototype] $node )
 
 
-
+Set digits
 
 
 
@@ -152,6 +152,6 @@ public **setNode** ( $node )
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| $node | mixed |  |
+| $node | Mesd\SettingsBundle\Model\Definition\SettingNode[Prototype] |  |
 
 --

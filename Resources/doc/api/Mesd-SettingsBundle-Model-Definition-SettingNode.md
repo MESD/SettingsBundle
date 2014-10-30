@@ -12,7 +12,7 @@ Mesd\SettingsBundle\Model\Definition\SettingNode
 
 
 
-    
+    Setting Node.
 
     
 
@@ -26,11 +26,11 @@ Properties
 
 **$default**
 
+Setting defualt value
 
 
 
-
-    private  $default
+    private mixed $default
 
 
 
@@ -39,11 +39,11 @@ Properties
 
 **$description**
 
+Setting description
 
 
 
-
-    private  $description
+    private string $description
 
 
 
@@ -52,11 +52,11 @@ Properties
 
 **$format**
 
+Setting format object
 
 
 
-
-    private  $format
+    private SettingNode[Type] $format
 
 
 
@@ -65,11 +65,11 @@ Properties
 
 **$name**
 
+Setting name
 
 
 
-
-    private  $name
+    private string $name
 
 
 
@@ -78,11 +78,11 @@ Properties
 
 **$type**
 
+Setting type
 
 
 
-
-    private  $type
+    private string $type
 
 
 
@@ -93,10 +93,10 @@ Methods
 -------
 
 
-public **__construct** ( $nodeData )
+public **__construct** ( array $nodeData )
 
 
-
+Constructor
 
 
 
@@ -109,14 +109,14 @@ public **__construct** ( $nodeData )
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| $nodeData | mixed |  |
+| $nodeData | array | &lt;p&gt;[optional]&lt;/p&gt; |
 
 --
 
 public **getDefault** (  )
 
 
-
+Get setting default value
 
 
 
@@ -127,10 +127,10 @@ public **getDefault** (  )
 
 --
 
-public **setDefault** ( $default )
+public **setDefault** ( mixed $default )
 
 
-
+Set setting default value
 
 
 
@@ -150,7 +150,7 @@ public **setDefault** ( $default )
 public **getDescription** (  )
 
 
-
+Get setting description
 
 
 
@@ -161,10 +161,10 @@ public **getDescription** (  )
 
 --
 
-public **setDescription** ( $description )
+public **setDescription** ( string $description )
 
 
-
+Set setting description
 
 
 
@@ -177,14 +177,14 @@ public **setDescription** ( $description )
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| $description | mixed |  |
+| $description | string |  |
 
 --
 
 public **getFormat** (  )
 
 
-
+Get setting format object
 
 
 
@@ -195,10 +195,10 @@ public **getFormat** (  )
 
 --
 
-public **setFormat** ( $format )
+public **setFormat** ( SettingNode[Type] $format )
 
 
-
+Set setting default value
 
 
 
@@ -211,14 +211,14 @@ public **setFormat** ( $format )
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| $format | mixed |  |
+| $format | Mesd\SettingsBundle\Model\Definition\SettingNode[Type] |  |
 
 --
 
 public **getName** (  )
 
 
-
+Get setting name
 
 
 
@@ -229,10 +229,10 @@ public **getName** (  )
 
 --
 
-public **setName** ( $name )
+public **setName** ( string $name )
 
 
-
+Set setting name
 
 
 
@@ -245,14 +245,14 @@ public **setName** ( $name )
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| $name | mixed |  |
+| $name | string |  |
 
 --
 
 public **getType** (  )
 
 
-
+Get setting type
 
 
 
@@ -263,10 +263,10 @@ public **getType** (  )
 
 --
 
-public **setType** ( $type )
+public **setType** ( string $type )
 
 
-
+Set setting type
 
 
 
@@ -279,6 +279,6 @@ public **setType** ( $type )
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| $type | mixed |  |
+| $type | string |  |
 
 --

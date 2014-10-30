@@ -24,13 +24,26 @@ Properties
 ----------
 
 
-**$container**
+**$objectManager**
 
-Symfony service container
+Doctrine entity manger
 
 
 
-    private ContainerInterface $container
+    private ObjectManager $objectManager
+
+
+
+
+
+
+**$definitionManager**
+
+Setting definition manager service
+
+
+
+    private DefinitionManager $definitionManager
 
 
 
@@ -41,7 +54,7 @@ Methods
 -------
 
 
-public **__construct** ( ContainerInterface $container )
+public **__construct** ( ObjectManager $objectManager, DefinitionManager $definitionManager )
 
 
 Constructor
@@ -57,7 +70,8 @@ Constructor
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| $container | Symfony\Component\DependencyInjection\ContainerInterface |  |
+| $objectManager | Doctrine\Common\Persistence\ObjectManager |  |
+| $definitionManager | [DefinitionManager](Mesd-SettingsBundle-Model-Definition-DefinitionManager.md) |  |
 
 --
 
