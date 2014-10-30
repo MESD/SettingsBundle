@@ -115,8 +115,7 @@ EOT
 
                 // Load hive's SettingDefinition
                 $settingDefinition = $definitionManager
-                    ->loadFile(strtolower($hive->getName())
-                );
+                    ->loadFileByHiveAndCluster($hive);
 
                 // Load Hive's cluster collection
                 $clusterCollection = $hive->getCluster();
@@ -149,10 +148,7 @@ EOT
 
                     // Load clusters's SettingDefinition
                     $settingDefinition = $definitionManager
-                        ->loadFile(
-                            $hive->getName(),
-                            $cluster->getName()
-                        );
+                        ->loadFileByHiveAndCluster($hive, $cluster);
 
                     $cluster = $this->validateCluster($cluster, $settingDefinition, $input, $output, $dialog, $confirmation);
                     $entityManager->persist($cluster);

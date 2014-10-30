@@ -58,7 +58,7 @@ EOT
         if ($hive->getDefinedAtHive()) {
             $clusterName = null;
             $fileName = $definitionManager
-                ->buildFileName($hiveName);
+                ->buildFileName($hive);
         }
         // If settings are not defined at hive, we must request a cluster.
         else {
@@ -87,12 +87,12 @@ EOT
             }
 
             $fileName = $definitionManager
-                ->buildFileName($hiveName, $clusterName);
+                ->buildFileName($hive, $cluster);
         }
 
         // If definition file does not exist, ask user if they want
         // to create the file.
-        if (!$definitionManager->locateFile($fileName)) {
+        if (!$file = $definitionManager->locateFile($fileName)) {
             $output->writeln(array(
                 '',
                 '<comment>Definition file was not found!</comment>',
@@ -155,7 +155,7 @@ EOT
         }
         // Load SettingDefinition from existing definition file
         else {
-            $settingDefinition = $definitionManager->loadFile($hiveName, $clusterName);
+            $settingDefinition = $definitionManager->loadFile($file);
         }
 
         // Define setting loop - Allow user to define as many settings as needed

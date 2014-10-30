@@ -16,6 +16,8 @@ use Symfony\Component\HttpKernel\Config\FileLocator;
 use Symfony\Component\HttpKernel\KernelInterface;
 use Symfony\Component\Yaml\Dumper;
 use Symfony\Component\Yaml\Parser;
+use Mesd\SettingsBundle\Entity\Hive;
+use Mesd\SettingsBundle\Entity\Cluster;
 use Mesd\SettingsBundle\Model\Definition\DefinitionValidator;
 use Mesd\SettingsBundle\Model\Definition\SettingDefinition;
 use Mesd\SettingsBundle\Model\Definition\SettingNode;
@@ -60,16 +62,16 @@ class DefinitionManager
     /**
      * Builds a file name based on a hive [ and cluster ].
      *
-     * @param string $hiveName
-     * @param string $clusterName
+     * @param Hive $hive
+     * @param Cluster $cluster
      * @return string $filename
      */
-    public function buildFileName($hiveName, $clusterName = null)
+    public function buildFileName(Hive $hive, Cluster $cluster = null)
     {
         $filename = (
-            null !== $clusterName ?
-            strtolower($hiveName) . '-' . strtolower($clusterName) . '.yml' :
-            strtolower($hiveName) . '.yml'
+            false === $hive->getDefinedAtHive() ?
+            strtolower($hive->getName()) . '-' . strtolower($cluster->getName()) . '.yml' :
+            strtolower($hive->getName()) . '.yml'
         );
 
         return $filename;
@@ -155,31 +157,53 @@ class DefinitionManager
 
 
     /**
-     * Loads a setting definition file by hive [ and cluster name ],
-     * parses the yaml content, and returns a SettingDefinition object.
+     * Loads a setting definition file parses the yaml content
+     * and returns a SettingDefinition object.
      *
-     * @param string $hiveName
-     * @param string $clusterName [optional]
+     * @param string $file
      * @return SettingDefinition
      */
-    public function loadFile($hiveName, $clusterName = null)
+    public function loadFile($file)
     {
-        $fileName = $this->buildFileName($hiveName, $clusterName);
 
-        if (!$file = $this->locateFile($fileName)) {
+        if (!$this->fileExists($file)) {
             throw new \Exception(
                 sprintf(
                     "Settings Definition File '%s' does not exist in any of the following paths you have configured for settings storage: %s",
-                    $fileName,
+                    $file,
                     implode(', ', $this->bundleStorage)
                 )
             );
         }
+
         $yaml = new Parser();
         $fileContents = $yaml->parse(file_get_contents($file));
         $settingDefinition = $this->unserialize($fileContents, $file);
 
         return $settingDefinition;
+    }
+
+
+    /**
+     * Loads a setting definition file by hive [ and cluster],
+     * parses the yaml content, and returns a SettingDefinition object.
+     *
+     * @param string $hive
+     * @param string $cluster [optional]
+     * @return SettingDefinition
+     */
+    public function loadFileByHiveAndCluster(Hive $hive, Cluster $cluster = null)
+    {
+        $fileName = $this->buildFileName($hive, $cluster);
+        $file     = $this->locateFile($fileName);
+
+        // This won't load anything, but it gives a more helpful
+        // error message.
+        if (!$file) {
+            return $this->loadFile($fileName);
+        }
+
+        return $this->loadFile($file);
     }
 
 

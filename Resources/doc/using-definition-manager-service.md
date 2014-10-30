@@ -14,11 +14,22 @@ from within your application dynamically.
 ####Option A - Loading an existing definition:
 
 ``` php
+// Get Setting Manager Service
+$settingManger = $this->get('mesd_settings.setting_manager');
+
+//Load Hive and Cluster
+$hive    = $settingManager->loadHive('application');
+$cluster = $settingManager->loadCluster('theme');
+
 // Get Definition Manager Service
 $definitionManger = $this->get('mesd_settings.definition_manager');
 
-// Load existing definition by hive and cluster ($hiveName, $clusterName = null)
-$settingDefinition = $definitionManger->loadFile('application', 'theme');
+// Load existing definition by hive and cluster ($hive, $cluster = null)
+$settingDefinition = $definitionManger
+    ->loadFileByHiveAndCluster(
+        $hive,
+        $cluster
+    );
 ```
 
 **Note:**
@@ -242,11 +253,22 @@ $definitionManger->saveFile($settingDefinition);
 #####Delete a setting node:
 
 ``` php
+/ Get Setting Manager Service
+$settingManger = $this->get('mesd_settings.setting_manager');
+
+//Load Hive and Cluster
+$hive    = $settingManager->loadHive('application');
+$cluster = $settingManager->loadCluster('theme');
+
 // Get Definition Manager Service
 $definitionManger = $this->get('mesd_settings.definition_manager');
 
-// Load existing definition by hive and cluster ($hiveName, $clusterName)
-$settingDefinition = $definitionManger->loadFile('application', 'theme');
+// Load existing definition by hive and cluster ($hive, $cluster = null)
+$settingDefinition = $definitionManger
+    ->loadFileByHiveAndCluster(
+        $hive,
+        $cluster
+    );
 
 // Remove a setting node
 $settingDefinition->removeSettingNodeByName($nodeName);

@@ -73,7 +73,7 @@ class SettingManager {
         }
 
         $cluster =
-            $this->container->get('doctrine.orm.entity_manager')
+            $this->objectManager
                 ->getRepository('MesdSettingsBundle:Cluster')
                 ->findOneBy(array(
                     'name' => strtoupper($clusterName),
@@ -114,11 +114,15 @@ class SettingManager {
         $hive->addCluster($cluster);
 
         // Populate settings from SettingDefinition
-        $fileName = $this->definitionManager->buildFileName($hiveName, $clusterName);
+        try {
+            $settingDefinition = $this->definitionManager
+                ->loadFileByHiveAndCluster($hive, $cluster);
+            }
+        catch (\Exception $e){
+            $settingDefinition = false;
+        }
 
-        if ($this->definitionManager->locateFile($fileName)) {
-            $settingDefinition = $this->definitionManager->loadFile($hiveName, $clusterName);
-
+        if ($settingDefinition) {
             foreach ($settingDefinition->getSettingNodes() as $key => $node) {
                 $setting = new Setting();
                 $setting->setName($node->getName());
@@ -154,8 +158,8 @@ class SettingManager {
         $hive->setName($hiveName);
         $hive->setDescription($description);
         $hive->setDefinedAtHive($definedAtHive);
-        $this->container->get('doctrine.orm.entity_manager')->persist($hive);
-        $this->container->get('doctrine.orm.entity_manager')->flush($hive);
+        $this->objectManager->persist($hive);
+        $this->objectManager->flush();
 
         return $hive;
     }
@@ -240,7 +244,7 @@ class SettingManager {
      */
     public function hiveExists($hiveName)
     {
-        $hive = $this->container->get('doctrine.orm.entity_manager')
+        $hive = $this->objectManager
             ->getRepository('MesdSettingsBundle:Hive')
             ->findOneBy(array('name' => strtoupper($hiveName)));
 
@@ -263,7 +267,7 @@ class SettingManager {
             throw new \Exception(sprintf('The hive %s does not exist', $hiveName));
         }
 
-        $hive = $this->container->get('doctrine.orm.entity_manager')
+        $hive = $this->objectManager
             ->getRepository('MesdSettingsBundle:Hive')
             ->findOneBy(array('name' => strtoupper($hiveName)));
 
@@ -342,7 +346,11 @@ class SettingManager {
         }
 
         if (true === $loadDefinition) {
-            $settingDefinition = $this->definitionManager->loadFile($hiveName, $clusterName);
+            $settingDefinition = $this->definitionManager
+                ->loadFileByHiveAndCluster(
+                    $cluster->getHive(),
+                    $cluster
+                );
 
             $setting->setSettingNode(
                 $settingDefinition->getSettingNode($settingName)
@@ -389,9 +397,9 @@ class SettingManager {
     public function saveSetting(Setting $setting)
     {
         $settingDefinition = $this->definitionManager
-            ->loadFile(
-                $setting->getCluster()->getHive()->getName(),
-                $setting->getCluster()->getName()
+            ->loadFileByHiveAndCluster(
+                $setting->getCluster()->getHive(),
+                $setting->getCluster()
             );
 
         $settingValidator = new SettingValidator(
@@ -446,7 +454,11 @@ class SettingManager {
             ));
         }
 
-        $settingDefinition = $this->definitionManager->loadFile($hiveName, $clusterName);
+        $settingDefinition = $this->definitionManager
+            ->loadFileByHiveAndCluster(
+                $cluster->getHive(),
+                $cluster
+            );
 
         $setting->setValue($settingValue);
 
