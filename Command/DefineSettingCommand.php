@@ -121,7 +121,7 @@ EOT
                 );
 
                 $settingDefinition = new SettingDefinition();
-                $settingDefinition->setHive($hiveName);
+                $settingDefinition->setHiveName($hiveName);
 
                 if ($hive->getDefinedAtHive()) {
                     $settingDefinition->setKey($hiveName);

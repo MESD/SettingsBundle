@@ -40,7 +40,7 @@ $settingDefinition->setType('cluster');
 $settingDefinition->setKey('theme');
 
 // Set the definition hive
-$settingDefinition->setHive('application');
+$settingDefinition->setHiveName('application');
 
 ```
 

@@ -86,7 +86,7 @@ class DefinitionManager
     {
         $filename = (
             'cluster' == $settingDefinition->getType() ?
-            strtolower($settingDefinition->getHive()) . '-' . strtolower($settingDefinition->getKey()) . '.yml' :
+            strtolower($settingDefinition->getHiveName()) . '-' . strtolower($settingDefinition->getKey()) . '.yml' :
             strtolower($settingDefinition->getKey()) . '.yml'
         );
 
@@ -276,7 +276,7 @@ class DefinitionManager
 
         $serializedDefinition = array(
             $settingDefinition->getKey() => array(
-                'hive'  => $settingDefinition->getHive(),
+                'hive'  => $settingDefinition->getHiveName(),
                 'type'  => $settingDefinition->getType(),
                 'nodes' => $serializedNodes
             )
@@ -303,7 +303,7 @@ class DefinitionManager
 
         $settingDefinition = new SettingDefinition();
         $settingDefinition->setKey($key);
-        $settingDefinition->setHive($fileContents[$key]['hive']);
+        $settingDefinition->setHiveName($fileContents[$key]['hive']);
         $settingDefinition->setType($fileContents[$key]['type']);
 
         // Determine File Path (trim file name)
