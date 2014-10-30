@@ -1,4 +1,4 @@
-[Index](ApiIndex.md)
+[API Index](ApiIndex.md)
 
 
 Mesd\SettingsBundle\Model\Definition\SettingNode
@@ -285,3 +285,5 @@ Set setting type
 | $type | string |  |
 
 --
+
+[API Index](ApiIndex.md)

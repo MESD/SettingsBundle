@@ -1,4 +1,4 @@
-[Index](ApiIndex.md)
+[API Index](ApiIndex.md)
 
 
 Mesd\SettingsBundle\Entity\Hive
@@ -279,3 +279,5 @@ Get cluster
 
 
 --
+
+[API Index](ApiIndex.md)

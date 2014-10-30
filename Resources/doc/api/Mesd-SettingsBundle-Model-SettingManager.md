@@ -1,4 +1,4 @@
-[Index](ApiIndex.md)
+[API Index](ApiIndex.md)
 
 
 Mesd\SettingsBundle\Model\SettingManager
@@ -378,3 +378,5 @@ Save the specified setting value or throw Exception.
 | $settingValue | mixed |  |
 
 --
+
+[API Index](ApiIndex.md)

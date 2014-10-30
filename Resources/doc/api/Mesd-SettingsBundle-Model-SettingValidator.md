@@ -1,4 +1,4 @@
-[Index](ApiIndex.md)
+[API Index](ApiIndex.md)
 
 
 Mesd\SettingsBundle\Model\SettingValidator
@@ -370,3 +370,5 @@ Validate data type
 
 
 --
+
+[API Index](ApiIndex.md)

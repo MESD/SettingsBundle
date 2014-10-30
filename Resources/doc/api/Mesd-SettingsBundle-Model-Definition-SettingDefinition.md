@@ -1,4 +1,4 @@
-[Index](ApiIndex.md)
+[API Index](ApiIndex.md)
 
 
 Mesd\SettingsBundle\Model\Definition\SettingDefinition
@@ -339,3 +339,5 @@ Remove setting node by node name
 | $name | string |  |
 
 --
+
+[API Index](ApiIndex.md)

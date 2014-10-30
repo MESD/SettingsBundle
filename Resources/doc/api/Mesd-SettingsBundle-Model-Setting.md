@@ -1,4 +1,4 @@
-[Index](ApiIndex.md)
+[API Index](ApiIndex.md)
 
 
 Mesd\SettingsBundle\Model\Setting
@@ -241,3 +241,5 @@ Set SettingNode definition
 | $settingNode | [SettingNode](Mesd-SettingsBundle-Model-Definition-SettingNode.md) |  |
 
 --
+
+[API Index](ApiIndex.md)

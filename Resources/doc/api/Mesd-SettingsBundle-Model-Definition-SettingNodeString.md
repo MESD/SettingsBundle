@@ -1,4 +1,4 @@
-[Index](ApiIndex.md)
+[API Index](ApiIndex.md)
 
 
 Mesd\SettingsBundle\Model\Definition\SettingNodeString
@@ -111,3 +111,5 @@ Set maximum length of string
 | $length | integer |  |
 
 --
+
+[API Index](ApiIndex.md)

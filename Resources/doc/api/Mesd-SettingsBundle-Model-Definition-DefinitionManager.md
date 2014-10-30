@@ -1,4 +1,4 @@
-[Index](ApiIndex.md)
+[API Index](ApiIndex.md)
 
 
 Mesd\SettingsBundle\Model\Definition\DefinitionManager
@@ -310,3 +310,5 @@ storage location for Setting Definition files.
 
 
 --
+
+[API Index](ApiIndex.md)

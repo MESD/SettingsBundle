@@ -1,4 +1,4 @@
-[Index](ApiIndex.md)
+[API Index](ApiIndex.md)
 
 
 Mesd\SettingsBundle\Model\Definition\DefinitionValidator
@@ -215,3 +215,5 @@ Validate setting definition string node
 | $key | string |  |
 
 --
+
+[API Index](ApiIndex.md)

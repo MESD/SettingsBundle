@@ -1,4 +1,4 @@
-[Index](ApiIndex.md)
+[API Index](ApiIndex.md)
 
 
 Mesd\SettingsBundle\Model\Definition\SettingNodeTypeInterface
@@ -40,3 +40,5 @@ Dump format data to array.
 
 
 --
+
+[API Index](ApiIndex.md)

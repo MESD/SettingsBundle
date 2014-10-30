@@ -1,4 +1,4 @@
-[Index](ApiIndex.md)
+[API Index](ApiIndex.md)
 
 
 Mesd\SettingsBundle\Model\Definition\SettingNodeArray
@@ -158,3 +158,5 @@ Set digits
 | $node | [SettingNodeTypeInterface](Mesd-SettingsBundle-Model-Definition-SettingNodeTypeInterface.md) |  |
 
 --
+
+[API Index](ApiIndex.md)

@@ -1,4 +1,4 @@
-[Index](ApiIndex.md)
+[API Index](ApiIndex.md)
 
 
 Mesd\SettingsBundle\Model\Definition\SettingNodeFloat
@@ -159,3 +159,5 @@ Set precision
 | $precision | integer |  |
 
 --
+
+[API Index](ApiIndex.md)
