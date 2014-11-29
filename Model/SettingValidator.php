@@ -278,9 +278,10 @@ class SettingValidator {
 
         $valid = (false === $this->validateType()) ? false : $valid;
 
-        $valid = (false === $this->validateDigits()) ? false : $valid;
-
-        $valid = (false === $this->validatePrecision()) ? false : $valid;
+        if ($valid) {
+            $valid = (false === $this->validateDigits()) ? false : $valid;
+            $valid = (false === $this->validatePrecision()) ? false : $valid;
+        }
 
         return $valid;
     }
@@ -297,7 +298,9 @@ class SettingValidator {
 
         $valid = (false === $this->validateType()) ? false : $valid;
 
-        $valid = (false === $this->validateDigits()) ? false : $valid;
+        if ($valid) {
+            $valid = (false === $this->validateDigits()) ? false : $valid;
+        }
 
         return $valid;
     }
@@ -314,7 +317,9 @@ class SettingValidator {
 
         $valid = (false === $this->validateType()) ? false : $valid;
 
-        $valid = (false === $this->validateLength()) ? false : $valid;
+        if ($valid) {
+            $valid = (false === $this->validateLength()) ? false : $valid;
+        }
 
         return $valid;
     }
