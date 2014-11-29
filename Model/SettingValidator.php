@@ -140,6 +140,20 @@ class SettingValidator {
 
 
     /**
+     * Sanitize a integer setting
+     *
+     * @return boolean
+     */
+    public function sanitizeInteger()
+    {
+        $this->sanitizeType();
+        $this->sanitizeDigits();
+
+        return true;
+    }
+
+
+    /**
      * Sanitize a string setting
      *
      * @return boolean
