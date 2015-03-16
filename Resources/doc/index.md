@@ -67,7 +67,7 @@ $ app/console doctrine:schema:update --dump-sql
 ```
 
 There should be just two tables created `setting_hive` and `setting_cluster`, and one
-foreign key. If everything looks good, go a head and run the command again, this time
+foreign key. If everything looks good, go ahead and run the command again, this time
 making the changes in the database:
 
 ```bash
@@ -297,16 +297,16 @@ $ app/console mesd:setting:setting:validate
 
 ### Retrieve a setting from the database:
 
-There are two ways to retrive setting data. The first method loads just the setting
+There are two ways to retrieve setting data. The first method loads just the setting
 value.
 
 ``` php
 // Get SettingManager Service
-$settingManger = $this->get('mesd_settings.setting_manager');
+$settingManager = $this->get('mesd_settings.setting_manager');
 
 // Retrieve Setting Value
-// $settingValue = $settingManger->loadSettingValue($hiveName, $clusterName, $settingName);
-$fontSize = $settingManger->loadSettingValue('application', 'theme', 'font-size');
+// $settingValue = $settingManager->loadSettingValue($hiveName, $clusterName, $settingName);
+$fontSize = $settingManager->loadSettingValue('application', 'theme', 'font-size');
 
 ```
 
@@ -314,11 +314,11 @@ The second method loads the setting object.
 
 ``` php
 // Get SettingManager Service
-$settingManger = $this->get('mesd_settings.setting_manager');
+$settingManager = $this->get('mesd_settings.setting_manager');
 
 // Retrieve Setting
-// $setting = $settingManger->loadSetting($hiveName, $clusterName, $settingName);
-$setting = $settingManger->loadSetting('application', 'theme', 'font-size');
+// $setting = $settingManager->loadSetting($hiveName, $clusterName, $settingName);
+$setting = $settingManager->loadSetting('application', 'theme', 'font-size');
 
 // Use the setting you retrieved
 $fontSize = $setting->getValue();
@@ -333,11 +333,11 @@ Pass a boolean `true` value to the fourth parameter to load the definition.
 
 ``` php
 // Get SettingManager Service
-$settingManger = $this->get('mesd_settings.setting_manager');
+$settingManager = $this->get('mesd_settings.setting_manager');
 
 // Retrieve Setting
-// $setting = $settingManger->loadSetting($hive, $cluster, $setting, $loadDefinition);
-$setting = $settingManger->loadSetting('application', 'theme', 'font-size', true);
+// $setting = $settingManager->loadSetting($hive, $cluster, $setting, $loadDefinition);
+$setting = $settingManager->loadSetting('application', 'theme', 'font-size', true);
 
 // Use the setting you retrieved
 $fontSize = $setting->getValue();
@@ -360,11 +360,11 @@ first method saves the value without the need to load or create a setting object
 
 ``` php
 // Get SettingManager Service
-$settingManger = $this->get('mesd_settings.setting_manager');
+$settingManager = $this->get('mesd_settings.setting_manager');
 
 // Store Setting Value
-// $settingManger->saveSettingValue($hive, $cluster, $setting, $value);
-$settingManger->saveSettingValue('application', 'theme', 'background', 'blue');
+// $settingManager->saveSettingValue($hive, $cluster, $setting, $value);
+$settingManager->saveSettingValue('application', 'theme', 'background', 'blue');
 ```
 
 The second method accepts the setting object to be saved. This is convenient when you
@@ -372,16 +372,16 @@ already have the setting object loaded.
 
 ``` php
 // Get SettingManager Service
-$settingManger = $this->get('mesd_settings.setting_manager');
+$settingManager = $this->get('mesd_settings.setting_manager');
 
 // Load a setting
-$fontSetting = $settingManger->loadSetting('application', 'theme', 'font-size');
+$fontSetting = $settingManager->loadSetting('application', 'theme', 'font-size');
 
 // Change the setting value
 $fontSetting->setValue(14);
 
 // Store Setting
-$settingManger->saveSetting($fontSetting);
+$settingManager->saveSetting($fontSetting);
 ```
 
 **Note:**

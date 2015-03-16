@@ -15,17 +15,17 @@ from within your application dynamically.
 
 ``` php
 // Get Setting Manager Service
-$settingManger = $this->get('mesd_settings.setting_manager');
+$settingManager = $this->get('mesd_settings.setting_manager');
 
 //Load Hive and Cluster
 $hive    = $settingManager->loadHive('application');
 $cluster = $settingManager->loadCluster('theme');
 
 // Get Definition Manager Service
-$definitionManger = $this->get('mesd_settings.definition_manager');
+$definitionManager = $this->get('mesd_settings.definition_manager');
 
 // Load existing definition by hive and cluster ($hive, $cluster = null)
-$settingDefinition = $definitionManger
+$settingDefinition = $definitionManager
     ->loadFileByHiveAndCluster(
         $hive,
         $cluster
@@ -242,10 +242,10 @@ $settingDefinition->addSettingNode($settingNode);
 
 ``` php
 // Get Definition Manager Service
-$definitionManger = $this->get('mesd_settings.definition_manager');
+$definitionManager = $this->get('mesd_settings.definition_manager');
 
 // Save definition to file
-$definitionManger->saveFile($settingDefinition);
+$definitionManager->saveFile($settingDefinition);
 ```
 
 ###Appendix - Other ways to manipulate setting definitions:
@@ -254,17 +254,17 @@ $definitionManger->saveFile($settingDefinition);
 
 ``` php
 / Get Setting Manager Service
-$settingManger = $this->get('mesd_settings.setting_manager');
+$settingManager = $this->get('mesd_settings.setting_manager');
 
 //Load Hive and Cluster
 $hive    = $settingManager->loadHive('application');
 $cluster = $settingManager->loadCluster('theme');
 
 // Get Definition Manager Service
-$definitionManger = $this->get('mesd_settings.definition_manager');
+$definitionManager = $this->get('mesd_settings.definition_manager');
 
 // Load existing definition by hive and cluster ($hive, $cluster = null)
-$settingDefinition = $definitionManger
+$settingDefinition = $definitionManager
     ->loadFileByHiveAndCluster(
         $hive,
         $cluster
@@ -274,7 +274,7 @@ $settingDefinition = $definitionManger
 $settingDefinition->removeSettingNodeByName($nodeName);
 
 // Save definition to file
-$definitionManger->saveFile($settingDefinition);
+$definitionManager->saveFile($settingDefinition);
 ```
 
 **Note:**

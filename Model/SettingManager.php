@@ -19,14 +19,14 @@ use Mesd\SettingsBundle\Model\Setting;
 use Mesd\SettingsBundle\Model\SettingValidator;
 
 /**
- * Service for manging settings.
+ * Service for managing settings.
  *
  * @author David Cramblett <dcramble@mesd.k12.or.us>
  */
 class SettingManager {
 
     /**
-     * Doctrine entity manger
+     * Doctrine entity manager
      *
      * @var ObjectManager
      */
@@ -55,9 +55,9 @@ class SettingManager {
 
 
     /**
-     * Check if cluster exisits
+     * Check if cluster exists
      *
-     * Determines if the specified cluster exisits
+     * Determines if the specified cluster exists
      * in the database.
      *
      * @param string $hiveName
@@ -177,7 +177,7 @@ class SettingManager {
         $cluster = $this->clusterExists($hiveName, $clusterName);
 
         if (!$cluster) {
-            throw new \Exception(sprintf('The hive %s and Cluster %s combination do not exist', $hiveName, $clusterName));
+            throw new \Exception(sprintf('The hive %s and Cluster %s combination does not exist', $hiveName, $clusterName));
         }
 
         $this->objectManager->remove($cluster);
@@ -198,7 +198,7 @@ class SettingManager {
         $hive = $this->hiveHasClusters($hiveName);
 
         if ($hive) {
-            throw new \Exception(sprintf('The hive %s still has clusters attched', $hiveName));
+            throw new \Exception(sprintf('The hive %s still has clusters attached', $hiveName));
         }
 
         $hive = $this->loadHive($hiveName);
@@ -211,7 +211,7 @@ class SettingManager {
 
 
     /**
-     * Delete all the clusters attched to specific hive.
+     * Delete all the clusters attached to specific hive.
      *
      * @param string $hiveName
      * @return true|false
@@ -236,7 +236,7 @@ class SettingManager {
 
 
     /**
-     * Determines if the specified hive exisits
+     * Determines if the specified hive exists
      * in the database.
      *
      * @param string $hiveName
@@ -254,7 +254,7 @@ class SettingManager {
 
     /**
      * Determines if the specified hive has clusters
-     * exisiting in the database.
+     * existing in the database.
      *
      * @param string $hiveName
      * @return Hive|false

@@ -202,7 +202,7 @@ EOT
                 }
             );
 
-            // Check if setting already exisits. If yes, ask user
+            // Check if setting already exists. If yes, ask user
             // if they want to overwrite.
             if ($settingDefinition->getSettingNode($nodeName)) {
 
@@ -211,7 +211,7 @@ EOT
                 $overwrite = $dialog->askConfirmation(
                     $output,
                     sprintf(
-                        '<comment>Setting %s already exisits. Would you like to overwrite? (y/n):</comment> ',
+                        '<comment>Setting %s already exists. Would you like to overwrite? (y/n):</comment> ',
                         $nodeName
                     ),
                     false

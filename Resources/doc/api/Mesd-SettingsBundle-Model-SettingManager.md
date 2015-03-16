@@ -15,7 +15,7 @@ Mesd\SettingsBundle\Model\SettingManager
 
 
 
-    Service for manging settings.
+    Service for managing settings.
 
     
 
@@ -29,7 +29,7 @@ Properties
 
 **$objectManager**
 
-Doctrine entity manger
+Doctrine entity manager
 
 
 
@@ -81,9 +81,9 @@ Constructor
 public **clusterExists** ( string $hiveName, string $clusterName )
 
 
-Check if cluster exisits
+Check if cluster exists
 
-Determines if the specified cluster exisits
+Determines if the specified cluster exists
 in the database.
 
 
@@ -188,7 +188,7 @@ Delete the specified hive or throw Exception.
 public **deleteHiveClusters** ( string $hiveName )
 
 
-Delete all the clusters attched to specific hive.
+Delete all the clusters attached to specific hive.
 
 
 
@@ -208,7 +208,7 @@ Delete all the clusters attched to specific hive.
 public **hiveExists** ( string $hiveName )
 
 
-Determines if the specified hive exisits
+Determines if the specified hive exists
 in the database.
 
 
@@ -230,7 +230,7 @@ public **hiveHasClusters** ( string $hiveName )
 
 
 Determines if the specified hive has clusters
-exisiting in the database.
+existing in the database.
 
 
 

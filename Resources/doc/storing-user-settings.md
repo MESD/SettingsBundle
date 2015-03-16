@@ -92,11 +92,11 @@ $user = new User();
 // ... Here is where your application logic for creating a new user ends
 
 // Get SettingManager Service
-$settingManger = $this->get('mesd_settings.setting_manager');
+$settingManager = $this->get('mesd_settings.setting_manager');
 
 // Create a new settings cluster for this user
-// $settingManger->createCluster($hiveName, $clusterName, $description = null);
-$cluster = $settingManger->createCluster('user', $user->getUsername());
+// $settingManager->createCluster($hiveName, $clusterName, $description = null);
+$cluster = $settingManager->createCluster('user', $user->getUsername());
 ```
 
 It's important that the first argument of `createCluster` be the hive name you
@@ -129,11 +129,11 @@ $user = $userRepository->loadUserByUsername($username)
 
 
 // Get SettingManager Service
-$settingManger = $this->get('mesd_settings.setting_manager');
+$settingManager = $this->get('mesd_settings.setting_manager');
 
 // Delete the users cluster
-// $settingManger->deleteCluster($hiveName, $clusterName)
-$settingManger->deleteCluster('user', $user->getUsername());
+// $settingManager->deleteCluster($hiveName, $clusterName)
+$settingManager->deleteCluster('user', $user->getUsername());
 ```
 
 It's important that the first argument of `createCluster` be the hive name you
@@ -143,7 +143,7 @@ identifying your user and the same method you used in creating the cluster.
 
 ### Step 5 - Retrieve or store values from your user settings
 
-At this point all your exiting users should have setting clusters (See Note in
+At this point all your existing users should have setting clusters (See Note in
 Step 3), and any new users should be created with a new setting cluster.
 
 When setting clusters are created they're loaded with the default values from the
@@ -168,26 +168,26 @@ $user = $this->getUser();
 
 
 // Get SettingManager Service
-$settingManger = $this->get('mesd_settings.setting_manager');
+$settingManager = $this->get('mesd_settings.setting_manager');
 
 
 //  --- Quick Get / Set Methods
 
 // Retrieve Setting Value
-// $settingValue = $settingManger->loadSettingValue($hiveName, $clusterName, $settingName);
-$homePage = $settingManger->loadSettingValue('user', $user->getUsername(), 'home-page');
+// $settingValue = $settingManager->loadSettingValue($hiveName, $clusterName, $settingName);
+$homePage = $settingManager->loadSettingValue('user', $user->getUsername(), 'home-page');
 
 
 // Store Setting Value
-// $settingManger->saveSettingValue($hive, $cluster, $setting, $value);
-$settingManger->saveSettingValue('user', $user->getUsername(), 'home-page', 'AcmeDemoBundle_home');
+// $settingManager->saveSettingValue($hive, $cluster, $setting, $value);
+$settingManager->saveSettingValue('user', $user->getUsername(), 'home-page', 'AcmeDemoBundle_home');
 
 
 //  --- Access setting as object
 
 // Retrieve Setting Object
-// $setting = $settingManger->loadSetting($hiveName, $clusterName, $settingName);
-$setting = $settingManger->loadSetting('user', $user->getUsername(), 'home-page');
+// $setting = $settingManager->loadSetting($hiveName, $clusterName, $settingName);
+$setting = $settingManager->loadSetting('user', $user->getUsername(), 'home-page');
 
 // Use the setting you retrieved
 $homePage = $setting->getValue();
@@ -196,5 +196,5 @@ $homePage = $setting->getValue();
 $homePage->setValue('AcmeDemoBundle_home');
 
 // Store Setting
-$settingManger->saveSetting($fontSetting);
+$settingManager->saveSetting($fontSetting);
 ```
