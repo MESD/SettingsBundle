@@ -39,9 +39,9 @@ EOT
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $clusterName        = $input->getArgument('clusterName');
-        $description = $input->getArgument('description');
         $hiveName    = $input->getArgument('hiveName');
+        $clusterName = $input->getArgument('clusterName');
+        $description = $input->getArgument('description');
 
         $settingManager =  $this->getContainer()->get("mesd_settings.setting_manager");
 
@@ -76,7 +76,7 @@ EOT
             $clusterName = $this->getHelper('dialog')->askAndValidate(
                 $output,
                 'Please choose a cluster name:',
-                function($clusterName) use ($hiveName) {
+                function($clusterName) use (&$hiveName) {
                     if (empty($clusterName)) {
                         throw new \Exception('Cluster name can not be empty');
                     }

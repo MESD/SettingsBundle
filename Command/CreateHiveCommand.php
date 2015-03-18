@@ -3,6 +3,7 @@
 namespace Mesd\SettingsBundle\Command;
 
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
+use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputInterface;
@@ -46,34 +47,71 @@ EOT
         // If user did not specify definition level at command execution,
         // ask the user now.
         if (!$definedAtHive) {
-            $definedAtHive = $this->getHelper('dialog')->askAndValidate(
-                $output,
-                'Should settings be defined at hive? (No):',
-                function($definedAtHive) {
-                    if (empty($definedAtHive) || !in_array(strtolower($definedAtHive), array('y', 'yes', 'n', 'no'))) {
-                        throw new \Exception('Please answer yes or no');
-                    }
-                    elseif (in_array(strtolower($definedAtHive), array('y', 'yes'))) {
-                        return true;
-                    }
-                    else  {
-                        return false;
-                    }
-                },
-                false,
-                'n'
-            );
+            $definedAtHive =
+                $this->getHelper('dialog')->askAndValidate(
+                    $output,
+                    'Should settings be defined at hive? (No):',
+                    function($definedAtHive) {
+                        if (empty($definedAtHive) || !in_array(strtolower($definedAtHive), array('y', 'yes', 'n', 'no'))) {
+                            throw new \Exception('Please answer yes or no');
+                        }
+                        elseif (in_array(strtolower($definedAtHive), array('y', 'yes'))) {
+                            return true;
+                        }
+                        else  {
+                            return false;
+                        }
+                    },
+                    false,
+                    'n'
+                );
         }
 
         $settingManager =  $this->getContainer()->get("mesd_settings.setting_manager");
 
+        // If hive already exists, throw error
         if ($settingManager->hiveExists($name)) {
             $output->writeln(sprintf('<error>Error: Hive %s already exists</error>', $name));
+            exit;
         }
         else {
             $settingManager->createHive($name, $description, $definedAtHive);
             $output->writeln(sprintf('<comment>Created hive <info>%s</info></comment>', $name));
         }
+
+        // If settings are not defined at hive, offer to create cluster
+        if (!$definedAtHive) {
+            $createCluster =
+                $this->getHelper('dialog')->askAndValidate(
+                    $output,
+                    'Would you like to create a new cluster? (No):',
+                    function($createCluster) {
+                        if (empty($createCluster) || !in_array(strtolower($createCluster), array('y', 'yes', 'n', 'no'))) {
+                            throw new \Exception('Please answer yes or no');
+                        }
+                        elseif (in_array(strtolower($createCluster), array('y', 'yes'))) {
+                            return true;
+                        }
+                        else  {
+                            return false;
+                        }
+                    },
+                    false,
+                    'n'
+                );
+
+            // If user requested, run create cluster command
+            if ($createCluster) {
+                $command = $this->getApplication()->find('mesd:setting:cluster:create');
+                $arguments = array(
+                    'command'  => 'mesd:setting:cluster:create',
+                    'hiveName' => $name,
+                );
+                $input = new ArrayInput($arguments);
+                $returnCode = $command->run($input, $output);
+            }
+        }
+
     }
 
     /**
