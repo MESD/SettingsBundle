@@ -43,6 +43,28 @@ EOT
         $description   = $input->getArgument('description');
         $definedAtHive = $input->getOption('definedAtHive');
 
+        // If user did not specify definition level at command execution,
+        // ask the user now.
+        if (!$definedAtHive) {
+            $definedAtHive = $this->getHelper('dialog')->askAndValidate(
+                $output,
+                'Should settings be defined at hive? (No):',
+                function($definedAtHive) {
+                    if (empty($definedAtHive) || !in_array(strtolower($definedAtHive), array('y', 'yes', 'n', 'no'))) {
+                        throw new \Exception('Please answer yes or no');
+                    }
+                    elseif (in_array(strtolower($definedAtHive), array('y', 'yes'))) {
+                        return true;
+                    }
+                    else  {
+                        return false;
+                    }
+                },
+                false,
+                'n'
+            );
+        }
+
         $settingManager =  $this->getContainer()->get("mesd_settings.setting_manager");
 
         if ($settingManager->hiveExists($name)) {
@@ -77,7 +99,7 @@ EOT
         if (!$input->getArgument('description')) {
             $description = $this->getHelper('dialog')->askAndValidate(
                 $output,
-                'Please enter a description (optional):',
+                'Please enter a description [optional]:',
                 function($description) {
                     if (empty($description)) {
                         return null;
