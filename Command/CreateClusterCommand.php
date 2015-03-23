@@ -52,7 +52,7 @@ EOT
         $output->writeln(sprintf('<comment>Created cluster <info>%s</info></comment>', $clusterName));
 
         // If user did not request to ignore setting definition at command line,
-        // offer to define settings now.
+        // offer to define cluster settings now.
         if (!$noDefine) {
             $defineSetting =
                 $this->getHelper('dialog')->askAndValidate(

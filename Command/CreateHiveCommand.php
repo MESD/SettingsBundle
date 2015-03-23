@@ -81,7 +81,7 @@ EOT
             $output->writeln(sprintf('<comment>Created hive <info>%s</info></comment>', $name));
         }
 
-        // If settings are not defined at hive, offer to create cluster
+        // If settings are not defined at hive, offer to create cluster.
         if (!$definedAtHive) {
             $createCluster =
                 $this->getHelper('dialog')->askAndValidate(
@@ -102,7 +102,7 @@ EOT
                     'n'
                 );
 
-            // If user requested, run create cluster command
+            // If user requested, run create cluster command now.
             if ($createCluster) {
                 $command = $this->getApplication()->find('mesd:setting:cluster:create');
                 $arguments = array(
@@ -114,7 +114,7 @@ EOT
             }
         }
         // If user did not request to ignore setting definition at command line,
-        // offer to define settings now.
+        // offer to define hive settings now.
         elseif (!$noDefine) {
             $defineSetting =
                 $this->getHelper('dialog')->askAndValidate(

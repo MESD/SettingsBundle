@@ -64,7 +64,8 @@ EOT
         }
         // If settings are not defined at hive, we need a cluster.
         else {
-            // If user did not provide one at command line, request one now.
+            // If user did not provide a cluster at command line, request one
+            // now.
             if (!$clusterName) {
                 $clusterName = $dialog->askAndValidate(
                     $output,
@@ -222,7 +223,7 @@ EOT
                     false
                 );
 
-                // If user doesn't want to overwite, then start again with a new setting.
+                // If user doesn't want to overwrite, then start again with a new setting.
                 if(!$overwrite) {
                     continue;
                 }
