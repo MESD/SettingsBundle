@@ -23,6 +23,7 @@ class DefineSettingCommand extends ContainerAwareCommand
             ->setDescription('Define a setting.')
             ->setDefinition(array(
                 new InputArgument('hiveName', InputArgument::REQUIRED, 'Hive Name'),
+                new InputOption('clusterName', null, InputOption::VALUE_NONE, 'Cluster Name'),
               ))
             ->setHelp(<<<EOT
 The <info>mesd:setting:setting:define</info> command defines a setting:
@@ -39,7 +40,8 @@ EOT
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         // Get user input
-        $hiveName = $input->getArgument('hiveName');
+        $hiveName    = $input->getArgument('hiveName');
+        $clusterName = $input->getOption('clusterName');
 
         // Get needed services
         $settingManager    = $this->getContainer()->get("mesd_settings.setting_manager");
@@ -60,19 +62,22 @@ EOT
             $fileName = $definitionManager
                 ->buildFileName($hive);
         }
-        // If settings are not defined at hive, we must request a cluster.
+        // If settings are not defined at hive, we need a cluster.
         else {
-            $clusterName = $dialog->askAndValidate(
-                $output,
-                'Please enter the cluster name:',
-                function($clusterName) {
-                    if (empty($clusterName)) {
-                        throw new \Exception('Cluster name can not be empty');
-                    }
+            // If user did not provide one at command line, request one now.
+            if (!$clusterName) {
+                $clusterName = $dialog->askAndValidate(
+                    $output,
+                    'Please enter the cluster name:',
+                    function($clusterName) {
+                        if (empty($clusterName)) {
+                            throw new \Exception('Cluster name can not be empty');
+                        }
 
-                    return $clusterName;
-                }
-            );
+                        return $clusterName;
+                    }
+                );
+            }
 
             // If Cluster doesn't exist, exit now so user can create it.
             if (!$cluster = $settingManager->clusterExists($hiveName, $clusterName)) {

@@ -25,6 +25,7 @@ class CreateHiveCommand extends ContainerAwareCommand
                 new InputArgument('name', InputArgument::REQUIRED, 'Hive Name'),
                 new InputArgument('description', InputArgument::OPTIONAL, 'Hive Description'),
                 new InputOption('definedAtHive', null, InputOption::VALUE_NONE, 'Set the definition level to hive'),
+                new InputOption('noDefine', null, InputOption::VALUE_NONE, 'Do not ask to define settings'),
               ))
             ->setHelp(<<<EOT
 The <info>mesd:setting:hive:create</info> command creates a setting hive:
@@ -43,6 +44,7 @@ EOT
         $name          = $input->getArgument('name');
         $description   = $input->getArgument('description');
         $definedAtHive = $input->getOption('definedAtHive');
+        $noDefine      = $input->getOption('noDefine');
 
         // If user did not specify definition level at command execution,
         // ask the user now.
@@ -111,7 +113,39 @@ EOT
                 $returnCode = $command->run($input, $output);
             }
         }
+        // If user did not request to ignore setting definition at command line,
+        // offer to define settings now.
+        elseif (!$noDefine) {
+            $defineSetting =
+                $this->getHelper('dialog')->askAndValidate(
+                    $output,
+                    'Would you like to define a new setting? (No):',
+                    function($defineSetting) {
+                        if (empty($defineSetting) || !in_array(strtolower($defineSetting), array('y', 'yes', 'n', 'no'))) {
+                            throw new \Exception('Please answer yes or no');
+                        }
+                        elseif (in_array(strtolower($defineSetting), array('y', 'yes'))) {
+                            return true;
+                        }
+                        else  {
+                            return false;
+                        }
+                    },
+                    false,
+                    'n'
+                );
 
+            // If user requested, run define setting command
+            if ($defineSetting) {
+                $command = $this->getApplication()->find('mesd:setting:setting:define');
+                $arguments = array(
+                    'command'  => 'mesd:setting:setting:define',
+                    'hiveName' => $name
+                );
+                $input = new ArrayInput($arguments);
+                $returnCode = $command->run($input, $output);
+            }
+        }
     }
 
     /**

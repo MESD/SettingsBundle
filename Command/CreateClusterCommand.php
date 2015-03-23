@@ -3,6 +3,7 @@
 namespace Mesd\SettingsBundle\Command;
 
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
+use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputInterface;
@@ -24,6 +25,7 @@ class CreateClusterCommand extends ContainerAwareCommand
                 new InputArgument('hiveName', InputArgument::REQUIRED, 'Hive name to attach Cluster'),
                 new InputArgument('clusterName', InputArgument::REQUIRED, 'Cluster Name'),
                 new InputArgument('description', InputArgument::OPTIONAL, 'Cluster Description'),
+                new InputOption('noDefine', null, InputOption::VALUE_NONE, 'Do not ask to define settings'),
               ))
             ->setHelp(<<<EOT
 The <info>mesd:setting:cluster:create</info> command creates a setting cluster:
@@ -42,11 +44,48 @@ EOT
         $hiveName    = $input->getArgument('hiveName');
         $clusterName = $input->getArgument('clusterName');
         $description = $input->getArgument('description');
+        $noDefine    = $input->getOption('noDefine');
 
         $settingManager =  $this->getContainer()->get("mesd_settings.setting_manager");
 
         $settingManager->createCluster($hiveName, $clusterName, $description);
         $output->writeln(sprintf('<comment>Created cluster <info>%s</info></comment>', $clusterName));
+
+        // If user did not request to ignore setting definition at command line,
+        // offer to define settings now.
+        if (!$noDefine) {
+            $defineSetting =
+                $this->getHelper('dialog')->askAndValidate(
+                    $output,
+                    'Would you like to define a new setting? (No):',
+                    function($defineSetting) {
+                        if (empty($defineSetting) || !in_array(strtolower($defineSetting), array('y', 'yes', 'n', 'no'))) {
+                            throw new \Exception('Please answer yes or no');
+                        }
+                        elseif (in_array(strtolower($defineSetting), array('y', 'yes'))) {
+                            return true;
+                        }
+                        else  {
+                            return false;
+                        }
+                    },
+                    false,
+                    'n'
+                );
+
+            // If user requested, run define setting command
+            if ($defineSetting) {
+                $command = $this->getApplication()->find('mesd:setting:setting:define');
+                $arguments = array(
+                    'command'  => 'mesd:setting:setting:define',
+                    'hiveName' => $hiveName,
+                    '--clusterName' => $clusterName,
+                );
+                $input = new ArrayInput($arguments);
+                $returnCode = $command->run($input, $output);
+            }
+        }
+
     }
 
     /**
