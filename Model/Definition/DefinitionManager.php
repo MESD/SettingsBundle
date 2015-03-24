@@ -113,27 +113,30 @@ class DefinitionManager
 
         $storagePaths = ($filePath) ? array(0 => $filePath) : $this->bundleStorage;
 
-        $fs = new Filesystem();
-
-        // Standard path
+        // Standard file path
         if ('@' != substr($storagePaths[0],0,1)) {
             $path = $storagePaths[0];
         }
-        // Bundle alias path (@BundleName/path/to/file)
+        // Bundle alias path (e.g. @BundleName/path/to/file)
         else {
+            $storagePathDir = str_replace('/settings', '', $storagePaths[0]);
             try {
-                $path = $this->kernel->locateResource($storagePaths[0]);
+                $path = $this->kernel->locateResource($storagePathDir) . '/settings';
             }
             catch (\Exception $e) {
-            }
+            }            
         }
 
-        if (!$path) {
+        // File path does not exist
+        if (!isset($path)) {
             throw new \Exception(sprintf(
                 'Could not create file %s',
                 $storagePaths[0] . '/' . $fileName
             ));
         }
+
+        // Create the settings directory if needed
+        $fs = new Filesystem();
 
         if (!$fs->exists($path)) {
             $fs->mkdir($path, 0776);
