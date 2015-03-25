@@ -3,6 +3,7 @@
 namespace Mesd\SettingsBundle\Command;
 
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
+use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputInterface;
@@ -23,7 +24,7 @@ class DefineSettingCommand extends ContainerAwareCommand
             ->setDescription('Define a setting.')
             ->setDefinition(array(
                 new InputArgument('hiveName', InputArgument::REQUIRED, 'Hive Name'),
-                new InputOption('clusterName', null, InputOption::VALUE_NONE, 'Cluster Name'),
+                new InputArgument('clusterName', InputArgument::OPTIONAL, 'Cluster Name')
               ))
             ->setHelp(<<<EOT
 The <info>mesd:setting:setting:define</info> command defines a setting:
@@ -41,7 +42,7 @@ EOT
     {
         // Get user input
         $hiveName    = $input->getArgument('hiveName');
-        $clusterName = $input->getOption('clusterName');
+        $clusterName = $input->getArgument('clusterName');
 
         // Get needed services
         $settingManager    = $this->getContainer()->get("mesd_settings.setting_manager");
@@ -274,6 +275,39 @@ EOT
             sprintf('<info>Setting definition saved to file %s</info>', $file),
             ''
         ));
+
+
+        // Ask if settings should be validated now. Validation can add any newly defined
+        // settings to the database.
+        $validateSettings =
+            $this->getHelper('dialog')->askAndValidate(
+                $output,
+                "Would you like to validate settings now? Validation will offer to add new \n" .
+                "settings to the database. (No):",
+                function($validateSettings) {
+                    if (empty($validateSettings) || !in_array(strtolower($validateSettings), array('y', 'yes', 'n', 'no'))) {
+                        throw new \Exception('Please answer yes or no');
+                    }
+                    elseif (in_array(strtolower($validateSettings), array('y', 'yes'))) {
+                        return true;
+                    }
+                    else  {
+                        return false;
+                    }
+                },
+                false,
+                'n'
+            );
+
+        // If user requested, run validate settings command
+        if ($validateSettings) {
+            $command = $this->getApplication()->find('mesd:setting:setting:validate');
+            $arguments = array(
+                'command'  => 'mesd:setting:setting:validate'
+            );
+            $input = new ArrayInput($arguments);
+            $returnCode = $command->run($input, $output);
+        }
 
     }
 
