@@ -253,7 +253,7 @@ $definitionManager->saveFile($settingDefinition);
 #####Delete a setting node:
 
 ``` php
-/ Get Setting Manager Service
+// Get Setting Manager Service
 $settingManager = $this->get('mesd_settings.setting_manager');
 
 //Load Hive and Cluster
