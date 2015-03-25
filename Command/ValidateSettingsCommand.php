@@ -9,8 +9,10 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Helper\DialogHelper;
 use Mesd\SettingsBundle\Entity\Cluster;
+use Mesd\SettingsBundle\Entity\Hive;
 use Mesd\SettingsBundle\Model\Definition\SettingDefinition;
 use Mesd\SettingsBundle\Model\Setting;
+use Mesd\SettingsBundle\Model\SettingManager;
 use Mesd\SettingsBundle\Model\SettingValidator;
 
 
@@ -25,7 +27,7 @@ class ValidateSettingsCommand extends ContainerAwareCommand
             ->setName('mesd:setting:setting:validate')
             ->setDescription('Validate settings.')
             ->setDefinition(array(
-                new InputOption('forceInsert', null, InputOption::VALUE_NONE, 'Force the insert of new settings - no user prompt'),
+                new InputOption('forceInsert', null, InputOption::VALUE_NONE, 'Force the insert of new hives, clusters, and/or settings - no user prompt'),
                 new InputOption('forceUpdate', null, InputOption::VALUE_NONE, 'Force the update of existing settings - no user prompt'),
                 new InputOption('forceDelete', null, InputOption::VALUE_NONE, 'Force the delete of existing settings - no user prompt'),
                 new InputOption('forceAll',    null, InputOption::VALUE_NONE, 'Force insert, update, and delete of settings - no user prompt'),
@@ -39,8 +41,9 @@ changes to settings in the database.
 
 There are three types of changes that could be required:
 
-  Insert - New settings that have been defined, but don't exist in database.
-           Inserts should not be destructive to existing data.
+  Insert - New hives, clusters, or settings that have been defined, but
+           don't exist in database. Inserts should not be destructive to
+           existing data.
 
   Update - Changes to the setting definition that need to be applied to
            settings in the database. Updates can potentially be destructive
@@ -91,6 +94,14 @@ EOT
 
         // Get Dialog Helper
         $dialog = $this->getHelper('dialog');
+
+        // Load all definition files
+        $settingDefinitions = $definitionManager->loadFiles();
+
+        // Ensure all hives and clusters are defined in the database
+        foreach ($settingDefinitions as $key => $settingDefinition) {
+            $this->validateDefinition($settingDefinition, $settingManager, $input, $output, $dialog, $confirmation);
+        }
 
         // Load hive collection
         $hiveCollection = $entityManager
@@ -169,6 +180,118 @@ EOT
     }
 
 
+
+    /**
+     * Validate setting definition exists in database
+     *
+     * @param SettingDefinition
+     * @param InputInterface
+     * @param OutputInterface
+     * @param DialogHelper
+     * @param array $confirmation
+     */
+    protected function validateDefinition(
+        SettingDefinition $settingDefinition,
+        SettingManager $settingManager,
+        InputInterface $input,
+        OutputInterface $output,
+        DialogHelper $dialog,
+        $confirmation
+    )
+    {
+        // Ensure Hive exists in database
+        if (!$settingManager->hiveExists($settingDefinition->getHiveName())) {
+
+            $output->writeln(array(
+                sprintf(
+                    "<comment>Hive '%s' is missing from the database</comment>",
+                    $settingDefinition->getHiveName()
+                ),
+                ''
+            ));
+
+            // Did the user request the 'force' option ?
+            if (!$confirmation['forceInsert'] && !$confirmation['forceAll']) {
+                $confirmInsert = $dialog->askConfirmation(
+                    $output,
+                    sprintf("Would you like to insert the hive? (y/n): "),
+                    false
+                );
+                $output->writeln('');
+            }
+            else {
+                $confirmInsert = true;
+            }
+
+            // Insert hive, if confirmed
+            if (true === $confirmInsert) {
+                $definedAtHive = ('cluster' === $settingDefinition->getType() ? false : true);
+                $settingManager->createHive(
+                    $settingDefinition->getHiveName(),
+                    null,
+                    $definedAtHive
+                );
+
+                $output->writeln(array(
+                    sprintf(
+                        "<info>Hive '%s' has been inserted!</info>",
+                        $settingDefinition->getHiveName()
+                    ),
+                    ''
+                ));
+            }
+        }
+
+
+        // If type is cluster, ensure cluster exisits in database
+        $cluster = $settingManager->clusterExists(
+            $settingDefinition->getHiveName(),
+            $settingDefinition->getKey()
+        );
+        if ('cluster' === $settingDefinition->getType() && !$cluster) {
+            
+            $output->writeln(array(
+                sprintf(
+                    "<comment>Cluster '%s' is missing from the database</comment>",
+                    $settingDefinition->getKey()
+                ),
+                ''
+            ));
+
+            // Did the user request the 'force' option ?
+            if (!$confirmation['forceInsert'] && !$confirmation['forceAll']) {
+                $confirmInsert = $dialog->askConfirmation(
+                    $output,
+                    sprintf("Would you like to insert the cluster? (y/n): "),
+                    false
+                );
+                $output->writeln('');
+            }
+            else {
+                $confirmInsert = true;
+            }
+
+            // Insert cluster, if confirmed
+            if (true === $confirmInsert) {
+                $settingManager->createCluster(
+                    $settingDefinition->getHiveName(),
+                    $settingDefinition->getKey()
+                );
+
+                $output->writeln(array(
+                    sprintf(
+                        "<info>Cluster '%s' has been inserted!</info>",
+                        $settingDefinition->getKey()
+                    ),
+                    ''
+                ));
+            }
+        }
+
+    }
+
+
+
     /**
      * Validate a cluster against a setting definition
      *
@@ -220,13 +343,10 @@ EOT
                 if (!$confirmation['forceInsert'] && !$confirmation['forceAll']) {
                     $confirmInsert = $dialog->askConfirmation(
                         $output,
-                        sprintf(
-                            "Would you like to insert the setting? (y/n): ",
-                            $cluster->getName(),
-                            $settingKey
-                        ),
+                        sprintf("Would you like to insert the setting? (y/n): "),
                         false
                     );
+                    $output->writeln('');
                 }
                 else {
                     $confirmInsert = true;
@@ -241,7 +361,6 @@ EOT
                     $cluster->addSetting($newSetting);
 
                     $output->writeln(array(
-                        '',
                         sprintf(
                             "<info>Cluster '%s' setting '%s' has been inserted!</info>",
                             $cluster->getName(),
@@ -287,6 +406,7 @@ EOT
                             ),
                             false
                         );
+                        $output->writeln('');
                     }
                     else {
                         $confirmUpdate = true;
@@ -299,7 +419,6 @@ EOT
 
                         $output->writeln(array(
                             sprintf(
-                                '',
                                 "<info>Cluster '%s' setting '%s' has been updated!</info>",
                                 $cluster->getName(),
                                 $settingKey
@@ -341,6 +460,7 @@ EOT
                         ),
                         false
                     );
+                    $output->writeln('');
                 }
                 else {
                     $confirmDelete = true;
@@ -353,7 +473,6 @@ EOT
                     );
 
                     $output->writeln(array(
-                        '',
                         sprintf(
                             "<info>Cluster '%s' setting '%s' has been deleted!</info>",
                             $cluster->getName(),

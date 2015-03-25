@@ -12,6 +12,7 @@
 namespace Mesd\SettingsBundle\Model\Definition;
 
 use Symfony\Component\Filesystem\Filesystem;
+use Symfony\Component\Finder\Finder;
 use Symfony\Component\HttpKernel\Config\FileLocator;
 use Symfony\Component\HttpKernel\KernelInterface;
 use Symfony\Component\Yaml\Dumper;
@@ -113,7 +114,7 @@ class DefinitionManager
 
         $storagePaths = ($filePath) ? array(0 => $filePath) : $this->bundleStorage;
 
-        // Standard file path
+        // Standard FQ file path
         if ('@' != substr($storagePaths[0],0,1)) {
             $path = $storagePaths[0];
         }
@@ -168,7 +169,6 @@ class DefinitionManager
      */
     public function loadFile($file)
     {
-
         if (!$this->fileExists($file)) {
             throw new \Exception(
                 sprintf(
@@ -182,6 +182,53 @@ class DefinitionManager
         $yaml = new Parser();
         $fileContents = $yaml->parse(file_get_contents($file));
         $settingDefinition = $this->unserialize($fileContents, $file);
+
+        return $settingDefinition;
+    }
+
+
+    /**
+     * Load an array of all setting definitions.
+     *
+     * @return array SettingDefinition
+     */
+    public function loadFiles()
+    {
+        // Get finder instance
+        $finder = new Finder();
+
+        // Track if any paths found
+        $pathsExisit = false;
+
+        // Add path from each storage location to finder instance
+        foreach ($this->bundleStorage as $key => $path) {
+            // Standard FQ path
+            if ('@' != substr($path,0,1)) {
+                if ($this->fileExists($path)) {
+                    $finder->in($path);
+                    $pathsExisit = true;
+                }
+            }
+            // Bundle alias path (@BundleName/path/to/file)
+            else {
+                try {
+                    $finder->in($this->kernel->locateResource($path));
+                    $pathsExisit = true;
+                }
+                catch (\Exception $e) {
+                }
+            }
+        }
+
+        $settingDefinition = array();
+
+        if ($pathsExisit) {
+            $finder->files()->name('*.yml');
+
+            foreach ($finder as $file) {
+                $settingDefinition[] = $this->loadFile($file->getRealpath());
+            }
+        }
 
         return $settingDefinition;
     }
