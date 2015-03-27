@@ -77,9 +77,9 @@ EOT
             if ($defineSetting) {
                 $command = $this->getApplication()->find('mesd:setting:setting:define');
                 $arguments = array(
-                    'command'  => 'mesd:setting:setting:define',
-                    'hiveName' => $hiveName,
-                    '--clusterName' => $clusterName,
+                    'command'     => 'mesd:setting:setting:define',
+                    'hiveName'    => $hiveName,
+                    'clusterName' => $clusterName,
                 );
                 $input = new ArrayInput($arguments);
                 $returnCode = $command->run($input, $output);
