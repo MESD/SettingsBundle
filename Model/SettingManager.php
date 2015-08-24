@@ -338,7 +338,7 @@ class SettingManager {
 
         if (!$setting) {
             throw new \Exception(sprintf(
-                "Setting '%s' does not exist in the Hive '%s' and Cluster '%s' combination",
+                "Load Setting Failed: Setting '%s' does not exist in the Hive '%s' and Cluster '%s' combination",
                 $settingName,
                 $hiveName,
                 $clusterName
@@ -377,7 +377,7 @@ class SettingManager {
 
         if (!$setting) {
             throw new \Exception(sprintf(
-                "Setting '%s' does not exist in the Hive '%s' and Cluster '%s' combination",
+                "Load Setting Value Failed: Setting '%s' does not exist in the Hive '%s' and Cluster '%s' combination",
                 $settingName,
                 $hiveName,
                 $clusterName
@@ -447,7 +447,7 @@ class SettingManager {
 
         if (!$setting) {
             throw new \Exception(sprintf(
-                "Setting '%s' does not exist in the Hive '%s' and Cluster '%s' combination",
+                "Save Setting Value Failed: Setting '%s' does not exist in the Hive '%s' and Cluster '%s' combination",
                 $settingName,
                 $hiveName,
                 $clusterName
