@@ -80,6 +80,10 @@ class SettingManager {
                     'hive' => $hive
                     )
                 );
+                
+        if (is_null($cluster)) {
+            return false;
+        }
 
         return $cluster;
     }
@@ -247,6 +251,10 @@ class SettingManager {
         $hive = $this->objectManager
             ->getRepository('MesdSettingsBundle:Hive')
             ->findOneBy(array('name' => strtoupper($hiveName)));
+
+        if (is_null($hive)) {
+            return false;
+        }
 
         return $hive;
     }
