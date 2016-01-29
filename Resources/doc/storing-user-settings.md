@@ -96,7 +96,7 @@ $settingManager = $this->get('mesd_settings.setting_manager');
 
 // Create a new settings cluster for this user
 // $settingManager->createCluster($hiveName, $clusterName, $description = null);
-$cluster = $settingManager->createCluster('user', $user->getUsername());
+$cluster = $settingManager->createCluster('user', $user->getId());
 ```
 
 It's important that the first argument of `createCluster` be the hive name you
@@ -133,7 +133,7 @@ $settingManager = $this->get('mesd_settings.setting_manager');
 
 // Delete the users cluster
 // $settingManager->deleteCluster($hiveName, $clusterName)
-$settingManager->deleteCluster('user', $user->getUsername());
+$settingManager->deleteCluster('user', $user->getId());
 ```
 
 It's important that the first argument of `createCluster` be the hive name you
@@ -175,19 +175,19 @@ $settingManager = $this->get('mesd_settings.setting_manager');
 
 // Retrieve Setting Value
 // $settingValue = $settingManager->loadSettingValue($hiveName, $clusterName, $settingName);
-$homePage = $settingManager->loadSettingValue('user', $user->getUsername(), 'home-page');
+$homePage = $settingManager->loadSettingValue('user', $user->getId(), 'home-page');
 
 
 // Store Setting Value
 // $settingManager->saveSettingValue($hive, $cluster, $setting, $value);
-$settingManager->saveSettingValue('user', $user->getUsername(), 'home-page', 'AcmeDemoBundle_home');
+$settingManager->saveSettingValue('user', $user->getId(), 'home-page', 'AcmeDemoBundle_home');
 
 
 //  --- Access setting as object
 
 // Retrieve Setting Object
 // $setting = $settingManager->loadSetting($hiveName, $clusterName, $settingName);
-$setting = $settingManager->loadSetting('user', $user->getUsername(), 'home-page');
+$setting = $settingManager->loadSetting('user', $user->getId(), 'home-page');
 
 // Use the setting you retrieved
 $homePage = $setting->getValue();
